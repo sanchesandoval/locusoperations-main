@@ -34,8 +34,8 @@ const LeakSection = () => {
         <div className="max-w-3xl mx-auto text-center mb-16">
           <p className="text-primary font-medium mb-4">The Problem</p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-balance">
-            Your ads are working.{" "}
-            <span className="text-muted-foreground">Your booking system isn't.</span>
+            Clicks Don't Pay You.{" "}
+            <span className="text-muted-foreground">Booked Appointments Do.</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">You're paying for leads you can't convert. Slow response, missed calls, after-hours gaps, staff overload, and inconsistent follow-up are bleeding your ad budget dry.</p>
         </div>
