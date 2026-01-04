@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 import Header from "@/components/layout/Header";
 
 interface QuizQuestion {
@@ -113,11 +114,35 @@ const questions: QuizQuestion[] = [
 
 const LeakFinder = () => {
   const navigate = useNavigate();
+  const [showGate, setShowGate] = useState(true);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState<{ [key: string]: { value: string; points: number } }>({});
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
 
-  const handleAnswer = (value: string) => {
+  // Listen for GHL form submission
+  useEffect(() => {
+    const handleMessage = (event: MessageEvent) => {
+      // Validate origin - only accept messages from trusted GHL domain
+      if (event.origin !== 'https://api.leadconnectorhq.com') {
+        return;
+      }
+
+      // GHL form submission detection
+      if (
+        event.data?.type === 'hsFormCallback' ||
+        event.data?.formSubmitted ||
+        event.data?.type === 'form:submit' ||
+        (typeof event.data === 'string' && event.data.includes('formSubmitted'))
+      ) {
+        setShowGate(false);
+      }
+    };
+
+    window.addEventListener('message', handleMessage);
+    return () => window.removeEventListener('message', handleMessage);
+  }, []);
+
+  const handleAnswer = (value: string, points: number) => {
     setSelectedOption(value);
   };
 
@@ -173,62 +198,88 @@ const LeakFinder = () => {
     <div className="min-h-screen bg-background">
       <Header />
       <div className="flex items-center justify-center p-6 pt-24">
-        <div className="w-full max-w-2xl">
-          {/* Progress bar */}
-          <div className="mb-8">
-            <div className="flex items-center justify-between text-sm text-muted-foreground mb-2">
-              <span>Question {currentQuestion + 1} of {questions.length}</span>
-              <span>{Math.round(progress)}% complete</span>
-            </div>
-            <div className="h-2 bg-muted rounded-full overflow-hidden">
-              <div
-                className="h-full bg-gradient-to-r from-brand-dark to-primary transition-all duration-500 ease-out"
-                style={{ width: `${progress}%` }}
-              />
-            </div>
-          </div>
+        {/* Gate Dialog */}
+        <Dialog open={showGate} onOpenChange={() => {}}>
+          <DialogContent className="sm:max-w-md bg-transparent border-none shadow-none [&>button]:hidden">
+            <iframe
+              src="https://api.leadconnectorhq.com/widget/form/JPKxiapOfZQgYoebuikK"
+              style={{ width: '100%', height: '700px', border: 'none', borderRadius: '4px' }}
+              id="inline-JPKxiapOfZQgYoebuikK"
+              data-layout="{'id':'INLINE'}"
+              data-trigger-type="alwaysShow"
+              data-trigger-value=""
+              data-activation-type="alwaysActivated"
+              data-activation-value=""
+              data-deactivation-type="neverDeactivate"
+              data-deactivation-value=""
+              data-form-name="LP Lead Magnet Assessment Form"
+              data-height="undefined"
+              data-layout-iframe-id="inline-JPKxiapOfZQgYoebuikK"
+              data-form-id="JPKxiapOfZQgYoebuikK"
+              title="LP Lead Magnet Assessment Form"
+            />
+          </DialogContent>
+        </Dialog>
 
-          {/* Question card */}
-          <div className="card-premium p-8 lg:p-12 animate-fade-up">
-            <h2 className="text-xl lg:text-2xl font-bold text-foreground mb-8 text-balance">
-              {questions[currentQuestion].question}
-            </h2>
+        {/* Quiz Content */}
+        {!showGate && (
+          <div className="w-full max-w-2xl">
+            {/* Progress bar */}
+            <div className="mb-8">
+              <div className="flex items-center justify-between text-sm text-muted-foreground mb-2">
+                <span>Question {currentQuestion + 1} of {questions.length}</span>
+                <span>{Math.round(progress)}% complete</span>
+              </div>
+              <div className="h-2 bg-muted rounded-full overflow-hidden">
+                <div
+                  className="h-full bg-gradient-to-r from-brand-dark to-primary transition-all duration-500 ease-out"
+                  style={{ width: `${progress}%` }}
+                />
+              </div>
+            </div>
 
-            <div className="space-y-3">
-              {questions[currentQuestion].options.map((option) => (
+            {/* Question card */}
+            <div className="card-premium p-8 lg:p-12 animate-fade-up">
+              <h2 className="text-xl lg:text-2xl font-bold text-foreground mb-8 text-balance">
+                {questions[currentQuestion].question}
+              </h2>
+
+              <div className="space-y-3">
+                {questions[currentQuestion].options.map((option) => (
+                  <button
+                    key={option.value}
+                    onClick={() => handleAnswer(option.value, option.points)}
+                    className={`w-full p-4 rounded-xl border text-left transition-all duration-200 ${
+                      selectedOption === option.value
+                        ? "border-primary bg-primary/10 text-foreground"
+                        : "border-border bg-muted/30 text-foreground/80 hover:border-primary/50 hover:bg-muted/50"
+                    }`}
+                  >
+                    <span className="font-medium">{option.label}</span>
+                  </button>
+                ))}
+              </div>
+
+              {/* Navigation */}
+              <div className="flex items-center justify-between mt-8 pt-6 border-t border-border/50">
                 <button
-                  key={option.value}
-                  onClick={() => handleAnswer(option.value)}
-                  className={`w-full p-4 rounded-xl border text-left transition-all duration-200 ${
-                    selectedOption === option.value
-                      ? "border-primary bg-primary/10 text-foreground"
-                      : "border-border bg-muted/30 text-foreground/80 hover:border-primary/50 hover:bg-muted/50"
-                  }`}
+                  onClick={handleBack}
+                  disabled={currentQuestion === 0}
+                  className="text-muted-foreground hover:text-foreground disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
                 >
-                  <span className="font-medium">{option.label}</span>
+                  ← Back
                 </button>
-              ))}
-            </div>
-
-            {/* Navigation */}
-            <div className="flex items-center justify-between mt-8 pt-6 border-t border-border/50">
-              <button
-                onClick={handleBack}
-                disabled={currentQuestion === 0}
-                className="text-muted-foreground hover:text-foreground disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
-              >
-                ← Back
-              </button>
-              <button
-                onClick={handleNext}
-                disabled={!selectedOption}
-                className="btn-primary px-8 disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {currentQuestion === questions.length - 1 ? "See Results" : "Next →"}
-              </button>
+                <button
+                  onClick={handleNext}
+                  disabled={!selectedOption}
+                  className="btn-primary px-8 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {currentQuestion === questions.length - 1 ? "See Results" : "Next →"}
+                </button>
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );
