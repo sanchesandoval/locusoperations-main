@@ -105,19 +105,20 @@ export const LowSignalIcon = ({ className = "w-6 h-6" }: { className?: string })
   </svg>
 );
 
-export const HourglassIcon = ({ className = "w-6 h-6" }: { className?: string }) => (
+export const TurtleIcon = ({ className = "w-6 h-6" }: { className?: string }) => (
   <svg className={className} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-    {/* Top cap */}
-    <rect x="8" y="4" width="16" height="2" rx="1" fill="currentColor" />
-    {/* Bottom cap */}
-    <rect x="8" y="26" width="16" height="2" rx="1" fill="currentColor" />
-    {/* Hourglass outline */}
-    <path d="M10 6V10C10 12 12 14 16 16C12 18 10 20 10 22V26" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-    <path d="M22 6V10C22 12 20 14 16 16C20 18 22 20 22 22V26" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-    {/* Sand in bottom (mostly full) */}
-    <path d="M11 26V23C11 21 13 19 16 17.5C19 19 21 21 21 23V26H11Z" fill="currentColor" opacity="0.6" />
-    {/* Small bit of sand in top */}
-    <path d="M15 15L16 16L17 15" stroke="currentColor" strokeWidth="1" strokeLinecap="round" opacity="0.4" />
+    {/* Shell */}
+    <ellipse cx="16" cy="16" rx="10" ry="7" stroke="currentColor" strokeWidth="1.5" />
+    <path d="M10 12C11 10 13 9 16 9C19 9 21 10 22 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" opacity="0.5" />
+    <path d="M12 15H20" stroke="currentColor" strokeWidth="1" strokeLinecap="round" opacity="0.3" />
+    {/* Head */}
+    <circle cx="27" cy="16" r="3" stroke="currentColor" strokeWidth="1.5" />
+    <circle cx="28" cy="15" r="0.8" fill="currentColor" />
+    {/* Legs */}
+    <path d="M9 20L7 24" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+    <path d="M14 21L13 25" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+    <path d="M19 21L20 25" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+    <path d="M23 20L25 24" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
   </svg>
 );
 
