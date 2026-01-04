@@ -108,18 +108,24 @@ const PipelineVisual = () => {
       </div>
 
       {/* Left: Incoming leads (messy) */}
-      <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 space-y-2">
-        {[...Array(5)].map((_, i) => (
+      <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 space-y-3">
+        {[
+          { color: "bg-primary" },
+          { color: "bg-muted-foreground/50" },
+          { color: "bg-primary" },
+          { color: "bg-muted-foreground/50" },
+          { color: "bg-muted-foreground/50" },
+        ].map((item, i) => (
           <div
             key={i}
-            className="flex items-center gap-2 animate-fade-up"
+            className="flex items-center gap-3 animate-fade-up"
             style={{ animationDelay: `${i * 0.1}s` }}
           >
-            <div className="w-2 h-2 rounded-full bg-muted-foreground/40" />
-            <div className="w-8 h-0.5 bg-muted-foreground/20" />
+            <div className={`w-2.5 h-2.5 rounded-full ${item.color}`} />
+            <div className="w-16 h-1 rounded-full bg-muted-foreground/30" />
           </div>
         ))}
-        <p className="text-xs text-muted-foreground mt-2">Leads</p>
+        <p className="text-xs text-muted-foreground mt-3">Leads</p>
       </div>
 
       {/* Right: Booked (organized) */}
@@ -127,14 +133,14 @@ const PipelineVisual = () => {
         {[...Array(4)].map((_, i) => (
           <div
             key={i}
-            className="flex items-center gap-2 animate-fade-up"
+            className="flex items-center gap-2 px-3 py-2 rounded-full bg-brand-dark/80 border border-primary/20 animate-fade-up"
             style={{ animationDelay: `${0.5 + i * 0.1}s` }}
           >
-            <div className="w-8 h-0.5 bg-primary/40" />
-            <div className="w-6 h-4 rounded bg-primary/30 border border-primary/40" />
+            <div className="w-3 h-3 rounded-full bg-primary" />
+            <div className="w-14 h-1.5 rounded-full bg-primary/40" />
           </div>
         ))}
-        <p className="text-xs text-primary mt-2">Booked</p>
+        <p className="text-xs text-primary mt-3">Booked</p>
       </div>
 
       {/* Flow lines */}
