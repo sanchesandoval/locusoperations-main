@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import Header from "@/components/layout/Header";
 
 interface QuizQuestion {
@@ -119,15 +119,37 @@ const LeakFinder = () => {
   const [answers, setAnswers] = useState<{ [key: string]: { value: string; points: number } }>({});
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
 
+  // Load GHL form embed script
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://link.msgsndr.com/js/form_embed.js';
+    script.async = true;
+    document.body.appendChild(script);
+    
+    return () => {
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
+  }, []);
+
   // Listen for GHL form submission
   useEffect(() => {
     const handleMessage = (event: MessageEvent) => {
-      // GHL form submission detection
+      // GHL/LeadConnector specific events
       if (
-        event.data?.type === 'hsFormCallback' ||
-        event.data?.formSubmitted ||
         event.data?.type === 'form:submit' ||
-        (typeof event.data === 'string' && event.data.includes('formSubmitted'))
+        event.data?.type === 'form_submitted' ||
+        event.data?.type === 'form-submitted' ||
+        event.data?.event === 'form_submit' ||
+        event.data?.formId === 'JPKxiapOfZQgYoebuikK' ||
+        event.data?.formSubmitted ||
+        (event.origin?.includes('leadconnectorhq.com') && event.data) ||
+        (event.origin?.includes('msgsndr.com') && event.data) ||
+        (typeof event.data === 'string' && 
+          (event.data.includes('submitted') || 
+           event.data.includes('success') ||
+           event.data.includes('thank')))
       ) {
         setShowGate(false);
       }
@@ -195,7 +217,8 @@ const LeakFinder = () => {
       <div className="flex items-center justify-center p-6 pt-24">
         {/* Gate Dialog */}
         <Dialog open={showGate} onOpenChange={() => {}}>
-          <DialogContent className="sm:max-w-md bg-transparent border-none shadow-none [&>button]:hidden">
+          <DialogContent className="sm:max-w-md bg-transparent border-none shadow-none [&>button]:hidden" aria-describedby={undefined}>
+            <DialogTitle className="sr-only">Lead Magnet Assessment Form</DialogTitle>
             <iframe
               src="https://api.leadconnectorhq.com/widget/form/JPKxiapOfZQgYoebuikK"
               style={{ width: '100%', height: '700px', border: 'none', borderRadius: '4px' }}
@@ -213,6 +236,12 @@ const LeakFinder = () => {
               data-form-id="JPKxiapOfZQgYoebuikK"
               title="LP Lead Magnet Assessment Form"
             />
+            <button
+              onClick={() => setShowGate(false)}
+              className="mt-4 text-sm text-muted-foreground hover:text-foreground underline mx-auto block"
+            >
+              Already submitted? Click here to continue
+            </button>
           </DialogContent>
         </Dialog>
 
