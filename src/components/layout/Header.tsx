@@ -1,0 +1,46 @@
+import { Link } from "react-router-dom";
+import locusLogo from "@/assets/locus-logo.png";
+
+const Header = () => {
+  const scrollToCalendly = () => {
+    const element = document.getElementById("book-call");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  return (
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border/50">
+      <div className="container-main">
+        <div className="flex items-center justify-between h-16 lg:h-20">
+          {/* Logo */}
+          <Link to="/" className="flex items-center">
+            <img 
+              src={locusLogo} 
+              alt="Locus" 
+              className="h-6 lg:h-7 w-auto"
+            />
+          </Link>
+
+          {/* CTAs */}
+          <div className="flex items-center gap-3">
+            <button
+              onClick={scrollToCalendly}
+              className="btn-secondary text-sm hidden sm:inline-flex"
+            >
+              Book a Call
+            </button>
+            <Link
+              to="/leak-finder"
+              className="btn-primary text-sm"
+            >
+              Start Leak Finder
+            </Link>
+          </div>
+        </div>
+      </div>
+    </header>
+  );
+};
+
+export default Header;
