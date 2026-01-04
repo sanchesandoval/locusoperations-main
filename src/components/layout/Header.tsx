@@ -2,13 +2,6 @@ import { Link } from "react-router-dom";
 import locusLogo from "@/assets/locus-logo.png";
 
 const Header = () => {
-  const scrollToCalendly = () => {
-    const element = document.getElementById("book-call");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border/50">
       <div className="container-main">
@@ -24,12 +17,12 @@ const Header = () => {
 
           {/* CTAs */}
           <div className="flex items-center gap-3">
-            <button
-              onClick={scrollToCalendly}
+            <Link
+              to="/book-call"
               className="btn-secondary text-sm hidden sm:inline-flex"
             >
               Book a Call
-            </button>
+            </Link>
             <Link
               to="/leak-finder"
               className="btn-primary text-xs sm:text-sm px-3 sm:px-4"

@@ -2,13 +2,6 @@ import { Link } from "react-router-dom";
 import { ClockSpeedIcon, CalendarSlotIcon, RefreshLoopIcon, ShieldIcon } from "@/components/icons/BrandIcons";
 
 const HeroSection = () => {
-  const scrollToCalendly = () => {
-    const element = document.getElementById("book-call");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
       {/* Background effects */}
@@ -44,12 +37,12 @@ const HeroSection = () => {
               >
                 Start Leak Finder
               </Link>
-              <button
-                onClick={scrollToCalendly}
+              <Link
+                to="/book-call"
                 className="btn-secondary text-base px-8 py-4"
               >
                 Book a Call
-              </button>
+              </Link>
             </div>
 
             {/* Trust chips */}
