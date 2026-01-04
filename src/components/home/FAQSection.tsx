@@ -40,7 +40,7 @@ const faqs = [
   },
   {
     question: "How do we get started?",
-    answer: "Start with our free Leak Finder assessment to identify where your bookings are slipping through the cracks. Then book a 15-minute Pipeline Diagnostic call where we'll map your leaks and recommend the right engagement level.",
+    answer: "Start with our free Leak Finder assessment to identify where your bookings are slipping through the cracks. Then book a 30-minute Pipeline Diagnostic call where we'll map your leaks and recommend the right engagement level.",
   },
 ];
 
