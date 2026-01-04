@@ -1,5 +1,15 @@
 import { StarIcon } from "@/components/icons/BrandIcons";
 
+// Logo imports
+import aestheticsproLogo from "@/assets/logos/aestheticspro.png";
+import boulevardLogo from "@/assets/logos/boulevard.webp";
+import hubspotLogo from "@/assets/logos/hubspot.png";
+import mangomintLogo from "@/assets/logos/mangomint.png";
+import salesforceLogo from "@/assets/logos/salesforce.png";
+import slackLogo from "@/assets/logos/slack.png";
+import vagaroLogo from "@/assets/logos/vagaro.webp";
+import zenotiLogo from "@/assets/logos/zenoti.png";
+
 const testimonials = [
   {
     quote: "Locus transformed how we handle patient bookings and follow-ups. Our AI receptionist captures calls 24/7, and automated reminders cut no-shows by 60%. Our front desk can now focus on in-person client experience.",
@@ -22,14 +32,14 @@ const testimonials = [
 ];
 
 const integrationLogos = [
-  "AestheticsPro",
-  "Vagaro",
-  "Zenoti",
-  "Boulevard",
-  "Mangomint",
-  "HubSpot",
-  "Salesforce",
-  "Slack",
+  { name: "AestheticsPro", src: aestheticsproLogo },
+  { name: "Vagaro", src: vagaroLogo },
+  { name: "Zenoti", src: zenotiLogo },
+  { name: "Boulevard", src: boulevardLogo },
+  { name: "Mangomint", src: mangomintLogo },
+  { name: "HubSpot", src: hubspotLogo },
+  { name: "Salesforce", src: salesforceLogo },
+  { name: "Slack", src: slackLogo },
 ];
 
 const TestimonialsSection = () => {
@@ -93,11 +103,13 @@ const TestimonialsSection = () => {
               {[...integrationLogos, ...integrationLogos].map((logo, index) => (
                 <div
                   key={index}
-                  className="flex-shrink-0 px-8 py-4"
+                  className="flex-shrink-0 px-8 py-4 flex items-center justify-center"
                 >
-                  <span className="text-lg font-semibold text-muted-foreground/40 whitespace-nowrap">
-                    {logo}
-                  </span>
+                  <img 
+                    src={logo.src} 
+                    alt={logo.name} 
+                    className="h-8 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                  />
                 </div>
               ))}
             </div>
