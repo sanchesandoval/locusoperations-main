@@ -9,11 +9,11 @@ const researchCards = [
     sourceUrl: "https://www.egghealthhub.com/blogs/med-spa-automation-workflows-to-boost-bookings",
   },
   {
-    stat: "100x",
-    title: "Speed-to-Lead Turns Clicks to Bookings",
-    description: "Industry data shows that leads contacted within 5 minutes can be up to 100x more likely to convert. If you wait, your paid clicks turn into 'ghost' leads.",
-    source: "salesMD - Med Spa Lead Response",
-    sourceUrl: "https://www.salesmd.com/med-spa-leads-9-ways-to-get-them-booked/"
+    stat: "21x",
+    title: "5 Minutes Beats 30 Minutes",
+    description: "Following up within 5 minutes makes you 21x more likely to qualify a lead than waiting 30 minutes. Automation keeps you inside the 5-minute window even when your front desk is busy or the clinic is closed.",
+    source: "Lead Response Management Study (2008)",
+    sourceUrl: "https://cdn2.hubspot.net/hub/25649/file-13535879-pdf/docs/mit_study.pdf"
   },
   {
     stat: "5-7",
