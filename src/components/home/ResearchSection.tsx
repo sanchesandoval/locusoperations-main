@@ -32,7 +32,6 @@ const researchCards = [
 const ResearchSection = () => {
   return (
     <section className="section-spacing relative">
-      <div className="absolute inset-0 bg-card/50" />
 
       <div className="container-main relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-16">
