@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { ClockSpeedIcon, RefreshLoopIcon, LeadSignalIcon, CalendarSlotIcon, ShieldIcon, LeakDropIcon, LowSignalIcon, TurtleIcon } from "@/components/icons/BrandIcons";
 const leakItems = [{
   icon: LowSignalIcon,
@@ -52,6 +53,12 @@ const LeakSection = () => {
                 </div>
               </div>
             </div>)}
+        </div>
+
+        <div className="text-center mt-12">
+          <Link to="/leak-finder" className="btn-primary text-base px-8 py-4">
+            Start Leak Finder
+          </Link>
         </div>
       </div>
     </section>;
