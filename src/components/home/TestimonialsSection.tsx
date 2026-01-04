@@ -25,7 +25,7 @@ const testimonials = [
     badge: "40% More Bookings",
   },
   {
-    quote: "Their AI integration handles everything from intake forms to class reminders. We've scaled from 25 to over 60 weekly clients while maintaining that personal touch our members love.",
+    quote: "Their ad creatives paired with AI helped us scale from 20 or so weekly clients to over 40 , all while maintaining that personal touch our clients love.",
     name: "Ariana",
     title: "Founder, Serenity Wellness Clinic",
     badge: "3x Client Growth",
