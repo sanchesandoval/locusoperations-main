@@ -19,7 +19,7 @@ const testimonials = [
     badge: "60% Fewer No-Shows",
   },
   {
-    quote: "I was extremely skeptical about AI handling our clientele. Our average client spends $3,500-$8,000 annually. I wasn't going to risk that relationship with robotic automation. Then I experienced the system firsthand. The AI complements our front desk team perfectly, managing the repetitive tasks while our staff focuses on building meaningful client relationships.",
+    quote: "I was extremely skeptical about AI handling our clientele. Our average client spends $3,500-$8,000 annually. I wasn't going to risk that relationship with a robot. Then I experienced the system firsthand. The AI complements our front desk team perfectly, managing the repetitive tasks while our staff focuses on in-person interactions.",
     name: "Dr. Emily Thompson",
     title: "Medical Director, Radiance Med Spa",
     badge: "40% More Bookings",
