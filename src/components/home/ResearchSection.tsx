@@ -2,9 +2,9 @@ const researchCards = [
   {
     stat: "78%",
     title: "Slow Replies Send Leads to Competitors",
-    description: "Leads contact multiple providers at once, and 78% of patients end up choosing the clinic that replies first, so slow replies hand your ad spend to competitors."
+    description: "Leads usually contact multiple providers at once, and 78% of patients end up choosing the clinic that replies first. Many clinics still take 12-24 hours to respond, by then the prospect has already booked somewhere else.",
     source: "Egg Health Hub - Med spa Automation",
-    sourceUrl: "https://www.egghealthhub.com/blogs/med-spa-automation-workflows-to-boost-bookings,
+    sourceUrl: "https://www.egghealthhub.com/blogs/med-spa-automation-workflows-to-boost-bookings",
   },
   {
     stat: "100x",
@@ -24,7 +24,7 @@ const researchCards = [
     stat: "50-60%",
     title: "After-Hours Booking is Huge",
     description: "Some med spa sources report 50-60% of bookings happen after hours. If your clinic only responds during open hours, your calendar loses to the clinic that can book 24/7.",
-    source: "MangoMint + Aesthetic Record - Online Booking"
+    source: "MangoMint + Aesthetic Record - Online Booking",
     sourceUrl: "https://www.mangomint.com/blog/med-spa-booking-statistics/",
   },
 ];
