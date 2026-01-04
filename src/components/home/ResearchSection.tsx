@@ -1,31 +1,31 @@
 const researchCards = [
   {
-    stat: "10x",
+    stat: "78%",
     title: "Slow Replies Send Leads to Competitors",
-    description: "Leads usually contact multiple providers at once, and 78% of patients end up choosing the clinic that replies first. Many clinics still take 12-24 hours to respond, by then the prospect has already booked somewhere else.",
-    source: "MIT / InsideSales Lead Response Study",
-    sourceUrl: "https://www.leadresponsemanagement.org/lrm_study",
+    description: "Leads contact multiple providers at once, and 78% of patients end up choosing the clinic that replies first, so slow replies hand your ad spend to competitors."
+    source: "Egg Health Hub - Med spa Automation",
+    sourceUrl: "https://www.egghealthhub.com/blogs/med-spa-automation-workflows-to-boost-bookings,
   },
   {
-    stat: "8x",
-    title: "Conversion drops fast after 5 minutes",
-    description: "InsideSales analyzed 55M+ sales activities and found conversion rates are 8x higher when the first contact attempt happens within 5 minutes.",
-    source: "InsideSales Lead Response 2021",
-    sourceUrl: "https://www.insidesales.com/wp-content/uploads/2021/02/infographic_LeadRespMgmt2021.pdf",
+    stat: "100x",
+    title: "Speed-to-Lead Turns Clicks to Bookings",
+    description: "Industry data shows that leads contacted within 5 minutes can be up to 100x more likely to convert. If you wait, your paid clicks turn into 'ghost' leads.",
+    source: "salesMD - Med Spa Lead Response",
+    sourceUrl: "https://www.salesmd.com/med-spa-leads-9-ways-to-get-them-booked/"
   },
   {
-    stat: "45%",
-    title: "After-hours booking is nearly half the demand",
-    description: "Zocdoc reports 45% of appointments booked on their platform happen after hours. If you only respond when staff is in, you miss high-intent patients.",
-    source: "Zocdoc After-Hours Booking",
-    sourceUrl: "https://www.zocdoc.com/resources/blog/article/why-not-offering-after-hours-booking-is-driving-away-patients/",
+    stat: "5-7",
+    title: "Most Leads Need Multiple Touches",
+    description: "Many prospects don't book after one message. One industry source claims 5-7 touchpoints are often needed before scheduling, so one-and-done follow-ups waste the leads you already paid for.",
+    source: "Digital Marketing - Med Spa Lead Generation Secrets",
+    sourceUrl: "https://www.ednadigitalmarketing.com/med-spa-lead-generation-secrets",
   },
   {
-    stat: "21x",
-    title: "Speed wins the qualification race",
-    description: "Lead response research shows you're ~21x more likely to qualify a lead when you respond in 5 minutes versus waiting 30 minutes.",
-    source: "InsideSales / Oldroyd summary",
-    sourceUrl: "https://resources.insidesales.com/blog/what-is-lead-response-management/",
+    stat: "50-60%",
+    title: "After-Hours Booking is Huge",
+    description: "Some med spa sources report 50-60% of bookings happen after hours. If your clinic only responds during open hours, your calendar loses to the clinic that can book 24/7.",
+    source: "MangoMint + Aesthetic Record - Online Booking"
+    sourceUrl: "https://www.mangomint.com/blog/med-spa-booking-statistics/",
   },
 ];
 
