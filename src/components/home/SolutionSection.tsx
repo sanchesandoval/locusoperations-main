@@ -1,42 +1,57 @@
+import { useState, useEffect, useRef } from "react";
+
 const stackItems = [
   {
     layer: "01",
-    title: "Ads + Offer + Landing",
-    description: "Premium lead generation with high-converting offers and landing pages",
+    title: "Acquisition",
+    description: "Premium lead generation with high-converting ads, compelling offers, and optimized landing pages",
   },
   {
     layer: "02",
-    title: "CRM Pipeline",
-    description: "Automated CRM setup to capture and organize every lead",
+    title: "Capture",
+    description: "Automated CRM pipeline setup to capture, organize, and route every lead instantly",
   },
   {
     layer: "03",
-    title: "Automated Follow-up",
-    description: "Multi-touch SMS and email sequences that run 24/7",
+    title: "Engage",
+    description: "Multi-touch SMS and email sequences with AI voice qualification and live transfer to your team",
   },
   {
     layer: "04",
-    title: "AI Voice Qualification",
-    description: "Instant lead qualification with live transfer to your team",
+    title: "Convert",
+    description: "Seamless booking system with automated reminders, confirmations, and no-show reactivation",
   },
   {
     layer: "05",
-    title: "Booking + Reminders",
-    description: "Seamless scheduling with automated confirmation systems",
-  },
-  {
-    layer: "06",
-    title: "Reactivation",
-    description: "Turn past leads and no-shows into booked appointments",
-  },
-  {
-    layer: "07",
-    title: "Weekly Optimization",
-    description: "Continuous improvement to maximize your ROI",
+    title: "Optimize",
+    description: "Weekly iteration and continuous improvement to maximize your ROI",
   },
 ];
 
 const SolutionSection = () => {
+  const [visibleItems, setVisibleItems] = useState<Set<number>>(new Set());
+  const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const index = itemRefs.current.indexOf(entry.target as HTMLDivElement);
+          if (entry.isIntersecting && index !== -1) {
+            setVisibleItems((prev) => new Set([...prev, index]));
+          }
+        });
+      },
+      { threshold: 0.2, rootMargin: "0px 0px -50px 0px" }
+    );
+
+    itemRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section className="section-spacing relative overflow-hidden">
       {/* Background */}
@@ -62,7 +77,13 @@ const SolutionSection = () => {
             {stackItems.map((item, index) => (
               <div
                 key={index}
-                className="relative flex items-start gap-6 group"
+                ref={(el) => (itemRefs.current[index] = el)}
+                className={`relative flex items-start gap-6 group transition-all duration-500 ease-out ${
+                  visibleItems.has(index)
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-4"
+                }`}
+                style={{ transitionDelay: `${index * 100}ms` }}
               >
                 {/* Node */}
                 <div className="relative z-10 w-14 h-14 rounded-xl bg-card border border-border flex items-center justify-center flex-shrink-0 group-hover:border-primary/50 transition-colors">
