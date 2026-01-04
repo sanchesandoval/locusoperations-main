@@ -10,7 +10,7 @@ const researchCards = [
   },
   {
     stat: "21x",
-    title: "5 Minutes Beats 30 Minutes",
+    title: "Speed-to-Lead turns Clicks into Bookings",
     description: "Following up within 5 minutes makes you 21x more likely to qualify a lead than waiting 30 minutes. Automation keeps you inside the 5-minute window even when your front desk is busy or the clinic is closed.",
     source: "Lead Response Management Study (2008)",
     sourceUrl: "https://cdn2.hubspot.net/hub/25649/file-13535879-pdf/docs/mit_study.pdf"
