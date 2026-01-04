@@ -28,7 +28,7 @@ const Header = () => {
             </Link>
             {!isLeakFinderPage && (
               <Link
-                to="/start-leak-finder"
+                to="/leak-finder"
                 className="btn-primary text-xs sm:text-sm px-3 sm:px-4"
               >
                 <span className="hidden sm:inline">Start Leak Finder</span>
