@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-
 const CalendlySection = () => {
   useEffect(() => {
     // Load Calendly widget script
@@ -7,14 +6,11 @@ const CalendlySection = () => {
     script.src = "https://assets.calendly.com/assets/external/widget.js";
     script.async = true;
     document.body.appendChild(script);
-
     return () => {
       document.body.removeChild(script);
     };
   }, []);
-
-  return (
-    <section id="book-call" className="section-spacing relative">
+  return <section id="book-call" className="section-spacing relative">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-card/50 to-background" />
 
@@ -24,18 +20,15 @@ const CalendlySection = () => {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
             Book Your Pipeline Diagnostic
           </h2>
-          <p className="text-lg text-muted-foreground max-w-xl mx-auto">
-            15 minutes. No fluff. We map where your bookings leak and what to install first.
-          </p>
+          <p className="text-lg text-muted-foreground max-w-xl mx-auto">30 minutes. No fluff. We map where your bookings leak and what to install first.</p>
         </div>
 
         {/* Calendly embed */}
         <div className="max-w-4xl mx-auto card-premium overflow-hidden">
-          <div
-            className="calendly-inline-widget"
-            data-url="https://calendly.com/locusops?hide_gdpr_banner=1&background_color=141414&text_color=fafafa&primary_color=4a9d8e"
-            style={{ minWidth: "320px", height: "700px" }}
-          />
+          <div className="calendly-inline-widget" data-url="https://calendly.com/locusops?hide_gdpr_banner=1&background_color=141414&text_color=fafafa&primary_color=4a9d8e" style={{
+          minWidth: "320px",
+          height: "700px"
+        }} />
         </div>
 
         {/* Privacy note */}
@@ -44,8 +37,6 @@ const CalendlySection = () => {
           We respect your privacy and will never share your information.
         </p>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default CalendlySection;
