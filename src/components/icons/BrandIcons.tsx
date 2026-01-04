@@ -76,9 +76,16 @@ export const RefreshLoopIcon = ({ className = "w-6 h-6" }: { className?: string 
 
 export const LeakDropIcon = ({ className = "w-6 h-6" }: { className?: string }) => (
   <svg className={className} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M16 4C16 4 6 14 6 20C6 25.523 10.477 28 16 28C21.523 28 26 25.523 26 20C26 14 16 4 16 4Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
-    <path d="M12 18L16 22L20 18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" opacity="0.5" />
-    <path d="M16 14V22" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" opacity="0.5" />
+    {/* Target circle */}
+    <circle cx="16" cy="16" r="10" stroke="currentColor" strokeWidth="1.5" opacity="0.3" />
+    <circle cx="16" cy="16" r="5" stroke="currentColor" strokeWidth="1.5" opacity="0.5" />
+    {/* Arrows missing the target */}
+    <path d="M4 8L8 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+    <path d="M4 8L6 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" opacity="0.6" />
+    <path d="M4 8L2 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" opacity="0.6" />
+    <path d="M28 24L24 20" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+    <path d="M28 24L26 27" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" opacity="0.6" />
+    <path d="M28 24L30 26" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" opacity="0.6" />
   </svg>
 );
 
