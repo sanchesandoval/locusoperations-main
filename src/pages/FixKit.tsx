@@ -261,14 +261,12 @@ const FixKit = () => {
                 <p className="text-muted-foreground mb-6">
                   30 minutes. We map where your bookings leak and what to install first.
                 </p>
-                <a
-                  href="https://calendly.com/locusops"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  to="/book-call"
                   className="btn-primary text-base px-8 py-4 inline-block"
                 >
                   Book Your Pipeline Diagnostic
-                </a>
+                </Link>
               </>
             ) : (
               <>
@@ -294,14 +292,12 @@ const FixKit = () => {
                   </p>
                 </div>
                 <div className="mt-6 pt-6 border-t border-border/50">
-                  <a
-                    href="https://calendly.com/locusops"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <Link
+                    to="/book-call"
                     className="text-primary hover:text-brand-accent transition-colors"
                   >
                     Or book a call anyway →
-                  </a>
+                  </Link>
                 </div>
               </>
             )}
@@ -376,14 +372,12 @@ const FixKit = () => {
           <p className="text-muted-foreground mb-4">
             Ready to install a complete lead-to-booking system?
           </p>
-          <a
-            href="https://calendly.com/locusops"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            to="/book-call"
             className="btn-primary text-base px-8 py-4 inline-block"
           >
             Book Your Pipeline Diagnostic
-          </a>
+          </Link>
         </div>
       </main>
     </div>
