@@ -3,7 +3,7 @@ import locusLogo from "@/assets/locus-logo.png";
 
 const Header = () => {
   const location = useLocation();
-  const isLeakFinderPage = location.pathname === "/leak-finder";
+  const hideLeakFinderButton = location.pathname === "/leak-finder" || location.pathname === "/start-leak-finder";
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border/50">
@@ -26,9 +26,9 @@ const Header = () => {
             >
               Book a Call
             </Link>
-            {!isLeakFinderPage && (
+            {!hideLeakFinderButton && (
               <Link
-                to="/leak-finder"
+                to="/start-leak-finder"
                 className="btn-primary text-xs sm:text-sm px-3 sm:px-4"
               >
                 <span className="hidden sm:inline">Start Leak Finder</span>
