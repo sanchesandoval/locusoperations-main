@@ -96,6 +96,32 @@ export const CheckCircleIcon = ({ className = "w-6 h-6" }: { className?: string 
   </svg>
 );
 
+export const LowSignalIcon = ({ className = "w-6 h-6" }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="4" y="22" width="4" height="6" rx="1" fill="currentColor" />
+    <rect x="10" y="18" width="4" height="10" rx="1" fill="currentColor" opacity="0.25" />
+    <rect x="16" y="14" width="4" height="14" rx="1" fill="currentColor" opacity="0.15" />
+    <rect x="22" y="10" width="4" height="18" rx="1" fill="currentColor" opacity="0.1" />
+  </svg>
+);
+
+export const TurtleIcon = ({ className = "w-6 h-6" }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* Shell */}
+    <ellipse cx="16" cy="16" rx="10" ry="7" stroke="currentColor" strokeWidth="1.5" />
+    <path d="M10 12C11 10 13 9 16 9C19 9 21 10 22 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" opacity="0.5" />
+    <path d="M12 15H20" stroke="currentColor" strokeWidth="1" strokeLinecap="round" opacity="0.3" />
+    {/* Head */}
+    <circle cx="27" cy="16" r="3" stroke="currentColor" strokeWidth="1.5" />
+    <circle cx="28" cy="15" r="0.8" fill="currentColor" />
+    {/* Legs */}
+    <path d="M9 20L7 24" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+    <path d="M14 21L13 25" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+    <path d="M19 21L20 25" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+    <path d="M23 20L25 24" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+  </svg>
+);
+
 export const StarIcon = ({ className = "w-5 h-5", filled = true }: { className?: string; filled?: boolean }) => (
   <svg className={className} viewBox="0 0 20 20" fill={filled ? "currentColor" : "none"} xmlns="http://www.w3.org/2000/svg">
     <path d="M10 2L12.09 7.26L18 7.64L13.45 11.14L14.82 17L10 14.27L5.18 17L6.55 11.14L2 7.64L7.91 7.26L10 2Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
