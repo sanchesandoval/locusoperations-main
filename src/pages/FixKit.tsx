@@ -144,6 +144,17 @@ const FixKit = () => {
     if (storedUser) setUserData(JSON.parse(storedUser));
   }, [navigate]);
 
+  // Load Calendly widget script
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://assets.calendly.com/assets/external/widget.js";
+    script.async = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   if (!results) return null;
 
   const isQualified = results.score >= 18;
@@ -200,14 +211,23 @@ const FixKit = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
+      {/* Header */}
       <header className="border-b border-border/50 py-4">
         <div className="container-main flex items-center justify-between">
           <Link to="/">
             <img src={locusLogo} alt="Locus" className="h-5" />
           </Link>
-          <Link to="/leak-finder" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-            Retake Assessment
-          </Link>
+          <div className="flex items-center gap-4">
+            <Link to="/leak-finder" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              Retake Assessment
+            </Link>
+            <a 
+              href="#book-call-section" 
+              className="btn-primary text-sm px-4 py-2"
+            >
+              Book a Call
+            </a>
+          </div>
         </div>
       </header>
 
@@ -250,59 +270,6 @@ const FixKit = () => {
           </div>
         )}
 
-        {/* CTA Section */}
-        <div className="max-w-2xl mx-auto mb-16">
-          <div className="card-premium p-8 text-center">
-            {isQualified ? (
-              <>
-                <h2 className="text-2xl font-bold mb-4">
-                  Let's Fix Your Pipeline
-                </h2>
-                <p className="text-muted-foreground mb-6">
-                  30 minutes. We map where your bookings leak and what to install first.
-                </p>
-                <Link
-                  to="/book-call"
-                  className="btn-primary text-base px-8 py-4 inline-block"
-                >
-                  Book Your Pipeline Diagnostic
-                </Link>
-              </>
-            ) : (
-              <>
-                <h2 className="text-2xl font-bold mb-4">
-                  Get Weekly Revenue Tips
-                </h2>
-                <p className="text-muted-foreground mb-6">
-                  Practical strategies to improve your lead conversion and reduce no-shows.
-                </p>
-                {/* GHL form placeholder */}
-                <div className="max-w-sm mx-auto space-y-3">
-                  <input
-                    type="email"
-                    placeholder="Your email"
-                    className="w-full px-4 py-3 rounded-xl bg-muted border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
-                  />
-                  <button className="w-full btn-primary py-3">
-                    Subscribe
-                  </button>
-                  <p className="text-xs text-muted-foreground">
-                    {/* Replace with GHL embed/script */}
-                    Form placeholder - integrate with GHL
-                  </p>
-                </div>
-                <div className="mt-6 pt-6 border-t border-border/50">
-                  <Link
-                    to="/book-call"
-                    className="text-primary hover:text-brand-accent transition-colors"
-                  >
-                    Or book a call anyway →
-                  </Link>
-                </div>
-              </>
-            )}
-          </div>
-        </div>
 
         {/* Leak Areas */}
         {leakAreas.length > 0 && (
@@ -367,17 +334,37 @@ const FixKit = () => {
           </div>
         </div>
 
+        {/* Calendly Section */}
+        <div id="book-call-section" className="max-w-4xl mx-auto mt-16">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl font-bold mb-4">Book Your Pipeline Diagnostic</h2>
+            <p className="text-muted-foreground">
+              30 minutes. No fluff. We map where your bookings leak and what to install first.
+            </p>
+          </div>
+          <div className="card-premium overflow-hidden">
+            <div 
+              className="calendly-inline-widget" 
+              data-url="https://calendly.com/locusops/30min?hide_gdpr_banner=1&background_color=141414&text_color=fafafa&primary_color=4a9d8e"
+              style={{ minWidth: "320px", height: "700px" }}
+            />
+          </div>
+          <p className="text-center text-xs text-muted-foreground/60 mt-6">
+            By booking a call, you agree to receive communications from Locus.
+          </p>
+        </div>
+
         {/* Bottom CTA */}
         <div className="max-w-xl mx-auto mt-16 text-center">
           <p className="text-muted-foreground mb-4">
             Ready to install a complete lead-to-booking system?
           </p>
-          <Link
-            to="/book-call"
+          <a
+            href="#book-call-section"
             className="btn-primary text-base px-8 py-4 inline-block"
           >
             Book Your Pipeline Diagnostic
-          </Link>
+          </a>
         </div>
       </main>
     </div>
