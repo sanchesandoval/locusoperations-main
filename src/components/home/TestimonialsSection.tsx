@@ -13,7 +13,7 @@ import zenotiLogo from "@/assets/logos/zenoti.png";
 
 const testimonials = [
   {
-    quote: "Locus transformed how we handle patient bookings and follow-ups. Our AI receptionist captures calls 24/7, and automated reminders cut no-shows by 60%. Our front desk can now focus on in-person client experience.",
+    quote: "Locus improved how we handle patient bookings and follow-ups. Our AI receptionist captures calls 24/7, and automated reminders cut no-shows by 60%.",
     name: "Victor Martinez",
     title: "Owner, Vibe Aesthetics",
     badge: "60% Fewer No-Shows",
