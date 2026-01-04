@@ -21,7 +21,12 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left: Copy */}
           <div className="space-y-8">
-            <div className="space-y-6">
+          <div className="space-y-6">
+              <div className="flex justify-center lg:justify-start">
+                <span className="inline-flex items-center px-3 py-1.5 rounded-full bg-card/80 border border-border text-xs text-muted-foreground">
+                  Built for medspas and wellness clinics
+                </span>
+              </div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] text-balance text-center lg:text-left">
                 Stop Paying for Leads{" "}
                 <span className="gradient-text">That Never Book.</span>
