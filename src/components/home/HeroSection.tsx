@@ -69,7 +69,7 @@ const HeroSection = () => {
           </div>
 
           {/* Right: Pipeline Visual */}
-          <div className="relative lg:h-[500px] flex items-center justify-center">
+          <div className="relative lg:h-[500px] hidden lg:flex items-center justify-center">
             <PipelineVisual />
           </div>
         </div>
