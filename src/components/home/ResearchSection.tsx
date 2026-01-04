@@ -1,7 +1,7 @@
 const researchCards = [
   {
     stat: "10x",
-    title: "Higher Contact Rates",
+    title: "Slow Replies Send Leads to Competitors",
     description: "Leads usually contact multiple providers at once, and 78% of patients end up choosing the clinic that replies first. Many clinics still take 12-24 hours to respond, by then the prospect has already booked somewhere else.",
     source: "MIT / InsideSales Lead Response Study",
     sourceUrl: "https://www.leadresponsemanagement.org/lrm_study",
