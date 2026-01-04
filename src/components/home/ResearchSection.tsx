@@ -26,8 +26,8 @@ const researchCards = [
     stat: "50-60%",
     title: "After-Hours Booking is Huge",
     description: "Some med spa sources report 50-60% of bookings happen after hours. If your clinic only responds during open hours, your calendar loses to the clinic that can book 24/7.",
-    source: "MangoMint + Aesthetic Record - Online Booking",
-    sourceUrl: "https://www.mangomint.com/blog/med-spa-booking-statistics/",
+    source: "Aesthetic Record - Online Booking",
+    sourceUrl: "https://blog.aestheticrecord.com/online-booking-a-competitive-business-advantage-or-a-workflow-optimization-tool/",
   },
 ];
 
