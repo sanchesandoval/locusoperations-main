@@ -109,19 +109,13 @@ const PipelineVisual = () => {
 
       {/* Left: Incoming leads (messy) */}
       <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 space-y-3">
-        {[
-          { color: "bg-primary" },
-          { color: "bg-muted-foreground/50" },
-          { color: "bg-primary" },
-          { color: "bg-muted-foreground/50" },
-          { color: "bg-muted-foreground/50" },
-        ].map((item, i) => (
+        {[...Array(5)].map((_, i) => (
           <div
             key={i}
             className="flex items-center gap-3 animate-fade-up"
             style={{ animationDelay: `${i * 0.1}s` }}
           >
-            <div className={`w-2.5 h-2.5 rounded-full ${item.color}`} />
+            <div className="w-2.5 h-2.5 rounded-full bg-muted-foreground/50" />
             <div className="w-16 h-1 rounded-full bg-muted-foreground/30" />
           </div>
         ))}
