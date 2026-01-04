@@ -1,7 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { Checkbox } from "@/components/ui/checkbox";
 import locusLogo from "@/assets/locus-logo.png";
 
 interface QuizQuestion {
@@ -116,23 +115,27 @@ const questions: QuizQuestion[] = [
 const LeakFinder = () => {
   const navigate = useNavigate();
   const [showGate, setShowGate] = useState(true);
-  const [gateData, setGateData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    consent: false,
-  });
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState<{ [key: string]: { value: string; points: number } }>({});
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
 
-  const handleGateSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!gateData.name || !gateData.email || !gateData.consent) return;
+  // Listen for GHL form submission
+  useEffect(() => {
+    const handleMessage = (event: MessageEvent) => {
+      // GHL form submission detection
+      if (
+        event.data?.type === 'hsFormCallback' ||
+        event.data?.formSubmitted ||
+        event.data?.type === 'form:submit' ||
+        (typeof event.data === 'string' && event.data.includes('formSubmitted'))
+      ) {
+        setShowGate(false);
+      }
+    };
 
-    sessionStorage.setItem("leakFinder_user", JSON.stringify(gateData));
-    setShowGate(false);
-  };
+    window.addEventListener('message', handleMessage);
+    return () => window.removeEventListener('message', handleMessage);
+  }, []);
 
   const handleAnswer = (value: string, points: number) => {
     setSelectedOption(value);
@@ -203,59 +206,25 @@ const LeakFinder = () => {
             </p>
           </DialogHeader>
 
-          <form onSubmit={handleGateSubmit} className="space-y-4 mt-4">
-            <div>
-              <input
-                type="text"
-                placeholder="Your name *"
-                value={gateData.name}
-                onChange={(e) => setGateData({ ...gateData, name: e.target.value })}
-                className="w-full px-4 py-3 rounded-xl bg-muted border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
-                required
-              />
-            </div>
-            <div>
-              <input
-                type="email"
-                placeholder="Email address *"
-                value={gateData.email}
-                onChange={(e) => setGateData({ ...gateData, email: e.target.value })}
-                className="w-full px-4 py-3 rounded-xl bg-muted border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
-                required
-              />
-            </div>
-            <div>
-              <input
-                type="tel"
-                placeholder="Phone (optional)"
-                value={gateData.phone}
-                onChange={(e) => setGateData({ ...gateData, phone: e.target.value })}
-                className="w-full px-4 py-3 rounded-xl bg-muted border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
-              />
-            </div>
-
-            <div className="flex items-start gap-3 pt-2">
-              <Checkbox
-                id="consent"
-                checked={gateData.consent}
-                onCheckedChange={(checked) =>
-                  setGateData({ ...gateData, consent: checked as boolean })
-                }
-                className="mt-1"
-              />
-              <label htmlFor="consent" className="text-xs text-muted-foreground leading-relaxed cursor-pointer">
-                I agree to receive communications from Locus about my assessment results and related services. *
-              </label>
-            </div>
-
-            <button
-              type="submit"
-              disabled={!gateData.name || !gateData.email || !gateData.consent}
-              className="w-full btn-primary py-4 text-base disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              Start the Assessment
-            </button>
-          </form>
+          <div className="mt-4">
+            <iframe
+              src="https://api.leadconnectorhq.com/widget/form/JPKxiapOfZQgYoebuikK"
+              style={{ width: '100%', height: '450px', border: 'none', borderRadius: '4px' }}
+              id="inline-JPKxiapOfZQgYoebuikK"
+              data-layout="{'id':'INLINE'}"
+              data-trigger-type="alwaysShow"
+              data-trigger-value=""
+              data-activation-type="alwaysActivated"
+              data-activation-value=""
+              data-deactivation-type="neverDeactivate"
+              data-deactivation-value=""
+              data-form-name="LP Lead Magnet Assessment Form"
+              data-height="undefined"
+              data-layout-iframe-id="inline-JPKxiapOfZQgYoebuikK"
+              data-form-id="JPKxiapOfZQgYoebuikK"
+              title="LP Lead Magnet Assessment Form"
+            />
+          </div>
         </DialogContent>
       </Dialog>
 
