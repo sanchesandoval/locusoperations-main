@@ -28,7 +28,7 @@ const BookCall = () => {
               />
             </Link>
             <Link
-              to="/leak-finder"
+              to="/start-leak-finder"
               className="btn-primary text-xs sm:text-sm px-3 sm:px-4"
             >
               Start Leak Finder
