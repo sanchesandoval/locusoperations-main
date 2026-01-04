@@ -1,5 +1,9 @@
-import { ClockSpeedIcon, RefreshLoopIcon, LeadSignalIcon, CalendarSlotIcon, ShieldIcon } from "@/components/icons/BrandIcons";
+import { ClockSpeedIcon, RefreshLoopIcon, LeadSignalIcon, CalendarSlotIcon, ShieldIcon, LeakDropIcon } from "@/components/icons/BrandIcons";
 const leakItems = [{
+  icon: LeakDropIcon,
+  title: "Weak ad targeting",
+  description: "Wrong audience = wasted budget"
+}, {
   icon: ClockSpeedIcon,
   title: "Slow response time",
   description: "Leads go cold in minutes, not hours"
