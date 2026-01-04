@@ -122,6 +122,11 @@ const LeakFinder = () => {
   // Listen for GHL form submission
   useEffect(() => {
     const handleMessage = (event: MessageEvent) => {
+      // Validate origin - only accept messages from trusted GHL domain
+      if (event.origin !== 'https://api.leadconnectorhq.com') {
+        return;
+      }
+
       // GHL form submission detection
       if (
         event.data?.type === 'hsFormCallback' ||
