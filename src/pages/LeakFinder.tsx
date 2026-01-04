@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import locusLogo from "@/assets/locus-logo.png";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
+import Header from "@/components/layout/Header";
 
 interface QuizQuestion {
   id: string;
@@ -190,26 +190,15 @@ const LeakFinder = () => {
   const progress = ((currentQuestion + 1) / questions.length) * 100;
 
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center p-6">
-      {/* Gate Dialog */}
-      <Dialog open={showGate} onOpenChange={() => {}}>
-        <DialogContent className="sm:max-w-md bg-card border-border [&>button]:hidden">
-          <DialogHeader className="text-center space-y-4">
-            <div className="flex justify-center">
-              <img src={locusLogo} alt="Locus" className="h-6" />
-            </div>
-            <DialogTitle className="text-2xl font-bold text-center">
-              Revenue Leak Finder
-            </DialogTitle>
-            <p className="text-muted-foreground text-sm">
-              Discover where your clinic is losing bookings. Takes 2 minutes.
-            </p>
-          </DialogHeader>
-
-          <div className="mt-4">
+    <div className="min-h-screen bg-background">
+      <Header />
+      <div className="flex items-center justify-center p-6 pt-24">
+        {/* Gate Dialog */}
+        <Dialog open={showGate} onOpenChange={() => {}}>
+          <DialogContent className="sm:max-w-md bg-transparent border-none shadow-none [&>button]:hidden">
             <iframe
               src="https://api.leadconnectorhq.com/widget/form/JPKxiapOfZQgYoebuikK"
-              style={{ width: '100%', height: '450px', border: 'none', borderRadius: '4px' }}
+              style={{ width: '100%', height: '550px', border: 'none', borderRadius: '4px' }}
               id="inline-JPKxiapOfZQgYoebuikK"
               data-layout="{'id':'INLINE'}"
               data-trigger-type="alwaysShow"
@@ -224,69 +213,69 @@ const LeakFinder = () => {
               data-form-id="JPKxiapOfZQgYoebuikK"
               title="LP Lead Magnet Assessment Form"
             />
-          </div>
-        </DialogContent>
-      </Dialog>
+          </DialogContent>
+        </Dialog>
 
-      {/* Quiz Content */}
-      {!showGate && (
-        <div className="w-full max-w-2xl">
-          {/* Progress bar */}
-          <div className="mb-8">
-            <div className="flex items-center justify-between text-sm text-muted-foreground mb-2">
-              <span>Question {currentQuestion + 1} of {questions.length}</span>
-              <span>{Math.round(progress)}% complete</span>
+        {/* Quiz Content */}
+        {!showGate && (
+          <div className="w-full max-w-2xl">
+            {/* Progress bar */}
+            <div className="mb-8">
+              <div className="flex items-center justify-between text-sm text-muted-foreground mb-2">
+                <span>Question {currentQuestion + 1} of {questions.length}</span>
+                <span>{Math.round(progress)}% complete</span>
+              </div>
+              <div className="h-2 bg-muted rounded-full overflow-hidden">
+                <div
+                  className="h-full bg-gradient-to-r from-brand-dark to-primary transition-all duration-500 ease-out"
+                  style={{ width: `${progress}%` }}
+                />
+              </div>
             </div>
-            <div className="h-2 bg-muted rounded-full overflow-hidden">
-              <div
-                className="h-full bg-gradient-to-r from-brand-dark to-primary transition-all duration-500 ease-out"
-                style={{ width: `${progress}%` }}
-              />
-            </div>
-          </div>
 
-          {/* Question card */}
-          <div className="card-premium p-8 lg:p-12 animate-fade-up">
-            <h2 className="text-xl lg:text-2xl font-bold text-foreground mb-8 text-balance">
-              {questions[currentQuestion].question}
-            </h2>
+            {/* Question card */}
+            <div className="card-premium p-8 lg:p-12 animate-fade-up">
+              <h2 className="text-xl lg:text-2xl font-bold text-foreground mb-8 text-balance">
+                {questions[currentQuestion].question}
+              </h2>
 
-            <div className="space-y-3">
-              {questions[currentQuestion].options.map((option) => (
+              <div className="space-y-3">
+                {questions[currentQuestion].options.map((option) => (
+                  <button
+                    key={option.value}
+                    onClick={() => handleAnswer(option.value, option.points)}
+                    className={`w-full p-4 rounded-xl border text-left transition-all duration-200 ${
+                      selectedOption === option.value
+                        ? "border-primary bg-primary/10 text-foreground"
+                        : "border-border bg-muted/30 text-foreground/80 hover:border-primary/50 hover:bg-muted/50"
+                    }`}
+                  >
+                    <span className="font-medium">{option.label}</span>
+                  </button>
+                ))}
+              </div>
+
+              {/* Navigation */}
+              <div className="flex items-center justify-between mt-8 pt-6 border-t border-border/50">
                 <button
-                  key={option.value}
-                  onClick={() => handleAnswer(option.value, option.points)}
-                  className={`w-full p-4 rounded-xl border text-left transition-all duration-200 ${
-                    selectedOption === option.value
-                      ? "border-primary bg-primary/10 text-foreground"
-                      : "border-border bg-muted/30 text-foreground/80 hover:border-primary/50 hover:bg-muted/50"
-                  }`}
+                  onClick={handleBack}
+                  disabled={currentQuestion === 0}
+                  className="text-muted-foreground hover:text-foreground disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
                 >
-                  <span className="font-medium">{option.label}</span>
+                  ← Back
                 </button>
-              ))}
-            </div>
-
-            {/* Navigation */}
-            <div className="flex items-center justify-between mt-8 pt-6 border-t border-border/50">
-              <button
-                onClick={handleBack}
-                disabled={currentQuestion === 0}
-                className="text-muted-foreground hover:text-foreground disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
-              >
-                ← Back
-              </button>
-              <button
-                onClick={handleNext}
-                disabled={!selectedOption}
-                className="btn-primary px-8 disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {currentQuestion === questions.length - 1 ? "See Results" : "Next →"}
-              </button>
+                <button
+                  onClick={handleNext}
+                  disabled={!selectedOption}
+                  className="btn-primary px-8 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {currentQuestion === questions.length - 1 ? "See Results" : "Next →"}
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 };
