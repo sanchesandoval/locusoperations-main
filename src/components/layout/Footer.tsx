@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
           {/* Brand */}
           <div className="space-y-4">
-            <img src={locusLogo} alt="Locus" className="h-7 w-auto" />
+            <img src={locusLogo} alt="Locus" className="h-6 w-auto" />
             <p className="text-sm text-muted-foreground max-w-xs">
               Growth operations for aesthetic and wellness clinics. Turn ad spend into booked appointments.
             </p>
