@@ -18,7 +18,7 @@ const Header = () => {
             <img 
               src={locusLogo} 
               alt="Locus" 
-              className="h-6 lg:h-7 w-auto"
+              className="h-8 lg:h-9 w-auto"
             />
           </Link>
 
