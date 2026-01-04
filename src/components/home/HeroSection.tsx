@@ -23,7 +23,7 @@ const HeroSection = () => {
           <div className="space-y-8">
           <div className="space-y-6">
               <div className="flex justify-center lg:justify-start">
-                <span className="inline-flex items-center px-3 py-1.5 rounded-full bg-card/80 border border-border text-xs text-muted-foreground">
+                <span className="inline-flex items-center px-3 py-1.5 rounded-full bg-card/80 border border-border text-xs text-foreground">
                   Built for medspas and wellness clinics
                 </span>
               </div>
