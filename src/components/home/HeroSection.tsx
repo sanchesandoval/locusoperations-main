@@ -26,13 +26,13 @@ const HeroSection = () => {
                 Stop Paying for Leads{" "}
                 <span className="gradient-text">That Never Book.</span>
               </h1>
-              <p className="text-lg lg:text-xl text-muted-foreground max-w-lg text-balance">
+              <p className="text-lg lg:text-xl text-muted-foreground max-w-lg text-balance text-center lg:text-left mx-auto lg:mx-0">
                 Locus turns ad spend into booked appointments with a conversion engine that responds, follows up, and reactivates leads automatically.
               </p>
             </div>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 items-center lg:items-start">
               <Link
                 to="/leak-finder"
                 className="btn-primary text-base px-8 py-4"
@@ -48,7 +48,7 @@ const HeroSection = () => {
             </div>
 
             {/* Trust chips */}
-            <div className="flex flex-wrap gap-3 pt-4">
+            <div className="flex flex-wrap gap-3 pt-4 justify-center lg:justify-start">
               <div className="trust-chip">
                 <ClockSpeedIcon className="w-4 h-4 text-primary" />
                 <span>Speed-to-lead under 60 seconds</span>
