@@ -198,7 +198,7 @@ const LeakFinder = () => {
           <DialogContent className="sm:max-w-md bg-transparent border-none shadow-none [&>button]:hidden">
             <iframe
               src="https://api.leadconnectorhq.com/widget/form/JPKxiapOfZQgYoebuikK"
-              style={{ width: '100%', height: '550px', border: 'none', borderRadius: '4px' }}
+              style={{ width: '100%', height: '700px', border: 'none', borderRadius: '4px' }}
               id="inline-JPKxiapOfZQgYoebuikK"
               data-layout="{'id':'INLINE'}"
               data-trigger-type="alwaysShow"
