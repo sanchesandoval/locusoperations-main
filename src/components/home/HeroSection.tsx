@@ -32,7 +32,7 @@ const HeroSection = () => {
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 items-center lg:items-start justify-center lg:justify-start">
               <Link
-                to="/start-leak-finder"
+                to="/leak-finder"
                 className="btn-primary text-base px-8 py-4"
               >
                 Start Leak Finder
