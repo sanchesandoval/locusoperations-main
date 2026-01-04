@@ -6,7 +6,7 @@ const stackItems = [
   },
   {
     layer: "02",
-    title: "GHL Pipeline",
+    title: "CRM Pipeline",
     description: "Automated CRM setup to capture and organize every lead",
   },
   {
