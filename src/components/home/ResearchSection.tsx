@@ -7,25 +7,25 @@ const researchCards = [
     sourceUrl: "https://www.leadresponsemanagement.org/lrm_study",
   },
   {
-    stat: "391%",
-    title: "More Conversions",
-    description: "Responding within 1 minute leads to 391% more conversions compared to waiting just 2 minutes.",
-    source: "Vendasta Lead Response Report",
-    sourceUrl: "https://www.vendasta.com/blog/speed-to-lead-statistics/",
+    stat: "8x",
+    title: "Conversion drops fast after 5 minutes",
+    description: "InsideSales analyzed 55M+ sales activities and found conversion rates are 8x higher when the first contact attempt happens within 5 minutes.",
+    source: "InsideSales Lead Response 2021",
+    sourceUrl: "https://www.insidesales.com/wp-content/uploads/2021/02/infographic_LeadRespMgmt2021.pdf",
   },
   {
-    stat: "78%",
-    title: "First Responder Wins",
-    description: "78% of customers buy from the company that responds to their inquiry first.",
-    source: "Lead Connect Study",
-    sourceUrl: "https://www.business.com/articles/lead-response-management-best-practices/",
+    stat: "45%",
+    title: "After-hours booking is nearly half the demand",
+    description: "Zocdoc reports 45% of appointments booked on their platform happen after hours. If you only respond when staff is in, you miss high-intent patients.",
+    source: "Zocdoc After-Hours Booking",
+    sourceUrl: "https://www.zocdoc.com/resources/blog/article/why-not-offering-after-hours-booking-is-driving-away-patients/",
   },
   {
-    stat: "50%+",
-    title: "After-Hours Leads",
-    description: "More than half of leads come in after business hours. Clinics without automation miss these entirely.",
-    source: "Industry Analysis",
-    sourceUrl: "#",
+    stat: "21x",
+    title: "Speed wins the qualification race",
+    description: "Lead response research shows you're ~21x more likely to qualify a lead when you respond in 5 minutes versus waiting 30 minutes.",
+    source: "InsideSales / Oldroyd summary",
+    sourceUrl: "https://resources.insidesales.com/blog/what-is-lead-response-management/",
   },
 ];
 
@@ -41,7 +41,7 @@ const ResearchSection = () => {
             Speed Wins the Booking
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            When a lead is shopping Botox, GLP-1, TRT, or peptides, they contact multiple clinics. The first real response wins.
+            If you're buying leads but responding late, you're funding your competitor's calendar.
           </p>
         </div>
 
