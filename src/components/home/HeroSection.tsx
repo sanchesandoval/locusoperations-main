@@ -22,7 +22,7 @@ const HeroSection = () => {
           {/* Left: Copy */}
           <div className="space-y-8">
             <div className="space-y-6">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] text-balance">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] text-balance text-center lg:text-left">
                 Stop Paying for Leads{" "}
                 <span className="gradient-text">That Never Book.</span>
               </h1>

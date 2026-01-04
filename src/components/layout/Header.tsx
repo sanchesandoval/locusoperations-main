@@ -32,9 +32,10 @@ const Header = () => {
             </button>
             <Link
               to="/leak-finder"
-              className="btn-primary text-sm"
+              className="btn-primary text-xs sm:text-sm px-3 sm:px-4"
             >
-              Start Leak Finder
+              <span className="hidden sm:inline">Start Leak Finder</span>
+              <span className="sm:hidden">Leak Finder</span>
             </Link>
           </div>
         </div>
