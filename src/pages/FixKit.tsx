@@ -259,7 +259,7 @@ const FixKit = () => {
                   Let's Fix Your Pipeline
                 </h2>
                 <p className="text-muted-foreground mb-6">
-                  15 minutes. No pitch. We map where your bookings leak and what to install first.
+                  30 minutes. We map where your bookings leak and what to install first.
                 </p>
                 <a
                   href="https://calendly.com/locusops"
