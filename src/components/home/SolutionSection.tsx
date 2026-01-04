@@ -1,29 +1,35 @@
 import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 
 const stackItems = [
   {
     layer: "01",
     title: "Acquisition",
+    outline: "Turn ad spend into qualified leads with high-converting campaigns.",
     description: "Premium lead generation with high-converting ads, compelling offers, and optimized landing pages",
   },
   {
     layer: "02",
     title: "Capture",
+    outline: "Never lose a lead—capture, organize, and route instantly.",
     description: "Automated CRM pipeline setup to capture, organize, and route every lead instantly",
   },
   {
     layer: "03",
     title: "Engage",
+    outline: "Turn cold leads into booked consults with multi-touch follow-up.",
     description: "Multi-touch SMS and email sequences with AI voice qualification and live transfer to your team",
   },
   {
     layer: "04",
     title: "Convert",
+    outline: "Fill your calendar with confirmed appointments, not no-shows.",
     description: "Seamless booking system with automated reminders, confirmations, and no-show reactivation",
   },
   {
     layer: "05",
     title: "Optimize",
+    outline: "Continuously improve ROI with data-driven iteration.",
     description: "Weekly iteration and continuous improvement to maximize your ROI",
   },
 ];
@@ -92,10 +98,13 @@ const SolutionSection = () => {
 
                 {/* Content */}
                 <div className="flex-1 pt-3 pb-5">
-                  <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+                  <h3 className="text-lg font-semibold text-foreground mb-1 group-hover:text-primary transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-base text-muted-foreground">
+                  <p className="text-sm text-primary/80 font-medium mb-2">
+                    {item.outline}
+                  </p>
+                  <p className="text-sm text-muted-foreground">
                     {item.description}
                   </p>
                 </div>
@@ -105,6 +114,12 @@ const SolutionSection = () => {
               </div>
             ))}
           </div>
+        </div>
+
+        <div className="text-center mt-12">
+          <Link to="/leak-finder" className="btn-primary text-base px-8 py-4">
+            Start Leak Finder
+          </Link>
         </div>
       </div>
     </section>
