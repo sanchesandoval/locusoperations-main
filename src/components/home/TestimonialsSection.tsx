@@ -28,7 +28,7 @@ const testimonials = [
     quote: "Their ad creatives paired with AI helped us scale from 20 or so weekly clients to over 40 , all while maintaining that personal touch our clients love.",
     name: "Ariana",
     title: "Founder, Serenity Wellness Clinic",
-    badge: "3x Client Growth",
+    badge: "2x Client Growth",
   },
 ];
 
