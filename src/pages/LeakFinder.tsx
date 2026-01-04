@@ -198,7 +198,7 @@ const LeakFinder = () => {
           <DialogContent className="sm:max-w-md bg-transparent border-none shadow-none [&>button]:hidden">
             <iframe
               src="https://api.leadconnectorhq.com/widget/form/JPKxiapOfZQgYoebuikK"
-              style={{ width: '100%', height: '700px', border: 'none', borderRadius: '4px' }}
+              style={{ width: '100%', height: '100%', border: 'none', borderRadius: '4px' }}
               id="inline-JPKxiapOfZQgYoebuikK"
               data-layout="{'id':'INLINE'}"
               data-trigger-type="alwaysShow"
@@ -208,7 +208,7 @@ const LeakFinder = () => {
               data-deactivation-type="neverDeactivate"
               data-deactivation-value=""
               data-form-name="LP Lead Magnet Assessment Form"
-              data-height="undefined"
+              data-height="496"
               data-layout-iframe-id="inline-JPKxiapOfZQgYoebuikK"
               data-form-id="JPKxiapOfZQgYoebuikK"
               title="LP Lead Magnet Assessment Form"
