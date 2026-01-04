@@ -107,18 +107,18 @@ export const LowSignalIcon = ({ className = "w-6 h-6" }: { className?: string })
 
 export const TurtleIcon = ({ className = "w-6 h-6" }: { className?: string }) => (
   <svg className={className} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-    {/* Shell */}
-    <ellipse cx="16" cy="16" rx="10" ry="7" stroke="currentColor" strokeWidth="1.5" />
-    <path d="M10 12C11 10 13 9 16 9C19 9 21 10 22 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" opacity="0.5" />
-    <path d="M12 15H20" stroke="currentColor" strokeWidth="1" strokeLinecap="round" opacity="0.3" />
-    {/* Head */}
-    <circle cx="27" cy="16" r="3" stroke="currentColor" strokeWidth="1.5" />
-    <circle cx="28" cy="15" r="0.8" fill="currentColor" />
-    {/* Legs */}
-    <path d="M9 20L7 24" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-    <path d="M14 21L13 25" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-    <path d="M19 21L20 25" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-    <path d="M23 20L25 24" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+    {/* Hourglass frame */}
+    <path d="M8 4H24" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    <path d="M8 28H24" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    {/* Hourglass glass */}
+    <path d="M9 4V10C9 12 12 16 16 16C12 16 9 20 9 22V28" stroke="currentColor" strokeWidth="1.5" />
+    <path d="M23 4V10C23 12 20 16 16 16C20 16 23 20 23 22V28" stroke="currentColor" strokeWidth="1.5" />
+    {/* Sand top - almost empty */}
+    <path d="M14 8H18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" opacity="0.3" />
+    {/* Sand falling */}
+    <circle cx="16" cy="16" r="1" fill="currentColor" opacity="0.5" />
+    {/* Sand bottom - almost full */}
+    <path d="M11 24C11 22 13 20 16 20C19 20 21 22 21 24V26H11V24Z" fill="currentColor" opacity="0.4" />
   </svg>
 );
 
