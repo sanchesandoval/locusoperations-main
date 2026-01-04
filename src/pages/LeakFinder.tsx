@@ -133,24 +133,34 @@ const LeakFinder = () => {
     };
   }, []);
 
-  // Listen for GHL form submission
+  // Listen for GHL form submission - only close on explicit submission events
   useEffect(() => {
     const handleMessage = (event: MessageEvent) => {
-      // GHL/LeadConnector specific events
-      if (
-        event.data?.type === 'form:submit' ||
-        event.data?.type === 'form_submitted' ||
-        event.data?.type === 'form-submitted' ||
-        event.data?.event === 'form_submit' ||
-        event.data?.formId === 'JPKxiapOfZQgYoebuikK' ||
-        event.data?.formSubmitted ||
-        (event.origin?.includes('leadconnectorhq.com') && event.data) ||
-        (event.origin?.includes('msgsndr.com') && event.data) ||
-        (typeof event.data === 'string' && 
-          (event.data.includes('submitted') || 
-           event.data.includes('success') ||
-           event.data.includes('thank')))
-      ) {
+      // Only process messages from GHL/LeadConnector origins
+      const isGHLOrigin = 
+        event.origin?.includes('leadconnectorhq.com') || 
+        event.origin?.includes('msgsndr.com');
+      
+      if (!isGHLOrigin) return;
+
+      // Debug log to see what messages come through (remove after confirming)
+      console.log('GHL postMessage:', event.origin, event.data);
+
+      // Check for explicit submission events only
+      const data = event.data;
+      const isSubmission = 
+        data?.type === 'form:submit' ||
+        data?.type === 'form_submitted' ||
+        data?.type === 'form-submitted' ||
+        data?.event === 'form_submit' ||
+        data?.formSubmitted === true ||
+        (data?.formId === 'JPKxiapOfZQgYoebuikK' && 
+          (data?.submitted || data?.success || data?.type?.includes('submit'))) ||
+        (typeof data === 'string' && 
+          data.includes('JPKxiapOfZQgYoebuikK') &&
+          (data.includes('submitted') || data.includes('success')));
+
+      if (isSubmission) {
         setShowGate(false);
       }
     };
@@ -236,12 +246,6 @@ const LeakFinder = () => {
               data-form-id="JPKxiapOfZQgYoebuikK"
               title="LP Lead Magnet Assessment Form"
             />
-            <button
-              onClick={() => setShowGate(false)}
-              className="mt-4 text-sm text-muted-foreground hover:text-foreground underline mx-auto block"
-            >
-              Already submitted? Click here to continue
-            </button>
           </DialogContent>
         </Dialog>
 
