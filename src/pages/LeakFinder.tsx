@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "@/components/layout/Header";
 
@@ -116,6 +116,45 @@ const LeakFinder = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState<{ [key: string]: { value: string; points: number } }>({});
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
+  const [showFormGate, setShowFormGate] = useState(true);
+
+  // Load GHL form embed script
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://link.msgsndr.com/js/form_embed.js';
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
+  }, []);
+
+  // Listen for GHL form submission
+  useEffect(() => {
+    const handleMessage = (event: MessageEvent) => {
+      if (event.origin?.includes('leadconnectorhq.com') || 
+          event.origin?.includes('msgsndr.com')) {
+        const data = event.data;
+        const dataStr = typeof data === 'string' ? data : JSON.stringify(data);
+        
+        if (
+          data?.type?.toLowerCase?.()?.includes('submit') ||
+          data?.event?.toLowerCase?.()?.includes('submit') ||
+          data?.formSubmitted === true ||
+          dataStr.toLowerCase().includes('submitted') ||
+          dataStr.toLowerCase().includes('success')
+        ) {
+          setShowFormGate(false);
+        }
+      }
+    };
+
+    window.addEventListener('message', handleMessage);
+    return () => window.removeEventListener('message', handleMessage);
+  }, []);
 
   const handleAnswer = (value: string) => {
     setSelectedOption(value);
@@ -172,64 +211,93 @@ const LeakFinder = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <div className="flex items-center justify-center p-6 pt-24">
-        <div className="w-full max-w-2xl">
-          {/* Progress bar */}
-          <div className="mb-8">
-            <div className="flex items-center justify-between text-sm text-muted-foreground mb-2">
-              <span>Question {currentQuestion + 1} of {questions.length}</span>
-              <span>{Math.round(progress)}% complete</span>
-            </div>
-            <div className="h-2 bg-muted rounded-full overflow-hidden">
-              <div
-                className="h-full bg-gradient-to-r from-brand-dark to-primary transition-all duration-500 ease-out"
-                style={{ width: `${progress}%` }}
-              />
-            </div>
+      
+      {/* GHL Form Popup Overlay */}
+      {showFormGate && (
+        <div className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4">
+          <div className="bg-background rounded-lg w-full max-w-lg max-h-[90vh] overflow-auto">
+            <iframe
+              src="https://api.leadconnectorhq.com/widget/form/JPKxiapOfZQgYoebuikK"
+              style={{ width: '100%', height: '600px', border: 'none', borderRadius: '4px' }}
+              id="inline-JPKxiapOfZQgYoebuikK"
+              data-layout="{'id':'INLINE'}"
+              data-trigger-type="alwaysShow"
+              data-trigger-value=""
+              data-activation-type="alwaysActivated"
+              data-activation-value=""
+              data-deactivation-type="leadCollected"
+              data-deactivation-value=""
+              data-form-name="LP Lead Magnet Assessment Form"
+              data-height="undefined"
+              data-layout-iframe-id="inline-JPKxiapOfZQgYoebuikK"
+              data-form-id="JPKxiapOfZQgYoebuikK"
+              title="LP Lead Magnet Assessment Form"
+            />
           </div>
+        </div>
+      )}
 
-          {/* Question card */}
-          <div className="card-premium p-8 lg:p-12 animate-fade-up">
-            <h2 className="text-xl lg:text-2xl font-bold text-foreground mb-8 text-balance">
-              {questions[currentQuestion].question}
-            </h2>
-
-            <div className="space-y-3">
-              {questions[currentQuestion].options.map((option) => (
-                <button
-                  key={option.value}
-                  onClick={() => handleAnswer(option.value)}
-                  className={`w-full p-4 rounded-xl border text-left transition-all duration-200 ${
-                    selectedOption === option.value
-                      ? "border-primary bg-primary/10 text-foreground"
-                      : "border-border bg-muted/30 text-foreground/80 hover:border-primary/50 hover:bg-muted/50"
-                  }`}
-                >
-                  <span className="font-medium">{option.label}</span>
-                </button>
-              ))}
+      {/* Quiz Content - shown after form submission */}
+      {!showFormGate && (
+        <div className="flex items-center justify-center p-6 pt-24">
+          <div className="w-full max-w-2xl">
+            {/* Progress bar */}
+            <div className="mb-8">
+              <div className="flex items-center justify-between text-sm text-muted-foreground mb-2">
+                <span>Question {currentQuestion + 1} of {questions.length}</span>
+                <span>{Math.round(progress)}% complete</span>
+              </div>
+              <div className="h-2 bg-muted rounded-full overflow-hidden">
+                <div
+                  className="h-full bg-gradient-to-r from-brand-dark to-primary transition-all duration-500 ease-out"
+                  style={{ width: `${progress}%` }}
+                />
+              </div>
             </div>
 
-            {/* Navigation */}
-            <div className="flex items-center justify-between mt-8 pt-6 border-t border-border/50">
-              <button
-                onClick={handleBack}
-                disabled={currentQuestion === 0}
-                className="text-muted-foreground hover:text-foreground disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
-              >
-                ← Back
-              </button>
-              <button
-                onClick={handleNext}
-                disabled={!selectedOption}
-                className="btn-primary px-8 disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {currentQuestion === questions.length - 1 ? "See Results" : "Next →"}
-              </button>
+            {/* Question card */}
+            <div className="card-premium p-8 lg:p-12 animate-fade-up">
+              <h2 className="text-xl lg:text-2xl font-bold text-foreground mb-8 text-balance">
+                {questions[currentQuestion].question}
+              </h2>
+
+              <div className="space-y-3">
+                {questions[currentQuestion].options.map((option) => (
+                  <button
+                    key={option.value}
+                    onClick={() => handleAnswer(option.value)}
+                    className={`w-full p-4 rounded-xl border text-left transition-all duration-200 ${
+                      selectedOption === option.value
+                        ? "border-primary bg-primary/10 text-foreground"
+                        : "border-border bg-muted/30 text-foreground/80 hover:border-primary/50 hover:bg-muted/50"
+                    }`}
+                  >
+                    <span className="font-medium">{option.label}</span>
+                  </button>
+                ))}
+              </div>
+
+              {/* Navigation */}
+              <div className="flex items-center justify-between mt-8 pt-6 border-t border-border/50">
+                <button
+                  onClick={handleBack}
+                  disabled={currentQuestion === 0}
+                  className="text-muted-foreground hover:text-foreground disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                >
+                  ← Back
+                </button>
+                <button
+                  onClick={handleNext}
+                  disabled={!selectedOption}
+                  className="btn-primary px-8 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {currentQuestion === questions.length - 1 ? "See Results" : "Next →"}
+                </button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };
