@@ -339,7 +339,7 @@ const FixKit = () => {
           <div className="text-center mb-8">
             <h2 className="text-2xl font-bold mb-4">Book Your Pipeline Diagnostic</h2>
             <p className="text-muted-foreground">
-              30 minutes. No fluff. We map where your bookings leak and what to install first.
+              Ready to install a complete lead-to-booking system? No fluff. We map where your bookings leak and what to install first.
             </p>
           </div>
           <div className="card-premium overflow-hidden">
@@ -352,19 +352,6 @@ const FixKit = () => {
           <p className="text-center text-xs text-muted-foreground/60 mt-6">
             By booking a call, you agree to receive communications from Locus.
           </p>
-        </div>
-
-        {/* Bottom CTA */}
-        <div className="max-w-xl mx-auto mt-16 text-center">
-          <p className="text-muted-foreground mb-4">
-            Ready to install a complete lead-to-booking system?
-          </p>
-          <a
-            href="#book-call-section"
-            className="btn-primary text-base px-8 py-4 inline-block"
-          >
-            Book Your Pipeline Diagnostic
-          </a>
         </div>
       </main>
     </div>
