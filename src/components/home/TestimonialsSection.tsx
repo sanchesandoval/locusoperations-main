@@ -76,12 +76,12 @@ const TestimonialsSection = () => {
               </blockquote>
 
               {/* Author */}
-              <div className="flex items-center justify-between gap-4 pt-4 border-t border-border/50">
+              <div className="flex flex-col-reverse lg:flex-row lg:items-center lg:justify-between gap-3 pt-4 border-t border-border/50">
                 <div>
                   <p className="font-semibold text-foreground">{testimonial.name}</p>
                   <p className="text-xs text-muted-foreground">{testimonial.title}</p>
                 </div>
-                <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium whitespace-nowrap">
+                <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium w-fit">
                   {testimonial.badge}
                 </span>
               </div>
