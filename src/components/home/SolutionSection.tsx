@@ -73,7 +73,7 @@ const SolutionSection = () => {
           {/* Connecting line */}
           <div className="absolute left-[27px] top-8 bottom-8 w-px bg-gradient-to-b from-primary/50 via-primary/30 to-primary/10" />
 
-          <div className="space-y-4">
+          <div className="space-y-6">
             {stackItems.map((item, index) => (
               <div
                 key={index}
@@ -86,16 +86,16 @@ const SolutionSection = () => {
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
                 {/* Node */}
-                <div className="relative z-10 w-14 h-14 rounded-xl bg-card border border-border flex items-center justify-center flex-shrink-0 group-hover:border-primary/50 transition-colors">
-                  <span className="text-xs font-mono text-primary">{item.layer}</span>
+                <div className="relative z-10 w-16 h-16 rounded-xl bg-card border border-border flex items-center justify-center flex-shrink-0 group-hover:border-primary/50 transition-colors">
+                  <span className="text-sm font-mono text-primary">{item.layer}</span>
                 </div>
 
                 {/* Content */}
-                <div className="flex-1 pt-2 pb-4">
-                  <h3 className="font-semibold text-foreground mb-1 group-hover:text-primary transition-colors">
+                <div className="flex-1 pt-3 pb-5">
+                  <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-base text-muted-foreground">
                     {item.description}
                   </p>
                 </div>
