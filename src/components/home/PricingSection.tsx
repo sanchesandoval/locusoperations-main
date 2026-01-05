@@ -43,10 +43,16 @@ const tiers = [
 
 const PricingSection = () => {
   return (
-    <section className="section-spacing relative">
-      <div className="container-main">
+    <section className="section-spacing relative overflow-hidden">
+      {/* Left glow */}
+      <div className="absolute top-1/2 left-0 w-[400px] h-[400px] rounded-full bg-primary/5 blur-[100px] -translate-y-1/2" />
+      
+      {/* Right glow */}
+      <div className="absolute top-1/2 right-0 w-[400px] h-[400px] rounded-full bg-primary/5 blur-[100px] -translate-y-1/2" />
+      
+      <div className="container-main relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <p className="text-primary font-medium mb-4">Engagement</p>
+          <p className="text-primary font-medium mb-4">Our Services</p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
             Choose Your Growth Path
           </h2>
