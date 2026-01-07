@@ -149,6 +149,13 @@ const FixKit = () => {
     const script = document.createElement("script");
     script.src = "https://assets.calendly.com/assets/external/widget.js";
     script.async = true;
+    
+    script.onload = () => {
+      if ((window as Window & { Calendly?: { initInlineWidgets: () => void } }).Calendly) {
+        (window as Window & { Calendly?: { initInlineWidgets: () => void } }).Calendly?.initInlineWidgets();
+      }
+    };
+    
     document.body.appendChild(script);
     return () => {
       document.body.removeChild(script);
@@ -215,7 +222,7 @@ const FixKit = () => {
       <header className="border-b border-border/50 py-4">
         <div className="container-main flex items-center justify-between">
           <Link to="/">
-            <img src={locusLogo} alt="Locus" className="h-5" />
+            <img src={locusLogo} alt="Locus" className="h-8 lg:h-9 w-auto" />
           </Link>
           <div className="flex items-center gap-4">
             <Link to="/leak-finder" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
