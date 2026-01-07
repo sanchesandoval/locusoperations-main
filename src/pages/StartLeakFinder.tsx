@@ -1,16 +1,46 @@
-import { useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import locusLogo from "@/assets/locus-logo.png";
 
 const StartLeakFinder = () => {
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+
   useEffect(() => {
-    // Load GHL form embed script
+    const scriptId = "ghl-form-embed-script";
+    
+    // Prevent duplicate script loading
+    if (document.getElementById(scriptId)) {
+      return;
+    }
+
     const script = document.createElement("script");
+    script.id = scriptId;
     script.src = "https://link.msgsndr.com/js/form_embed.js";
-    script.async = true;
+    
+    script.onload = () => {
+      console.log("GHL form embed script loaded successfully");
+    };
+    
+    script.onerror = () => {
+      console.error("GHL form embed script failed to load");
+      // Force iframe visible on script error
+      if (iframeRef.current) {
+        iframeRef.current.style.display = "block";
+      }
+    };
+
     document.body.appendChild(script);
+
+    // Fallback: if iframe is still hidden after 2 seconds, force it visible
+    const fallbackTimer = setTimeout(() => {
+      if (iframeRef.current && iframeRef.current.style.display === "none") {
+        console.log("GHL script didn't activate iframe, forcing visible");
+        iframeRef.current.style.display = "block";
+      }
+    }, 2000);
+
     return () => {
-      document.body.removeChild(script);
+      clearTimeout(fallbackTimer);
     };
   }, []);
 
@@ -47,6 +77,7 @@ const StartLeakFinder = () => {
             <iframe
               src="https://api.leadconnectorhq.com/widget/form/p61qThW6q0uTt7jSreIK"
               style={{ display: "none", width: "100%", height: "100%", border: "none", borderRadius: "4px" }}
+              ref={iframeRef}
               id="inline-p61qThW6q0uTt7jSreIK"
               data-layout="{'id':'INLINE'}"
               data-trigger-type="alwaysShow"
