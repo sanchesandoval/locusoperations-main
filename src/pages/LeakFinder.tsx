@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import Header from "@/components/layout/Header";
+import { supabase } from "@/integrations/supabase/client";
 
 interface QuizQuestion {
   id: string;
@@ -113,16 +114,18 @@ const questions: QuizQuestion[] = [
 
 const LeakFinder = () => {
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState<{ [key: string]: { value: string; points: number } }>({});
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleAnswer = (value: string) => {
     setSelectedOption(value);
   };
 
-  const handleNext = () => {
-    if (!selectedOption) return;
+  const handleNext = async () => {
+    if (!selectedOption || isSubmitting) return;
 
     const question = questions[currentQuestion];
     const option = question.options.find((o) => o.value === selectedOption);
@@ -137,7 +140,9 @@ const LeakFinder = () => {
     if (currentQuestion < questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
     } else {
-      // Calculate score and save
+      setIsSubmitting(true);
+      
+      // Calculate score
       const totalScore = Object.values(newAnswers).reduce((sum, a) => sum + a.points, 0);
       
       let tier = "minor";
@@ -145,6 +150,7 @@ const LeakFinder = () => {
       else if (totalScore >= 18) tier = "significant";
       else if (totalScore >= 9) tier = "moderate";
 
+      // Save to sessionStorage for FixKit page
       sessionStorage.setItem(
         "leakFinder_results",
         JSON.stringify({
@@ -154,6 +160,15 @@ const LeakFinder = () => {
           completedAt: new Date().toISOString(),
         })
       );
+
+      // Save to database
+      const email = searchParams.get('email') || null;
+      await supabase.from('leak_finder_submissions').insert({
+        score: totalScore,
+        tier,
+        answers: newAnswers,
+        email,
+      });
 
       navigate("/fix-kit");
     }
