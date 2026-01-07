@@ -43,10 +43,10 @@ const StartLeakFinder = () => {
           </div>
 
           {/* GHL Form embed */}
-          <div className="max-w-2xl mx-auto">
+          <div className="max-w-2xl mx-auto" style={{ minHeight: "550px" }}>
             <iframe
               src="https://api.leadconnectorhq.com/widget/form/p61qThW6q0uTt7jSreIK"
-              style={{ width: "100%", height: "550px", border: "none", borderRadius: "4px" }}
+              style={{ display: "none", width: "100%", height: "100%", border: "none", borderRadius: "4px" }}
               id="inline-p61qThW6q0uTt7jSreIK"
               data-layout="{'id':'INLINE'}"
               data-trigger-type="alwaysShow"
@@ -59,8 +59,8 @@ const StartLeakFinder = () => {
               data-height="550"
               data-layout-iframe-id="inline-p61qThW6q0uTt7jSreIK"
               data-form-id="p61qThW6q0uTt7jSreIK"
-              title="LP Lead Magnet Assessment Form - Copy"
-            />
+              title="Locus LP Lead Magnet Assessment Form"
+            ></iframe>
           </div>
 
           {/* Privacy note */}
