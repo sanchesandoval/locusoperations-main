@@ -170,7 +170,7 @@ const LeakFinder = () => {
         email,
       });
 
-      navigate("/fix-kit");
+      navigate("/get-results");
     }
   };
 
