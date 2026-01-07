@@ -17,7 +17,7 @@ const Footer = () => {
           {/* Links */}
           <div className="flex items-center gap-6">
             <Link
-              to="/start-leak-finder"
+              to="/leak-finder"
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               Leak Finder
