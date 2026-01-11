@@ -4,7 +4,7 @@ import locusLogo from "@/assets/locus-logo.png";
 
 const GetResults = () => {
   useEffect(() => {
-    // Load GHL form embed script
+    // Load CRM form embed script
     const script = document.createElement("script");
     script.src = "https://link.msgsndr.com/js/form_embed.js";
     script.async = true;
@@ -42,7 +42,7 @@ const GetResults = () => {
             </p>
           </div>
 
-          {/* GHL Form embed */}
+          {/* CRM Form embed */}
           <div className="max-w-2xl mx-auto">
             <iframe
               src="https://api.leadconnectorhq.com/widget/form/p61qThW6q0uTt7jSreIK"

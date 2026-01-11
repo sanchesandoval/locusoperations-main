@@ -25,7 +25,7 @@ const faqs = [
   },
   {
     question: "Can you work with our existing CRM?",
-    answer: "Yes. We primarily build on GoHighLevel (GHL) for its robust automation capabilities, but we can integrate with existing systems like HubSpot, Salesforce, or practice management tools like Zenoti, Boulevard, and more.",
+    answer: "Yes. We build on a robust CRM platform with powerful automation capabilities, and we can integrate with existing systems like HubSpot, Salesforce, or practice management tools like Zenoti, Boulevard, and more.",
   },
   {
     question: "What does 'HIPAA-ready' mean here?",
