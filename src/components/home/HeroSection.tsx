@@ -11,7 +11,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-primary/5 blur-[100px]" />
         <div className="absolute top-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-brand-accent/5 blur-[80px]" />
-        <DotPattern className="opacity-30 [mask-image:radial-gradient(600px_circle_at_center,white,transparent)]" />
+        <DotPattern className="opacity-60 [mask-image:radial-gradient(600px_circle_at_center,white,transparent)]" />
       </div>
 
       <div className="container-main relative z-10">
