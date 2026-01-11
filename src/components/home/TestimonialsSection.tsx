@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import { StarIcon } from "@/components/icons/BrandIcons";
+import { BlurFade } from "@/components/magicui/blur-fade";
+import { Marquee } from "@/components/magicui/marquee";
 
 // Logo imports
 import aestheticsproLogo from "@/assets/logos/aestheticspro.png";
@@ -25,7 +27,7 @@ const testimonials = [
     badge: "40% More Bookings",
   },
   {
-    quote: "Their ad creatives paired with AI helped us scale from 20 or so weekly clients to over 40 , all while maintaining that personal touch our clients love.",
+    quote: "Their ad creatives paired with AI helped us scale from 20 or so weekly clients to over 40, all while maintaining that personal touch our clients love.",
     name: "Ariana",
     title: "Founder, Serenity Wellness Clinic",
     badge: "2x Client Growth",
@@ -43,85 +45,100 @@ const integrationLogos = [
   { name: "Slack", src: slackLogo },
 ];
 
+const TestimonialCard = ({ testimonial }: { testimonial: typeof testimonials[0] }) => (
+  <div className="card-premium p-6 lg:p-8 flex flex-col w-[350px] shrink-0">
+    {/* Stars */}
+    <div className="flex gap-1 mb-4">
+      {[...Array(5)].map((_, i) => (
+        <StarIcon key={i} className="w-4 h-4 text-primary" />
+      ))}
+    </div>
+
+    {/* Quote */}
+    <blockquote className="text-foreground/90 text-sm leading-relaxed flex-1 mb-6">
+      "{testimonial.quote}"
+    </blockquote>
+
+    {/* Author */}
+    <div className="flex flex-col-reverse lg:flex-row lg:items-center lg:justify-between gap-3 pt-4 border-t border-border/50">
+      <div>
+        <p className="font-semibold text-foreground">{testimonial.name}</p>
+        <p className="text-xs text-muted-foreground">{testimonial.title}</p>
+      </div>
+      <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium w-fit">
+        {testimonial.badge}
+      </span>
+    </div>
+  </div>
+);
+
 const TestimonialsSection = () => {
   return (
-    <section className="section-spacing relative overflow-hidden">
+    <section id="testimonials" className="section-spacing relative overflow-hidden">
       {/* Background */}
       <div className="absolute top-1/2 right-0 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[120px] translate-x-1/2 -translate-y-1/2" />
 
       <div className="container-main relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <p className="text-primary font-medium mb-4">Results</p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-            Trusted by Growing Clinics
-          </h2>
+          <BlurFade delay={0.1}>
+            <p className="text-primary font-medium mb-4">Results</p>
+          </BlurFade>
+          <BlurFade delay={0.15}>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+              Trusted by Growing Clinics
+            </h2>
+          </BlurFade>
         </div>
 
-        {/* Testimonial cards */}
-        <div className="grid md:grid-cols-3 gap-6 mb-20">
-          {testimonials.map((testimonial, index) => (
-            <div
-              key={index}
-              className="card-premium p-6 lg:p-8 flex flex-col"
-            >
-              {/* Stars */}
-              <div className="flex gap-1 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <StarIcon key={i} className="w-4 h-4 text-primary" />
-                ))}
-              </div>
-
-              {/* Quote */}
-              <blockquote className="text-foreground/90 text-sm leading-relaxed flex-1 mb-6">
-                "{testimonial.quote}"
-              </blockquote>
-
-              {/* Author */}
-              <div className="flex flex-col-reverse lg:flex-row lg:items-center lg:justify-between gap-3 pt-4 border-t border-border/50">
-                <div>
-                  <p className="font-semibold text-foreground">{testimonial.name}</p>
-                  <p className="text-xs text-muted-foreground">{testimonial.title}</p>
-                </div>
-                <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium w-fit">
-                  {testimonial.badge}
-                </span>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Integration logos */}
-        <div className="text-center">
-          <p className="text-sm text-muted-foreground mb-8">Seamless Integration Ecosystem</p>
-          
-          <div className="relative overflow-hidden">
-            {/* Fade edges */}
+        {/* Testimonial marquee */}
+        <BlurFade delay={0.2}>
+          <div className="relative mb-20">
             <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent z-10" />
             <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10" />
-
-            {/* Scrolling logos */}
-            <div className="flex animate-scroll-left">
-              {[...integrationLogos, ...integrationLogos].map((logo, index) => (
-                <div
-                  key={index}
-                  className="flex-shrink-0 px-8 py-4 flex items-center justify-center"
-                >
-                  <img 
-                    src={logo.src} 
-                    alt={logo.name} 
-                    className="h-8 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
-                  />
-                </div>
+            
+            <Marquee pauseOnHover className="[--duration:30s]">
+              {testimonials.map((testimonial, index) => (
+                <TestimonialCard key={index} testimonial={testimonial} />
               ))}
+            </Marquee>
+          </div>
+        </BlurFade>
+
+        {/* Integration logos */}
+        <BlurFade delay={0.3}>
+          <div className="text-center">
+            <p className="text-sm text-muted-foreground mb-8">Seamless Integration Ecosystem</p>
+            
+            <div className="relative overflow-hidden">
+              {/* Fade edges */}
+              <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent z-10" />
+              <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10" />
+
+              <Marquee reverse pauseOnHover className="[--duration:25s]">
+                {integrationLogos.map((logo, index) => (
+                  <div
+                    key={index}
+                    className="flex-shrink-0 px-8 py-4 flex items-center justify-center"
+                  >
+                    <img 
+                      src={logo.src} 
+                      alt={logo.name} 
+                      className="h-8 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                    />
+                  </div>
+                ))}
+              </Marquee>
             </div>
           </div>
-        </div>
+        </BlurFade>
 
-        <div className="text-center mt-12">
-          <Link to="/leak-finder" className="btn-primary text-base px-8 py-4">
-            Start Leak Finder
-          </Link>
-        </div>
+        <BlurFade delay={0.4}>
+          <div className="text-center mt-12">
+            <Link to="/leak-finder" className="btn-primary text-base px-8 py-4">
+              Start Leak Finder
+            </Link>
+          </div>
+        </BlurFade>
       </div>
     </section>
   );
