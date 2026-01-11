@@ -6,7 +6,7 @@ const tiers = [
     label: "For clinics starting with automation",
     features: [
       "Ads management + basic funnel",
-      "GHL pipeline setup",
+      "CRM pipeline setup",
       "SMS/email follow-up sequences",
       "Basic reporting dashboard",
       "Email & chat support",
