@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+
 import { StarIcon } from "@/components/icons/BrandIcons";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import { Marquee } from "@/components/magicui/marquee";
@@ -132,13 +132,6 @@ const TestimonialsSection = () => {
           </div>
         </BlurFade>
 
-        <BlurFade delay={0.4}>
-          <div className="text-center mt-12">
-            <Link to="/leak-finder" className="btn-primary text-base px-8 py-4">
-              Start Leak Finder
-            </Link>
-          </div>
-        </BlurFade>
       </div>
     </section>
   );
