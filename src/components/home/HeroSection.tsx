@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
 import { ClockSpeedIcon, CalendarSlotIcon, RefreshLoopIcon, ShieldIcon } from "@/components/icons/BrandIcons";
+import { BlurFade } from "@/components/magicui/blur-fade";
+import { AnimatedGradientText } from "@/components/magicui/animated-gradient-text";
+import { DotPattern } from "@/components/magicui/dot-pattern";
 
 const HeroSection = () => {
   return (
@@ -8,68 +11,81 @@ const HeroSection = () => {
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-primary/5 blur-[100px]" />
         <div className="absolute top-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-brand-accent/5 blur-[80px]" />
+        <DotPattern className="opacity-30 [mask-image:radial-gradient(600px_circle_at_center,white,transparent)]" />
       </div>
 
       <div className="container-main relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left: Copy */}
           <div className="space-y-8">
-          <div className="space-y-6">
-              <div className="flex justify-center lg:justify-start">
-                <span className="inline-flex items-center px-3 py-1.5 rounded-full bg-card/80 border border-border text-xs text-foreground">
-                  Built for medspas and wellness clinics
-                </span>
-              </div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] text-balance text-center lg:text-left">
-                Stop Paying for Leads{" "}
-                <span className="gradient-text">That Never Book.</span>
-              </h1>
-              <p className="text-lg lg:text-xl text-muted-foreground max-w-lg text-balance text-center lg:text-left mx-auto lg:mx-0">
-                Locus turns ad spend into booked appointments with a conversion engine that responds, follows up, and reactivates leads automatically.
-              </p>
+            <div className="space-y-6">
+              <BlurFade delay={0.1}>
+                <div className="flex justify-center lg:justify-start">
+                  <span className="inline-flex items-center px-3 py-1.5 rounded-full bg-card/80 border border-border text-xs text-foreground">
+                    Built for medspas and wellness clinics
+                  </span>
+                </div>
+              </BlurFade>
+              
+              <BlurFade delay={0.2}>
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] text-balance text-center lg:text-left">
+                  Stop Paying for Leads{" "}
+                  <AnimatedGradientText>That Never Book.</AnimatedGradientText>
+                </h1>
+              </BlurFade>
+              
+              <BlurFade delay={0.3}>
+                <p className="text-lg lg:text-xl text-muted-foreground max-w-lg text-balance text-center lg:text-left mx-auto lg:mx-0">
+                  Locus turns ad spend into booked appointments with a conversion engine that responds, follows up, and reactivates leads automatically.
+                </p>
+              </BlurFade>
             </div>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4 items-center lg:items-start justify-center lg:justify-start">
-              <Link
-                to="/leak-finder"
-                className="btn-primary text-base px-8 py-4"
-              >
-                Start Leak Finder
-              </Link>
-              <Link
-                to="/book-call"
-                className="btn-secondary text-base px-8 py-4"
-              >
-                Book a Call
-              </Link>
-            </div>
+            <BlurFade delay={0.4}>
+              <div className="flex flex-col sm:flex-row gap-4 items-center lg:items-start justify-center lg:justify-start">
+                <Link
+                  to="/leak-finder"
+                  className="btn-primary text-base px-8 py-4"
+                >
+                  Start Leak Finder
+                </Link>
+                <Link
+                  to="/book-call"
+                  className="btn-secondary text-base px-8 py-4"
+                >
+                  Book a Call
+                </Link>
+              </div>
+            </BlurFade>
 
             {/* Trust chips */}
-            <div className="flex flex-wrap gap-3 pt-4 justify-center lg:justify-start">
-              <div className="trust-chip">
-                <ClockSpeedIcon className="w-4 h-4 text-primary" />
-                <span>Speed-to-lead under 60 seconds</span>
+            <BlurFade delay={0.5}>
+              <div className="flex flex-wrap gap-3 pt-4 justify-center lg:justify-start">
+                <div className="trust-chip">
+                  <ClockSpeedIcon className="w-4 h-4 text-primary" />
+                  <span>Speed-to-lead under 60 seconds</span>
+                </div>
+                <div className="trust-chip">
+                  <ShieldIcon className="w-4 h-4 text-primary" />
+                  <span>After-hours coverage</span>
+                </div>
+                <div className="trust-chip">
+                  <CalendarSlotIcon className="w-4 h-4 text-primary" />
+                  <span>No-show reduction</span>
+                </div>
+                <div className="trust-chip">
+                  <RefreshLoopIcon className="w-4 h-4 text-primary" />
+                  <span>Reactivation campaigns</span>
+                </div>
               </div>
-              <div className="trust-chip">
-                <ShieldIcon className="w-4 h-4 text-primary" />
-                <span>After-hours coverage</span>
-              </div>
-              <div className="trust-chip">
-                <CalendarSlotIcon className="w-4 h-4 text-primary" />
-                <span>No-show reduction</span>
-              </div>
-              <div className="trust-chip">
-                <RefreshLoopIcon className="w-4 h-4 text-primary" />
-                <span>Reactivation campaigns</span>
-              </div>
-            </div>
+            </BlurFade>
           </div>
 
           {/* Right: Pipeline Visual */}
-          <div className="relative lg:h-[500px] hidden lg:flex items-center justify-center">
+          <BlurFade delay={0.4} className="relative lg:h-[500px] hidden lg:flex items-center justify-center">
             <PipelineVisual />
-          </div>
+          </BlurFade>
         </div>
       </div>
     </section>
