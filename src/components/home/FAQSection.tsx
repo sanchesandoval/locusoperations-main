@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+
 import {
   Accordion,
   AccordionContent,
@@ -75,11 +75,6 @@ const FAQSection = () => {
           </Accordion>
         </div>
 
-        <div className="text-center mt-12">
-          <Link to="/leak-finder" className="btn-primary text-base px-8 py-4">
-            Start Leak Finder
-          </Link>
-        </div>
       </div>
     </section>
   );
