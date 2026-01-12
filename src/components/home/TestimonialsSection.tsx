@@ -6,10 +6,13 @@ import { Marquee } from "@/components/magicui/marquee";
 // Logo imports
 import aestheticsproLogo from "@/assets/logos/aestheticspro.png";
 import boulevardLogo from "@/assets/logos/boulevard.webp";
-import hubspotLogo from "@/assets/logos/hubspot.png";
 import mangomintLogo from "@/assets/logos/mangomint.png";
-import salesforceLogo from "@/assets/logos/salesforce.png";
 import slackLogo from "@/assets/logos/slack.png";
+import janeappLogo from "@/assets/logos/janeapp.png";
+import patientnowLogo from "@/assets/logos/patientnow.png";
+import simplepracticeLogo from "@/assets/logos/simplepractice.png";
+import zapierLogo from "@/assets/logos/zapier.png";
+import n8nLogo from "@/assets/logos/n8n.svg";
 import vagaroLogo from "@/assets/logos/vagaro.webp";
 import zenotiLogo from "@/assets/logos/zenoti.png";
 
@@ -40,9 +43,12 @@ const integrationLogos = [
   { name: "Zenoti", src: zenotiLogo },
   { name: "Boulevard", src: boulevardLogo },
   { name: "Mangomint", src: mangomintLogo },
-  { name: "HubSpot", src: hubspotLogo },
-  { name: "Salesforce", src: salesforceLogo },
   { name: "Slack", src: slackLogo },
+  { name: "Jane", src: janeappLogo },
+  { name: "PatientNow", src: patientnowLogo },
+  { name: "SimplePractice", src: simplepracticeLogo },
+  { name: "Zapier", src: zapierLogo },
+  { name: "n8n", src: n8nLogo },
 ];
 
 const TestimonialCard = ({ testimonial }: { testimonial: typeof testimonials[0] }) => (
