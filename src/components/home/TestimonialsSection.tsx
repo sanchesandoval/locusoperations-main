@@ -15,22 +15,22 @@ import zenotiLogo from "@/assets/logos/zenoti.png";
 
 const testimonials = [
   {
-    quote: "Locus improved how we handle patient bookings and follow-ups. Our AI receptionist captures calls 24/7, and automated reminders cut no-shows by 60%.",
+    quote: "We were hemorrhaging bookings from people who'd inquire and then just... disappear. Now the Digital Cortex follows up automatically, even at 2am. Our no-shows dropped 60%—I finally stopped losing sleep over empty chairs.",
     name: "Victor Martinez",
     title: "Owner, Vibe Aesthetics",
-    badge: "60% Fewer No-Shows",
+    badge: "60% No-Show Reduction",
   },
   {
-    quote: "I was extremely skeptical about AI handling our clientele. Our average client spends $3,500-$8,000 annually. I wasn't going to risk that relationship with a robot. Then I experienced the system firsthand. The AI complements our front desk team perfectly, managing the repetitive tasks while our staff focuses on in-person interactions.",
+    quote: "Honestly? I didn't trust AI with my high-ticket clients. But leads were dying in that 'Dark Zone' between inquiry and consult. Now nothing slips through. We're booking 40% more without hiring another front desk person.",
     name: "Dr. Emily Thompson",
     title: "Medical Director, Radiance Med Spa",
-    badge: "40% More Bookings",
+    badge: "40% Booking Increase",
   },
   {
-    quote: "Their ad creatives paired with AI helped us scale from 20 or so weekly clients to over 40, all while maintaining that personal touch our clients love.",
+    quote: "We were throwing money at ads with no real system behind it. Locus built us an actual pipeline—now leads get nurtured automatically until they book. Went from 20 clients a week to 40, and it still feels personal.",
     name: "Ariana",
     title: "Founder, Serenity Wellness Clinic",
-    badge: "2x Client Growth",
+    badge: "2x Weekly Consults",
   },
 ];
 
@@ -84,9 +84,14 @@ const TestimonialsSection = () => {
             <p className="text-primary font-medium mb-4">Results</p>
           </BlurFade>
           <BlurFade delay={0.15}>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-              Trusted by Growing Clinics
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+              Proven Infrastructure Upgrades.
             </h2>
+          </BlurFade>
+          <BlurFade delay={0.2}>
+            <p className="text-lg text-muted-foreground">
+              Infrastructure success stories from clinics running the Locus OS.
+            </p>
           </BlurFade>
         </div>
 
