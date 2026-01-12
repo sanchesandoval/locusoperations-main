@@ -36,7 +36,7 @@ const HeroSection = () => {
               
               <BlurFade delay={0.3}>
                 <p className="text-lg lg:text-xl text-muted-foreground max-w-lg text-balance text-center lg:text-left mx-auto lg:mx-0">
-                  Locus turns ad spend into booked appointments with a conversion engine that responds, follows up, and reactivates leads automatically.
+                  Locus installs the Central Nervous System for your clinic. We replace fragmented manual follow-up with a precision-engineered conversion engine that captures, qualifies, and books consults 24/7.
                 </p>
               </BlurFade>
             </div>
@@ -48,14 +48,16 @@ const HeroSection = () => {
                   to="/leak-finder"
                   className="btn-primary text-base px-8 py-4"
                 >
-                  Start Leak Finder
+                  Run System Diagnostic
                 </Link>
-                <Link
-                  to="/book-call"
+                <a
+                  href="https://www.loom.com/share/YOUR_DEMO_VIDEO_ID"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="btn-secondary text-base px-8 py-4"
                 >
-                  Book a Call
-                </Link>
+                  Watch 5-Min System Demo
+                </a>
               </div>
             </BlurFade>
 
