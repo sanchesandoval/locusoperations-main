@@ -50,14 +50,14 @@ const Header = () => {
           <div className="flex items-center gap-2 sm:gap-3">
             <Link
               to="/book-call"
-              className="btn-secondary text-xs sm:text-sm px-3 sm:px-6 py-2 sm:py-3"
+              className="btn-secondary text-xs sm:text-sm px-3 sm:px-6 py-2 sm:py-3 text-center"
             >
               Book a Call
             </Link>
             {!hideLeakFinderButton && (
               <Link
                 to="/leak-finder"
-                className="btn-primary text-xs sm:text-sm px-3 sm:px-6 py-2 sm:py-3"
+                className="btn-primary text-xs sm:text-sm px-3 sm:px-6 py-2 sm:py-3 text-center"
               >
                 <span className="hidden sm:inline">Run System Diagnostic</span>
                 <span className="sm:hidden">System Diagnostic</span>
