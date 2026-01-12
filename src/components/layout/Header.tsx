@@ -19,7 +19,7 @@ const Header = () => {
           </Link>
 
           {/* Navigation Links */}
-          <nav className="hidden md:flex items-center gap-6 lg:gap-8">
+          <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
             <a 
               href="#how-it-works" 
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
@@ -47,20 +47,20 @@ const Header = () => {
           </nav>
 
           {/* CTAs */}
-          <div className="flex items-center gap-2 sm:gap-3">
+          <div className="flex items-center gap-2 md:gap-3">
             <Link
               to="/book-call"
-              className="btn-secondary text-xs sm:text-sm px-3 sm:px-6 py-2 sm:py-3 text-center"
+              className="btn-secondary text-[10px] md:text-xs lg:text-sm px-2 md:px-4 lg:px-6 py-1.5 md:py-2 lg:py-3 text-center"
             >
               Book a Call
             </Link>
             {!hideLeakFinderButton && (
               <Link
                 to="/leak-finder"
-                className="btn-primary text-xs sm:text-sm px-3 sm:px-6 py-2 sm:py-3 text-center"
+                className="btn-primary text-[10px] md:text-xs lg:text-sm px-2 md:px-4 lg:px-6 py-1.5 md:py-2 lg:py-3 text-center"
               >
-                <span className="hidden sm:inline">Run System Diagnostic</span>
-                <span className="sm:hidden">System Diagnostic</span>
+                <span className="hidden md:inline">Run System Diagnostic</span>
+                <span className="md:hidden">Diagnostic</span>
               </Link>
             )}
           </div>
