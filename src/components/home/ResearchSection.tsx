@@ -3,36 +3,33 @@ import { NumberTicker } from "@/components/magicui/number-ticker";
 
 const researchCards = [
   {
-    value: 78,
-    suffix: "%",
-    title: "Slow Replies Send Leads to Competitors",
-    description: "Leads usually contact multiple providers at once, and 78% of patients end up choosing the clinic that replies first. Many clinics still take 12-24 hours to respond, by then the prospect has already booked somewhere else.",
-    source: "Egg Health Hub - Med spa Automation",
-    sourceUrl: "https://www.egghealthhub.com/blogs/med-spa-automation-workflows-to-boost-bookings",
-  },
-  {
     value: 21,
     suffix: "x",
-    title: "Speed-to-Lead turns Clicks into Bookings",
-    description: "Following up within 5 minutes makes you 21x more likely to qualify a lead than waiting 30 minutes. Automation keeps you inside the 5-minute window even when your front desk is busy or the clinic is closed.",
-    source: "Lead Response Management Study",
-    sourceUrl: "https://cdn2.hubspot.net/hub/25649/file-13535879-pdf/docs/mit_study.pdf"
+    title: "21x Higher Qualification Rate",
+    description: "Leads contacted within 5 minutes are 21x more likely to be qualified than those reached after 30 minutes. In the elective medical space, response speed is the primary driver of patient acquisition.",
+    source: "LeadResponseManagement / InsideSales Study",
+  },
+  {
+    value: 10,
+    suffix: "%",
+    prefix: "<",
+    title: "<10% After-Hours Capture",
+    description: "Most wellness clinics capture less than 10% of bookings after 5 PM, despite a massive share of high-ticket inquiries arriving in the evening. Our AI Front Desk closes this gap 24/7.",
+    source: "Mangomint Med-Spa Booking Statistics",
   },
   {
     value: 5,
-    suffix: "-7",
-    title: "Most Leads Need Multiple Touches",
-    description: "Many prospects don't book after one message. One industry source claims 5-7 touchpoints are often needed before scheduling, so one-and-done follow-ups waste the leads you already paid for.",
-    source: "Digital Marketing - Med Spa Lead Generation Secrets",
-    sourceUrl: "https://www.ednadigitalmarketing.com/med-spa-lead-generation-secrets",
+    suffix: "–7",
+    title: "5–7 Essential Touchpoints",
+    description: "High-ticket wellness patients require 5–7 touches across SMS, email, and phone before committing to a cash-pay consult. If your team stops after one call, you are subsidizing your competitors.",
+    source: "Digital Marketing Med-Spa Sales Funnel Guides",
   },
   {
-    value: 50,
-    suffix: "-60%",
-    title: "After-Hours Booking is Huge",
-    description: "Some med spa sources report 50-60% of bookings happen after hours. If your clinic only responds during open hours, your calendar loses to the clinic that can book 24/7.",
-    source: "Aesthetic Record - Online Booking",
-    sourceUrl: "https://blog.aestheticrecord.com/online-booking-a-competitive-business-advantage-or-a-workflow-optimization-tool/",
+    value: 70,
+    suffix: "%+",
+    title: "70%+ Booking Rate on Old Leads",
+    description: "Automated reactivation of dormant databases routinely yields a 70%+ lead-to-booking rate. Your old inquiries are clinical assets; Locus turns them into realized revenue.",
+    source: "GoHighLevel Case Example & CRM Playbooks",
   },
 ];
 
@@ -58,6 +55,7 @@ const ResearchSection = () => {
               className="card-premium-hover p-6 text-center group"
             >
               <div className="text-4xl lg:text-5xl font-bold gradient-text mb-3">
+                {card.prefix && <span>{card.prefix}</span>}
                 <NumberTicker value={card.value} suffix={card.suffix} />
               </div>
               <h3 className="font-semibold text-foreground mb-2">
@@ -66,14 +64,9 @@ const ResearchSection = () => {
               <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
                 {card.description}
               </p>
-              <a
-                href={card.sourceUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xs text-primary/70 hover:text-primary transition-colors"
-              >
-                {card.source} →
-              </a>
+              <span className="text-xs text-muted-foreground/70">
+                {card.source}
+              </span>
             </div>
           ))}
         </div>
