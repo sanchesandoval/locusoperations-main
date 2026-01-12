@@ -10,7 +10,7 @@ const CalendlySection = () => {
       document.body.removeChild(script);
     };
   }, []);
-  return <section id="book-call" className="section-spacing relative">
+  return <section id="calendly" className="section-spacing relative">
       <div className="container-main relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-12">
           <p className="text-primary font-medium mb-4">Get Started</p>
