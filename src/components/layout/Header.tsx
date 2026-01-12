@@ -1,9 +1,7 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import locusLogo from "@/assets/locus-logo.png";
 
 const Header = () => {
-  const location = useLocation();
-  const hideLeakFinderButton = location.pathname === "/leak-finder" || location.pathname === "/get-results";
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border/50">
@@ -46,23 +44,14 @@ const Header = () => {
             </Link>
           </nav>
 
-          {/* CTAs */}
-          <div className="flex items-center gap-2 md:gap-3">
+          {/* CTA */}
+          <div className="flex items-center">
             <Link
               to="/book-call"
-              className="btn-secondary text-[10px] md:text-xs lg:text-sm px-2 md:px-4 lg:px-6 py-1.5 md:py-2 lg:py-3 text-center"
+              className="btn-primary text-[10px] md:text-xs lg:text-sm px-2 md:px-4 lg:px-6 py-1.5 md:py-2 lg:py-3 text-center"
             >
               Book a Call
             </Link>
-            {!hideLeakFinderButton && (
-              <Link
-                to="/leak-finder"
-                className="btn-primary text-[10px] md:text-xs lg:text-sm px-2 md:px-4 lg:px-6 py-1.5 md:py-2 lg:py-3 text-center"
-              >
-                <span className="hidden md:inline">Run System Diagnostic</span>
-                <span className="md:hidden">Diagnostic</span>
-              </Link>
-            )}
           </div>
         </div>
       </div>

@@ -1,0 +1,1 @@
+DROP TABLE IF EXISTS public.leak_finder_submissions;

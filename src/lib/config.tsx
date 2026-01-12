@@ -34,11 +34,6 @@ export const siteConfig = {
         "No, we integrate with your existing systems like Boulevard, Mangomint, Vagaro, and others. Locus works alongside your current tech stack to fill the gaps, not replace what's already working.",
     },
     {
-      question: "What's included in the Leak Finder assessment?",
-      answer:
-        "The Leak Finder is a free diagnostic tool that analyzes your current lead-to-booking process. You'll get a custom report showing exactly where leads are falling through the cracks and specific recommendations to fix them.",
-    },
-    {
       question: "How does pricing work?",
       answer:
         "We offer transparent, performance-based pricing. After your free Leak Finder assessment, we'll recommend a package based on your clinic's specific needs and volume. No long-term contracts required.",
@@ -53,8 +48,6 @@ export const siteConfig = {
     {
       title: "Product",
       links: [
-        { href: "/leak-finder", label: "Leak Finder" },
-        { href: "/fix-kit", label: "Fix Kit" },
         { href: "/book-call", label: "Book a Call" },
       ],
     },
