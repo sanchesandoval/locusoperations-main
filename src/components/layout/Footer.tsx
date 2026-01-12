@@ -14,7 +14,7 @@ const Footer = () => {
           <div className="md:col-span-2 space-y-4">
             <img src={locusLogo} alt="Locus" className="h-6 w-auto" />
             <p className="text-sm text-muted-foreground max-w-xs">
-              Growth operations for aesthetic and wellness clinics. Turn ad spend into booked appointments.
+              Growth operations for High-Performance Medical Wellness.
             </p>
             
             {/* Social links */}

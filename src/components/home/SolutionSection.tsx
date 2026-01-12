@@ -54,7 +54,7 @@ const SolutionSection = () => {
         <div className="max-w-3xl mx-auto text-center mb-16">
           <p className="text-primary font-medium mb-4">The Solution</p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-balance">
-            What Locus Installs
+            The Locus Operating System (OS)
           </h2>
           <p className="text-lg text-muted-foreground">A complete lead-to-booked-appointment engine — the center of your revenue.</p>
         </div>
