@@ -110,7 +110,7 @@ const HeroSection = () => {
 
         {/* Logo Marquee */}
         <BlurFade delay={0.6}>
-          <div className="mt-16 lg:mt-20 text-center">
+          <div className="mt-24 lg:mt-32 text-center">
             <p className="text-sm text-muted-foreground mb-6">
               Trusted by leading service brands and automation-driven companies.
             </p>
