@@ -352,7 +352,7 @@ const FixKit = () => {
           <div className="card-premium overflow-hidden">
             <div 
               className="calendly-inline-widget" 
-              data-url="https://calendly.com/locusops/30min?hide_gdpr_banner=1&background_color=141414&text_color=fafafa&primary_color=4a9d8e"
+              data-url="https://calendly.com/locusops?hide_landing_page_details=1"
               style={{ minWidth: "320px", height: "700px" }}
             />
           </div>

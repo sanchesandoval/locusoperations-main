@@ -53,9 +53,9 @@ const BookCall = () => {
 
           {/* Calendly embed */}
           <div className="max-w-4xl mx-auto card-premium overflow-hidden">
-            <div 
+          <div 
               className="calendly-inline-widget" 
-              data-url="https://calendly.com/locusops?hide_gdpr_banner=1&background_color=141414&text_color=fafafa&primary_color=4a9d8e" 
+              data-url="https://calendly.com/locusops?hide_landing_page_details=1" 
               style={{
                 minWidth: "320px",
                 height: "700px"
