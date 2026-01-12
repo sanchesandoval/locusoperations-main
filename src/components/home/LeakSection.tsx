@@ -15,7 +15,7 @@ const leakItems = [{
   description: "One-and-done follow-up isn't a strategy; it's a gamble. Most patients require 5–7 touches to commit."
 }, {
   icon: ShieldIcon,
-  title: "Dark Zone Gaps",
+  title: "Missed After-Hours Leads",
   description: "50%+ of patient inquiries happen after 5 PM. If your system is \"closed,\" your competitors are booking."
 }, {
   icon: CalendarSlotIcon,
