@@ -198,8 +198,14 @@
     }
   }
 
-  @keyframes scroll-left {
+@keyframes scroll-left {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
   }
+}
+
+/* GHL Popup Form responsive height */
+#popup-p61qThW6q0uTt7jSreIK {
+  height: min(720px, 90vh) !important;
+  width: min(720px, 94vw) !important;
 }
