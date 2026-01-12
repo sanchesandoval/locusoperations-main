@@ -15,19 +15,19 @@ import zenotiLogo from "@/assets/logos/zenoti.png";
 
 const testimonials = [
   {
-    quote: "We were hemorrhaging bookings from people who'd inquire and then just... disappear. Now the Digital Cortex follows up automatically, even at 2am. Our no-shows dropped 60%—I finally stopped losing sleep over empty chairs.",
+    quote: "We were dealing with leads who'd inquire and just disappear. Now we have a system in place that follows up automatically even after-hours.",
     name: "Victor Martinez",
     title: "Owner, Vibe Aesthetics",
     badge: "60% No-Show Reduction",
   },
   {
-    quote: "Honestly? I didn't trust AI with my high-ticket clients. But leads were dying in that 'Dark Zone' between inquiry and consult. Now nothing slips through. We're booking 40% more without hiring another front desk person.",
+    quote: "Honestly, I didn't trust AI to handle my patients but leads were dying between the inquiry and booked stage. I had to take the chance and I can say it was worth it. Nothing slips through anymore. We basically have a front desk person working 24/7.",
     name: "Dr. Emily Thompson",
     title: "Medical Director, Radiance Med Spa",
     badge: "40% Booking Increase",
   },
   {
-    quote: "We were throwing money at ads with no real system behind it. Locus built us an actual pipeline—now leads get nurtured automatically until they book. Went from 20 clients a week to 40, and it still feels personal.",
+    quote: "We were throwing money at ads with no real system behind it. Locus built us an actual pipeline—now leads are taken care of until they book. Went from 20 clients a week to 40.",
     name: "Ariana",
     title: "Founder, Serenity Wellness Clinic",
     badge: "2x Weekly Consults",
