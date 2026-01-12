@@ -5,7 +5,7 @@ const researchCards = [
   {
     value: 21,
     suffix: "x",
-    title: "21x Higher Qualification Rate",
+    title: "Higher Qualification Rate",
     description: "Leads contacted within 5 minutes are 21x more likely to be qualified than those reached after 30 minutes. In the elective medical space, response speed is the primary driver of patient acquisition.",
     source: "LeadResponseManagement / InsideSales Study",
   },
