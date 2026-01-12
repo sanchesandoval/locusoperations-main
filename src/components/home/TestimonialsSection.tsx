@@ -8,6 +8,7 @@ import aestheticsproLogo from "@/assets/logos/aestheticspro.png";
 import boulevardLogo from "@/assets/logos/boulevard.webp";
 import mangomintLogo from "@/assets/logos/mangomint.png";
 import slackLogo from "@/assets/logos/slack.png";
+import whatsappLogo from "@/assets/logos/whatsapp.png";
 import janeappLogo from "@/assets/logos/janeapp.png";
 import patientnowLogo from "@/assets/logos/patientnow.png";
 import simplepracticeLogo from "@/assets/logos/simplepractice.png";
@@ -43,10 +44,11 @@ const integrationLogos = [
   { name: "Zenoti", src: zenotiLogo },
   { name: "Boulevard", src: boulevardLogo },
   { name: "Mangomint", src: mangomintLogo },
-  { name: "Slack", src: slackLogo },
   { name: "Jane", src: janeappLogo },
   { name: "PatientNow", src: patientnowLogo },
   { name: "SimplePractice", src: simplepracticeLogo },
+  { name: "Slack", src: slackLogo },
+  { name: "WhatsApp", src: whatsappLogo },
   { name: "Zapier", src: zapierLogo },
   { name: "n8n", src: n8nLogo },
 ];
