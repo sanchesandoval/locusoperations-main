@@ -41,7 +41,7 @@ const LeakSection = () => {
             <span className="text-muted-foreground">It Has a Complexity Wall.</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Most medical wellness clinics hit a ceiling at $50k/mo. Fragmentation between your ads, EMR, and front desk creates Revenue Leakage. A lead is just "potential energy"—without a system to force a booking in under 60 seconds, you are funding your competitor's calendar.
+            Most medical wellness clinics hit a ceiling at $50k/mo. Fragmentation between your ads, EMR, and front desk creates Revenue Leakage. A lead is just "potential energy"—without a system to capture a booking in under 60 seconds, you are funding your competitor's calendar.
           </p>
         </div>
 
