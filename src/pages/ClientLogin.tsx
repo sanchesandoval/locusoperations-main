@@ -7,10 +7,10 @@ const ClientLogin = () => {
   const [videoError, setVideoError] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  // Set playback speed to 2.5x
+  // Set playback speed to 3.5x
   useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.playbackRate = 3;
+      videoRef.current.playbackRate = 3.5;
     }
   }, []);
 
