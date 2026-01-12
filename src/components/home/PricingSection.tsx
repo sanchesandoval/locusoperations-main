@@ -15,7 +15,7 @@ const tiers = [
   },
   {
     name: "Locus Growth",
-    label: "Build & Release: For clinics ready to scale via AI automation and SIO implementation.",
+    label: "Build & Release: For clinics ready to scale via AI automation and system implementation.",
     features: [
       "Everything in Locus Core",
       "Build & Release (SCALE Implementation)",
