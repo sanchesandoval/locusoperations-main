@@ -4,22 +4,22 @@ const faqs = [
   {
     question: "Do you do ads or just automation?",
     answer:
-      "We do both. Ads are just the 'fuel.'' We build the 'engine' (infrastructure) that makes the fuel valuable.",
+      `We do both. Ads are just the "fuel." We build the "engine" (infrastructure) that makes the fuel valuable.`,
   },
   {
     question: "Will AI sound robotic?",
     answer:
-      "No. We deploy a 'Digital Cortex' specifically trained on your clinic's protocols and tone of voice. It is engineered to handle medical FAQs and qualify patients using natural language, ensuring the transition from inquiry to booked consult feels professional and personal, 24/7. ",
+      `No. We deploy a "Digital Cortex" specifically trained on your clinic's protocols and tone of voice. It is engineered to handle medical FAQs and qualify patients using natural language, ensuring the transition from inquiry to booked consult feels professional and personal, 24/7.`,
   },
   {
     question: "Does Locus replace my front desk?",
     answer:
-      "Not at all. Locus complements your front desk team. We remove the low-leverage, repetitive tasks—like answering 'Do you offer Semaglutide?'' at 2 AM—so your clinical staff can focus on high-value, in-person patient care and optimizing the clinic experience.",
+      `Not at all. Locus complements your front desk team. We remove the low-leverage, repetitive tasks—like answering "Do you offer Semaglutide?" at 2 AM—so your clinical staff can focus on high-value, in-person patient care and optimizing the clinic experience.`,
   },
   {
     question: "How does Locus integrate with my current EHR (Zenoti, Mangomint, etc.)",
     answer:
-      "Locus acts as the Central Nervous System that bridges the gap between your acquisition channels and your clinical software. We use advanced system integrator 'plumbing' to ensure that when a consult is booked in Locus, it is reflected in your existing patient management system without manual data entry.",
+      `Locus acts as the Central Nervous System that bridges the gap between your acquisition channels and your clinical software. We use advanced system integrator "plumbing" to ensure that when a consult is booked in Locus, it is reflected in your existing patient management system without manual data entry.`,
   },
   {
     question: "How fast can we launch?",
@@ -29,27 +29,27 @@ const faqs = [
   {
     question: "Is this a monthly marketing tax or an asset?",
     answer:
-      "Locus is a business asset. Unlike a traditional agency where results stop when you stop paying, we follow the 'Build & Release' model. We install the infrastructure into your business; if you ever choose to move operations in-house, you own the system we’ve built.",
+      `Locus is a business asset. Unlike a traditional agency where results stop when you stop paying, we follow the "Build & Release" model. We install the infrastructure into your business; if you ever choose to move operations in-house, you own the system we've built.`,
   },
   {
     question: "How fast will I see an increase in booked consults?",
     answer:
-      "Most clinics see immediate revenue recovery within the first 14 days by launching an automated Database Reactivation on their dormant leads. Our 'Speed-to-Lead' infrastructure ensures you capture the 21x higher conversion probability that occurs when responding to new leads in under 5 minutes.",
+      `Most clinics see immediate revenue recovery within the first 14 days by launching an automated Database Reactivation on their dormant leads. Our "Speed-to-Lead" infrastructure ensures you capture the 21x higher conversion probability that occurs when responding to new leads in under 5 minutes.`,
   },
   {
     question: "Why do I need an SIO instead of just a standard marketing agency?",
     answer:
-      "Agencies provide labor; SIOs provide Infrastructure. Agencies often give you more 'work' by dumping raw leads into your inbox. Locus installs the SCALE framework to ensure every lead is systemically moved to a booked appointment on your calendar automatically.",
+      `Agencies provide labor; SIOs provide Infrastructure. Agencies often give you more "work" by dumping raw leads into your inbox. Locus installs the SCALE framework to ensure every lead is systemically moved to a booked appointment on your calendar automatically.`,
   },
   {
     question: "Is the system HIPAA-compliant?",
     answer:
-      "We prioritize technical data integrity. Locus is configured for HIPAA-readiness, including secure messaging and encrypted data storage, ensuring your 'Digital Cortex' operates within the security standards required for medical wellness.",
+      `We prioritize technical data integrity. Locus is configured for HIPAA-readiness, including secure messaging and encrypted data storage, ensuring your "Digital Cortex" operates within the security standards required for medical wellness.`,
   },
   {
     question: "Can Locus handle multi-location clinics?",
     answer:
-      "Yes. Our Locus Elite tier is specifically designed for enterprises. We provide a 'Command Center' view, allowing you to evaluate KPIs across all locations while maintaining standardized, automated booking infrastructures for each individual branch.",
+      `Yes. Our Locus Elite tier is specifically designed for enterprises. We provide a "Command Center" view, allowing you to evaluate KPIs across all locations while maintaining standardized, automated booking infrastructures for each individual branch.`,
   },
 ];
 
