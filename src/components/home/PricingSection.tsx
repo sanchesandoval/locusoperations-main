@@ -27,7 +27,7 @@ const PricingSection = () => {
         <div className="max-w-3xl mx-auto text-center mb-16">
           <p className="text-primary font-medium mb-4">Our Services</p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-            ​Locus installs the Central Nervous System your clinic needs to eliminate revenue leakage and enable lead-to-consult conversions.
+            Engineered Conversion Infrastructure
           </h2>
           <p className="text-lg text-muted-foreground">
             Every engagement starts with a setup phase, followed by ongoing optimization.
