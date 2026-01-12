@@ -12,7 +12,7 @@ const steps = [
     step: "02",
     title: "Infrastructure Deployment",
     tag: "A/L",
-    description: "We build, integrate, and launch your Longevity OS. This includes deploying your \"Digital Cortex\" (AI Front Desk) and configuring your automated lead-to-consult pipelines.",
+    description: "We build, integrate, and launch your Locus OS. This includes deploying your \"Digital Cortex\" (AI Front Desk) and configuring your automated lead-to-consult pipelines.",
   },
   {
     step: "03",
