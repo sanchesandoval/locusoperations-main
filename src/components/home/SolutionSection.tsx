@@ -2,29 +2,34 @@ import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 const stackItems = [{
   layer: "01",
-  title: "Acquisition",
-  outline: "Turn ad spend into qualified leads with high-converting campaigns.",
-  description: "Premium lead generation with high-converting ads, compelling offers, and optimized landing pages"
+  letter: "S",
+  title: "ystemize",
+  outline: "Map your unique clinical workflow.",
+  description: "We map your unique clinical workflow, documenting the exact path from click to consult."
 }, {
   layer: "02",
-  title: "Capture",
-  outline: "Never lose a lead—capture, organize, and route instantly.",
-  description: "Automated CRM pipeline setup to capture, organize, and route every lead instantly"
+  letter: "C",
+  title: "onsolidate",
+  outline: "Eliminate tool fatigue.",
+  description: "We eliminate \"tool fatigue\" by merging your assets and data into the Locus Canvas."
 }, {
   layer: "03",
-  title: "Engage",
-  outline: "Turn cold leads into booked consults with multi-touch follow-up.",
-  description: "Multi-touch SMS and email sequences with AI voice qualification and live transfer to your team"
+  letter: "A",
+  title: "utomate",
+  outline: "Deploy the Digital Cortex.",
+  description: "We deploy the \"Digital Cortex\"—AI Front Desk agents that answer FAQs and book consults 24/7."
 }, {
   layer: "04",
-  title: "Convert",
-  outline: "Fill your calendar with confirmed appointments, not no-shows.",
-  description: "Seamless booking system with automated reminders, confirmations, and no-show reactivation"
+  letter: "L",
+  title: "everage",
+  outline: "Scale without adding staff.",
+  description: "We install our proprietary Longevity OS snapshots so your team can manage volume without adding staff."
 }, {
   layer: "05",
-  title: "Optimize",
-  outline: "Continuously improve ROI with data-driven iteration.",
-  description: "Weekly iteration and continuous improvement to maximize your ROI"
+  letter: "E",
+  title: "valuate",
+  outline: "Track the only metric that matters.",
+  description: "We install real-time KPI tracking to measure the only metric that matters: Cost Per Booked Consult."
 }];
 const SolutionSection = () => {
   const [visibleItems, setVisibleItems] = useState<Set<number>>(new Set());
@@ -54,9 +59,8 @@ const SolutionSection = () => {
         <div className="max-w-3xl mx-auto text-center mb-16">
           <p className="text-primary font-medium mb-4">The Solution</p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-balance">
-            The Locus Operating System (OS)
+            The Locus SCALE Framework: <span className="text-muted-foreground">Engineering Your Lead-to-Consult Pipeline.</span>
           </h2>
-          <p className="text-lg text-muted-foreground">A complete lead-to-booked-appointment engine — the center of your revenue.</p>
         </div>
 
         {/* Stack visualization */}
@@ -75,8 +79,8 @@ const SolutionSection = () => {
 
                 {/* Content */}
                 <div className="flex-1 pt-3 pb-5">
-                  <h3 className="text-lg font-semibold text-foreground mb-1 group-hover:text-primary transition-colors">
-                    {item.title}
+                <h3 className="text-lg font-semibold text-foreground mb-1 group-hover:text-primary transition-colors">
+                    <span className="text-primary">[{item.letter}]</span>{item.title}
                   </h3>
                   <p className="text-sm text-primary/80 font-medium mb-2">
                     {item.outline}
