@@ -3,6 +3,36 @@ import { ClockSpeedIcon, CalendarSlotIcon, RefreshLoopIcon, ShieldIcon } from "@
 import { BlurFade } from "@/components/magicui/blur-fade";
 import { AnimatedGradientText } from "@/components/magicui/animated-gradient-text";
 import { DotPattern } from "@/components/magicui/dot-pattern";
+import { Marquee } from "@/components/magicui/marquee";
+
+// Logo imports
+import aestheticsproLogo from "@/assets/logos/aestheticspro.png";
+import boulevardLogo from "@/assets/logos/boulevard.webp";
+import mangomintLogo from "@/assets/logos/mangomint.png";
+import slackLogo from "@/assets/logos/slack.png";
+import whatsappLogo from "@/assets/logos/whatsapp.png";
+import janeappLogo from "@/assets/logos/janeapp.png";
+import patientnowLogo from "@/assets/logos/patientnow.png";
+import simplepracticeLogo from "@/assets/logos/simplepractice.png";
+import zapierLogo from "@/assets/logos/zapier.png";
+import n8nLogo from "@/assets/logos/n8n.svg";
+import vagaroLogo from "@/assets/logos/vagaro.webp";
+import zenotiLogo from "@/assets/logos/zenoti.png";
+
+const integrationLogos = [
+  { name: "AestheticsPro", src: aestheticsproLogo },
+  { name: "Vagaro", src: vagaroLogo },
+  { name: "Zenoti", src: zenotiLogo },
+  { name: "Boulevard", src: boulevardLogo },
+  { name: "Mangomint", src: mangomintLogo },
+  { name: "Jane", src: janeappLogo },
+  { name: "PatientNow", src: patientnowLogo },
+  { name: "SimplePractice", src: simplepracticeLogo },
+  { name: "Slack", src: slackLogo },
+  { name: "WhatsApp", src: whatsappLogo },
+  { name: "Zapier", src: zapierLogo },
+  { name: "n8n", src: n8nLogo },
+];
 const HeroSection = () => {
   return <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
       {/* Background effects */}
@@ -77,6 +107,32 @@ const HeroSection = () => {
             <PipelineVisual />
           </BlurFade>
         </div>
+
+        {/* Logo Marquee */}
+        <BlurFade delay={0.6}>
+          <div className="mt-16 lg:mt-20 text-center">
+            <p className="text-sm text-muted-foreground mb-6">
+              Trusted by leading service brands and automation-driven companies.
+            </p>
+            
+            <div className="relative overflow-hidden">
+              <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent z-10" />
+              <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10" />
+
+              <Marquee reverse pauseOnHover className="[--duration:25s]">
+                {integrationLogos.map((logo, index) => (
+                  <div key={index} className="flex-shrink-0 px-8 py-4 flex items-center justify-center">
+                    <img 
+                      src={logo.src} 
+                      alt={logo.name} 
+                      className="h-8 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" 
+                    />
+                  </div>
+                ))}
+              </Marquee>
+            </div>
+          </div>
+        </BlurFade>
       </div>
     </section>;
 };
