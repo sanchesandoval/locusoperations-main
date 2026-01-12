@@ -1,4 +1,3 @@
-
 import { StarIcon } from "@/components/icons/BrandIcons";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import { Marquee } from "@/components/magicui/marquee";
@@ -16,50 +15,67 @@ import zapierLogo from "@/assets/logos/zapier.png";
 import n8nLogo from "@/assets/logos/n8n.svg";
 import vagaroLogo from "@/assets/logos/vagaro.webp";
 import zenotiLogo from "@/assets/logos/zenoti.png";
-
-const testimonials = [
-  {
-    quote: "Marketing agencies would just sell us leads who'd inquire and just disappear. Now we have a system in place that follows up automatically even after-hours and still gets us new leads.",
-    name: "Victor Martinez",
-    title: "Owner, Vibe Aesthetics",
-    badge: "60% No-Show Reduction",
-  },
-  {
-    quote: "Honestly, I didn't trust AI to handle my patients but leads were dying between the inquiry and booked stage. I had to take the chance and I can say it was worth it. Nothing slips through anymore. We basically have a front desk person working 24/7.",
-    name: "Dr. Emily Thompson",
-    title: "Medical Director, Radiance Med Spa",
-    badge: "40% Booking Increase",
-  },
-  {
-    quote: "We were throwing money at ads with no real system behind it. Locus built us an actual pipeline—now leads are taken care of until they book. Went from 20 clients a week to 40.",
-    name: "Ariana",
-    title: "Founder, Serenity Wellness Clinic",
-    badge: "2x Weekly Consults",
-  },
-];
-
-const integrationLogos = [
-  { name: "AestheticsPro", src: aestheticsproLogo },
-  { name: "Vagaro", src: vagaroLogo },
-  { name: "Zenoti", src: zenotiLogo },
-  { name: "Boulevard", src: boulevardLogo },
-  { name: "Mangomint", src: mangomintLogo },
-  { name: "Jane", src: janeappLogo },
-  { name: "PatientNow", src: patientnowLogo },
-  { name: "SimplePractice", src: simplepracticeLogo },
-  { name: "Slack", src: slackLogo },
-  { name: "WhatsApp", src: whatsappLogo },
-  { name: "Zapier", src: zapierLogo },
-  { name: "n8n", src: n8nLogo },
-];
-
-const TestimonialCard = ({ testimonial }: { testimonial: typeof testimonials[0] }) => (
-  <div className="card-premium p-6 lg:p-8 flex flex-col w-[350px] shrink-0">
+const testimonials = [{
+  quote: "Marketing agencies would just sell us leads who'd inquire and just disappear. Now we have a system in place that follows up automatically even after-hours and still gets us new leads.",
+  name: "Victor Martinez",
+  title: "Owner, Vibe Aesthetics",
+  badge: "60% No-Show Reduction"
+}, {
+  quote: "Honestly, I didn't trust AI to handle my patients but leads were dying between the inquiry and booked stage. I had to take the chance and I can say it was worth it. Nothing slips through anymore. We basically have a front desk person working 24/7.",
+  name: "Dr. Emily Thompson",
+  title: "Medical Director, Radiance Med Spa",
+  badge: "40% Booking Increase"
+}, {
+  quote: "We were throwing money at ads with no real system behind it. Locus built us an actual pipeline—now leads are taken care of until they book. Went from 20 clients a week to 40.",
+  name: "Ariana",
+  title: "Founder, Serenity Wellness Clinic",
+  badge: "2x Weekly Consults"
+}];
+const integrationLogos = [{
+  name: "AestheticsPro",
+  src: aestheticsproLogo
+}, {
+  name: "Vagaro",
+  src: vagaroLogo
+}, {
+  name: "Zenoti",
+  src: zenotiLogo
+}, {
+  name: "Boulevard",
+  src: boulevardLogo
+}, {
+  name: "Mangomint",
+  src: mangomintLogo
+}, {
+  name: "Jane",
+  src: janeappLogo
+}, {
+  name: "PatientNow",
+  src: patientnowLogo
+}, {
+  name: "SimplePractice",
+  src: simplepracticeLogo
+}, {
+  name: "Slack",
+  src: slackLogo
+}, {
+  name: "WhatsApp",
+  src: whatsappLogo
+}, {
+  name: "Zapier",
+  src: zapierLogo
+}, {
+  name: "n8n",
+  src: n8nLogo
+}];
+const TestimonialCard = ({
+  testimonial
+}: {
+  testimonial: typeof testimonials[0];
+}) => <div className="card-premium p-6 lg:p-8 flex flex-col w-[350px] shrink-0">
     {/* Stars */}
     <div className="flex gap-1 mb-4">
-      {[...Array(5)].map((_, i) => (
-        <StarIcon key={i} className="w-4 h-4 text-primary" />
-      ))}
+      {[...Array(5)].map((_, i) => <StarIcon key={i} className="w-4 h-4 text-primary" />)}
     </div>
 
     {/* Quote */}
@@ -77,12 +93,9 @@ const TestimonialCard = ({ testimonial }: { testimonial: typeof testimonials[0] 
         {testimonial.badge}
       </span>
     </div>
-  </div>
-);
-
+  </div>;
 const TestimonialsSection = () => {
-  return (
-    <section id="testimonials" className="section-spacing relative overflow-hidden">
+  return <section id="testimonials" className="section-spacing relative overflow-hidden">
       {/* Background */}
       <div className="absolute top-1/2 right-0 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[120px] translate-x-1/2 -translate-y-1/2" />
 
@@ -110,9 +123,7 @@ const TestimonialsSection = () => {
             <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10" />
             
             <Marquee pauseOnHover className="[--duration:30s]">
-              {testimonials.map((testimonial, index) => (
-                <TestimonialCard key={index} testimonial={testimonial} />
-              ))}
+              {testimonials.map((testimonial, index) => <TestimonialCard key={index} testimonial={testimonial} />)}
             </Marquee>
           </div>
         </BlurFade>
@@ -120,7 +131,7 @@ const TestimonialsSection = () => {
         {/* Integration logos */}
         <BlurFade delay={0.3}>
           <div className="text-center">
-            <p className="text-sm text-muted-foreground mb-8">Seamless Integration Ecosystem</p>
+            <p className="text-sm text-muted-foreground mb-8">​The Locus Connectivity Hub         </p>
             
             <div className="relative overflow-hidden">
               {/* Fade edges */}
@@ -128,26 +139,15 @@ const TestimonialsSection = () => {
               <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10" />
 
               <Marquee reverse pauseOnHover className="[--duration:25s]">
-                {integrationLogos.map((logo, index) => (
-                  <div
-                    key={index}
-                    className="flex-shrink-0 px-8 py-4 flex items-center justify-center"
-                  >
-                    <img 
-                      src={logo.src} 
-                      alt={logo.name} 
-                      className="h-8 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
-                    />
-                  </div>
-                ))}
+                {integrationLogos.map((logo, index) => <div key={index} className="flex-shrink-0 px-8 py-4 flex items-center justify-center">
+                    <img src={logo.src} alt={logo.name} className="h-8 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
+                  </div>)}
               </Marquee>
             </div>
           </div>
         </BlurFade>
 
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default TestimonialsSection;
