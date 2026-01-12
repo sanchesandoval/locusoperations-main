@@ -13,7 +13,7 @@ const researchCards = [
     value: 10,
     suffix: "%",
     prefix: "<",
-    title: "<10% After-Hours Capture",
+    title: "After-Hours Capture",
     description: "Most wellness clinics capture less than 10% of bookings after 5 PM, despite a massive share of high-ticket inquiries arriving in the evening. Our AI Front Desk closes this gap 24/7.",
     source: "Mangomint Med-Spa Booking Statistics",
   },
