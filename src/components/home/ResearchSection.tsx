@@ -27,7 +27,7 @@ const researchCards = [
   {
     value: 70,
     suffix: "%+",
-    title: "70%+ Booking Rate on Old Leads",
+    title: "Booking Rate on Old Leads",
     description: "Automated reactivation of dormant databases routinely yields a 70%+ lead-to-booking rate. Your old inquiries are clinical assets; Locus turns them into realized revenue.",
     source: "GoHighLevel Case Example & CRM Playbooks",
   },
