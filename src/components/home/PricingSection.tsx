@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { CheckCircleIcon } from "@/components/icons/BrandIcons";
 
 const tiers = [
@@ -12,6 +13,9 @@ const tiers = [
       "Technical Support Bot",
     ],
     popular: false,
+    ctaText: "Watch 5-Min System Demo",
+    ctaLink: "/system-demo",
+    pricingText: "Investment Revealed in Demo",
   },
   {
     name: "Locus Growth",
@@ -24,6 +28,9 @@ const tiers = [
       "Monthly Revenue Operations (RevOps) Audit",
     ],
     popular: true,
+    ctaText: "Watch 5-Min System Demo",
+    ctaLink: "/system-demo",
+    pricingText: "Investment Revealed in Demo",
   },
   {
     name: "Locus Elite",
@@ -37,6 +44,9 @@ const tiers = [
       "KPI Intelligence with advanced analytics",
     ],
     popular: false,
+    ctaText: "Book Pipeline Diagnostic",
+    ctaLink: "/pipeline-diagnostic",
+    pricingText: "Request for pricing",
   },
 ];
 
@@ -84,20 +94,18 @@ const PricingSection = () => {
 
               {/* Pricing */}
               <div className="mb-6 pb-6 border-b border-border/50">
-                <p className="text-2xl font-bold text-foreground">Request for pricing</p>
+                <p className="text-2xl font-bold text-foreground">{tier.pricingText}</p>
               </div>
 
               {/* CTA */}
-              <a
-                href="https://calendly.com/locusops"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to={tier.ctaLink}
                 className={`block text-center py-3 rounded-xl font-semibold transition-all duration-300 mb-6 ${
                   tier.popular ? "btn-primary" : "btn-secondary"
                 }`}
               >
-                Schedule a call
-              </a>
+                {tier.ctaText}
+              </Link>
 
               {/* Features */}
               <div className="space-y-3 flex-1">
@@ -116,10 +124,10 @@ const PricingSection = () => {
         {/* Additional notes */}
         <div className="mt-12 text-center space-y-2">
           <p className="text-sm text-muted-foreground">
-            Ad spend managed directly by client • 3-month minimum recommended for optimization cycles
+            Growth Fuel (Ad Spend) managed directly by client. We install the engine; you provide the fuel.
           </p>
           <p className="text-xs text-muted-foreground/60">
-            HIPAA readiness depends on your tools, configuration, and clinic policies.
+            HIPAA readiness depends on your tools, configuration, and clinic policies. Locus provides the technical Central Nervous System; you maintain the clinical standard.
           </p>
         </div>
       </div>
