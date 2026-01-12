@@ -10,6 +10,7 @@ import GetResults from "./pages/GetResults";
 import FixKit from "./pages/FixKit";
 import SystemDemo from "./pages/SystemDemo";
 import PipelineDiagnostic from "./pages/PipelineDiagnostic";
+import ClientLogin from "./pages/ClientLogin";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/fix-kit" element={<FixKit />} />
           <Route path="/system-demo" element={<SystemDemo />} />
           <Route path="/pipeline-diagnostic" element={<PipelineDiagnostic />} />
+          <Route path="/client-login" element={<ClientLogin />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
