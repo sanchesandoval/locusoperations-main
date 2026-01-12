@@ -15,7 +15,7 @@ import zenotiLogo from "@/assets/logos/zenoti.png";
 
 const testimonials = [
   {
-    quote: "We were dealing with leads who'd inquire and just disappear. Now we have a system in place that follows up automatically even after-hours.",
+    quote: "Marketing agencies would just sell us leads who'd inquire and just disappear. Now we have a system in place that follows up automatically even after-hours and still gets us new leads.",
     name: "Victor Martinez",
     title: "Owner, Vibe Aesthetics",
     badge: "60% No-Show Reduction",
