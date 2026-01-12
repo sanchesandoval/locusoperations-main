@@ -2,39 +2,40 @@ import { CheckCircleIcon } from "@/components/icons/BrandIcons";
 
 const tiers = [
   {
-    name: "Locus Core",
-    label: "The Foundation: For clinics needing robust infrastructure and DIY growth tools.",
+    name: "Starter",
+    label: "For clinics starting with automation",
     features: [
-      "Locus OS",
-      "DIY Clinical Ad Library",
-      "Missed-Call Text-Back Automation",
-      "Automated Lead Nurture Engine",
-      "Technical Support Bot",
+      "Ads management + basic funnel",
+      "CRM pipeline setup",
+      "SMS/email follow-up sequences",
+      "Basic reporting dashboard",
+      "Email & chat support",
     ],
     popular: false,
   },
   {
-    name: "Locus Growth",
-    label: "Build & Release: For clinics ready to scale via AI automation and system implementation.",
+    name: "Professional",
+    label: "For clinics ready to scale bookings",
     features: [
-      "Everything in Locus Core",
-      "Build & Release(SCALE Implementation)",
-      "AI Digital Cortex(Voice/SMS Front Desk Receptionist)",
-      "Database Reactivation Campaign",
-      "Monthly Revenue Operations(RevOps) Audit",
+      "Everything in Starter",
+      "AI voice qualification",
+      "Live transfer to your team",
+      "Reactivation campaigns",
+      "Weekly optimization calls",
+      "Priority support",
     ],
     popular: true,
   },
   {
-    name: "Locus Elite",
-    label: "The Systems Partner: For clinics seeking fractional operations and total autonomy.",
+    name: "Enterprise",
+    label: "For multi-location or high-volume clinics",
     features: [
-      "Everything in Locus Growth",
-      "Multi-location support(if applicable)",
-      "Full & Customized Tech Stack Integrations",
-      "Fractional COO Support",
-      "Clinical Staff Training & Placement",
-      "KPI Intelligence with Advanced Analytics and Insights",
+      "Everything in Professional",
+      "Multi-location support",
+      "Custom integrations",
+      "Dedicated account manager",
+      "Advanced analytics & insights",
+      "HIPAA-ready workflows",
     ],
     popular: false,
   },
@@ -52,9 +53,10 @@ const PricingSection = () => {
       <div className="container-main relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <p className="text-primary font-medium mb-4">Our Services</p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">Choose Your Growth Path</h2>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">Engineered Conversion Infrastructure</h2>
           <p className="text-lg text-muted-foreground">
-            Every engagement starts with a setup phase, followed by ongoing optimization.
+            Locus installs the Central Nervous System your clinic needs to eliminate revenue leakage and force
+            lead-to-consult conversions.
           </p>
         </div>
 
@@ -83,7 +85,7 @@ const PricingSection = () => {
 
               {/* Pricing */}
               <div className="mb-6 pb-6 border-b border-border/50">
-                <p className="text-2xl font-bold text-foreground">Investment Revealed in Demo</p>
+                <p className="text-2xl font-bold text-foreground">Request for pricing</p>
               </div>
 
               {/* CTA */}
