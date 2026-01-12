@@ -1,11 +1,18 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import locusLogo from "@/assets/locus-logo.png";
+import locusLogo from "@/assets/locus-logo-client.png";
 
 const ClientLogin = () => {
   const [videoEnded, setVideoEnded] = useState(false);
   const [videoError, setVideoError] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+
+  // Set playback speed to 1.25x
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 1.25;
+    }
+  }, []);
 
   const handleVideoEnd = () => {
     setVideoEnded(true);
@@ -17,13 +24,6 @@ const ClientLogin = () => {
   };
 
   const showLoginContent = videoEnded || videoError;
-
-  // Replace this with your actual GHL white-labeled login URL
-  const ghlLoginUrl = "https://your-ghl-login-url.com";
-
-  const handleLogin = () => {
-    window.location.href = ghlLoginUrl;
-  };
 
   return (
     <div className="relative min-h-screen w-full overflow-hidden bg-black">
@@ -76,13 +76,13 @@ const ClientLogin = () => {
                 {/* Subtle glow border */}
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-brand/20 via-transparent to-transparent opacity-50 pointer-events-none" />
                 
-                <div className="relative space-y-8">
+                <div className="relative space-y-6">
                   {/* Logo */}
                   <div className="flex justify-center">
                     <img 
                       src={locusLogo} 
                       alt="Locus" 
-                      className="h-10 sm:h-12 w-auto"
+                      className="h-12 sm:h-14 w-auto"
                     />
                   </div>
 
@@ -96,15 +96,24 @@ const ClientLogin = () => {
                     </p>
                   </div>
 
-                  {/* Login Button */}
-                  <motion.button
-                    onClick={handleLogin}
-                    whileHover={{ scale: 1.02, y: -2 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="w-full py-4 px-6 bg-gradient-to-r from-brand to-brand-light text-white font-semibold rounded-xl shadow-lg shadow-brand/25 hover:shadow-xl hover:shadow-brand/30 transition-all duration-300"
-                  >
-                    Access Portal
-                  </motion.button>
+                  {/* GHL Login Form Embed Container */}
+                  <div className="w-full min-h-[350px] rounded-xl overflow-hidden bg-white/5 border border-white/10">
+                    {/* 
+                      Replace the placeholder below with your GHL login form embed code.
+                      Example:
+                      <iframe 
+                        src="https://your-ghl-subdomain.com/login" 
+                        className="w-full h-[350px] border-0"
+                        title="Client Login"
+                      />
+                    */}
+                    <div className="w-full h-[350px] flex items-center justify-center text-white/40 text-sm">
+                      <p className="text-center px-4">
+                        GHL Login Form<br />
+                        <span className="text-xs text-white/30">(Replace this with your embed code)</span>
+                      </p>
+                    </div>
+                  </div>
 
                   {/* Support Link */}
                   <p className="text-center text-sm text-white/40">
