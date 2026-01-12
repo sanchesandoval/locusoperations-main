@@ -31,7 +31,7 @@ const BookCall = () => {
               to="/leak-finder"
               className="btn-primary text-xs sm:text-sm px-3 sm:px-4"
             >
-              Start Leak Finder
+              Run System Diagnostic
             </Link>
           </div>
         </div>
