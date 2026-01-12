@@ -4,10 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
-import LeakFinder from "./pages/LeakFinder";
 import BookCall from "./pages/BookCall";
-import GetResults from "./pages/GetResults";
-import FixKit from "./pages/FixKit";
 import SystemDemo from "./pages/SystemDemo";
 import PipelineDiagnostic from "./pages/PipelineDiagnostic";
 import ClientLogin from "./pages/ClientLogin";
@@ -23,10 +20,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/leak-finder" element={<LeakFinder />} />
-          <Route path="/get-results" element={<GetResults />} />
           <Route path="/book-call" element={<BookCall />} />
-          <Route path="/fix-kit" element={<FixKit />} />
           <Route path="/system-demo" element={<SystemDemo />} />
           <Route path="/pipeline-diagnostic" element={<PipelineDiagnostic />} />
           <Route path="/client-login" element={<ClientLogin />} />

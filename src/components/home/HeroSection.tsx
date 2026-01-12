@@ -40,8 +40,8 @@ const HeroSection = () => {
             {/* CTAs */}
             <BlurFade delay={0.4}>
               <div className="flex flex-col sm:flex-row gap-4 items-center lg:items-start justify-center lg:justify-start">
-                <Link to="/leak-finder" className="btn-primary text-base px-8 py-4">
-                  Run System Diagnostic
+                <Link to="/book-call" className="btn-primary text-base px-8 py-4">
+                  Book a Call
                 </Link>
                 <a href="https://www.loom.com/share/YOUR_DEMO_VIDEO_ID" target="_blank" rel="noopener noreferrer" className="btn-secondary text-base px-8 py-4">
                   Watch 5-Min System Demo
