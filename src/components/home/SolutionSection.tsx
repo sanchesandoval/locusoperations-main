@@ -23,7 +23,7 @@ const stackItems = [{
   letter: "L",
   title: "everage",
   outline: "Scale without adding staff.",
-  description: "We install our proprietary Longevity OS snapshots so your team can manage volume without adding staff."
+  description: "We install our proprietary Locus OS snapshots so your team can manage volume without adding staff."
 }, {
   layer: "05",
   letter: "E",
