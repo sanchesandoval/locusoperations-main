@@ -16,7 +16,7 @@ const leakItems = [{
 }, {
   icon: ShieldIcon,
   title: "Dark Zone Gaps",
-  description: "50%+ of longevity inquiries happen after 5 PM. If your system is \"closed,\" your competitors are booking."
+  description: "50%+ of patient inquiries happen after 5 PM. If your system is \"closed,\" your competitors are booking."
 }, {
   icon: CalendarSlotIcon,
   title: "Confirmation Slippage",
