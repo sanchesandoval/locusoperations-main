@@ -57,10 +57,13 @@ const SolutionSection = () => {
 
       <div className="container-main relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <p className="text-primary font-medium mb-4">The Solution</p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-balance">
-            The Locus SCALE Framework: <span className="text-muted-foreground">Engineering Your Lead-to-Consult Pipeline.</span>
+          <p className="text-primary font-medium mb-4">Solution</p>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-balance">
+            The SCALE Framework
           </h2>
+          <p className="text-lg text-muted-foreground">
+            Engineering Your Lead-to-Consult Pipeline.
+          </p>
         </div>
 
         {/* Stack visualization */}
