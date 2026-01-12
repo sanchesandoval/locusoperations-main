@@ -20,7 +20,7 @@ const researchCards = [
   {
     value: 5,
     suffix: "–7",
-    title: "5–7 Essential Touchpoints",
+    title: "Essential Touchpoints",
     description: "High-ticket wellness patients require 5–7 touches across SMS, email, and phone before committing to a cash-pay consult. If your team stops after one call, you are subsidizing your competitors.",
     source: "Digital Marketing Med-Spa Sales Funnel Guides",
   },
