@@ -35,7 +35,7 @@ const LeakSection = () => {
 
       <div className="container-main relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <p className="text-primary font-medium mb-4">The Problem</p>
+          <p className="text-primary font-medium mb-4">Problem</p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-balance">
             Your Clinic Doesn't Have a Lead Problem.{" "}
             <span className="text-muted-foreground">It Has a Complexity Wall.</span>
