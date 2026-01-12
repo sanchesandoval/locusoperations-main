@@ -10,7 +10,7 @@ const ClientLogin = () => {
   // Set playback speed to 2.5x
   useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.playbackRate = 2.5;
+      videoRef.current.playbackRate = 3;
     }
   }, []);
 
