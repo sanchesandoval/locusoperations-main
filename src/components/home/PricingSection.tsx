@@ -65,7 +65,7 @@ const PricingSection = () => {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">Engineered Conversion Infrastructure</h2>
           <p className="text-lg text-muted-foreground">
             Locus installs the Central Nervous System your clinic needs to eliminate revenue leakage and force
-            lead-to-consult conversions.
+            lead-to-appointment conversions.
           </p>
         </div>
 

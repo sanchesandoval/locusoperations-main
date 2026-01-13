@@ -62,7 +62,7 @@ const HeroSection = () => {
               
               <BlurFade delay={0.3}>
                 <p className="text-base sm:text-lg md:text-xl lg:text-lg xl:text-xl text-muted-foreground max-w-sm sm:max-w-lg md:max-w-xl lg:max-w-lg text-balance text-center lg:text-left mx-auto lg:mx-0">
-                  Locus installs the Central Nervous System for your clinic. We replace fragmented manual follow-up with a precision-engineered conversion engine that captures, qualifies, and books consults 24/7.
+                  Locus installs the Central Nervous System for your clinic. We replace fragmented manual follow-up with a precision-engineered conversion engine that captures, qualifies, and books appointments 24/7.
                 </p>
               </BlurFade>
             </div>

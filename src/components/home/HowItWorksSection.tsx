@@ -12,13 +12,13 @@ const steps = [
     step: "02",
     title: "Infrastructure Deployment",
     tag: "A/L",
-    description: "We build, integrate, and launch your Locus OS. This includes deploying your \"Digital Cortex\" (AI Front Desk) and configuring your automated lead-to-consult pipelines.",
+    description: "We build, integrate, and launch your Locus OS. This includes deploying your \"Digital Cortex\" (AI Front Desk) and configuring your automated lead-to-appointment pipelines.",
   },
   {
     step: "03",
     title: "Performance Intelligence",
     tag: "E",
-    description: "We transition from integration to optimization. We evaluate your weekly KPIs, refine your AI prompts, and tune your ad \"fuel\" to maximize your cost-per-consult.",
+    description: "We transition from integration to optimization. We evaluate your weekly KPIs, refine your AI prompts, and tune your ad \"fuel\" to maximize your cost-per-appointment.",
   },
 ];
 

@@ -9,7 +9,7 @@ const faqs = [
   {
     question: "Will AI sound robotic?",
     answer:
-      `No. We deploy a "Digital Cortex" specifically trained on your clinic's protocols and tone of voice. It is engineered to handle medical FAQs and qualify patients using natural language, ensuring the transition from inquiry to booked consult feels professional and personal, 24/7.`,
+      `No. We deploy a "Digital Cortex" specifically trained on your clinic's protocols and tone of voice. It is engineered to handle medical FAQs and qualify patients using natural language, ensuring the transition from inquiry to booked appointment feels professional and personal, 24/7.`,
   },
   {
     question: "Does Locus replace my front desk?",
@@ -19,7 +19,7 @@ const faqs = [
   {
     question: "How does Locus integrate with my current EHR (Zenoti, Mangomint, etc.)",
     answer:
-      `Locus acts as the Central Nervous System that bridges the gap between your acquisition channels and your clinical software. We use advanced system integrator "plumbing" to ensure that when a consult is booked in Locus, it is reflected in your existing patient management system without manual data entry.`,
+      `Locus acts as the Central Nervous System that bridges the gap between your acquisition channels and your clinical software. We use advanced system integrator "plumbing" to ensure that when an appointment is booked in Locus, it is reflected in your existing patient management system without manual data entry.`,
   },
   {
     question: "How fast can we launch?",
@@ -32,7 +32,7 @@ const faqs = [
       `Locus is a business asset. Unlike a traditional agency where results stop when you stop paying, we follow the "Build & Release" model. We install the infrastructure into your business; if you ever choose to move operations in-house, you own the system we've built.`,
   },
   {
-    question: "How fast will I see an increase in booked consults?",
+    question: "How fast will I see an increase in booked appointments?",
     answer:
       `Most clinics see immediate revenue recovery within the first 14 days by launching an automated Database Reactivation on their dormant leads. Our "Speed-to-Lead" infrastructure ensures you capture the 21x higher conversion probability that occurs when responding to new leads in under 5 minutes.`,
   },

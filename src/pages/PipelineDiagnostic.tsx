@@ -292,7 +292,7 @@ const PipelineDiagnostic = () => {
                 </button>
 
                 <p className="text-center text-sm text-muted-foreground">
-                  You'll be redirected to schedule your personalized consultation
+                  You'll be redirected to schedule your personalized appointment
                 </p>
               </form>
             </div>

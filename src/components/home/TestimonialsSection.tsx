@@ -15,7 +15,7 @@ const testimonials = [{
   quote: "We were throwing money at ads with no real system behind it. Locus built us an actual pipeline—now leads are taken care of until they book. Went from 20 clients a week to 40.",
   name: "Ariana",
   title: "Founder, Serenity Wellness Clinic",
-  badge: "2x Weekly Consults"
+  badge: "2x Weekly Appointments"
 }];
 const TestimonialCard = ({
   testimonial
