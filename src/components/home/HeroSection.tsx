@@ -34,7 +34,7 @@ const integrationLogos = [
   { name: "n8n", src: n8nLogo },
 ];
 const HeroSection = () => {
-  return <section className="relative pt-20 sm:pt-24 md:pt-28 pb-8 sm:pb-10 overflow-x-hidden px-4 sm:px-6 lg:min-h-screen lg:flex lg:items-center">
+  return <section className="relative min-h-[100svh] pt-20 sm:pt-24 md:pt-28 pb-16 sm:pb-20 md:pb-24 lg:pb-10 overflow-x-hidden px-4 sm:px-6 lg:flex lg:items-center">
       {/* Background effects */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-primary/5 blur-[100px]" />
@@ -110,7 +110,7 @@ const HeroSection = () => {
 
         {/* Logo Marquee */}
         <BlurFade delay={0.6}>
-          <div className="mt-10 sm:mt-14 md:mt-16 lg:mt-24 text-center">
+          <div className="mt-10 sm:mt-14 md:mt-16 lg:mt-24 mb-8 sm:mb-12 md:mb-16 lg:mb-0 text-center">
             <p className="text-sm sm:text-sm md:text-base text-muted-foreground mb-4 sm:mb-5 md:mb-6 lg:mb-6">
               Trusted by leading service brands and automation-driven companies.
             </p>
