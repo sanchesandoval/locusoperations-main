@@ -34,7 +34,7 @@ const integrationLogos = [
   { name: "n8n", src: n8nLogo },
 ];
 const HeroSection = () => {
-  return <section className="relative min-h-[100svh] pt-20 sm:pt-24 md:pt-28 pb-16 sm:pb-20 md:pb-24 lg:pb-10 overflow-x-hidden px-4 sm:px-6 lg:flex lg:items-center">
+  return <section className="relative min-h-[100svh] pt-28 sm:pt-32 md:pt-36 lg:pt-28 pb-16 sm:pb-20 md:pb-24 lg:pb-10 overflow-x-hidden px-4 sm:px-6 lg:flex lg:items-center">
       {/* Background effects */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-primary/5 blur-[100px]" />
