@@ -34,7 +34,7 @@ const integrationLogos = [
   { name: "n8n", src: n8nLogo },
 ];
 const HeroSection = () => {
-  return <section className="relative min-h-[100svh] pt-20 sm:pt-24 pb-8 sm:pb-12 overflow-x-hidden px-4 sm:px-6 lg:flex lg:items-center">
+  return <section className="relative min-h-[100svh] flex flex-col justify-center pt-16 sm:pt-20 pb-6 sm:pb-10 overflow-x-hidden px-4 sm:px-6">
       {/* Background effects */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-primary/5 blur-[100px]" />
@@ -43,10 +43,10 @@ const HeroSection = () => {
       </div>
 
       <div className="container-main relative z-10">
-        <div className="grid lg:grid-cols-2 gap-6 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Left: Copy */}
-          <div className="space-y-4 sm:space-y-6 lg:space-y-8">
-            <div className="space-y-3 sm:space-y-4 lg:space-y-6">
+          <div className="space-y-5 sm:space-y-7 lg:space-y-8">
+            <div className="space-y-4 sm:space-y-5 lg:space-y-6">
               <BlurFade delay={0.1}>
                 <div className="flex justify-center lg:justify-start">
                   <span className="inline-flex items-center px-2 sm:px-3 py-1 sm:py-1.5 rounded-full bg-card/80 border border-border text-[10px] sm:text-xs text-foreground text-center">Engineered for Functional Medicine & Wellness Clinics</span>
@@ -54,14 +54,14 @@ const HeroSection = () => {
               </BlurFade>
               
               <BlurFade delay={0.2}>
-                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-[1.1] text-balance text-center lg:text-left">
+                <h1 className="mt-2 sm:mt-3 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-[1.1] text-balance text-center lg:text-left">
                   Stop Paying for Leads{" "}
                   <AnimatedGradientText>That Never Book.</AnimatedGradientText>
                 </h1>
               </BlurFade>
               
               <BlurFade delay={0.3}>
-                <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-muted-foreground max-w-xs sm:max-w-md lg:max-w-lg text-balance text-center lg:text-left mx-auto lg:mx-0">
+                <p className="mt-3 sm:mt-4 text-sm sm:text-base lg:text-lg xl:text-xl text-muted-foreground max-w-xs sm:max-w-md lg:max-w-lg text-balance text-center lg:text-left mx-auto lg:mx-0">
                   Locus installs the Central Nervous System for your clinic. We replace fragmented manual follow-up with a precision-engineered conversion engine that captures, qualifies, and books consults 24/7.
                 </p>
               </BlurFade>
@@ -81,7 +81,7 @@ const HeroSection = () => {
 
             {/* Trust chips */}
             <BlurFade delay={0.5}>
-              <div className="flex flex-wrap gap-1.5 sm:gap-2 lg:gap-3 pt-1 sm:pt-2 lg:pt-4 justify-center lg:justify-start">
+              <div className="flex flex-wrap gap-1.5 sm:gap-2 lg:gap-3 pt-3 sm:pt-4 lg:pt-4 justify-center lg:justify-start">
                 <div className="trust-chip text-[10px] sm:text-xs lg:text-sm px-1.5 sm:px-2 lg:px-3 py-0.5 sm:py-1 lg:py-1.5">
                   <ClockSpeedIcon className="w-2.5 h-2.5 sm:w-3 sm:h-3 lg:w-4 lg:h-4 text-primary" />
                   <span>Speed-to-lead under 60s</span>
@@ -110,7 +110,7 @@ const HeroSection = () => {
 
         {/* Logo Marquee */}
         <BlurFade delay={0.6}>
-          <div className="mt-6 sm:mt-10 lg:mt-24 text-center">
+          <div className="mt-8 sm:mt-12 lg:mt-24 text-center">
             <p className="text-xs sm:text-sm text-muted-foreground mb-3 sm:mb-4 lg:mb-6">
               Trusted by leading service brands and automation-driven companies.
             </p>
