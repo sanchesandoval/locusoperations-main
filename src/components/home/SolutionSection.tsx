@@ -53,7 +53,7 @@ const SolutionSection = () => {
   }, []);
   return <section className="section-spacing relative overflow-hidden">
       {/* Background */}
-      <div className="absolute top-1/2 left-0 w-[500px] h-[500px] rounded-full bg-primary/5 blur-[100px] -translate-y-1/2" />
+      <div className="absolute top-1/2 left-0 w-full max-w-[500px] h-[300px] sm:h-[400px] lg:h-[500px] rounded-full bg-primary/5 blur-[100px] -translate-y-1/2" />
 
       <div className="container-main relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-16">

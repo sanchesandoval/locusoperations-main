@@ -31,7 +31,7 @@ const LeakSection = () => {
   return (
     <section className="section-spacing relative">
       {/* Background accent */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] rounded-full bg-destructive/5 blur-[120px]" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[600px] h-[400px] rounded-full bg-destructive/5 blur-[120px]" />
 
       <div className="container-main relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-16">
