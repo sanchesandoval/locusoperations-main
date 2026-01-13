@@ -34,7 +34,7 @@ const integrationLogos = [
   { name: "n8n", src: n8nLogo },
 ];
 const HeroSection = () => {
-  return <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+  return <section className="relative min-h-screen flex items-center pt-20 overflow-hidden px-4 sm:px-6">
       {/* Background effects */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-primary/5 blur-[100px]" />
@@ -43,25 +43,25 @@ const HeroSection = () => {
       </div>
 
       <div className="container-main relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Left: Copy */}
-          <div className="space-y-8">
-            <div className="space-y-6">
+          <div className="space-y-6 sm:space-y-8">
+            <div className="space-y-4 sm:space-y-6">
               <BlurFade delay={0.1}>
                 <div className="flex justify-center lg:justify-start">
-                  <span className="inline-flex items-center px-3 py-1.5 rounded-full bg-card/80 border border-border text-xs text-foreground">Engineered for Functional Medicine & Wellness Clinics</span>
+                  <span className="inline-flex items-center px-2 sm:px-3 py-1 sm:py-1.5 rounded-full bg-card/80 border border-border text-[10px] sm:text-xs text-foreground text-center">Engineered for Functional Medicine & Wellness Clinics</span>
                 </div>
               </BlurFade>
               
               <BlurFade delay={0.2}>
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] text-balance text-center lg:text-left">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] text-balance text-center lg:text-left">
                   Stop Paying for Leads{" "}
                   <AnimatedGradientText>That Never Book.</AnimatedGradientText>
                 </h1>
               </BlurFade>
               
               <BlurFade delay={0.3}>
-                <p className="text-lg lg:text-xl text-muted-foreground max-w-lg text-balance text-center lg:text-left mx-auto lg:mx-0">
+                <p className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-xs sm:max-w-lg text-balance text-center lg:text-left mx-auto lg:mx-0">
                   Locus installs the Central Nervous System for your clinic. We replace fragmented manual follow-up with a precision-engineered conversion engine that captures, qualifies, and books consults 24/7.
                 </p>
               </BlurFade>
@@ -69,11 +69,11 @@ const HeroSection = () => {
 
             {/* CTAs */}
             <BlurFade delay={0.4}>
-              <div className="flex flex-col sm:flex-row gap-4 items-center lg:items-start justify-center lg:justify-start">
-                <Link to="/book-call" className="btn-primary text-base px-8 py-4">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center lg:items-start justify-center lg:justify-start">
+                <Link to="/book-call" className="btn-primary text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4">
                   Book a Call
                 </Link>
-                <a href="https://www.loom.com/share/YOUR_DEMO_VIDEO_ID" target="_blank" rel="noopener noreferrer" className="btn-secondary text-base px-8 py-4">
+                <a href="https://www.loom.com/share/YOUR_DEMO_VIDEO_ID" target="_blank" rel="noopener noreferrer" className="btn-secondary text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4">
                   Watch 5-Min System Demo
                 </a>
               </div>
@@ -81,21 +81,21 @@ const HeroSection = () => {
 
             {/* Trust chips */}
             <BlurFade delay={0.5}>
-              <div className="flex flex-wrap gap-3 pt-4 justify-center lg:justify-start">
-                <div className="trust-chip">
-                  <ClockSpeedIcon className="w-4 h-4 text-primary" />
-                  <span>Speed-to-lead under 60 seconds</span>
+              <div className="flex flex-wrap gap-2 sm:gap-3 pt-2 sm:pt-4 justify-center lg:justify-start">
+                <div className="trust-chip text-xs sm:text-sm px-2 sm:px-3 py-1 sm:py-1.5">
+                  <ClockSpeedIcon className="w-3 h-3 sm:w-4 sm:h-4 text-primary" />
+                  <span>Speed-to-lead under 60s</span>
                 </div>
-                <div className="trust-chip">
-                  <ShieldIcon className="w-4 h-4 text-primary" />
+                <div className="trust-chip text-xs sm:text-sm px-2 sm:px-3 py-1 sm:py-1.5">
+                  <ShieldIcon className="w-3 h-3 sm:w-4 sm:h-4 text-primary" />
                   <span>After-hours coverage</span>
                 </div>
-                <div className="trust-chip">
-                  <CalendarSlotIcon className="w-4 h-4 text-primary" />
+                <div className="trust-chip text-xs sm:text-sm px-2 sm:px-3 py-1 sm:py-1.5">
+                  <CalendarSlotIcon className="w-3 h-3 sm:w-4 sm:h-4 text-primary" />
                   <span>No-show reduction</span>
                 </div>
-                <div className="trust-chip">
-                  <RefreshLoopIcon className="w-4 h-4 text-primary" />
+                <div className="trust-chip text-xs sm:text-sm px-2 sm:px-3 py-1 sm:py-1.5">
+                  <RefreshLoopIcon className="w-3 h-3 sm:w-4 sm:h-4 text-primary" />
                   <span>Reactivation campaigns</span>
                 </div>
               </div>
@@ -110,7 +110,7 @@ const HeroSection = () => {
 
         {/* Logo Marquee */}
         <BlurFade delay={0.6}>
-          <div className="mt-24 lg:mt-32 text-center">
+          <div className="mt-12 sm:mt-16 lg:mt-32 text-center">
             <p className="text-sm text-muted-foreground mb-6">
               Trusted by leading service brands and automation-driven companies.
             </p>
