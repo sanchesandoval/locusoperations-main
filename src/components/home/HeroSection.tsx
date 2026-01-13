@@ -34,11 +34,11 @@ const integrationLogos = [
   { name: "n8n", src: n8nLogo },
 ];
 const HeroSection = () => {
-  return <section className="relative min-h-screen flex items-center pt-20 overflow-hidden max-w-full">
+  return <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
       {/* Background effects */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[800px] h-[400px] sm:h-[600px] lg:h-[800px] rounded-full bg-primary/5 blur-[100px]" />
-        <div className="absolute top-1/4 right-1/4 w-full max-w-[400px] h-[200px] sm:h-[300px] lg:h-[400px] rounded-full bg-brand-accent/5 blur-[80px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-primary/5 blur-[100px]" />
+        <div className="absolute top-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-brand-accent/5 blur-[80px]" />
         <DotPattern className="opacity-80 [mask-image:radial-gradient(720px_circle_at_center,white,transparent)]" />
       </div>
 
@@ -115,7 +115,7 @@ const HeroSection = () => {
               Trusted by leading service brands and automation-driven companies.
             </p>
             
-            <div className="relative overflow-hidden max-w-full">
+            <div className="relative overflow-hidden">
               <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent z-10" />
               <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10" />
 
