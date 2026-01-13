@@ -5,7 +5,7 @@ const stackItems = [{
   letter: "S",
   title: "ystemize",
   outline: "Map your unique clinical workflow.",
-  description: "We map your unique clinical workflow, documenting the exact path from click to consult."
+  description: "We map your unique clinical workflow, documenting the exact path from click to appointment."
 }, {
   layer: "02",
   letter: "C",
@@ -17,7 +17,7 @@ const stackItems = [{
   letter: "A",
   title: "utomate",
   outline: "Deploy the Digital Cortex.",
-  description: "We deploy the \"Digital Cortex\"—AI Front Desk agents that answer FAQs and book consults 24/7."
+  description: "We deploy the \"Digital Cortex\"—AI Front Desk agents that answer FAQs and book appointments 24/7."
 }, {
   layer: "04",
   letter: "L",
@@ -29,7 +29,7 @@ const stackItems = [{
   letter: "E",
   title: "valuate",
   outline: "Track the only metric that matters.",
-  description: "We install real-time KPI tracking to measure the only metric that matters: Cost Per Booked Consult."
+  description: "We install real-time KPI tracking to measure the only metric that matters: Cost Per Booked Appointment."
 }];
 const SolutionSection = () => {
   const [visibleItems, setVisibleItems] = useState<Set<number>>(new Set());
@@ -62,7 +62,7 @@ const SolutionSection = () => {
             The SCALE Framework
           </h2>
           <p className="text-lg text-muted-foreground">
-            Engineering Your Lead-to-Consult Pipeline.
+            Engineering Your Lead-to-Appointment Pipeline.
           </p>
         </div>
 

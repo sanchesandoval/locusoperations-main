@@ -81,7 +81,7 @@ const SystemDemo = () => {
               </h2>
               <p className="text-muted-foreground mb-8">
                 Stop losing leads to slow response times. Get Locus installed and start 
-                converting more leads into booked consultations.
+                converting more leads into booked appointments.
               </p>
               <Link
                 to="/book-call"
