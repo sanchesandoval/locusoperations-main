@@ -35,7 +35,7 @@ const LeakSection = () => {
             <span className="text-muted-foreground">You have a Revenue Recovery Problem.</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Most wellness clinics lose <strong className="text-foreground">15–30% of potential revenue</strong> on leads that never convert—that's <strong className="text-foreground">$4,500–$9,000/month</strong> for a $30K clinic, or <strong className="text-foreground">$22,500–$45,000/month</strong> at $150K. Three fixable problems cause this:
+            Most wellness clinics lose <strong className="text-foreground">15–40% of potential revenue</strong> on leads that never convert—that's <strong className="text-foreground">$4,500–$9,000/month</strong> for a $30K clinic, or <strong className="text-foreground">$22,500–$45,000/month</strong> at $150K. Three fixable problems cause this:
           </p>
         </div>
 
