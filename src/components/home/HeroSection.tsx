@@ -93,9 +93,9 @@ const HeroSection = () => {
                 <Link to="/book-call" className="btn-primary text-sm sm:text-base md:text-base lg:text-base px-6 sm:px-8 md:px-8 lg:px-8 py-3 sm:py-4 md:py-4 lg:py-4">
                   Book a Call
                 </Link>
-                <a href="https://www.loom.com/share/YOUR_DEMO_VIDEO_ID" target="_blank" rel="noopener noreferrer" className="btn-secondary text-sm sm:text-base md:text-base lg:text-base px-6 sm:px-8 md:px-8 lg:px-8 py-3 sm:py-4 md:py-4 lg:py-4">
-                  Watch 5-Min System Demo
-                </a>
+                <Link to="/system-demo" className="text-sm sm:text-base text-muted-foreground hover:text-primary transition-colors">
+                  Or watch the 5-minute system walkthrough →
+                </Link>
               </div>
             </BlurFade>
 
