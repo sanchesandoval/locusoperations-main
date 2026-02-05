@@ -139,7 +139,7 @@ const HeroSection = () => {
         <BlurFade delay={0.6}>
           <div className="mt-10 sm:mt-14 md:mt-16 lg:mt-24 mb-8 sm:mb-12 md:mb-16 lg:mb-0 text-center">
             <p className="text-sm sm:text-sm md:text-base text-muted-foreground mb-4 sm:mb-5 md:mb-6 lg:mb-6">
-              Trusted by leading service brands and integrates with your existing stack.
+              Integrates with your existing stack.
             </p>
             
             <div className="relative overflow-hidden">
