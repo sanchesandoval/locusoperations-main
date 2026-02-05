@@ -3,50 +3,50 @@ import { CheckCircleIcon } from "@/components/icons/BrandIcons";
 
 const tiers = [
   {
-    name: "Locus Core",
-    label: "The Foundation: For clinics needing DIY growth tools and robust infrastructure.",
+    name: "Core System",
+    label: "The Foundation — For clinics who want the system and can install it themselves.",
     features: [
-      "Locus OS",
-      "DIY Clinical Ad Library",
-      "Missed-Call Text-Back Automation",
-      "Automated Lead Nurture Engine",
-      "Technical Support Bot",
+      "Locus OS (booking + follow-up automation)",
+      "DIY clinical workflow templates",
+      "Missed-call text-back automation",
+      "Automated lead nurture engine",
+      "Technical support bot",
     ],
     popular: false,
     ctaText: "Watch 5-Min System Demo",
     ctaLink: "/system-demo",
-    pricingText: "Investment Revealed in Demo",
+    pricingText: "$297/month",
   },
   {
-    name: "Locus Growth",
-    label: "Build & Release: For clinics ready to scale via AI automation and system implementation.",
+    name: "Implementation",
+    label: "Done-For-You Setup — For clinics ready to go live fast with professional installation.",
     features: [
-      "Everything in Locus Core",
-      "Build & Release (SCALE Implementation)",
-      "AI Digital Cortex (Voice/SMS Front Desk Receptionist)",
-      "Database Reactivation Campaign",
-      "Monthly Revenue Operations (RevOps) Audit",
+      "Everything in Core System",
+      "Full systems mapping & implementation (SCALE process)",
+      "AI Digital Cortex (voice/SMS front desk)",
+      "Database reactivation campaign",
+      "Monthly revenue operations audit",
     ],
     popular: true,
     ctaText: "Watch 5-Min System Demo",
     ctaLink: "/system-demo",
-    pricingText: "Investment Revealed in Demo",
+    pricingText: "$1,500 setup + $497/month",
   },
   {
-    name: "Locus Elite",
-    label: "The Systems Partner: For multi-location enterprises seeking fractional operations and total autonomy.",
+    name: "Growth Ops",
+    label: "Enterprise Systems Partner — For multi-location clinics or owners who want ongoing optimization and custom builds.",
     features: [
-      "Everything in Locus Growth",
-      "Multi location support (if applicable)",
-      "Full & Custom Tech Stack Integrations (EMR/EHR)",
-      "Fractional COO Support",
-      "Clinical Staff Training & Placement",
-      "KPI Intelligence with advanced analytics",
+      "Everything in Implementation",
+      "Multi-location support (if applicable)",
+      "Custom tech stack integrations (EMR/EHR)",
+      "Fractional COO support (ongoing optimization)",
+      "Clinical staff training & placement",
+      "KPI intelligence with advanced analytics",
     ],
     popular: false,
     ctaText: "Book Pipeline Diagnostic",
     ctaLink: "/pipeline-diagnostic",
-    pricingText: "Request for pricing",
+    pricingText: "Custom pricing",
   },
 ];
 
@@ -62,10 +62,9 @@ const PricingSection = () => {
       <div className="container-main relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <p className="text-primary font-medium mb-4">Our Services</p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">Engineered Conversion Infrastructure</h2>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">Three Ways to Work With Locus</h2>
           <p className="text-lg text-muted-foreground">
-            Locus installs the Central Nervous System your clinic needs to eliminate revenue leakage and force
-            lead-to-appointment conversions.
+            Pick the level of support that fits your clinic.
           </p>
         </div>
 
@@ -122,12 +121,9 @@ const PricingSection = () => {
         </div>
 
         {/* Additional notes */}
-        <div className="mt-12 text-center space-y-2">
+        <div className="mt-12 text-center">
           <p className="text-sm text-muted-foreground">
             Growth Fuel (Ad Spend) managed directly by client. We install the engine; you provide the fuel.
-          </p>
-          <p className="text-xs text-muted-foreground/60">
-            HIPAA readiness depends on your tools, configuration, and clinic policies. Locus provides the technical Central Nervous System; you maintain the clinical standard.
           </p>
         </div>
       </div>
