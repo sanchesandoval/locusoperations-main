@@ -70,6 +70,16 @@ const LeakSection = () => {
             </div>
           ))}
         </div>
+
+        {/* Summary text */}
+        <div className="max-w-2xl mx-auto text-center mt-12 space-y-2">
+          <p className="text-lg text-muted-foreground">
+            Combined, these three failures cost most clinics <strong className="text-foreground">20–40% of potential revenue</strong>.
+          </p>
+          <p className="text-xl font-semibold text-foreground">
+            One system fixes all three.
+          </p>
+        </div>
       </div>
     </section>
   );
