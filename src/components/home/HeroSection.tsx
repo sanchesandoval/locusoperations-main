@@ -83,7 +83,7 @@ const HeroSection = () => {
               </BlurFade>
               
               <BlurFade delay={0.3}>
-                <p className="text-base sm:text-lg md:text-xl lg:text-lg xl:text-xl text-muted-foreground max-w-sm sm:max-w-lg md:max-w-xl lg:max-w-lg text-balance text-center lg:text-left mx-auto lg:mx-0">Locus installs an AI front desk assistant that responds in under 60 seconds, follows up via call/SMS/email, and books qualified appointments 24/7— so you stop bleeding revenue on slow response times and inconsistent follow-up.</p>
+                <p className="text-base sm:text-lg md:text-xl lg:text-lg xl:text-xl text-muted-foreground max-w-sm sm:max-w-lg md:max-w-xl lg:max-w-lg text-balance text-center lg:text-left mx-auto lg:mx-0">Locus installs an AI front desk that responds in under 60 seconds, follows up via call/SMS/email, and books qualified appointments 24/7— so you stop bleeding revenue on slow response times and inconsistent follow-up.</p>
               </BlurFade>
             </div>
 
