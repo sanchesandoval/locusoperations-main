@@ -39,7 +39,7 @@ const faqs = [
   {
     question: "Why Locus instead of a standard marketing agency?",
     answer:
-      `Agencies provide labor; Locus provides infrastructure. Agencies often give you more "work" by dumping raw leads into your inbox. Locus installs the SCALE framework to ensure every lead is systemically moved to a booked appointment on your calendar automatically.`,
+      `Agencies provide labor; Locus provides infrastructure. Agencies dump leads in your inbox and expect your team to handle them. Locus installs the automated system that turns leads into booked appointments—without adding work to your staff.`,
   },
   {
     question: "Is the system HIPAA-compliant?",
