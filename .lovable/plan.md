@@ -1,39 +1,33 @@
 
-## Remove Pipeline Diagnostic Page
 
-**Goal:** Completely remove the `/pipeline-diagnostic` route and its associated page file.
+## Update GHL Popup Form Embed Code
 
----
-
-### Changes Required
-
-| File | Action |
-|------|--------|
-| `src/App.tsx` | Remove import and route for PipelineDiagnostic |
-| `src/pages/PipelineDiagnostic.tsx` | Delete file |
+**Goal:** Update the GoHighLevel popup form iframe in `index.html` with the new configuration.
 
 ---
 
-### Details
+### Changes to `index.html`
 
-**1. Update `src/App.tsx`**
-
-Remove line 11 (import):
-```tsx
-import PipelineDiagnostic from "./pages/PipelineDiagnostic";
-```
-
-Remove line 27 (route):
-```tsx
-<Route path="/pipeline-diagnostic" element={<PipelineDiagnostic />} />
-```
-
-**2. Delete `src/pages/PipelineDiagnostic.tsx`**
+| Attribute | Current Value | New Value |
+|-----------|---------------|-----------|
+| `style` (border-radius) | `4px` | `20px` |
+| `data-deactivation-type` | `leadCollected` | `neverDeactivate` |
+| `data-height` | `551` | `485` |
 
 ---
 
-### Impact
+### Technical Details
 
-- No other files reference `/pipeline-diagnostic` or link to this page
-- All other routes and functionality remain unaffected
-- Users visiting `/pipeline-diagnostic` will see the 404 NotFound page
+**File:** `index.html` (lines 38-54)
+
+The iframe will be updated with:
+- Rounder corners (20px border radius)
+- Popup will never deactivate (previously closed after lead collected)
+- Slightly shorter form height (485px instead of 551px)
+
+---
+
+### No Other Changes Needed
+
+The script tag `https://link.msgsndr.com/js/form_embed.js` remains the same.
+
