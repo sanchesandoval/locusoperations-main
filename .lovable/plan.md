@@ -1,38 +1,27 @@
 
 
-## Add Taglines and Positioning Lines to Pricing Tiers
+## Update Locus Command Tier Card
 
-**Goal:** Update the pricing section with bold taglines and smaller gray positioning lines below each tier name.
-
----
-
-### Updated Tier Data
-
-| Tier | Tagline (Bold) | Positioning (Small, Gray) |
-|------|----------------|---------------------------|
-| Locus Core | The Operating System | Self-install. Full control. |
-| Locus Ops | **Full Operational Deployment** | Professionally installed. Live in 2-3 weeks. |
-| Locus Command | Enterprise + Fractional COO | Multi-location. Full optimization. |
+**Goal:** Update the Locus Command tier with new tagline, positioning, and features.
 
 ---
 
 ### Changes to `src/components/home/PricingSection.tsx`
 
-**1. Update tiers array** - Add `tagline` and `positioning` fields to each tier object
+Update the third tier object in the `tiers` array:
 
-**2. Update card header JSX** - Render the new fields:
-- Tier name (existing bold style)
-- Tagline (bold text)
-- Positioning line (smaller, gray text using `text-muted-foreground`)
+| Field | Current | New |
+|-------|---------|-----|
+| tagline | Enterprise + Fractional COO | Revenue Operations Partner |
+| positioning | Multi-location. Full optimization. | Multi-location visibility. Ongoing optimization. Embedded accountability. |
 
-```text
-Card Header Structure:
-┌─────────────────────────────────────────────┐
-│  Locus Ops                                  │  ← name
-│  Full Operational Deployment                │  ← tagline (bold)
-│  Professionally installed. Live in 2-3 weeks│  ← positioning (small, gray)
-└─────────────────────────────────────────────┘
-```
+**Updated Features:**
+1. Everything in Locus Ops *(unchanged)*
+2. Multi-location command center dashboard *(was: Multi-location support (if applicable))*
+3. Custom tech stack integrations (EMR/EHR) *(unchanged)*
+4. Embedded revenue operations partnership *(was: Fractional COO operations partnership)*
+5. Staff training & placement *(was: Clinical staff training & placement)*
+6. Advanced KPI intelligence & analytics *(unchanged)*
 
 ---
 
@@ -40,5 +29,5 @@ Card Header Structure:
 
 | File | Action |
 |------|--------|
-| `src/components/home/PricingSection.tsx` | Add tagline/positioning data + update card rendering |
+| `src/components/home/PricingSection.tsx` | Update Locus Command tier data (tagline, positioning, features) |
 
