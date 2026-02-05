@@ -17,22 +17,22 @@ const Header = () => {
           </Link>
 
           {/* Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
+          <nav className="flex items-center gap-2 sm:gap-4 lg:gap-6 xl:gap-8">
             <a 
               href="#how-it-works" 
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              className="text-[10px] sm:text-xs lg:text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               Process
             </a>
             <a 
               href="#testimonials" 
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              className="text-[10px] sm:text-xs lg:text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               Results
             </a>
             <a 
               href="#calendly" 
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              className="text-[10px] sm:text-xs lg:text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               Get Started
             </a>
