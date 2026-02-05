@@ -1,42 +1,37 @@
 
 
-## Simplify Solution Section
+## Update Process Section
 
-**Goal:** Transform the current 5-step "SCALE Framework" into a cleaner 3-card "How Locus Works" section while preserving the scroll animation.
+**Goal:** Simplify the "Process" section with cleaner, more direct copy — Elon simple.
+
+**File:** `src/components/home/HowItWorksSection.tsx`
 
 ### Content Changes
 
 **Header:**
-- Label: Keep "Solution"
-- Headline: "The SCALE Framework" → "How Locus Works"
-- Subhead: "Engineering Your Lead-to-Appointment Pipeline." → "Three systems that fix the revenue leaks in your clinic."
+- Headline: "The Locus 'Build & Release' Protocol" → "How We Get You Live"
+- Subhead: "A three-phase technical integration..." → "Three-phase implementation. Most clinics are live in 2-3 weeks."
 
-**Items (5 → 3):**
+**Cards (simplified):**
 
-| # | Title | Description |
-|---|-------|-------------|
-| 01 | Instant Response | AI answers inquiries in under 60 seconds via call, SMS, and email—24/7, even after hours. |
-| 02 | Automated Follow-Up | Multi-touch sequences (call + SMS + email) convert leads your team would have lost after one attempt. |
-| 03 | No-Show Prevention | Automated reminders and reconfirmation loops cut no-shows by 25-40%. |
+| Step | Title | Description |
+|------|-------|-------------|
+| 01 | Systems Mapping | We audit your current workflow and document where leads are falling through. This becomes your blueprint. |
+| 02 | Infrastructure Deployment | We build and launch your AI front desk, automated follow-up sequences, and booking pipelines in your system. |
+| 03 | Performance Optimization | We track KPIs, refine AI prompts, and tune workflows to maximize cost-per-booked-appointment. |
 
 ### Technical Changes
 
-**File:** `src/components/home/SolutionSection.tsx`
+1. **Update `steps` array** (lines 4-23):
+   - Remove `tag` field from each item
+   - Update descriptions with new copy
+   - Change "Performance Intelligence" to "Performance Optimization"
 
-1. **Update `stackItems` array** (lines 3-33):
-   - Reduce from 5 items to 3
-   - Simplify structure: remove `letter` and `title` fields, use single `title` field
-   - Keep `layer`, `title`, `description`
+2. **Update header text** (lines 34-41):
+   - Change headline to "How We Get You Live"
+   - Change subhead to new copy
 
-2. **Update header text** (lines 61-66):
-   - Change headline and subhead
-
-3. **Update card rendering** (lines 85-87):
-   - Remove the `[letter]title` format
-   - Display simple title instead
-
-4. **Keep intact:**
-   - IntersectionObserver logic for scroll animations
-   - Staggered animation delays
-   - Hover effects and styling
+3. **Update card rendering** (lines 50-52):
+   - Remove the `({item.tag})` display
+   - Show just the title: `{item.title}`
 
