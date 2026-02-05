@@ -10,9 +10,8 @@ const leakItems = [
   {
     icon: RefreshLoopIcon,
     title: "Follow-Up Inconsistency",
-    description: "Most leads need multiple touchpoints across call, SMS, and email before they book. Practices using automated multi-touch follow-up convert 2-5x more leads than those relying on manual, one-off attempts. Without consistent sequences, up to 59% of qualified callers never book—leaving thousands in \"almost-booked\" revenue on the table.",
-    cost: "10-18% of monthly revenue in abandoned pipeline",
-    example: "A $50K/month clinic loses $5,000-$9,000/month here alone"
+    description: "59% of qualified callers never book an appointment.\n\nMost practices stop after one attempt.",
+    cost: "10–18% of monthly revenue"
   },
   {
     icon: CalendarSlotIcon,
