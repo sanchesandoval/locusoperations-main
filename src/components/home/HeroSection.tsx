@@ -84,8 +84,8 @@ const HeroSection = () => {
               
               <BlurFade delay={0.2}>
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold leading-[1.1] text-balance text-center lg:text-left">
-                  Stop Paying for Leads{" "}
-                  <AnimatedGradientText>That Never Book.</AnimatedGradientText>
+                  Stop Paying for Leads That{" "}
+                  <AnimatedGradientText>Never Book.</AnimatedGradientText>
                 </h1>
               </BlurFade>
               
