@@ -1,26 +1,42 @@
 
-## Spacing Adjustment: Problem Section
 
-**Goal:** Add more breathing room between the main headline and the descriptive paragraph below it.
+## Simplify Solution Section
 
-**File:** `src/components/home/LeakSection.tsx`
+**Goal:** Transform the current 5-step "SCALE Framework" into a cleaner 3-card "How Locus Works" section while preserving the scroll animation.
 
-**Current spacing:**
-- "Problem" label: `mb-4` (margin-bottom)
-- Main headline (h2): `mb-6` (margin-bottom)
-- Paragraph: No top margin
+### Content Changes
 
-**Proposed change:**
-- Increase the headline's bottom margin from `mb-6` to `mb-8`
+**Header:**
+- Label: Keep "Solution"
+- Headline: "The SCALE Framework" → "How Locus Works"
+- Subhead: "Engineering Your Lead-to-Appointment Pipeline." → "Three systems that fix the revenue leaks in your clinic."
 
-This adds an extra 0.5rem (8px) of space between the headline and paragraph, creating better visual separation without disrupting the overall section harmony. The rest of the spacing (`mb-16` on the header container, `mt-12` on the summary) remains balanced.
+**Items (5 → 3):**
 
-**Technical detail:**
-Change line 33 from:
-```tsx
-<h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold mb-6">
-```
-To:
-```tsx
-<h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold mb-8">
-```
+| # | Title | Description |
+|---|-------|-------------|
+| 01 | Instant Response | AI answers inquiries in under 60 seconds via call, SMS, and email—24/7, even after hours. |
+| 02 | Automated Follow-Up | Multi-touch sequences (call + SMS + email) convert leads your team would have lost after one attempt. |
+| 03 | No-Show Prevention | Automated reminders and reconfirmation loops cut no-shows by 25-40%. |
+
+### Technical Changes
+
+**File:** `src/components/home/SolutionSection.tsx`
+
+1. **Update `stackItems` array** (lines 3-33):
+   - Reduce from 5 items to 3
+   - Simplify structure: remove `letter` and `title` fields, use single `title` field
+   - Keep `layer`, `title`, `description`
+
+2. **Update header text** (lines 61-66):
+   - Change headline and subhead
+
+3. **Update card rendering** (lines 85-87):
+   - Remove the `[letter]title` format
+   - Display simple title instead
+
+4. **Keep intact:**
+   - IntersectionObserver logic for scroll animations
+   - Staggered animation delays
+   - Hover effects and styling
+
