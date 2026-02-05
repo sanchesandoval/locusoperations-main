@@ -4,9 +4,9 @@ const leakItems = [
   {
     icon: ClockSpeedIcon,
     title: "Speed-to-Lead Failure",
-    description: "78% of buyers choose whoever responds first. If your front desk is buried or it's after 5 PM, your lead gets a voicemail—and books with the competitor who answered in 60 seconds.",
-    cost: "8–15% of monthly revenue in lost first-response appointments",
-    example: "A $50K/month clinic loses $4,000–$7,500/month here alone"
+    description: "Leads contacted within 5 minutes are 10-20x more likely to convert than those contacted after 30 minutes. The average medical practice takes 2 hours to respond—and in healthcare, whoever answers first usually books the appointment. If your front desk is buried or it's after 5 PM, your $150 lead books with the competitor who responded instantly.",
+    cost: "8-15% of monthly revenue in lost first-response appointments",
+    example: "A $50K/month clinic loses $4,000-$7,500/month here alone"
   },
   {
     icon: RefreshLoopIcon,
