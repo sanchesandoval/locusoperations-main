@@ -4,7 +4,8 @@ import { CheckCircleIcon } from "@/components/icons/BrandIcons";
 const tiers = [
   {
     name: "Locus Core",
-    label: "The Operating System — For clinics who want the infrastructure and can deploy it themselves.",
+    tagline: "The Operating System",
+    positioning: "Self-install. Full control.",
     features: [
       "Locus OS (booking + follow-up automation)",
       "DIY clinical workflow templates",
@@ -18,7 +19,8 @@ const tiers = [
   },
   {
     name: "Locus Ops",
-    label: "Full Deployment + Revenue Operations — For clinics ready to go live fast with professional installation and AI front desk.",
+    tagline: "Full Operational Deployment",
+    positioning: "Professionally installed. Live in 2-3 weeks.",
     features: [
       "Everything in Locus Core",
       "Full systems mapping & implementation",
@@ -32,7 +34,8 @@ const tiers = [
   },
   {
     name: "Locus Command",
-    label: "Enterprise Infrastructure + Fractional COO — For multi-location clinics or owners who want ongoing optimization and custom builds.",
+    tagline: "Enterprise + Fractional COO",
+    positioning: "Multi-location. Full optimization.",
     features: [
       "Everything in Locus Ops",
       "Multi-location support (if applicable)",
@@ -84,8 +87,9 @@ const PricingSection = () => {
 
               {/* Header */}
               <div className="mb-6">
-                <h3 className="text-xl font-bold text-foreground mb-2">{tier.name}</h3>
-                <p className="text-sm text-muted-foreground">{tier.label}</p>
+                <h3 className="text-xl font-bold text-foreground mb-1">{tier.name}</h3>
+                <p className="font-bold text-foreground">{tier.tagline}</p>
+                <p className="text-sm text-muted-foreground">{tier.positioning}</p>
               </div>
 
 
