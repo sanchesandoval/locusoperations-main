@@ -18,21 +18,43 @@ import zapierLogo from "@/assets/logos/zapier.png";
 import n8nLogo from "@/assets/logos/n8n.svg";
 import vagaroLogo from "@/assets/logos/vagaro.webp";
 import zenotiLogo from "@/assets/logos/zenoti.png";
-
-const integrationLogos = [
-  { name: "AestheticsPro", src: aestheticsproLogo },
-  { name: "Vagaro", src: vagaroLogo },
-  { name: "Zenoti", src: zenotiLogo },
-  { name: "Boulevard", src: boulevardLogo },
-  { name: "Mangomint", src: mangomintLogo },
-  { name: "Jane", src: janeappLogo },
-  { name: "PatientNow", src: patientnowLogo },
-  { name: "SimplePractice", src: simplepracticeLogo },
-  { name: "Slack", src: slackLogo },
-  { name: "WhatsApp", src: whatsappLogo },
-  { name: "Zapier", src: zapierLogo },
-  { name: "n8n", src: n8nLogo },
-];
+const integrationLogos = [{
+  name: "AestheticsPro",
+  src: aestheticsproLogo
+}, {
+  name: "Vagaro",
+  src: vagaroLogo
+}, {
+  name: "Zenoti",
+  src: zenotiLogo
+}, {
+  name: "Boulevard",
+  src: boulevardLogo
+}, {
+  name: "Mangomint",
+  src: mangomintLogo
+}, {
+  name: "Jane",
+  src: janeappLogo
+}, {
+  name: "PatientNow",
+  src: patientnowLogo
+}, {
+  name: "SimplePractice",
+  src: simplepracticeLogo
+}, {
+  name: "Slack",
+  src: slackLogo
+}, {
+  name: "WhatsApp",
+  src: whatsappLogo
+}, {
+  name: "Zapier",
+  src: zapierLogo
+}, {
+  name: "n8n",
+  src: n8nLogo
+}];
 const HeroSection = () => {
   return <section className="relative min-h-[100svh] pt-28 sm:pt-32 md:pt-36 lg:pt-28 pb-16 sm:pb-20 md:pb-24 lg:pb-10 overflow-x-hidden px-4 sm:px-6 lg:flex lg:items-center">
       {/* Background effects */}
@@ -61,9 +83,7 @@ const HeroSection = () => {
               </BlurFade>
               
               <BlurFade delay={0.3}>
-                <p className="text-base sm:text-lg md:text-xl lg:text-lg xl:text-xl text-muted-foreground max-w-sm sm:max-w-lg md:max-w-xl lg:max-w-lg text-balance text-center lg:text-left mx-auto lg:mx-0">
-                  Locus installs the Central Nervous System for your clinic. We replace fragmented manual follow-up with a precision-engineered conversion engine that captures, qualifies, and books appointments 24/7.
-                </p>
+                <p className="text-base sm:text-lg md:text-xl lg:text-lg xl:text-xl text-muted-foreground max-w-sm sm:max-w-lg md:max-w-xl lg:max-w-lg text-balance text-center lg:text-left mx-auto lg:mx-0">Locus installs an AI front desk assistant that responds in under 60 seconds, follows up via call/SMS/email, and books qualified appointments 24/7— so you stop bleeding revenue on slow response times and inconsistent follow-up.</p>
               </BlurFade>
             </div>
 
@@ -120,15 +140,9 @@ const HeroSection = () => {
               <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-20 lg:w-20 bg-gradient-to-l from-background to-transparent z-10" />
 
               <Marquee reverse pauseOnHover className="[--duration:25s]">
-                {integrationLogos.map((logo, index) => (
-                  <div key={index} className="flex-shrink-0 px-5 sm:px-7 md:px-8 lg:px-8 py-3 sm:py-4 lg:py-4 flex items-center justify-center">
-                    <img 
-                      src={logo.src} 
-                      alt={logo.name} 
-                      className="h-6 sm:h-7 md:h-8 lg:h-8 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" 
-                    />
-                  </div>
-                ))}
+                {integrationLogos.map((logo, index) => <div key={index} className="flex-shrink-0 px-5 sm:px-7 md:px-8 lg:px-8 py-3 sm:py-4 lg:py-4 flex items-center justify-center">
+                    <img src={logo.src} alt={logo.name} className="h-6 sm:h-7 md:h-8 lg:h-8 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
+                  </div>)}
               </Marquee>
             </div>
           </div>
