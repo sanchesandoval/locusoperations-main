@@ -3,8 +3,8 @@ import { CheckCircleIcon } from "@/components/icons/BrandIcons";
 
 const tiers = [
   {
-    name: "Core System",
-    label: "The Foundation — For clinics who want the system and can install it themselves.",
+    name: "Locus Core",
+    label: "The Operating System — For clinics who want the infrastructure and can deploy it themselves.",
     features: [
       "Locus OS (booking + follow-up automation)",
       "DIY clinical workflow templates",
@@ -18,35 +18,35 @@ const tiers = [
     pricingText: "$297/month",
   },
   {
-    name: "Implementation",
-    label: "Done-For-You Setup — For clinics ready to go live fast with professional installation.",
+    name: "Locus Ops",
+    label: "Full Deployment + Revenue Operations — For clinics ready to go live fast with professional installation and AI front desk.",
     features: [
-      "Everything in Core System",
-      "Full systems mapping & implementation (SCALE process)",
+      "Everything in Locus Core",
+      "Full systems mapping & implementation",
       "AI Digital Cortex (voice/SMS front desk)",
       "Database reactivation campaign",
-      "Monthly revenue operations audit",
+      "Monthly revenue operations support",
     ],
     popular: true,
-    ctaText: "Watch 5-Min System Demo",
-    ctaLink: "/system-demo",
-    pricingText: "$1,500 setup + $497/month",
+    ctaText: "Book Strategy Call",
+    ctaLink: "/book-call",
+    pricingText: "Book a call for pricing",
   },
   {
-    name: "Growth Ops",
-    label: "Enterprise Systems Partner — For multi-location clinics or owners who want ongoing optimization and custom builds.",
+    name: "Locus Command",
+    label: "Enterprise Infrastructure + Fractional COO — For multi-location clinics or owners who want ongoing optimization and custom builds.",
     features: [
-      "Everything in Implementation",
+      "Everything in Locus Ops",
       "Multi-location support (if applicable)",
       "Custom tech stack integrations (EMR/EHR)",
-      "Fractional COO support (ongoing optimization)",
+      "Fractional COO operations partnership",
       "Clinical staff training & placement",
-      "KPI intelligence with advanced analytics",
+      "Advanced KPI intelligence & analytics",
     ],
     popular: false,
-    ctaText: "Book Pipeline Diagnostic",
-    ctaLink: "/pipeline-diagnostic",
-    pricingText: "Custom pricing",
+    ctaText: "Book Strategy Call",
+    ctaLink: "/book-call",
+    pricingText: "Book a call for pricing",
   },
 ];
 
