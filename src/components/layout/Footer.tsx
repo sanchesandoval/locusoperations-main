@@ -12,7 +12,7 @@ const Footer = () => {
           <div className="md:col-span-2 space-y-4">
             <img src={locusLogo} alt="Locus" className="h-6 w-auto brightness-0 invert" />
             <p className="text-sm text-white/70 max-w-xs">
-              Revenue Infrastructure for High-Performance Medical Wellness.
+              Revenue Infrastructure for Medical Wellness.
             </p>
             
             {/* Social links */}
