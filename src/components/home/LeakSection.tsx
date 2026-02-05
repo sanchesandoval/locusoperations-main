@@ -33,9 +33,8 @@ const LeakSection = () => {
       <div className="container-main relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <p className="text-primary font-medium mb-4">Problem</p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-balance">
-            Your Clinic Doesn't Have a Lead Problem.{" "}
-            <span className="text-muted-foreground">​You have a Revenue Recovery Problem.       </span>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6">
+            Your Clinic Doesn't Have a Lead Problem. <span className="text-muted-foreground">You have a Revenue Recovery Problem.</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Most medical wellness clinics hit a ceiling at $50k/mo. Fragmentation between your ads, EMR, and front desk creates Revenue Leakage. A lead is just "potential energy"—without a system to capture a booking in under 60 seconds, you are funding your competitor's calendar.
