@@ -20,19 +20,23 @@ import vagaroLogo from "@/assets/logos/vagaro.webp";
 import zenotiLogo from "@/assets/logos/zenoti.png";
 const integrationLogos = [{
   name: "AestheticsPro",
-  src: aestheticsproLogo
+  src: aestheticsproLogo,
+  scale: 1.3
 }, {
   name: "Vagaro",
-  src: vagaroLogo
+  src: vagaroLogo,
+  scale: 1.3
 }, {
   name: "Zenoti",
   src: zenotiLogo
 }, {
   name: "Boulevard",
-  src: boulevardLogo
+  src: boulevardLogo,
+  scale: 1.3
 }, {
   name: "Mangomint",
-  src: mangomintLogo
+  src: mangomintLogo,
+  scale: 1.3
 }, {
   name: "Jane",
   src: janeappLogo
@@ -41,13 +45,16 @@ const integrationLogos = [{
   src: patientnowLogo
 }, {
   name: "SimplePractice",
-  src: simplepracticeLogo
+  src: simplepracticeLogo,
+  scale: 1.3
 }, {
   name: "Slack",
-  src: slackLogo
+  src: slackLogo,
+  scale: 1.3
 }, {
   name: "WhatsApp",
-  src: whatsappLogo
+  src: whatsappLogo,
+  scale: 1.3
 }, {
   name: "Zapier",
   src: zapierLogo
@@ -141,7 +148,7 @@ const HeroSection = () => {
 
               <Marquee reverse pauseOnHover className="[--duration:25s]">
                 {integrationLogos.map((logo, index) => <div key={index} className="flex-shrink-0 px-5 sm:px-7 md:px-8 lg:px-8 py-3 sm:py-4 lg:py-4 flex items-center justify-center">
-                    <img src={logo.src} alt={logo.name} className="h-6 sm:h-7 md:h-8 lg:h-8 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />
+                    <img src={logo.src} alt={logo.name} className="w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" style={{ height: `${(logo.scale || 1) * 32}px` }} />
                   </div>)}
               </Marquee>
             </div>
