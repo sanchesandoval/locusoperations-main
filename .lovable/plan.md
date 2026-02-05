@@ -1,60 +1,37 @@
 
 
-## Update Services Section with Branded Tier Names
+## Remove Pricing Text from Service Cards
 
-**Goal:** Rebrand pricing tiers with "Locus" prefix for brand consistency and update copy/CTAs.
+**Goal:** Remove the "$297/month" and "Book a call for pricing" text displays from all three tier cards.
 
 **File:** `src/components/home/PricingSection.tsx`
 
 ---
 
-### Tier Data Updates (lines 4-51)
+### Changes Required
 
-| Current | New |
-|---------|-----|
-| "Core System" | "Locus Core" |
-| "Implementation" | "Locus Ops" |
-| "Growth Ops" | "Locus Command" |
+**1. Remove pricingText from tier data (lines 18, 33, 49)**
+- Delete `pricingText: "$297/month"` from Locus Core
+- Delete `pricingText: "Book a call for pricing"` from Locus Ops
+- Delete `pricingText: "Book a call for pricing"` from Locus Command
 
-**Tier 1: Locus Core**
-- Name: "Locus Core"
-- Label: "The Operating System — For clinics who want the infrastructure and can deploy it themselves."
-- Pricing: "$297/month" (keep)
-- CTA: "Watch 5-Min System Demo" (keep)
-- Features: (keep existing)
-
-**Tier 2: Locus Ops** (Popular)
-- Name: "Locus Ops"
-- Label: "Full Deployment + Revenue Operations — For clinics ready to go live fast with professional installation and AI front desk."
-- Pricing: "Book a call for pricing"
-- CTA: "Book Strategy Call" → link to `/book-call`
-- Features:
-  - Everything in Locus Core
-  - Full systems mapping & implementation
-  - AI Digital Cortex (voice/SMS front desk)
-  - Database reactivation campaign
-  - Monthly revenue operations support
-
-**Tier 3: Locus Command**
-- Name: "Locus Command"
-- Label: "Enterprise Infrastructure + Fractional COO — For multi-location clinics or owners who want ongoing optimization and custom builds."
-- Pricing: "Book a call for pricing"
-- CTA: "Book Strategy Call" → link to `/book-call`
-- Features:
-  - Everything in Locus Ops
-  - Multi-location support (if applicable)
-  - Custom tech stack integrations (EMR/EHR)
-  - Fractional COO operations partnership
-  - Clinical staff training & placement
-  - Advanced KPI intelligence & analytics
+**2. Remove pricing display section from JSX (lines 94-97)**
+- Delete the entire pricing div block:
+```tsx
+{/* Pricing */}
+<div className="mb-6 pb-6 border-b border-border/50">
+  <p className="text-2xl font-bold text-foreground">{tier.pricingText}</p>
+</div>
+```
 
 ---
 
-### Why This Works
+### Result
 
-- "Locus Core / Ops / Command" reinforces brand identity
-- "Ops" signals operational infrastructure, not just software
-- "Command" conveys control and mastery for enterprise clients
-- Clean hierarchy that's easy to explain on sales calls
-- "Book a call for pricing" on higher tiers encourages conversations
+Cards will display:
+- Tier name and tagline
+- CTA button
+- Features list
+
+Without any pricing information shown.
 
