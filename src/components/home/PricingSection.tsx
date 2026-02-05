@@ -15,7 +15,6 @@ const tiers = [
     popular: false,
     ctaText: "Watch 5-Min System Demo",
     ctaLink: "/system-demo",
-    pricingText: "$297/month",
   },
   {
     name: "Locus Ops",
@@ -30,7 +29,6 @@ const tiers = [
     popular: true,
     ctaText: "Book Strategy Call",
     ctaLink: "/book-call",
-    pricingText: "Book a call for pricing",
   },
   {
     name: "Locus Command",
@@ -46,7 +44,6 @@ const tiers = [
     popular: false,
     ctaText: "Book Strategy Call",
     ctaLink: "/book-call",
-    pricingText: "Book a call for pricing",
   },
 ];
 
@@ -91,10 +88,6 @@ const PricingSection = () => {
                 <p className="text-sm text-muted-foreground">{tier.label}</p>
               </div>
 
-              {/* Pricing */}
-              <div className="mb-6 pb-6 border-b border-border/50">
-                <p className="text-2xl font-bold text-foreground">{tier.pricingText}</p>
-              </div>
 
               {/* CTA */}
               <Link
