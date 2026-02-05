@@ -1,76 +1,60 @@
 
 
-## Update Services/Pricing Section
+## Update Services Section with Branded Tier Names
 
-**Goal:** Simplify the pricing section with clearer, outcome-first positioning and transparent pricing.
+**Goal:** Rebrand pricing tiers with "Locus" prefix for brand consistency and update copy/CTAs.
 
 **File:** `src/components/home/PricingSection.tsx`
 
 ---
 
-### Header Changes (lines 64-69)
+### Tier Data Updates (lines 4-51)
 
 | Current | New |
 |---------|-----|
-| "Our Services" | "Our Services" (keep) |
-| "Engineered Conversion Infrastructure" | "Three Ways to Work With Locus" |
-| Long subhead about CNS | "Pick the level of support that fits your clinic." |
+| "Core System" | "Locus Core" |
+| "Implementation" | "Locus Ops" |
+| "Growth Ops" | "Locus Command" |
 
----
+**Tier 1: Locus Core**
+- Name: "Locus Core"
+- Label: "The Operating System — For clinics who want the infrastructure and can deploy it themselves."
+- Pricing: "$297/month" (keep)
+- CTA: "Watch 5-Min System Demo" (keep)
+- Features: (keep existing)
 
-### Tier Data Changes (lines 4-51)
-
-**Tier 1: Core System**
-- Name: "Core System"
-- Label: "The Foundation — For clinics who want the system and can install it themselves."
-- Pricing: "$297/month"
-- Button: "Watch 5-Min System Demo" (keep)
+**Tier 2: Locus Ops** (Popular)
+- Name: "Locus Ops"
+- Label: "Full Deployment + Revenue Operations — For clinics ready to go live fast with professional installation and AI front desk."
+- Pricing: "Book a call for pricing"
+- CTA: "Book Strategy Call" → link to `/book-call`
 - Features:
-  - Locus OS (booking + follow-up automation)
-  - DIY clinical workflow templates
-  - Missed-call text-back automation
-  - Automated lead nurture engine
-  - Technical support bot
-
-**Tier 2: Implementation** (Popular badge)
-- Name: "Implementation"
-- Label: "Done-For-You Setup — For clinics ready to go live fast with professional installation."
-- Pricing: "$1,500 setup + $497/month"
-- Button: "Watch 5-Min System Demo"
-- Features:
-  - Everything in Core System
-  - Full systems mapping & implementation (SCALE process)
+  - Everything in Locus Core
+  - Full systems mapping & implementation
   - AI Digital Cortex (voice/SMS front desk)
   - Database reactivation campaign
-  - Monthly revenue operations audit
+  - Monthly revenue operations support
 
-**Tier 3: Growth Ops**
-- Name: "Growth Ops"
-- Label: "Enterprise Systems Partner — For multi-location clinics or owners who want ongoing optimization and custom builds."
-- Pricing: "Custom pricing"
-- Button: "Book Pipeline Diagnostic"
+**Tier 3: Locus Command**
+- Name: "Locus Command"
+- Label: "Enterprise Infrastructure + Fractional COO — For multi-location clinics or owners who want ongoing optimization and custom builds."
+- Pricing: "Book a call for pricing"
+- CTA: "Book Strategy Call" → link to `/book-call`
 - Features:
-  - Everything in Implementation
+  - Everything in Locus Ops
   - Multi-location support (if applicable)
   - Custom tech stack integrations (EMR/EHR)
-  - Fractional COO support (ongoing optimization)
+  - Fractional COO operations partnership
   - Clinical staff training & placement
-  - KPI intelligence with advanced analytics
-
----
-
-### Footer Changes (lines 125-131)
-
-- Keep first note about Growth Fuel/Ad Spend
-- Remove HIPAA disclaimer (simplify)
+  - Advanced KPI intelligence & analytics
 
 ---
 
 ### Why This Works
 
-- Removes jargon ("Engineered Conversion Infrastructure")
-- Shows real pricing (builds trust)
-- Outcome-first tier positioning
-- Clear "who this is for" on each tier
-- Tier 2 stays "Popular" to guide decisions
+- "Locus Core / Ops / Command" reinforces brand identity
+- "Ops" signals operational infrastructure, not just software
+- "Command" conveys control and mastery for enterprise clients
+- Clean hierarchy that's easy to explain on sales calls
+- "Book a call for pricing" on higher tiers encourages conversations
 
