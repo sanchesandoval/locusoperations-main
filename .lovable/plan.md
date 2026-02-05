@@ -1,64 +1,44 @@
 
 
-## Fix Scroll-to-Top on Navigation
+## Add Taglines and Positioning Lines to Pricing Tiers
 
-**Goal:** Ensure clicking "Watch 5-Min System Demo" or "Or watch the 5-minute system walkthrough" links navigates to `/system-demo` and starts at the top of the page.
-
-**Problem:** React Router doesn't automatically scroll to top when navigating between routes, so users land in the middle/bottom of the new page.
+**Goal:** Update the pricing section with bold taglines and smaller gray positioning lines below each tier name.
 
 ---
 
-### Solution: Add ScrollToTop Component
+### Updated Tier Data
 
-**1. Create new file: `src/components/ScrollToTop.tsx`**
+| Tier | Tagline (Bold) | Positioning (Small, Gray) |
+|------|----------------|---------------------------|
+| Locus Core | The Operating System | Self-install. Full control. |
+| Locus Ops | **Full Operational Deployment** | Professionally installed. Live in 2-3 weeks. |
+| Locus Command | Enterprise + Fractional COO | Multi-location. Full optimization. |
 
-```tsx
-import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+---
 
-const ScrollToTop = () => {
-  const { pathname } = useLocation();
+### Changes to `src/components/home/PricingSection.tsx`
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+**1. Update tiers array** - Add `tagline` and `positioning` fields to each tier object
 
-  return null;
-};
+**2. Update card header JSX** - Render the new fields:
+- Tier name (existing bold style)
+- Tagline (bold text)
+- Positioning line (smaller, gray text using `text-muted-foreground`)
 
-export default ScrollToTop;
-```
-
-**2. Update `src/App.tsx`**
-
-Add the ScrollToTop component inside the BrowserRouter so it triggers on every route change:
-
-```tsx
-import ScrollToTop from "./components/ScrollToTop";
-
-// Inside BrowserRouter, before Routes:
-<BrowserRouter>
-  <ScrollToTop />
-  <Routes>
-    ...
-  </Routes>
-</BrowserRouter>
+```text
+Card Header Structure:
+┌─────────────────────────────────────────────┐
+│  Locus Ops                                  │  ← name
+│  Full Operational Deployment                │  ← tagline (bold)
+│  Professionally installed. Live in 2-3 weeks│  ← positioning (small, gray)
+└─────────────────────────────────────────────┘
 ```
 
 ---
 
-### How It Works
-
-- The component listens for `pathname` changes via `useLocation()`
-- On every route change, it calls `window.scrollTo(0, 0)` to scroll to top
-- This applies globally to all navigation, not just the system demo links
-
----
-
-### Files to Create/Edit
+### File to Edit
 
 | File | Action |
 |------|--------|
-| `src/components/ScrollToTop.tsx` | Create new |
-| `src/App.tsx` | Add import and component |
+| `src/components/home/PricingSection.tsx` | Add tagline/positioning data + update card rendering |
 
