@@ -2,34 +2,16 @@ import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 const stackItems = [{
   layer: "01",
-  letter: "S",
-  title: "ystemize",
-  outline: "Map your unique clinical workflow.",
-  description: "We map your unique clinical workflow, documenting the exact path from click to appointment."
+  title: "Instant Response",
+  description: "AI answers inquiries in under 60 seconds via call, SMS, and email—24/7, even after hours."
 }, {
   layer: "02",
-  letter: "C",
-  title: "onsolidate",
-  outline: "Eliminate tool fatigue.",
-  description: "We eliminate \"tool fatigue\" by merging your assets and data into the Locus Canvas."
+  title: "Automated Follow-Up",
+  description: "Multi-touch sequences (call + SMS + email) convert leads your team would have lost after one attempt."
 }, {
   layer: "03",
-  letter: "A",
-  title: "utomate",
-  outline: "Deploy the Digital Cortex.",
-  description: "We deploy the \"Digital Cortex\"—AI Front Desk agents that answer FAQs and book appointments 24/7."
-}, {
-  layer: "04",
-  letter: "L",
-  title: "everage",
-  outline: "Scale without adding staff.",
-  description: "We install our proprietary Locus OS snapshots so your team can manage volume without adding staff."
-}, {
-  layer: "05",
-  letter: "E",
-  title: "valuate",
-  outline: "Track the only metric that matters.",
-  description: "We install real-time KPI tracking to measure the only metric that matters: Cost Per Booked Appointment."
+  title: "No-Show Prevention",
+  description: "Automated reminders and reconfirmation loops cut no-shows by 25-40%."
 }];
 const SolutionSection = () => {
   const [visibleItems, setVisibleItems] = useState<Set<number>>(new Set());
@@ -59,10 +41,10 @@ const SolutionSection = () => {
         <div className="max-w-3xl mx-auto text-center mb-16">
           <p className="text-primary font-medium mb-4">Solution</p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-balance">
-            The SCALE Framework
+            How Locus Works
           </h2>
           <p className="text-lg text-muted-foreground">
-            Engineering Your Lead-to-Appointment Pipeline.
+            Three systems that fix the revenue leaks in your clinic.
           </p>
         </div>
 
@@ -82,12 +64,9 @@ const SolutionSection = () => {
 
                 {/* Content */}
                 <div className="flex-1 pt-3 pb-5">
-                <h3 className="text-lg font-semibold text-foreground mb-1 group-hover:text-primary transition-colors">
-                    <span className="text-primary">[{item.letter}]</span>{item.title}
+                <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+                    {item.title}
                   </h3>
-                  <p className="text-sm text-primary/80 font-medium mb-2">
-                    {item.outline}
-                  </p>
                   <p className="text-sm text-muted-foreground">
                     {item.description}
                   </p>
