@@ -1,63 +1,59 @@
 
+## Add Mobile Hamburger Menu
 
-## Show Navigation Links on Mobile and Tablet
-
-**Goal:** Make the navigation links (Process, Results, Get Started) visible on all screen sizes with responsive text sizing.
+**Goal:** Replace the congested inline navigation with a clean hamburger dropdown menu on mobile screens (below 640px), while keeping inline nav for tablet and desktop.
 
 ---
 
-### Current State
+### Approach
 
-The nav uses `hidden lg:flex` which hides it on screens smaller than 1024px (tablet and mobile).
+Use the existing `Sheet` component from shadcn/ui with a hamburger menu icon (from Lucide) that appears only on mobile.
 
 ---
 
 ### Changes to `src/components/layout/Header.tsx`
 
-| Element | Current | New |
-|---------|---------|-----|
-| Nav container | `hidden lg:flex` | `flex` (always visible) |
-| Nav gap | `gap-6 xl:gap-8` | `gap-2 sm:gap-4 lg:gap-6 xl:gap-8` |
-| Link text size | `text-sm` | `text-[10px] sm:text-xs lg:text-sm` |
+| Element | Mobile (<640px) | Tablet/Desktop (640px+) |
+|---------|-----------------|-------------------------|
+| Nav links | Hidden (in dropdown) | Visible inline |
+| Hamburger icon | Visible | Hidden |
+| Sheet menu | Opens on click | Not used |
 
 ---
 
-### Updated Code
+### Implementation Details
 
-```tsx
-{/* Navigation Links */}
-<nav className="flex items-center gap-2 sm:gap-4 lg:gap-6 xl:gap-8">
-  <a 
-    href="#how-it-works" 
-    className="text-[10px] sm:text-xs lg:text-sm text-muted-foreground hover:text-foreground transition-colors"
-  >
-    Process
-  </a>
-  <a 
-    href="#testimonials" 
-    className="text-[10px] sm:text-xs lg:text-sm text-muted-foreground hover:text-foreground transition-colors"
-  >
-    Results
-  </a>
-  <a 
-    href="#calendly" 
-    className="text-[10px] sm:text-xs lg:text-sm text-muted-foreground hover:text-foreground transition-colors"
-  >
-    Get Started
-  </a>
-</nav>
+1. **Import** `Sheet` components and `Menu` icon from Lucide
+2. **Add state** to track menu open/close
+3. **Add hamburger button** visible only on mobile (`sm:hidden`)
+4. **Show inline nav** only on tablet+ (`hidden sm:flex`)
+5. **Sheet content** contains nav links, closes on link click
+
+---
+
+### Updated Structure
+
+```text
+Header
+├── Logo
+├── Hamburger Button (mobile only)
+├── Inline Nav Links (tablet+ only)
+├── Book a Call CTA
+└── Sheet/Drawer (mobile menu)
+    ├── Process
+    ├── Results
+    └── Get Started
 ```
 
 ---
 
-### Responsive Breakdown
+### Visual Result
 
-| Screen | Text Size | Gap |
-|--------|-----------|-----|
-| Mobile (<640px) | 10px | 8px (gap-2) |
-| Tablet (640px+) | 12px (xs) | 16px (gap-4) |
-| Desktop (1024px+) | 14px (sm) | 24px (gap-6) |
-| Large (1280px+) | 14px (sm) | 32px (gap-8) |
+| Screen | Navigation |
+|--------|------------|
+| Mobile | Hamburger icon → opens slide-out menu |
+| Tablet | Inline links (Process, Results, Get Started) |
+| Desktop | Inline links with larger text/spacing |
 
 ---
 
@@ -65,5 +61,4 @@ The nav uses `hidden lg:flex` which hides it on screens smaller than 1024px (tab
 
 | File | Action |
 |------|--------|
-| `src/components/layout/Header.tsx` | Update nav visibility and text sizing |
-
+| `src/components/layout/Header.tsx` | Add hamburger menu for mobile |
