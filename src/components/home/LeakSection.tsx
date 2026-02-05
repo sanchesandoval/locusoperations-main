@@ -34,20 +34,9 @@ const LeakSection = () => {
             Your Clinic Doesn't Have a Lead Problem.{" "}
             <span className="text-muted-foreground">You have a Revenue Recovery Problem.</span>
           </h2>
-          <div className="text-lg text-muted-foreground max-w-2xl mx-auto space-y-4">
-            <p>
-              Most wellness clinics lose <strong className="text-foreground">15–30% of potential revenue</strong> on leads that never convert.
-            </p>
-            <p>
-              For a $30K/month clinic, that's <strong className="text-foreground">$4,500–$9,000/month</strong>.
-            </p>
-            <p>
-              For a $150K/month clinic, it's <strong className="text-foreground">$22,500–$45,000/month</strong>.
-            </p>
-            <p className="text-foreground font-medium">
-              Three fixable problems cause this:
-            </p>
-          </div>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Most wellness clinics lose <strong className="text-foreground">15–30% of potential revenue</strong> on leads that never convert—that's <strong className="text-foreground">$4,500–$9,000/month</strong> for a $30K clinic, or <strong className="text-foreground">$22,500–$45,000/month</strong> at $150K. Three fixable problems cause this:
+          </p>
         </div>
 
         {/* Leak list */}
