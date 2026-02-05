@@ -37,7 +37,7 @@ const faqs = [
       `Most clinics see immediate revenue recovery within the first 14 days by launching an automated Database Reactivation on their dormant leads. Our "Speed-to-Lead" infrastructure ensures you capture the 21x higher conversion probability that occurs when responding to new leads in under 5 minutes.`,
   },
   {
-    question: "Why do I need an SIO instead of just a standard marketing agency?",
+    question: "Why Locus instead of a standard marketing agency?",
     answer:
       `Agencies provide labor; SIOs provide Infrastructure. Agencies often give you more "work" by dumping raw leads into your inbox. Locus installs the SCALE framework to ensure every lead is systemically moved to a booked appointment on your calendar automatically.`,
   },
