@@ -8,7 +8,7 @@ import Index from "./pages/Index";
 import BookCall from "./pages/BookCall";
 import SystemDemo from "./pages/SystemDemo";
 import PipelineDiagnostic from "./pages/PipelineDiagnostic";
-import ClientLogin from "./pages/ClientLogin";
+// import ClientLogin from "./pages/ClientLogin";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -25,7 +25,7 @@ const App = () => (
           <Route path="/book-call" element={<BookCall />} />
           <Route path="/system-demo" element={<SystemDemo />} />
           <Route path="/pipeline-diagnostic" element={<PipelineDiagnostic />} />
-          <Route path="/client-login" element={<ClientLogin />} />
+          {/* <Route path="/client-login" element={<ClientLogin />} /> */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
