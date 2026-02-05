@@ -4,9 +4,8 @@ const leakItems = [
   {
     icon: ClockSpeedIcon,
     title: "Speed-to-Lead Failure",
-    description: "Leads contacted within 5 minutes are 10-20x more likely to convert than those contacted after 30 minutes. The average medical practice takes 2 hours to respond—and in healthcare, whoever answers first usually books the appointment. If your front desk is buried or it's after 5 PM, your $150 lead books with the competitor who responded instantly.",
-    cost: "8-15% of monthly revenue in lost first-response appointments",
-    example: "A $50K/month clinic loses $4,000-$7,500/month here alone"
+    description: "Leads contacted within 5 minutes are 10-20x more likely to book.\n\nMost practices take 2 hours to respond.",
+    cost: "8–15% of monthly revenue"
   },
   {
     icon: RefreshLoopIcon,
@@ -67,7 +66,7 @@ const LeakSection = () => {
                 <p className="text-sm text-muted-foreground">{item.description}</p>
                 <div className="pt-3 border-t border-border/50 space-y-1">
                   <p className="text-sm font-medium text-destructive/90">Cost: {item.cost}</p>
-                  <p className="text-xs text-muted-foreground">({item.example})</p>
+                  {item.example && <p className="text-xs text-muted-foreground">({item.example})</p>}
                 </div>
               </div>
             </div>
