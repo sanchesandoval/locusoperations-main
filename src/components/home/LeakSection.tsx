@@ -16,9 +16,8 @@ const leakItems = [
   {
     icon: CalendarSlotIcon,
     title: "No-Show & Cancellation Bleed",
-    description: "Medical practices typically see 10-30% no-show rates, with elective and cash-pay appointments trending toward the higher end. Every ghost appointment is a double loss—you paid for the lead AND lost the revenue slot. Automated SMS and phone reminders cut no-shows by 25-40% compared to manual or no reminder systems.",
-    cost: "5-10% of monthly revenue in empty time slots",
-    example: "A $50K/month clinic loses $2,500-$5,000/month here alone"
+    description: "Medical practices see 10–30% no-show rates.\n\nAutomated reminders cut this by 25–40%.",
+    cost: "5–10% of monthly revenue"
   }
 ];
 
@@ -63,9 +62,8 @@ const LeakSection = () => {
                   <h3 className="font-semibold text-foreground">{item.title}</h3>
                 </div>
                 <p className="text-sm text-muted-foreground">{item.description}</p>
-                <div className="pt-3 border-t border-border/50 space-y-1">
+                <div className="pt-3 border-t border-border/50">
                   <p className="text-sm font-medium text-destructive/90">Cost: {item.cost}</p>
-                  {item.example && <p className="text-xs text-muted-foreground">({item.example})</p>}
                 </div>
               </div>
             </div>
