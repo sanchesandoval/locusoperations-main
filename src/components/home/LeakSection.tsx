@@ -18,9 +18,9 @@ const leakItems = [
   {
     icon: CalendarSlotIcon,
     title: "No-Show & Cancellation Bleed",
-    description: "Industry average: 25–40% no-show rate. Every ghost appointment is a double loss—you paid for the lead AND lost the revenue slot. Without reminder sequences and reconfirmation loops, your calendar is Swiss cheese.",
-    cost: "5–10% of monthly revenue in empty time slots",
-    example: "A $50K/month clinic loses $2,500–$5,000/month here alone"
+    description: "Medical practices typically see 10-30% no-show rates, with elective and cash-pay appointments trending toward the higher end. Every ghost appointment is a double loss—you paid for the lead AND lost the revenue slot. Automated SMS and phone reminders cut no-shows by 25-40% compared to manual or no reminder systems.",
+    cost: "5-10% of monthly revenue in empty time slots",
+    example: "A $50K/month clinic loses $2,500-$5,000/month here alone"
   }
 ];
 
