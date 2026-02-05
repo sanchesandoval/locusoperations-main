@@ -39,13 +39,16 @@ const LeakSection = () => {
           </h2>
           <div className="text-lg text-muted-foreground max-w-2xl mx-auto space-y-4">
             <p>
-              Most wellness clinics hit a revenue ceiling—not because they need more leads, but because they're losing <strong className="text-foreground">15–30% of potential revenue</strong> on leads that never convert.
+              Most wellness clinics lose <strong className="text-foreground">15–30% of potential revenue</strong> on leads that never convert.
             </p>
             <p>
-              For a clinic doing $30K/month, that's <strong className="text-foreground">$4,500–$9,000</strong> disappearing every month. For a clinic doing $150K/month, it's <strong className="text-foreground">$22,500–$45,000</strong>.
+              For a $30K/month clinic, that's <strong className="text-foreground">$4,500–$9,000/month</strong>.
             </p>
             <p>
-              The gap between "ad click" and "booked appointment" is where your revenue bleeds. Without a system to respond instantly, follow up consistently, and capture after-hours inquiries, you're funding your competitors' calendars.
+              For a $150K/month clinic, it's <strong className="text-foreground">$22,500–$45,000/month</strong>.
+            </p>
+            <p className="text-foreground font-medium">
+              Three fixable problems cause this:
             </p>
           </div>
         </div>
