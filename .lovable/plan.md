@@ -1,33 +1,52 @@
 
+## Hide Client Portal (Temporarily)
 
-## Update Locus Command Tier Card
-
-**Goal:** Update the Locus Command tier with new tagline, positioning, and features.
-
----
-
-### Changes to `src/components/home/PricingSection.tsx`
-
-Update the third tier object in the `tiers` array:
-
-| Field | Current | New |
-|-------|---------|-----|
-| tagline | Enterprise + Fractional COO | Revenue Operations Partner |
-| positioning | Multi-location. Full optimization. | Multi-location visibility. Ongoing optimization. Embedded accountability. |
-
-**Updated Features:**
-1. Everything in Locus Ops *(unchanged)*
-2. Multi-location command center dashboard *(was: Multi-location support (if applicable))*
-3. Custom tech stack integrations (EMR/EHR) *(unchanged)*
-4. Embedded revenue operations partnership *(was: Fractional COO operations partnership)*
-5. Staff training & placement *(was: Clinical staff training & placement)*
-6. Advanced KPI intelligence & analytics *(unchanged)*
+**Goal:** Make the client portal inaccessible while preserving the code for future use.
 
 ---
 
-### File to Edit
+### Changes Required
 
 | File | Action |
 |------|--------|
-| `src/components/home/PricingSection.tsx` | Update Locus Command tier data (tagline, positioning, features) |
+| `src/components/layout/Header.tsx` | Remove "Client Login" nav link |
+| `src/App.tsx` | Comment out the `/client-login` route |
+| `src/pages/ClientLogin.tsx` | **No changes** - keep file as-is |
 
+---
+
+### 1. Remove Nav Link from Header
+
+**File:** `src/components/layout/Header.tsx`
+
+Delete this block from the navigation:
+```tsx
+<Link 
+  to="/client-login" 
+  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+>
+  Client Login
+</Link>
+```
+
+---
+
+### 2. Comment Out Route
+
+**File:** `src/App.tsx`
+
+Comment out the route and import:
+```tsx
+// import ClientLogin from "./pages/ClientLogin";
+
+// In Routes:
+// <Route path="/client-login" element={<ClientLogin />} />
+```
+
+---
+
+### Result
+
+- `/client-login` URL will show your 404 page
+- No visible link in navigation
+- Code preserved for future activation
