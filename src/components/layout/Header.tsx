@@ -36,12 +36,6 @@ const Header = () => {
             >
               Get Started
             </a>
-            <Link 
-              to="/client-login" 
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Client Login
-            </Link>
           </nav>
 
           {/* CTA */}
