@@ -55,7 +55,8 @@ const TestimonialsSection = () => {
           </BlurFade>
           <BlurFade delay={0.15}>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-              Proven Infrastructure Upgrades.
+              ​Results from Clinics Running Locus
+    
             </h2>
           </BlurFade>
           <BlurFade delay={0.2}>
