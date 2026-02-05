@@ -1,37 +1,64 @@
 
 
-## Remove Pricing Text from Service Cards
+## Fix Scroll-to-Top on Navigation
 
-**Goal:** Remove the "$297/month" and "Book a call for pricing" text displays from all three tier cards.
+**Goal:** Ensure clicking "Watch 5-Min System Demo" or "Or watch the 5-minute system walkthrough" links navigates to `/system-demo` and starts at the top of the page.
 
-**File:** `src/components/home/PricingSection.tsx`
+**Problem:** React Router doesn't automatically scroll to top when navigating between routes, so users land in the middle/bottom of the new page.
 
 ---
 
-### Changes Required
+### Solution: Add ScrollToTop Component
 
-**1. Remove pricingText from tier data (lines 18, 33, 49)**
-- Delete `pricingText: "$297/month"` from Locus Core
-- Delete `pricingText: "Book a call for pricing"` from Locus Ops
-- Delete `pricingText: "Book a call for pricing"` from Locus Command
+**1. Create new file: `src/components/ScrollToTop.tsx`**
 
-**2. Remove pricing display section from JSX (lines 94-97)**
-- Delete the entire pricing div block:
 ```tsx
-{/* Pricing */}
-<div className="mb-6 pb-6 border-b border-border/50">
-  <p className="text-2xl font-bold text-foreground">{tier.pricingText}</p>
-</div>
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
+
+export default ScrollToTop;
+```
+
+**2. Update `src/App.tsx`**
+
+Add the ScrollToTop component inside the BrowserRouter so it triggers on every route change:
+
+```tsx
+import ScrollToTop from "./components/ScrollToTop";
+
+// Inside BrowserRouter, before Routes:
+<BrowserRouter>
+  <ScrollToTop />
+  <Routes>
+    ...
+  </Routes>
+</BrowserRouter>
 ```
 
 ---
 
-### Result
+### How It Works
 
-Cards will display:
-- Tier name and tagline
-- CTA button
-- Features list
+- The component listens for `pathname` changes via `useLocation()`
+- On every route change, it calls `window.scrollTo(0, 0)` to scroll to top
+- This applies globally to all navigation, not just the system demo links
 
-Without any pricing information shown.
+---
+
+### Files to Create/Edit
+
+| File | Action |
+|------|--------|
+| `src/components/ScrollToTop.tsx` | Create new |
+| `src/App.tsx` | Add import and component |
 
