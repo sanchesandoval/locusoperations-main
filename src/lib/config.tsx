@@ -1,5 +1,4 @@
-import { FaTwitter, FaLinkedin } from "react-icons/fa";
-import { RiInstagramFill } from "react-icons/ri";
+import { FaLinkedin } from "react-icons/fa";
 
 export const siteConfig = {
   name: "Locus",
@@ -61,16 +60,10 @@ export const siteConfig = {
     },
   ],
   socialLinks: [
-    { href: "https://twitter.com/locusops", icon: FaTwitter, label: "Twitter" },
     {
-      href: "https://linkedin.com/company/locus",
+      href: "https://linkedin.com/company/locusaiops",
       icon: FaLinkedin,
       label: "LinkedIn",
-    },
-    {
-      href: "https://instagram.com/locusops/",
-      icon: RiInstagramFill,
-      label: "Instagram",
     },
   ],
 };

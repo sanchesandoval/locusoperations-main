@@ -55,7 +55,7 @@ const faqs = [
 
 const FAQSection = () => {
   return (
-    <section className="section-spacing relative">
+    <section id="faq" className="section-spacing relative">
       <div className="container-main">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <p className="text-primary font-medium mb-4">Questions</p>
