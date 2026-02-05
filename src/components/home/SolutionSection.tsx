@@ -53,7 +53,7 @@ const SolutionSection = () => {
           {/* Connecting line */}
           <div className="absolute left-[27px] top-8 bottom-8 w-px bg-gradient-to-b from-primary/50 via-primary/30 to-primary/10" />
 
-          <div className="space-y-6">
+          <div className="space-y-8">
             {stackItems.map((item, index) => <div key={index} ref={el => itemRefs.current[index] = el} className={`relative flex items-start gap-6 group transition-all duration-500 ease-out ${visibleItems.has(index) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`} style={{
             transitionDelay: `${index * 100}ms`
           }}>
