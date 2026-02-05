@@ -37,7 +37,7 @@ const LeakSection = () => {
             Your Clinic Doesn't Have a Lead Problem. <span className="text-muted-foreground">You have a Revenue Recovery Problem.</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Most medical wellness clinics hit a ceiling at $50k/mo. Fragmentation between your ads, EMR, and front desk creates Revenue Leakage. A lead is just "potential energy"—without a system to capture a booking in under 60 seconds, you are funding your competitor's calendar.
+            Most wellness clinics hit a revenue ceiling—not because they need more leads, but because they're losing 15–30% of potential revenue on leads that never convert. For a clinic doing $30K/month, that's $4,500–$9,000 disappearing every month. For a clinic doing $150K/month, it's $22,500–$45,000. The gap between "ad click" and "booked appointment" is where your revenue bleeds. Without a system to respond instantly, follow up consistently, and capture after-hours inquiries, you're funding your competitors' calendars.
           </p>
         </div>
 
