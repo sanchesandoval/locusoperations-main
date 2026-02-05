@@ -1,43 +1,39 @@
 
+## Remove Pipeline Diagnostic Page
 
-## Update Calendly Widget URL
-
-**Goal:** Change the Calendly booking link to the new 30-minute meeting URL with February 2026 as the default month.
-
----
-
-### Files to Update
-
-| File | Current URL | New URL |
-|------|-------------|---------|
-| `src/components/home/CalendlySection.tsx` | `https://calendly.com/locusops?hide_landing_page_details=1` | `https://calendly.com/locusops/30min/?month=2026-02&hide_landing_page_details=1` |
-| `src/pages/BookCall.tsx` | `https://calendly.com/locusops?hide_landing_page_details=1` | `https://calendly.com/locusops/30min/?month=2026-02&hide_landing_page_details=1` |
+**Goal:** Completely remove the `/pipeline-diagnostic` route and its associated page file.
 
 ---
 
-### Changes
+### Changes Required
 
-**Line 23 in CalendlySection.tsx:**
+| File | Action |
+|------|--------|
+| `src/App.tsx` | Remove import and route for PipelineDiagnostic |
+| `src/pages/PipelineDiagnostic.tsx` | Delete file |
+
+---
+
+### Details
+
+**1. Update `src/App.tsx`**
+
+Remove line 11 (import):
 ```tsx
-// Before
-data-url="https://calendly.com/locusops?hide_landing_page_details=1"
-
-// After
-data-url="https://calendly.com/locusops/30min/?month=2026-02&hide_landing_page_details=1"
+import PipelineDiagnostic from "./pages/PipelineDiagnostic";
 ```
 
-**Line 57 in BookCall.tsx:**
+Remove line 27 (route):
 ```tsx
-// Before
-data-url="https://calendly.com/locusops?hide_landing_page_details=1"
-
-// After
-data-url="https://calendly.com/locusops/30min/?month=2026-02&hide_landing_page_details=1"
+<Route path="/pipeline-diagnostic" element={<PipelineDiagnostic />} />
 ```
+
+**2. Delete `src/pages/PipelineDiagnostic.tsx`**
 
 ---
 
-### Result
+### Impact
 
-Both Calendly widgets will now link directly to the 30-minute meeting type and default to showing February 2026.
-
+- No other files reference `/pipeline-diagnostic` or link to this page
+- All other routes and functionality remain unaffected
+- Users visiting `/pipeline-diagnostic` will see the 404 NotFound page
