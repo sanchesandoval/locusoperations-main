@@ -1,7 +1,17 @@
 import { Link } from "react-router-dom";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import { ArrowRight, Clock, Zap, TrendingUp } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { CheckCircleIcon } from "@/components/icons/BrandIcons";
+
+const features = [
+  "Locus OS (booking + follow-up automation)",
+  "Missed-call text-back (after-hours capture)",
+  "Multi-touch follow-up sequences",
+  "No-show prevention reminders",
+  "Pipeline tracking dashboard",
+  "Technical support",
+];
 
 const SystemDemo = () => {
   return (
@@ -14,18 +24,16 @@ const SystemDemo = () => {
           <div className="max-w-4xl mx-auto text-center mb-12">
             <p className="text-primary font-medium mb-4">See The System In Action</p>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-              Watch How Locus Eliminates Lead Decay in 5 Minutes
+              See How Locus Fixes Revenue Leaks in 5 Minutes
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Discover how automated infrastructure responds within the critical 5-minute window 
-              where leads are 21x more likely to qualify.
+              Watch how the system responds to leads in under 60 seconds, follows up automatically, and cuts no-shows—so you stop losing $5K-15K/month on leads that never book.
             </p>
           </div>
 
           {/* Video Section */}
           <div className="max-w-4xl mx-auto mb-16">
             <div className="card-premium p-2 rounded-2xl">
-              {/* Loom Video Placeholder - Replace with actual embed */}
               <div className="aspect-video bg-muted/50 rounded-xl flex items-center justify-center border border-border/50">
                 <div className="text-center p-8">
                   <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
@@ -40,60 +48,59 @@ const SystemDemo = () => {
             </div>
           </div>
 
-          {/* Key Value Props */}
-          <div className="max-w-4xl mx-auto mb-16">
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="card-premium p-6 text-center">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <Clock className="w-6 h-6 text-primary" />
+          {/* Locus Core Pricing Card */}
+          <div className="max-w-xl mx-auto mb-12">
+            <div className="card-premium p-6 lg:p-8 flex flex-col">
+              <div className="mb-6">
+                <h3 className="text-xl font-bold text-foreground mb-1">Locus Core</h3>
+                <p className="font-bold text-foreground mb-4">The Operating System</p>
+                <div className="mb-2">
+                  <span className="text-4xl font-bold text-foreground">$297</span>
+                  <span className="text-muted-foreground">/month</span>
                 </div>
-                <h3 className="font-semibold mb-2">5-Minute Response</h3>
-                <p className="text-sm text-muted-foreground">
-                  Automated follow-up within the critical window when leads are hottest
-                </p>
+                <p className="text-sm text-muted-foreground">No setup fee. Cancel anytime.</p>
               </div>
-              <div className="card-premium p-6 text-center">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <Zap className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="font-semibold mb-2">21x More Likely</h3>
-                <p className="text-sm text-muted-foreground">
-                  Leads contacted within 5 minutes are 21x more likely to qualify
-                </p>
+
+              {/* CTA */}
+              <Link
+                to="/book-call"
+                className="block text-center py-3 rounded-xl font-semibold transition-all duration-300 mb-6 btn-primary"
+              >
+                Get Started
+              </Link>
+
+              {/* Features */}
+              <div className="space-y-3 flex-1">
+                <p className="text-sm font-medium text-muted-foreground">What's Included:</p>
+                {features.map((feature, index) => (
+                  <div key={index} className="flex items-start gap-3">
+                    <CheckCircleIcon className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-sm text-foreground/90">{feature}</span>
+                  </div>
+                ))}
               </div>
-              <div className="card-premium p-6 text-center">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <TrendingUp className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="font-semibold mb-2">Zero Lead Decay</h3>
-                <p className="text-sm text-muted-foreground">
-                  Never lose another lead to slow response times again
-                </p>
-              </div>
+
+              <p className="text-sm text-muted-foreground text-center mt-6">
+                Self-install. Full control. No sales call needed.
+              </p>
             </div>
           </div>
 
-          {/* CTA Section */}
-          <div className="max-w-2xl mx-auto text-center">
-            <div className="card-premium p-8 lg:p-12">
-              <h2 className="text-2xl lg:text-3xl font-bold mb-4">
-                Ready to Install Your Central Nervous System?
-              </h2>
-              <p className="text-muted-foreground mb-8">
-                Stop losing leads to slow response times. Get Locus installed and start 
-                converting more leads into booked appointments.
-              </p>
-              <Link
-                to="/book-call"
-                className="btn-primary inline-flex items-center gap-2 px-8 py-4 text-lg"
-              >
-                Get Started Now
-                <ArrowRight className="w-5 h-5" />
-              </Link>
-              <p className="text-sm text-muted-foreground mt-4">
-                No sales call required • Start converting leads today
-              </p>
-            </div>
+          {/* Secondary Upgrade CTA */}
+          <div className="max-w-xl mx-auto text-center border-t border-border/30 pt-10">
+            <h3 className="text-lg font-semibold text-foreground mb-2">
+              Want us to install it for you?
+            </h3>
+            <p className="text-muted-foreground mb-6">
+              Book a Strategy Call for Locus Ops — We build it, deploy it, and train your team. Live in 2-3 weeks.
+            </p>
+            <Link
+              to="/book-call"
+              className="btn-secondary inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300"
+            >
+              Book Strategy Call
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
       </main>
