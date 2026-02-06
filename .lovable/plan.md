@@ -1,51 +1,49 @@
 
-## Fix Footer Navigation Links and Update Social Icons
 
-**Goal:** Ensure footer links scroll to correct sections and update social links to only show LinkedIn with the correct URL.
+## Revamp System Demo Page
 
----
+### 1. Update Hero Copy (lines 14-22)
 
-### Changes Required
+- **Headline**: "See How Locus Fixes Revenue Leaks in 5 Minutes"
+- **Subhead**: "Watch how the system responds to leads in under 60 seconds, follows up automatically, and cuts no-shows--so you stop losing $5K-15K/month on leads that never book."
 
-| File | Change |
-|------|--------|
-| `src/components/home/FAQSection.tsx` | Add `id="faq"` to the section element |
-| `src/lib/config.tsx` | Update LinkedIn URL and remove Twitter/Instagram from socialLinks |
+### 2. Remove 3-Card Benefits Section (lines 43-74)
 
----
+Delete the entire "Key Value Props" grid with the Clock, Zap, and TrendingUp cards.
 
-### Details
+### 3. Replace CTA Section with Locus Core Pricing Card (lines 76-97)
 
-**1. Add ID to FAQ Section (`src/components/home/FAQSection.tsx`)**
+Add a single centered `card-premium` card styled like the existing pricing tier cards, containing:
 
-Line 60 - Change:
-```tsx
-<section className="section-spacing relative">
-```
-To:
-```tsx
-<section id="faq" className="section-spacing relative">
-```
+- **Title**: "Locus Core" with bold tagline "The Operating System"
+- **Price**: "$297/month"
+- **Subtitle**: "No setup fee. Cancel anytime."
+- **Features list** with green check icons:
+  - Locus OS (booking + follow-up automation)
+  - Missed-call text-back (after-hours capture)
+  - Multi-touch follow-up sequences
+  - No-show prevention reminders
+  - Pipeline tracking dashboard
+  - Technical support
+- **CTA Button**: "Get Started" using the `btn-primary` class (green gradient style, no "Locus Core" in button text)
+- **Footer text**: "Self-install. Full control. No sales call needed."
 
-**2. Update Social Links (`src/lib/config.tsx`)**
+### 4. Add Secondary Upgrade CTA Below Pricing Card
 
-- Update LinkedIn URL from `linkedin.com/company/locus` to `https://linkedin.com/company/locusaiops`
-- Remove Twitter and Instagram entries from `socialLinks` array
-- Remove unused imports (`FaTwitter`, `RiInstagramFill`)
+A subtle section below the pricing card offering an upgrade path:
 
----
+- **Text**: "Want us to install it for you?"
+- **Description**: "Book a Strategy Call for Locus Ops -- We build it, deploy it, and train your team. Live in 2-3 weeks."
+- **Link**: "Book Strategy Call" with arrow, using `btn-secondary` style, linking to `/book-call`
 
-### Current Section IDs (Verified)
+### Technical Details
 
-| Footer Link | Target ID | Section |
-|-------------|-----------|---------|
-| Our Process | `#how-it-works` | HowItWorksSection ✓ |
-| Results | `#testimonials` | TestimonialsSection ✓ |
-| FAQs | `#faq` | FAQSection (needs id added) |
+**File modified**: `src/pages/SystemDemo.tsx`
 
----
+- Remove unused imports: `Clock`, `Zap`, `TrendingUp`
+- Add import: `CheckCircleIcon` from `@/components/icons/BrandIcons`
+- Add import: `ArrowRight` from `lucide-react` (already imported)
+- Restructure the page content between the video section and footer
+- Use `card-premium` class and `btn-primary` class to match existing site styling
+- Max width constraint (`max-w-lg` or `max-w-xl`) to keep the single pricing card centered and appropriately sized
 
-### Result
-
-- All three footer links will scroll to their respective sections
-- Only LinkedIn icon will appear in footer, linking to `linkedin.com/company/locusaiops`
