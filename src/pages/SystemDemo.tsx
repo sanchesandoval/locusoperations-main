@@ -65,7 +65,7 @@ const SystemDemo = () => {
           </div>
 
           {/* Locus Core Pricing Card */}
-          <div className="max-w-xl mx-auto mb-12 mt-20">
+          <div className="max-w-xl mx-auto mb-12 mt-32">
             <div className="card-premium p-6 lg:p-8 flex flex-col">
               <div className="mb-6">
                 <h3 className="text-xl font-bold text-foreground mb-1">Locus Core</h3>
