@@ -55,7 +55,7 @@ export const siteConfig = {
       links: [
         { href: "#how-it-works", label: "Our Process" },
         { href: "#testimonials", label: "Results" },
-        { href: "#faq", label: "FAQs" },
+        { href: "/#faq", label: "FAQs" },
       ],
     },
   ],
