@@ -48,7 +48,7 @@ const SystemDemo = () => {
           </div>
 
           {/* Video Section */}
-          <div className="max-w-4xl mx-auto mb-16">
+          <div className="max-w-4xl mx-auto mb-16 mt-16">
             <div className="card-premium p-2 rounded-2xl">
               <div className="aspect-video bg-muted/50 rounded-xl flex items-center justify-center border border-border/50">
                 <div className="text-center p-8">
