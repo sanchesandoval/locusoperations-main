@@ -1,49 +1,63 @@
 
 
-## Revamp System Demo Page
+## Add FAQ Section to System Demo Page and Update Footer Link
 
-### 1. Update Hero Copy (lines 14-22)
+### UX Decision: Footer "FAQs" Link
 
-- **Headline**: "See How Locus Fixes Revenue Leaks in 5 Minutes"
-- **Subhead**: "Watch how the system responds to leads in under 60 seconds, follows up automatically, and cuts no-shows--so you stop losing $5K-15K/month on leads that never book."
+The footer "FAQs" link currently points to `#faq` (an anchor). Since the System Demo page now has its own FAQ section with product-specific questions, and the home page has a broader FAQ section, the best UX approach is:
 
-### 2. Remove 3-Card Benefits Section (lines 43-74)
+- **Keep the footer link pointing to the home page FAQ** (`/#faq`) using a route-based link instead of a plain anchor. This ensures the link works correctly from any page (including `/system-demo`) by navigating to the home page and scrolling to the FAQ section. The home page FAQ is more comprehensive and serves as the canonical FAQ destination.
+- The System Demo FAQ section will have its own `id="demo-faq"` so it does not conflict.
 
-Delete the entire "Key Value Props" grid with the Clock, Zap, and TrendingUp cards.
+### Changes
 
-### 3. Replace CTA Section with Locus Core Pricing Card (lines 76-97)
+**1. Add FAQ section to `src/pages/SystemDemo.tsx`**
 
-Add a single centered `card-premium` card styled like the existing pricing tier cards, containing:
+- Add a new FAQ section below the secondary upgrade CTA (after line 104, before the closing `</div>`)
+- Use the same Accordion pattern and styling from the home page FAQ section (`card-premium`, `AccordionTrigger`, `AccordionContent`)
+- Include the 3 provided Q&As as inline data
+- Add `id="demo-faq"` to the section
+- Import `Accordion`, `AccordionContent`, `AccordionItem`, `AccordionTrigger` from `@/components/ui/accordion`
 
-- **Title**: "Locus Core" with bold tagline "The Operating System"
-- **Price**: "$297/month"
-- **Subtitle**: "No setup fee. Cancel anytime."
-- **Features list** with green check icons:
-  - Locus OS (booking + follow-up automation)
-  - Missed-call text-back (after-hours capture)
-  - Multi-touch follow-up sequences
-  - No-show prevention reminders
-  - Pipeline tracking dashboard
-  - Technical support
-- **CTA Button**: "Get Started" using the `btn-primary` class (green gradient style, no "Locus Core" in button text)
-- **Footer text**: "Self-install. Full control. No sales call needed."
+**2. Update footer "FAQs" link in `src/lib/config.tsx`**
 
-### 4. Add Secondary Upgrade CTA Below Pricing Card
+- Change `{ href: "#faq", label: "FAQs" }` to `{ href: "/#faq", label: "FAQs" }`
+- This ensures it navigates to the home page FAQ from any route
 
-A subtle section below the pricing card offering an upgrade path:
+**3. Update `src/components/layout/Footer.tsx`**
 
-- **Text**: "Want us to install it for you?"
-- **Description**: "Book a Strategy Call for Locus Ops -- We build it, deploy it, and train your team. Live in 2-3 weeks."
-- **Link**: "Book Strategy Call" with arrow, using `btn-secondary` style, linking to `/book-call`
+- Update the link rendering logic so that `/#faq` (starts with `/`) is treated as a `<Link>` route rather than an anchor, which it already will be since it doesn't start with `#`.
 
 ### Technical Details
 
-**File modified**: `src/pages/SystemDemo.tsx`
+**`src/pages/SystemDemo.tsx`** -- Add after the secondary CTA section (line 104):
 
-- Remove unused imports: `Clock`, `Zap`, `TrendingUp`
-- Add import: `CheckCircleIcon` from `@/components/icons/BrandIcons`
-- Add import: `ArrowRight` from `lucide-react` (already imported)
-- Restructure the page content between the video section and footer
-- Use `card-premium` class and `btn-primary` class to match existing site styling
-- Max width constraint (`max-w-lg` or `max-w-xl`) to keep the single pricing card centered and appropriately sized
+```tsx
+// New FAQ data array at top of file
+const demoFaqs = [
+  {
+    question: "Do I need technical skills?",
+    answer: "No. Setup guides walk you through connecting your calendar, phone, and email. If you'd rather we handle it, book a call for Locus Ops.",
+  },
+  {
+    question: "Can I upgrade to Locus Ops later?",
+    answer: "Absolutely. Core is the right choice if you're building your foundation or want full control of the system. Many clinics stay on Core indefinitely. Others upgrade to Ops when they want done-for-you implementation, or to Command when they scale to multiple locations. We'll migrate everything seamlessly.",
+  },
+  {
+    question: "What if it doesn't work for my clinic?",
+    answer: "Cancel anytime. No contracts. If you're not seeing more booked appointments in 30 days, we'll help you troubleshoot or you can cancel.",
+  },
+];
+```
 
+New section markup mirrors the home page FAQ styling with `card-premium` accordion items, a "Questions" label, and "Frequently Asked" heading.
+
+**`src/lib/config.tsx`** -- Line 58:
+```tsx
+// Change from:
+{ href: "#faq", label: "FAQs" }
+// To:
+{ href: "/#faq", label: "FAQs" }
+```
+
+This ensures from any page the footer FAQs link takes users to the comprehensive home page FAQ section.
