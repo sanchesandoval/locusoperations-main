@@ -3,6 +3,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { ArrowRight } from "lucide-react";
 import { CheckCircleIcon } from "@/components/icons/BrandIcons";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const features = [
   "Locus OS (booking + follow-up automation)",
@@ -11,6 +12,21 @@ const features = [
   "No-show prevention reminders",
   "Pipeline tracking dashboard",
   "Technical support",
+];
+
+const demoFaqs = [
+  {
+    question: "Do I need technical skills?",
+    answer: "No. Setup guides walk you through connecting your calendar, phone, and email. If you'd rather we handle it, book a call for Locus Ops.",
+  },
+  {
+    question: "Can I upgrade to Locus Ops later?",
+    answer: "Absolutely. Core is the right choice if you're building your foundation or want full control of the system. Many clinics stay on Core indefinitely. Others upgrade to Ops when they want done-for-you implementation, or to Command when they scale to multiple locations. We'll migrate everything seamlessly.",
+  },
+  {
+    question: "What if it doesn't work for my clinic?",
+    answer: "Cancel anytime. No contracts. If you're not seeing more booked appointments in 30 days, we'll help you troubleshoot or you can cancel.",
+  },
 ];
 
 const SystemDemo = () => {
@@ -102,6 +118,29 @@ const SystemDemo = () => {
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
+
+          {/* FAQ Section */}
+          <section id="demo-faq" className="mt-20">
+            <div className="max-w-3xl mx-auto text-center mb-12">
+              <p className="text-primary font-medium mb-4">Questions</p>
+              <h2 className="text-3xl sm:text-4xl font-bold">Frequently Asked</h2>
+            </div>
+
+            <div className="max-w-3xl mx-auto">
+              <Accordion type="single" collapsible className="space-y-4">
+                {demoFaqs.map((faq, index) => (
+                  <AccordionItem key={index} value={`item-${index}`} className="card-premium px-6 border-border/50">
+                    <AccordionTrigger className="text-left font-semibold text-foreground hover:text-primary py-5">
+                      {faq.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground pb-5 leading-relaxed">
+                      {faq.answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
+          </section>
         </div>
       </main>
 
