@@ -1,15 +1,21 @@
 
 
-# Remove GHL Popup Form from index.html
+# Show Full GHL Form Without Scrolling
 
-## What
-Remove the scroll-triggered GHL popup iframe and its associated script tag from `index.html`. The only GHL form should be the inline embed on the `/scorecard` page.
+## Change
+Update `src/pages/Scorecard.tsx` to remove the fixed `500px` height and instead use a much taller height so the entire form renders inline without any internal scrolling.
 
-## Changes
+- Change iframe height from `500px` to `800px` (can be adjusted once you see how tall the actual form is)
+- Remove `overflow-hidden` from the card container so nothing gets clipped
 
-### `index.html`
-- Remove the popup iframe (`id="popup-p61qThW6q0uTt7jSreIK"`) near the bottom of the body
-- Remove the `<script src="https://link.msgsndr.com/js/form_embed.js"></script>` tag that accompanies it
+## Colors for GHL Form Styling
+Use these in your GHL form builder to match the site:
 
-The `/scorecard` page (`src/pages/Scorecard.tsx`) already loads its own embed script dynamically via `useEffect`, so no other changes are needed.
+- **Page/Form background**: `#121212` (or card bg `#1a1a1a`)
+- **Text color**: `#f2f2f2`
+- **Muted/label text**: `#999999`
+- **Primary/button green**: `#45A88C`
+- **Input field background**: `#2e2e2e`
+- **Border color**: `#2e2e2e`
+- **Button text**: `#ffffff`
 
