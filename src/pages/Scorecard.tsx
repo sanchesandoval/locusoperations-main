@@ -25,10 +25,10 @@ const Scorecard = () => {
             </h1>
           </div>
 
-          <div className="max-w-2xl mx-auto card-premium" style={{ minHeight: "800px", overflow: "hidden" }}>
+          <div className="max-w-3xl mx-auto card-premium" style={{ minHeight: "800px", overflow: "hidden" }}>
             <iframe
               src="https://api.leadconnectorhq.com/widget/form/p61qThW6q0uTt7jSreIK"
-              style={{ display: "none", width: "100%", height: "100%", border: "none", borderRadius: "20px" }}
+              style={{ display: "none", width: "100%", height: "800px", border: "none", borderRadius: "20px", overflow: "hidden" }}
               id="inline-p61qThW6q0uTt7jSreIK"
               data-layout="{'id':'INLINE'}"
               data-trigger-type="alwaysShow"
