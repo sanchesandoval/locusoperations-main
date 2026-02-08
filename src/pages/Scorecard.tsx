@@ -25,7 +25,7 @@ const Scorecard = () => {
             </h1>
           </div>
 
-          <div className="max-w-2xl mx-auto card-premium">
+          <div className="max-w-2xl mx-auto card-premium" style={{ minHeight: "800px", overflow: "hidden" }}>
             <iframe
               src="https://api.leadconnectorhq.com/widget/form/p61qThW6q0uTt7jSreIK"
               style={{ display: "none", width: "100%", height: "100%", border: "none", borderRadius: "20px" }}
