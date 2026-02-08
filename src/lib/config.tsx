@@ -12,6 +12,7 @@ export const siteConfig = {
   },
   header: [
     { href: "#problem", label: "The Problem" },
+    { href: "#our-services", label: "Services" },
     { href: "#testimonials", label: "Results" },
     { href: "#faq", label: "FAQ" },
   ],
