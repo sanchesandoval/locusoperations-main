@@ -6,9 +6,6 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navLinks = [{
-    href: "#how-it-works",
-    label: "Process"
-  }, {
     href: "#testimonials",
     label: "Results"
   }, {
