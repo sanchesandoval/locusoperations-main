@@ -33,7 +33,7 @@ const SolutionSection = () => {
     });
     return () => observer.disconnect();
   }, []);
-  return <section className="section-spacing relative overflow-hidden">
+  return <section id="how-it-works" className="section-spacing relative overflow-hidden">
       {/* Background */}
       <div className="absolute top-1/2 left-0 w-[500px] h-[500px] rounded-full bg-primary/5 blur-[100px] -translate-y-1/2" />
 
