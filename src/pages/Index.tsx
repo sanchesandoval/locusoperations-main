@@ -18,10 +18,9 @@ const Index = () => {
         <HeroSection />
         <LeakSection />
         <SolutionSection />
-        
+        <PricingSection />
         <TestimonialsSection />
         <ResearchSection />
-        <PricingSection />
         <FAQSection />
         <LeadMagnetCTA />
       </main>
