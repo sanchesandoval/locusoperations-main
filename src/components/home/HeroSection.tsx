@@ -32,7 +32,7 @@ const integrationLogos = [
   { name: "Salesforce", src: salesforceLogo, scale: 1.4 },
   { name: "Pipedrive", src: pipedriveLogo },
   { name: "Wealthbox", src: wealthboxLogo, scale: 1.3 },
-  { name: "Lawmatics", src: lawmaticsLogo, scale: 1.3 },
+  { name: "Lawmatics", src: lawmaticsLogo },
   { name: "HighLevel", src: highlevelLogo, scale: 1.6 },
   // Scheduling / Booking
   { name: "Calendly", src: calendlyLogo, scale: 1.3 },
