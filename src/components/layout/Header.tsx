@@ -6,11 +6,11 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navLinks = [{
-    href: "#testimonials",
-    label: "Results"
-  }, {
     href: "#our-services",
     label: "Services"
+  }, {
+    href: "#testimonials",
+    label: "Results"
   }];
   return <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border/50">
       <div className="container-main">
