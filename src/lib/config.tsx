@@ -54,7 +54,7 @@ export const siteConfig = {
     {
       title: "Company",
       links: [
-        { href: "/#how-it-works", label: "How It Works" },
+        { href: "/#our-services", label: "How It Works" },
         { href: "/#testimonials", label: "Results" },
         { href: "/#faq", label: "FAQs" },
       ],
