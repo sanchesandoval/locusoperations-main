@@ -45,7 +45,7 @@ export const siteConfig = {
   ],
   footer: [
     {
-      title: "Product",
+      title: "Get Started",
       links: [
         { href: "/book-call", label: "Book a Free Consultation" },
       ],
