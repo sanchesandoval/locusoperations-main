@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { supabase } from "@/integrations/supabase/client";
 
 type Answer = "yes" | "no" | null;
 
@@ -158,7 +159,25 @@ const RevenueLeakFinder = () => {
           <div className="max-w-2xl mx-auto mt-12">
             {!submitted ? (
               <button
-                onClick={() => setSubmitted(true)}
+                onClick={() => {
+                  setSubmitted(true);
+                  // Fire-and-forget: save submission to database
+                  let qi = 0;
+                  const categoryScores = categories.map((cat) => {
+                    const gaps = cat.questions.filter((_, i) => answers[qi + i] === "no").length;
+                    const total = cat.questions.length;
+                    qi += total;
+                    return { name: cat.name, gaps, total };
+                  });
+                  const answersObj: Record<string, string> = {};
+                  answers.forEach((a, i) => { if (a) answersObj[String(i)] = a; });
+                  supabase.from("leak_finder_submissions").insert({
+                    answers: answersObj,
+                    category_scores: categoryScores,
+                    score,
+                    result_label: result.label,
+                  } as any).then(() => {});
+                }}
                 disabled={!allAnswered}
                 className="btn-primary w-full py-4 text-lg disabled:opacity-40 disabled:cursor-not-allowed"
               >

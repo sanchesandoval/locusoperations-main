@@ -14,7 +14,33 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      leak_finder_submissions: {
+        Row: {
+          answers: Json
+          category_scores: Json
+          created_at: string | null
+          id: string
+          result_label: string
+          score: number
+        }
+        Insert: {
+          answers: Json
+          category_scores: Json
+          created_at?: string | null
+          id?: string
+          result_label: string
+          score: number
+        }
+        Update: {
+          answers?: Json
+          category_scores?: Json
+          created_at?: string | null
+          id?: string
+          result_label?: string
+          score?: number
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
