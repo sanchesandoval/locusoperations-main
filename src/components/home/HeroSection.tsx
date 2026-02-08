@@ -42,9 +42,9 @@ const integrationLogos = [
   // Practice Management
   { name: "AestheticsPro", src: aestheticsproLogo, scale: 1.5 },
   { name: "SimplePractice", src: simplepracticeLogo, scale: 2.2 },
-  { name: "Clio", src: clioLogo },
-  { name: "Jobber", src: jobberLogo, scale: 0.85 },
-  { name: "ServiceTitan", src: servicetitanLogo },
+  { name: "Clio", src: clioLogo, scale: 0.8 },
+  { name: "Jobber", src: jobberLogo, scale: 0.7 },
+  { name: "ServiceTitan", src: servicetitanLogo, scale: 0.8 },
   // Messaging
   { name: "Slack", src: slackLogo, scale: 1.3 },
   { name: "WhatsApp", src: whatsappLogo, scale: 1.8 },
