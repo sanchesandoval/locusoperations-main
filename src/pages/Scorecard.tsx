@@ -18,7 +18,7 @@ const Scorecard = () => {
       <Header />
       <main className="pt-24 pb-16">
         <div className="container-main">
-          <div className="max-w-2xl mx-auto text-center mb-4">
+          <div className="max-w-2xl mx-auto text-center mb-2">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
               Find Out Which Revenue Leaks Are Costing You the Most
               <span className="text-primary">...</span>in under 3 minutes.
