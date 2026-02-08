@@ -48,11 +48,13 @@ export const siteConfig = {
       title: "Get Started",
       links: [
         { href: "/book-call", label: "Book a Free Consultation" },
+        { href: "/scorecard", label: "Revenue Leak Scorecard" },
       ],
     },
     {
       title: "Company",
       links: [
+        { href: "/#how-it-works", label: "How It Works" },
         { href: "/#testimonials", label: "Results" },
         { href: "/#faq", label: "FAQs" },
       ],
