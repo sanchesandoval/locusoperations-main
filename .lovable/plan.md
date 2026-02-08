@@ -1,18 +1,21 @@
 
-# Fix Scrollbar on Scorecard Iframe
+
+# Fix Scrollbar by Matching Container to Form Dimensions
 
 ## Problem
-The GHL form content is 732px tall (per `data-height`), but the `card-premium` container doesn't have enough explicit height, causing a scrollbar to appear inside the iframe.
+The GHL form is 750px wide (per the screenshot) with 105px margin on each side, but the scrollbar persists because the iframe's explicit height isn't set high enough for the rendered content, and the container width may be constraining it.
 
-## Fix in `src/pages/Scorecard.tsx`
+## Changes to `src/pages/Scorecard.tsx`
 
-1. **Set a minimum height on the container div** -- Give the `card-premium` wrapper a `min-height` of ~800px (732px form + padding buffer) so the iframe has room to render fully.
+1. **Widen the container** -- Change `max-w-2xl` (672px) to `max-w-3xl` (768px) so the 750px-wide form fits without horizontal compression that can cause vertical overflow.
 
-2. **Add `overflow: hidden`** to the container to suppress any residual scrollbar while the GHL script auto-sizes the iframe.
+2. **Set explicit iframe height** -- Instead of relying on `height: 100%`, give the iframe a fixed pixel height of at least `800px` (above the 732px data-height plus margins/padding). The GHL script sets `display: none` initially and then reveals it, but the iframe needs an explicit height to avoid scroll.
 
-The change is a one-line style addition to the container div wrapping the iframe.
+3. **Keep container overflow hidden** -- The existing `overflow: hidden` and `minHeight: 800px` stay as a safety net.
 
 ## Technical Detail
 
-- On the `<div className="max-w-2xl mx-auto card-premium">`, add inline style: `minHeight: "800px"` and `overflow: "hidden"`
-- This ensures the container is always tall enough for the 732px form, eliminating the scrollbar
+- Container: change `max-w-2xl` to `max-w-3xl`, keep `style={{ minHeight: "800px", overflow: "hidden" }}`
+- Iframe: change `height: "100%"` to `height: "800px"` in the inline style, and add `overflow: "hidden"` to the iframe style as well
+- This ensures both the container and the iframe element itself are large enough that no scrollbar appears
+
