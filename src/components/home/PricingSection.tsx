@@ -139,6 +139,14 @@ const PricingSection = () => {
           <Link to="/book-call" className="btn-primary text-lg px-8 py-4">
             Book a Free Consultation
           </Link>
+          <div className="mt-4">
+            <Link
+              to="/scorecard"
+              className="text-primary hover:text-primary/80 text-sm font-medium inline-flex items-center gap-1 transition-colors"
+            >
+              Get your Revenue Leak Scorecard →
+            </Link>
+          </div>
         </div>
 
         <div className="mt-8 text-center">
