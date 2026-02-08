@@ -5,7 +5,7 @@ const LeadMagnetCTA = () => {
       <div className="container-main relative z-10">
         <div className="max-w-3xl mx-auto card-premium p-8 sm:p-12 lg:p-16 text-center">
           <p className="text-primary font-medium mb-4">Free Assessment</p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">​Frustrated that you're paying for leads that don't turn into clients?</h2>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">​Frustrated that you're paying for leads that don't turn into paying customers?</h2>
           <p className="text-lg text-muted-foreground max-w-xl mx-auto mb-8">
             Answer 12 quick questions and get a personalized scorecard showing exactly where your pipeline is bleeding revenue.
           </p>
