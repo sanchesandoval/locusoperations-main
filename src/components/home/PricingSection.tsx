@@ -52,7 +52,7 @@ const tiers = [
 
 const PricingSection = () => {
   return (
-    <section className="section-spacing relative overflow-hidden">
+    <section id="our-services" className="section-spacing relative overflow-hidden">
       {/* Left glow */}
       <div className="absolute top-1/2 left-0 w-[400px] h-[400px] rounded-full bg-primary/5 blur-[100px] -translate-y-1/2" />
 
