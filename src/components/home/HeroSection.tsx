@@ -78,7 +78,7 @@ const HeroSection = () => {
             <div className="space-y-4 sm:space-y-5 md:space-y-6 lg:space-y-6">
               <BlurFade delay={0.1}>
                 <div className="flex justify-center lg:justify-start">
-                  <span className="inline-flex items-center px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-card/80 border border-border text-xs sm:text-sm md:text-sm text-foreground text-center">Engineered for Functional Medicine & Wellness Clinics</span>
+                  <span className="inline-flex items-center px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-card/80 border border-border text-xs sm:text-sm md:text-sm text-foreground text-center">​For Appointment-Based Businesses     </span>
                 </div>
               </BlurFade>
               
