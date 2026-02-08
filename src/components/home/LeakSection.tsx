@@ -28,7 +28,7 @@ const LeakSection = () => {
             <span className="text-muted-foreground">You Have a Revenue Leak Problem.</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Most appointment-based businesses lose <strong className="text-foreground">20–40% of potential revenue</strong> on leads that never convert—that's <strong className="text-foreground">$4,500–$9,000/month</strong> for a $30K clinic, or <strong className="text-foreground">$22,500–$45,000/month</strong> at $150K. Three fixable problems cause this:
+            Most appointment-based businesses lose <strong className="text-foreground">20–40% of potential revenue</strong> on leads that never convert. Three fixable failures cause this:
           </p>
         </div>
 
