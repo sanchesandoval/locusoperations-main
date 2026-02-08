@@ -172,6 +172,12 @@
     width: 0;
     height: 0;
   }
+
+  @media (max-width: 768px) {
+    .ghl-form-iframe {
+      height: 920px !important;
+    }
+  }
 }
 
 @layer utilities {
