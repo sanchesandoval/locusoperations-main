@@ -1,24 +1,19 @@
 
 
-## Add Secondary CTA Below "Book a Free Consultation"
+## Add Descriptive Text Below Scorecard Headline
 
-### Overview
-Add a secondary CTA link labeled "Get your Revenue Leak Scorecard ->" below the existing "Book a Free Consultation" button in the Our Services section, linking to `/scorecard`.
+**What will change:**
+A new paragraph block will be added to the Scorecard page (`src/pages/Scorecard.tsx`) between the existing headline and the embedded form. It will describe the three scoring areas using the standard muted grey text color (`text-muted-foreground`), with balanced spacing.
 
-### Changes
+**Details:**
+- Add a new `div` below the `h1` inside the existing `max-w-2xl` container
+- Use `text-base` size to keep it readable but not oversized
+- Use `text-muted-foreground` for the standard grey color
+- Structure: one intro sentence, then a list of three items with bold labels
+- Adjust bottom margin on the headline container (`mb-8` or `mb-10`) and top margin on the form wrapper to create even, balanced spacing between headline, description text, and form
 
-**File:** `src/components/home/PricingSection.tsx`
-
-In the CTA area (after the "Book a Free Consultation" button and before the "Growth Fuel" footnote), add a secondary link:
-
-```tsx
-<Link
-  to="/scorecard"
-  className="text-primary hover:text-primary/80 text-sm font-medium inline-flex items-center gap-1 transition-colors"
->
-  Get your Revenue Leak Scorecard →
-</Link>
-```
-
-This will be placed inside the existing `mt-12 text-center` div, between the primary button and the Growth Fuel note, with a small top margin (e.g. `mt-4`).
+**Technical steps:**
+1. In `src/pages/Scorecard.tsx`, add descriptive text below the `h1` element
+2. Use `text-muted-foreground` and `text-base` for styling
+3. Adjust spacing: set the headline container to `mb-10` and ensure the form wrapper has `mt-10` for even gaps
 
