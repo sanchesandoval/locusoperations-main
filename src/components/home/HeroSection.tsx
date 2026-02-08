@@ -98,7 +98,7 @@ const HeroSection = () => {
             <BlurFade delay={0.4}>
               <div className="flex flex-col gap-3 items-center lg:items-start">
                 <Link to="/book-call" className="btn-primary text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4">
-                  Book a Call
+                  Book a Free Consultation  
                 </Link>
               </div>
             </BlurFade>
