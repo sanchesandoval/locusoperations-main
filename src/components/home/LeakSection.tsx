@@ -2,7 +2,7 @@ import { ClockSpeedIcon, RefreshLoopIcon, CalendarSlotIcon } from "@/components/
 const leakItems = [{
   icon: ClockSpeedIcon,
   title: "Speed-to-Lead Failure",
-  description: "Leads contacted within 5 minutes are 10-20x more likely to book.\n\nMost practices take 2 hours to respond.",
+  description: "Leads contacted within 5 minutes are 10-20x more likely to book.\n\nMost businesses take 2+ hours to respond.",
   cost: "8–15% of monthly revenue"
 }, {
   icon: RefreshLoopIcon,
