@@ -7,7 +7,7 @@ const leakItems = [{
 }, {
   icon: RefreshLoopIcon,
   title: "Follow-Up Inconsistency",
-  description: "59% of qualified callers never book an appointment.\n\nMost practices stop after one attempt.",
+  description: "59% of qualified callers never book an appointment.\n\nMost businesses stop after one attempt.",
   cost: "10–18% of monthly revenue"
 }, {
   icon: CalendarSlotIcon,
