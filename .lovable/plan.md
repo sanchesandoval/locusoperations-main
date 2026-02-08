@@ -1,18 +1,75 @@
 
-# Fix Scrollbar on Scorecard Iframe
 
-## Problem
-The GHL form content is 732px tall (per `data-height`), but the `card-premium` container doesn't have enough explicit height, causing a scrollbar to appear inside the iframe.
+# Remove Scrollbar from GHL Form (ChatGPT Approach)
 
-## Fix in `src/pages/Scorecard.tsx`
+## Overview
+Replace the current iframe implementation with a wrapper-based approach that uses explicit height, `scrolling="no"`, and CSS overrides to fully eliminate the scrollbar.
 
-1. **Set a minimum height on the container div** -- Give the `card-premium` wrapper a `min-height` of ~800px (732px form + padding buffer) so the iframe has room to render fully.
+## Changes
 
-2. **Add `overflow: hidden`** to the container to suppress any residual scrollbar while the GHL script auto-sizes the iframe.
+### 1. Update `src/pages/Scorecard.tsx`
+- Remove the current `card-premium` div with inline styles wrapping the iframe
+- Replace with a `<div className="ghl-form-wrap">` containing the new iframe markup
+- Key iframe changes:
+  - Add `scrolling="no"` attribute
+  - Add `className="ghl-form-iframe"`
+  - Bump `data-height` from `732` to `820`
+  - Remove inline `style` with `display:none` and `height:100%` (CSS will handle it)
+  - Keep all existing `data-*` attributes
+- The GHL embed script stays loaded via `useEffect` (no inline `<script>` tag in JSX)
 
-The change is a one-line style addition to the container div wrapping the iframe.
+### 2. Add CSS to `src/index.css`
+Add the following rules in the `@layer components` section:
 
-## Technical Detail
+- `.ghl-form-wrap` -- full width, max-width 900px, centered, overflow hidden, border-radius 20px
+- `.ghl-form-iframe` -- display block !important, width/height 100%/820px !important, border 0, overflow hidden, scrollbar hiding for Firefox/Webkit/Edge
 
-- On the `<div className="max-w-2xl mx-auto card-premium">`, add inline style: `minHeight: "800px"` and `overflow: "hidden"`
-- This ensures the container is always tall enough for the 732px form, eliminating the scrollbar
+## Technical Details
+
+**Scorecard.tsx** will look like:
+```
+<div className="ghl-form-wrap">
+  <iframe
+    src="https://api.leadconnectorhq.com/widget/form/p61qThW6q0uTt7jSreIK"
+    id="inline-p61qThW6q0uTt7jSreIK"
+    className="ghl-form-iframe"
+    title="Locus LP Lead Magnet Assessment Form"
+    scrolling="no"
+    style={{ border: "none", borderRadius: "20px" }}
+    data-layout="{'id':'INLINE'}"
+    data-trigger-type="alwaysShow"
+    data-activation-type="alwaysActivated"
+    data-deactivation-type="leadCollected"
+    data-form-name="Locus LP Lead Magnet Assessment Form"
+    data-height="820"
+    data-layout-iframe-id="inline-p61qThW6q0uTt7jSreIK"
+    data-form-id="p61qThW6q0uTt7jSreIK"
+  />
+</div>
+```
+
+**CSS additions** in `src/index.css` (`@layer components`):
+```css
+.ghl-form-wrap {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.ghl-form-iframe {
+  display: block !important;
+  width: 100% !important;
+  height: 820px !important;
+  border: 0 !important;
+  overflow: hidden !important;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.ghl-form-iframe::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+```
