@@ -12,7 +12,7 @@ const leakItems = [{
 }, {
   icon: CalendarSlotIcon,
   title: "No-Show & Cancellation Bleed",
-  description: "Medical practices see 10–30% no-show rates.\n\nAutomated reminders cut this by 25–40%.",
+  description: "Appointment-based businesses see 10–30% no-show rates.\n\nAutomated reminders cut this by 25–40%.",
   cost: "5–10% of monthly revenue"
 }];
 const LeakSection = () => {
