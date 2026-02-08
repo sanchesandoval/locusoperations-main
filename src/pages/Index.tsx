@@ -8,7 +8,7 @@ import TestimonialsSection from "@/components/home/TestimonialsSection";
 import ResearchSection from "@/components/home/ResearchSection";
 import PricingSection from "@/components/home/PricingSection";
 import FAQSection from "@/components/home/FAQSection";
-import CalendlySection from "@/components/home/CalendlySection";
+import LeadMagnetCTA from "@/components/home/LeadMagnetCTA";
 
 const Index = () => {
   return (
@@ -23,7 +23,7 @@ const Index = () => {
         <ResearchSection />
         <PricingSection />
         <FAQSection />
-        <CalendlySection />
+        <LeadMagnetCTA />
       </main>
       <Footer />
     </div>

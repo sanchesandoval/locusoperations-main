@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu } from "lucide-react";
-import locusLogo from "@/assets/locus-logo.png";
+import locusLogo from "@/assets/locus-logo-white.png";
 import {
   Sheet,
   SheetContent,

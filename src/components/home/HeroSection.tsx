@@ -148,7 +148,7 @@ const HeroSection = () => {
 
               <Marquee reverse pauseOnHover className="[--duration:25s]">
                 {integrationLogos.map((logo, index) => <div key={index} className="flex-shrink-0 px-5 sm:px-7 md:px-8 lg:px-8 py-3 sm:py-4 lg:py-4 flex items-center justify-center">
-                    <img src={logo.src} alt={logo.name} className="w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" style={{
+                    <img src={logo.src} alt={logo.name} className="w-auto object-contain grayscale invert opacity-60 hover:grayscale-0 hover:invert-0 hover:opacity-100 transition-all duration-300" style={{
                   height: `${(logo.scale || 1) * 32}px`
                 }} />
                   </div>)}

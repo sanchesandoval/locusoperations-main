@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import locusLogo from "@/assets/locus-logo.png";
+import locusLogo from "@/assets/locus-logo-white.png";
 import { siteConfig } from "@/lib/config";
 const Footer = () => {
   return <footer className="border-t border-white/10 py-12 bg-brand-deep">
@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8 lg:gap-12">
           {/* Brand */}
           <div className="md:col-span-2 space-y-4">
-            <img src={locusLogo} alt="Locus" className="h-6 w-auto brightness-0 invert" />
+            <img src={locusLogo} alt="Locus" className="h-6 w-auto" />
             <p className="text-sm text-white/70 max-w-xs">
               Revenue Infrastructure for Medical Wellness.
             </p>
