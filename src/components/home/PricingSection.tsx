@@ -140,12 +140,6 @@ const PricingSection = () => {
             Book a Free Consultation
           </Link>
         </div>
-
-        <div className="mt-8 text-center">
-          <p className="text-sm text-muted-foreground">
-            Growth Fuel (Ad Spend) managed directly by client. We install the engine; you provide the fuel.
-          </p>
-        </div>
       </div>
     </section>
   );
