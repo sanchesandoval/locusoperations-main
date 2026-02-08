@@ -47,7 +47,7 @@ export const siteConfig = {
     {
       title: "Product",
       links: [
-        { href: "/book-call", label: "Book a Call" },
+        { href: "/book-call", label: "Book a Free Consultation" },
       ],
     },
     {
