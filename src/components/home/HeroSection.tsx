@@ -31,7 +31,7 @@ import makeLogo from "@/assets/logos/make.png";
 const integrationLogos = [
   // CRM / Sales
   { name: "Salesforce", src: salesforceLogo, scale: 1.4 },
-  { name: "HubSpot", src: hubspotLogo, scale: 1.4 },
+  { name: "HubSpot", src: hubspotLogo, scale: 1.12 },
   { name: "Pipedrive", src: pipedriveLogo },
   { name: "Wealthbox", src: wealthboxLogo, scale: 1.3 },
   { name: "Lawmatics", src: lawmaticsLogo },
