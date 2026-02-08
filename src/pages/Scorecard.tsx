@@ -25,23 +25,22 @@ const Scorecard = () => {
             </h1>
           </div>
 
-          <div className="max-w-2xl mx-auto card-premium" style={{ minHeight: "800px", overflow: "hidden" }}>
+          <div className="ghl-form-wrap">
             <iframe
               src="https://api.leadconnectorhq.com/widget/form/p61qThW6q0uTt7jSreIK"
-              style={{ display: "none", width: "100%", height: "100%", border: "none", borderRadius: "20px" }}
               id="inline-p61qThW6q0uTt7jSreIK"
+              className="ghl-form-iframe"
+              title="Locus LP Lead Magnet Assessment Form"
+              scrolling="no"
+              style={{ border: "none", borderRadius: "20px" }}
               data-layout="{'id':'INLINE'}"
               data-trigger-type="alwaysShow"
-              data-trigger-value=""
               data-activation-type="alwaysActivated"
-              data-activation-value=""
               data-deactivation-type="leadCollected"
-              data-deactivation-value=""
               data-form-name="Locus LP Lead Magnet Assessment Form"
-              data-height="732"
+              data-height="820"
               data-layout-iframe-id="inline-p61qThW6q0uTt7jSreIK"
               data-form-id="p61qThW6q0uTt7jSreIK"
-              title="Locus LP Lead Magnet Assessment Form"
             />
           </div>
         </div>

@@ -149,6 +149,29 @@
   .text-balance {
     text-wrap: balance;
   }
+
+  .ghl-form-wrap {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 20px;
+  }
+
+  .ghl-form-iframe {
+    display: block !important;
+    width: 100% !important;
+    height: 820px !important;
+    border: 0 !important;
+    overflow: hidden !important;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .ghl-form-iframe::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
 }
 
 @layer utilities {
