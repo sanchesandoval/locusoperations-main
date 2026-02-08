@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import locusLogo from "@/assets/locus-logo-white.png";
 import { siteConfig } from "@/lib/config";
 const Footer = () => {
-  return <footer className="border-t border-white/10 py-12 bg-primary">
+  return <footer className="border-t border-white/10 py-12 bg-brand-deep">
       {/* Top accent line */}
       <div className="h-px w-full bg-gradient-to-r from-transparent via-white/20 to-transparent mb-12" />
       
