@@ -1,63 +1,100 @@
 
 
-## Add FAQ Section to System Demo Page and Update Footer Link
+# Dark Theme + Lead Magnet Funnel Overhaul
 
-### UX Decision: Footer "FAQs" Link
+## Overview
+This plan covers four major changes: (1) inverting the site to a dark black theme, (2) swapping logos to the white Locus logo, (3) creating two new subpages for the lead magnet funnel, and (4) replacing the Calendly section with a lead magnet CTA and updating all "Book a Call" CTAs.
 
-The footer "FAQs" link currently points to `#faq` (an anchor). Since the System Demo page now has its own FAQ section with product-specific questions, and the home page has a broader FAQ section, the best UX approach is:
+---
 
-- **Keep the footer link pointing to the home page FAQ** (`/#faq`) using a route-based link instead of a plain anchor. This ensures the link works correctly from any page (including `/system-demo`) by navigating to the home page and scrolling to the FAQ section. The home page FAQ is more comprehensive and serves as the canonical FAQ destination.
-- The System Demo FAQ section will have its own `id="demo-faq"` so it does not conflict.
+## 1. Dark Theme Conversion
 
-### Changes
+Update CSS variables in `src/index.css` to flip the color scheme to dark black while preserving all green (primary) values:
 
-**1. Add FAQ section to `src/pages/SystemDemo.tsx`**
+- `--background`: black/near-black (e.g., `0 0% 7%`)
+- `--foreground`: white (e.g., `0 0% 95%`)
+- `--card`: dark gray (e.g., `0 0% 10%`)
+- `--card-foreground`: white
+- `--popover`: same as card
+- `--secondary`, `--muted`: dark grays
+- `--muted-foreground`: light gray (e.g., `0 0% 60%`)
+- `--border`: subtle white borders (e.g., `0 0% 15%`)
+- All `--primary` / green values stay exactly the same
+- Update shadow/gradient variables for dark compatibility
+- Update `--brand-deep` footer background to match or go darker
 
-- Add a new FAQ section below the secondary upgrade CTA (after line 104, before the closing `</div>`)
-- Use the same Accordion pattern and styling from the home page FAQ section (`card-premium`, `AccordionTrigger`, `AccordionContent`)
-- Include the 3 provided Q&As as inline data
-- Add `id="demo-faq"` to the section
-- Import `Accordion`, `AccordionContent`, `AccordionItem`, `AccordionTrigger` from `@/components/ui/accordion`
+Components that reference `bg-background` or `text-foreground` will automatically adapt. The `card-premium`, `btn-secondary`, `trust-chip`, and other utility classes already reference CSS variables, so they'll update automatically.
 
-**2. Update footer "FAQs" link in `src/lib/config.tsx`**
+Special attention areas:
+- Header backdrop blur: update `bg-background/80` will work automatically
+- Marquee fade edges (`from-background`) will work automatically
+- Dot pattern and glow effects will look better on dark
+- Integration logos already have `grayscale opacity-60` -- will add `invert` filter so they show on dark background
 
-- Change `{ href: "#faq", label: "FAQs" }` to `{ href: "/#faq", label: "FAQs" }`
-- This ensures it navigates to the home page FAQ from any route
+## 2. Logo Swap
 
-**3. Update `src/components/layout/Footer.tsx`**
+- Copy `user-uploads://White_Font_Transparent_Large_Locus_Logo.png` to `src/assets/locus-logo-white.png`
+- Update `Header.tsx`: import and use the white logo instead of `locus-logo.png`
+- Update `Footer.tsx`: use the white logo directly (remove `brightness-0 invert` filter since the logo is already white)
 
-- Update the link rendering logic so that `/#faq` (starts with `/`) is treated as a `<Link>` route rather than an anchor, which it already will be since it doesn't start with `#`.
+## 3. New Page: `/scorecard` (GHL Form Gate)
 
-### Technical Details
+Create `src/pages/Scorecard.tsx`:
+- Headline: "Find Out Which Revenue Leaks Are Costing You the Most...in under 3 minutes."
+- Embeds the GHL form using an iframe and the provided embed script
+- Clean, centered layout matching site branding
+- After form fill, GHL auto-redirects to `/revenue-leak-finder`
 
-**`src/pages/SystemDemo.tsx`** -- Add after the secondary CTA section (line 104):
+## 4. New Page: `/revenue-leak-finder` (Interactive Scorecard)
 
-```tsx
-// New FAQ data array at top of file
-const demoFaqs = [
-  {
-    question: "Do I need technical skills?",
-    answer: "No. Setup guides walk you through connecting your calendar, phone, and email. If you'd rather we handle it, book a call for Locus Ops.",
-  },
-  {
-    question: "Can I upgrade to Locus Ops later?",
-    answer: "Absolutely. Core is the right choice if you're building your foundation or want full control of the system. Many clinics stay on Core indefinitely. Others upgrade to Ops when they want done-for-you implementation, or to Command when they scale to multiple locations. We'll migrate everything seamlessly.",
-  },
-  {
-    question: "What if it doesn't work for my clinic?",
-    answer: "Cancel anytime. No contracts. If you're not seeing more booked appointments in 30 days, we'll help you troubleshoot or you can cancel.",
-  },
-];
-```
+Create `src/pages/RevenueLeakFinder.tsx`:
+- Header: "Your Revenue Leak Scorecard -- Answer 12 questions. Get your score. See which leaks to fix first."
+- 12 yes/no questions organized into 5 categories (Speed-to-Lead, Follow-Up, Booking, No-Shows, Reactivation)
+- Each "No" = 1 point (counting leaks)
+- Auto-calculated score at bottom with conditional messaging:
+  - 0-3: Pipeline in decent shape
+  - 4-7: Losing significant revenue ($3-5K/month)
+  - 8-12: Critical structural leaks (20-40% revenue loss)
+- All score ranges end with the same CTA: "Want to know exactly where YOUR revenue is leaking?" with a "Book a Free 15-Minute Pipeline Review" button linking to `/book-call`
+- Page only accessible via direct link or GHL redirect (not in navigation)
 
-New section markup mirrors the home page FAQ styling with `card-premium` accordion items, a "Questions" label, and "Frequently Asked" heading.
+## 5. Replace Calendly Section with Lead Magnet CTA
 
-**`src/lib/config.tsx`** -- Line 58:
-```tsx
-// Change from:
-{ href: "#faq", label: "FAQs" }
-// To:
-{ href: "/#faq", label: "FAQs" }
-```
+- Remove `CalendlySection.tsx` import/usage from `Index.tsx`
+- Create a new `LeadMagnetCTA.tsx` component styled like the reference screenshot:
+  - Clean card/section with a bold headline about finding revenue leaks
+  - "Find My Revenue Leaks" CTA button linking to `/scorecard`
+  - Matches dark theme branding with the green accent
+- Add this component to `Index.tsx` in place of CalendlySection
 
-This ensures from any page the footer FAQs link takes users to the comprehensive home page FAQ section.
+## 6. Update All "Book a Call" CTAs
+
+- Ensure all "Book a Call" buttons/links across the site point to `/book-call`
+- This is already the case for most CTAs -- will verify Header, PricingSection, SystemDemo, and HeroSection links
+
+## 7. Route Registration
+
+Update `App.tsx` to add:
+- `<Route path="/scorecard" element={<Scorecard />} />`
+- `<Route path="/revenue-leak-finder" element={<RevenueLeakFinder />} />`
+
+---
+
+## Technical Details
+
+### Files to Create
+- `src/pages/Scorecard.tsx` -- GHL form embed page
+- `src/pages/RevenueLeakFinder.tsx` -- 12-question interactive scorecard
+- `src/components/home/LeadMagnetCTA.tsx` -- CTA section replacing Calendly
+
+### Files to Modify
+- `src/index.css` -- Dark theme CSS variables
+- `src/components/layout/Header.tsx` -- White logo swap
+- `src/components/layout/Footer.tsx` -- White logo swap, remove invert filter
+- `src/pages/Index.tsx` -- Swap CalendlySection for LeadMagnetCTA
+- `src/App.tsx` -- Add new routes
+- `src/components/home/HeroSection.tsx` -- Invert integration logo filters for dark bg
+
+### Asset to Copy
+- `White_Font_Transparent_Large_Locus_Logo.png` to `src/assets/locus-logo-white.png`
+
