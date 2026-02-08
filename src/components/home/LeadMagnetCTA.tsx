@@ -10,7 +10,7 @@ const LeadMagnetCTA = () => {
             Answer 12 quick questions and get a personalized scorecard showing exactly where your pipeline is bleeding revenue.
           </p>
           <Link to="/scorecard" className="btn-primary text-base sm:text-lg px-8 py-4 inline-flex items-center gap-2">
-            Takes under 3 minutes. Completely free. Get your score and personalized recommendations instantly.
+            Start My Free Assessment
             <ArrowRight className="w-5 h-5" />
           </Link>
           <p className="text-xs text-muted-foreground/60 mt-6">
