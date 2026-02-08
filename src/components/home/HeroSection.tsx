@@ -7,6 +7,7 @@ import { Marquee } from "@/components/magicui/marquee";
 
 // Logo imports — grouped by industry
 import salesforceLogo from "@/assets/logos/salesforce-new.png";
+import hubspotLogo from "@/assets/logos/hubspot-new.png";
 import pipedriveLogo from "@/assets/logos/pipedrive.png";
 import wealthboxLogo from "@/assets/logos/wealthbox.png";
 import lawmaticsLogo from "@/assets/logos/lawmatics.png";
@@ -30,6 +31,7 @@ import makeLogo from "@/assets/logos/make.png";
 const integrationLogos = [
   // CRM / Sales
   { name: "Salesforce", src: salesforceLogo, scale: 1.4 },
+  { name: "HubSpot", src: hubspotLogo, scale: 1.4 },
   { name: "Pipedrive", src: pipedriveLogo },
   { name: "Wealthbox", src: wealthboxLogo, scale: 1.3 },
   { name: "Lawmatics", src: lawmaticsLogo },
