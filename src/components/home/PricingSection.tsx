@@ -14,8 +14,8 @@ const tiers = [
       "Technical support bot",
     ],
     popular: false,
-    ctaText: "Watch 5-Min System Demo",
-    ctaLink: "/system-demo",
+    ctaText: "Book a Call",
+    ctaLink: "/book-call",
   },
   {
     name: "Locus Ops",

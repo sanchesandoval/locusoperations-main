@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import Index from "./pages/Index";
 import BookCall from "./pages/BookCall";
-import SystemDemo from "./pages/SystemDemo";
+
 import Scorecard from "./pages/Scorecard";
 import RevenueLeakFinder from "./pages/RevenueLeakFinder";
 
@@ -25,7 +25,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/book-call" element={<BookCall />} />
-          <Route path="/system-demo" element={<SystemDemo />} />
+          
           <Route path="/scorecard" element={<Scorecard />} />
           <Route path="/revenue-leak-finder" element={<RevenueLeakFinder />} />
           

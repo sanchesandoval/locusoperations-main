@@ -100,9 +100,6 @@ const HeroSection = () => {
                 <Link to="/book-call" className="btn-primary text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4">
                   Book a Call
                 </Link>
-                <Link to="/system-demo" className="text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors">
-                  Or watch the 5-minute system walkthrough →
-                </Link>
               </div>
             </BlurFade>
 
