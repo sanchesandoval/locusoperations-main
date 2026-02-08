@@ -37,7 +37,7 @@ const Header = () => {
                       {link.label}
                     </a>)}
                   <Link to="/book-call" className="btn-primary text-sm px-4 py-2 text-center mt-4" onClick={() => setIsOpen(false)}>
-                    Book a Call
+                    Book a Free Consultation  
                   </Link>
                 </nav>
               </SheetContent>
