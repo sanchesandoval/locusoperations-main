@@ -23,7 +23,7 @@ const Scorecard = () => {
               Find Out Which Revenue Leaks Are Costing You the Most
               <span className="text-primary">...</span>in under 3 minutes.
             </h1>
-            <div className="text-base text-muted-foreground space-y-3 text-left">
+            <div className="text-base text-muted-foreground space-y-3 text-center">
               <p>This scorecard measures and scores you across three critical areas of your lead-to-appointment pipeline:</p>
               <ul className="space-y-2 list-none pl-0">
                 <li><span className="font-semibold text-foreground">Speed & Capture</span> — How fast and reliably you respond to new leads</li>
