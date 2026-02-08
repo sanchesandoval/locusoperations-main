@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import locusLogo from "@/assets/locus-logo.png";
-
 const BookCall = () => {
   useEffect(() => {
     // Load Calendly widget script
@@ -13,24 +12,15 @@ const BookCall = () => {
       document.body.removeChild(script);
     };
   }, []);
-
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border/50">
         <div className="container-main">
           <div className="flex items-center justify-between h-16 lg:h-20">
             <Link to="/" className="flex items-center">
-              <img 
-                src={locusLogo} 
-                alt="Locus" 
-                className="h-8 lg:h-9 w-auto"
-              />
+              <img alt="Locus" className="h-8 lg:h-9 w-auto" src="/lovable-uploads/da30ffe9-a858-45fe-9836-e5b94140a7b0.png" />
             </Link>
-            <Link
-              to="/"
-              className="btn-secondary text-xs sm:text-sm px-3 sm:px-4"
-            >
+            <Link to="/" className="btn-secondary text-xs sm:text-sm px-3 sm:px-4">
               Back to Home
             </Link>
           </div>
@@ -53,14 +43,10 @@ const BookCall = () => {
 
           {/* Calendly embed */}
           <div className="max-w-4xl mx-auto card-premium overflow-hidden">
-          <div 
-              className="calendly-inline-widget" 
-              data-url="https://calendly.com/locusops/30min/?month=2026-02&hide_landing_page_details=1" 
-              style={{
-                minWidth: "320px",
-                height: "700px"
-              }} 
-            />
+          <div className="calendly-inline-widget" data-url="https://calendly.com/locusops/30min/?month=2026-02&hide_landing_page_details=1" style={{
+            minWidth: "320px",
+            height: "700px"
+          }} />
           </div>
 
           {/* Privacy note */}
@@ -70,8 +56,6 @@ const BookCall = () => {
           </p>
         </div>
       </main>
-    </div>
-  );
+    </div>;
 };
-
 export default BookCall;
