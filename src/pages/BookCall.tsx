@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import locusLogo from "@/assets/locus-logo.png";
+import Footer from "@/components/layout/Footer";
 const BookCall = () => {
   useEffect(() => {
     // Load Calendly widget script
@@ -56,6 +57,7 @@ const BookCall = () => {
           </p>
         </div>
       </main>
+      <Footer />
     </div>;
 };
 export default BookCall;
