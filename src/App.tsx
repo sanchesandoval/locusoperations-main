@@ -7,6 +7,8 @@ import ScrollToTop from "./components/ScrollToTop";
 import Index from "./pages/Index";
 import BookCall from "./pages/BookCall";
 import SystemDemo from "./pages/SystemDemo";
+import Scorecard from "./pages/Scorecard";
+import RevenueLeakFinder from "./pages/RevenueLeakFinder";
 
 // import ClientLogin from "./pages/ClientLogin";
 import NotFound from "./pages/NotFound";
@@ -24,6 +26,8 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/book-call" element={<BookCall />} />
           <Route path="/system-demo" element={<SystemDemo />} />
+          <Route path="/scorecard" element={<Scorecard />} />
+          <Route path="/revenue-leak-finder" element={<RevenueLeakFinder />} />
           
           {/* <Route path="/client-login" element={<ClientLogin />} /> */}
           <Route path="*" element={<NotFound />} />
