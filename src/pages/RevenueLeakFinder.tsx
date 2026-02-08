@@ -1,9 +1,11 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { supabase } from "@/integrations/supabase/client";
+import QualifyingQuestions from "@/components/revenue-leak/QualifyingQuestions";
+import ScoreGauge from "@/components/revenue-leak/ScoreGauge";
+import PersonalizedInsights from "@/components/revenue-leak/PersonalizedInsights";
+import PersonalizedCTA from "@/components/revenue-leak/PersonalizedCTA";
 
 type Answer = "yes" | "no" | null;
 
@@ -49,36 +51,15 @@ const categories = [
 
 const allQuestions = categories.flatMap((c) => c.questions);
 
-const getResult = (score: number) => {
-  if (score <= 3) {
-    return {
-      label: "Low Risk",
-      color: "text-primary",
-      message:
-        "Your pipeline is in decent shape. A few tweaks could unlock meaningful revenue.",
-    };
-  }
-  if (score <= 7) {
-    return {
-      label: "Moderate Risk",
-      color: "text-yellow-400",
-      message:
-        "You're losing significant revenue. Most businesses at this score are leaving $3-5K/month on the table.",
-    };
-  }
-  return {
-    label: "Critical",
-    color: "text-destructive",
-    message:
-      "This is critical. Your pipeline has major structural leaks that are costing you 20-40% of potential revenue.",
-  };
-};
-
 const RevenueLeakFinder = () => {
   const [answers, setAnswers] = useState<Answer[]>(
     new Array(allQuestions.length).fill(null)
   );
   const [submitted, setSubmitted] = useState(false);
+  const [q14, setQ14] = useState<string | null>(null);
+  const [q15, setQ15] = useState<string | null>(null);
+  const [q16, setQ16] = useState<string | null>(null);
+  const [q17, setQ17] = useState("");
 
   const handleAnswer = (index: number, value: "yes" | "no") => {
     const next = [...answers];
@@ -86,9 +67,24 @@ const RevenueLeakFinder = () => {
     setAnswers(next);
   };
 
-  const allAnswered = answers.every((a) => a !== null);
+  const allScoredAnswered = answers.every((a) => a !== null);
+  const qualifyingReady = q14 !== null && q15 !== null && q16 !== null;
+  const canSubmit = allScoredAnswered && qualifyingReady;
+
   const score = answers.filter((a) => a === "no").length;
-  const result = getResult(score);
+
+  // Compute category scores
+  const computeCategoryScores = () => {
+    let qi = 0;
+    return categories.map((cat) => {
+      const gaps = cat.questions.filter((_, i) => answers[qi + i] === "no").length;
+      const total = cat.questions.length;
+      qi += total;
+      return { name: cat.name, gaps, total };
+    });
+  };
+
+  const categoryScores = computeCategoryScores();
 
   let questionIndex = 0;
 
@@ -103,11 +99,11 @@ const RevenueLeakFinder = () => {
               Your Revenue Leak Scorecard
             </h1>
             <p className="text-lg text-muted-foreground">
-              Answer 12 questions. Get your score. See which leaks to fix first.
+              Answer a few quick questions. Get your score. See which leaks to fix first.
             </p>
           </div>
 
-          {/* Questions */}
+          {/* Scored Questions */}
           <div className="max-w-2xl mx-auto space-y-8">
             {categories.map((category) => (
               <div key={category.name}>
@@ -155,63 +151,49 @@ const RevenueLeakFinder = () => {
             ))}
           </div>
 
+          {/* Qualifying Questions */}
+          <div className="max-w-2xl mx-auto">
+            <QualifyingQuestions
+              q14={q14} q15={q15} q16={q16} q17={q17}
+              onQ14={setQ14} onQ15={setQ15} onQ16={setQ16} onQ17={setQ17}
+            />
+          </div>
+
           {/* Submit / Results */}
           <div className="max-w-2xl mx-auto mt-12">
             {!submitted ? (
               <button
                 onClick={() => {
                   setSubmitted(true);
-                  // Fire-and-forget: save submission to database
-                  let qi = 0;
-                  const categoryScores = categories.map((cat) => {
-                    const gaps = cat.questions.filter((_, i) => answers[qi + i] === "no").length;
-                    const total = cat.questions.length;
-                    qi += total;
-                    return { name: cat.name, gaps, total };
-                  });
                   const answersObj: Record<string, string> = {};
                   answers.forEach((a, i) => { if (a) answersObj[String(i)] = a; });
                   supabase.from("leak_finder_submissions").insert({
                     answers: answersObj,
                     category_scores: categoryScores,
                     score,
-                    result_label: result.label,
+                    result_label: score <= 4 ? "Low Risk" : score <= 8 ? "Moderate Risk" : "Critical",
+                    qualifying_answers: {
+                      desired_outcome: q14,
+                      biggest_obstacle: q15,
+                      preferred_solution: q16,
+                      additional_notes: q17 || null,
+                    },
                   } as any).then(() => {});
                 }}
-                disabled={!allAnswered}
+                disabled={!canSubmit}
                 className="btn-primary w-full py-4 text-lg disabled:opacity-40 disabled:cursor-not-allowed"
               >
                 See My Score
               </button>
             ) : (
-              <div className="card-premium p-8 text-center space-y-6">
-                <div>
-                  <p className="text-sm text-muted-foreground mb-2">
-                    Your Score
-                  </p>
-                  <p className={`text-6xl font-bold ${result.color}`}>
-                    {score}
-                    <span className="text-2xl text-muted-foreground">/12</span>
-                  </p>
-                  <p className={`text-lg font-semibold mt-2 ${result.color}`}>
-                    {result.label}
-                  </p>
-                </div>
-                <p className="text-muted-foreground max-w-lg mx-auto">
-                  {result.message}
-                </p>
-                <div className="pt-4 border-t border-border">
-                  <p className="text-foreground font-semibold mb-4">
-                    Want to know exactly where YOUR revenue is leaking?
-                  </p>
-                  <Link
-                    to="/book-call"
-                    className="btn-primary inline-flex items-center gap-2 text-base px-8 py-4"
-                  >
-                    Book a Free 15-Minute Pipeline Review
-                    <ArrowRight className="w-5 h-5" />
-                  </Link>
-                </div>
+              <div className="space-y-8">
+                <ScoreGauge score={score} />
+                <PersonalizedInsights categoryScores={categoryScores} />
+                <PersonalizedCTA
+                  score={score}
+                  q16Answer={q16}
+                  categoryScores={categoryScores}
+                />
               </div>
             )}
           </div>

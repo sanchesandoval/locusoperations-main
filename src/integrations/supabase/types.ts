@@ -20,6 +20,7 @@ export type Database = {
           category_scores: Json
           created_at: string | null
           id: string
+          qualifying_answers: Json | null
           result_label: string
           score: number
         }
@@ -28,6 +29,7 @@ export type Database = {
           category_scores: Json
           created_at?: string | null
           id?: string
+          qualifying_answers?: Json | null
           result_label: string
           score: number
         }
@@ -36,6 +38,7 @@ export type Database = {
           category_scores?: Json
           created_at?: string | null
           id?: string
+          qualifying_answers?: Json | null
           result_label?: string
           score?: number
         }
