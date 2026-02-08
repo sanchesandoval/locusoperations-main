@@ -5,63 +5,55 @@ import { AnimatedGradientText } from "@/components/magicui/animated-gradient-tex
 import { DotPattern } from "@/components/magicui/dot-pattern";
 import { Marquee } from "@/components/magicui/marquee";
 
-// Logo imports
-import aestheticsproLogo from "@/assets/logos/aestheticspro.png";
+// Logo imports — grouped by industry
+import salesforceLogo from "@/assets/logos/salesforce-new.png";
+import pipedriveLogo from "@/assets/logos/pipedrive.png";
+import wealthboxLogo from "@/assets/logos/wealthbox.png";
+import lawmaticsLogo from "@/assets/logos/lawmatics.png";
+import highlevelLogo from "@/assets/logos/highlevel.png";
+import calendlyLogo from "@/assets/logos/calendly.png";
+import janeappLogo from "@/assets/logos/janeapp.png";
 import boulevardLogo from "@/assets/logos/boulevard.webp";
-import mangomintLogo from "@/assets/logos/mangomint.png";
+import vagaroLogo from "@/assets/logos/vagaro.webp";
+import aestheticsproLogo from "@/assets/logos/aestheticspro.png";
+import simplepracticeLogo from "@/assets/logos/simplepractice.png";
+import clioLogo from "@/assets/logos/clio.png";
+import jobberLogo from "@/assets/logos/jobber.png";
+import servicetitanLogo from "@/assets/logos/servicetitan.png";
 import slackLogo from "@/assets/logos/slack.png";
 import whatsappLogo from "@/assets/logos/whatsapp.png";
-import janeappLogo from "@/assets/logos/janeapp.png";
-import patientnowLogo from "@/assets/logos/patientnow.png";
-import simplepracticeLogo from "@/assets/logos/simplepractice.png";
+import twilioLogo from "@/assets/logos/twilio.png";
 import zapierLogo from "@/assets/logos/zapier.png";
 import n8nLogo from "@/assets/logos/n8n.svg";
-import vagaroLogo from "@/assets/logos/vagaro.webp";
-import zenotiLogo from "@/assets/logos/zenoti.png";
-const integrationLogos = [{
-  name: "AestheticsPro",
-  src: aestheticsproLogo,
-  scale: 1.3
-}, {
-  name: "Vagaro",
-  src: vagaroLogo,
-  scale: 1.3
-}, {
-  name: "Zenoti",
-  src: zenotiLogo
-}, {
-  name: "Boulevard",
-  src: boulevardLogo,
-  scale: 1.3
-}, {
-  name: "Mangomint",
-  src: mangomintLogo,
-  scale: 1.3
-}, {
-  name: "Jane",
-  src: janeappLogo
-}, {
-  name: "PatientNow",
-  src: patientnowLogo
-}, {
-  name: "SimplePractice",
-  src: simplepracticeLogo,
-  scale: 1.3
-}, {
-  name: "Slack",
-  src: slackLogo,
-  scale: 1.3
-}, {
-  name: "WhatsApp",
-  src: whatsappLogo,
-  scale: 1.3
-}, {
-  name: "Zapier",
-  src: zapierLogo
-}, {
-  name: "n8n",
-  src: n8nLogo
-}];
+import makeLogo from "@/assets/logos/make.png";
+
+const integrationLogos = [
+  // CRM / Sales
+  { name: "Salesforce", src: salesforceLogo, scale: 1.4 },
+  { name: "Pipedrive", src: pipedriveLogo, scale: 1.3 },
+  { name: "Wealthbox", src: wealthboxLogo, scale: 1.3 },
+  { name: "Lawmatics", src: lawmaticsLogo, scale: 1.3 },
+  { name: "HighLevel", src: highlevelLogo, scale: 1.3 },
+  // Scheduling / Booking
+  { name: "Calendly", src: calendlyLogo, scale: 1.3 },
+  { name: "Jane", src: janeappLogo },
+  { name: "Boulevard", src: boulevardLogo, scale: 1.3 },
+  { name: "Vagaro", src: vagaroLogo, scale: 1.3 },
+  // Practice Management
+  { name: "AestheticsPro", src: aestheticsproLogo, scale: 1.3 },
+  { name: "SimplePractice", src: simplepracticeLogo, scale: 1.8 },
+  { name: "Clio", src: clioLogo, scale: 1.3 },
+  { name: "Jobber", src: jobberLogo, scale: 1.3 },
+  { name: "ServiceTitan", src: servicetitanLogo, scale: 1.3 },
+  // Messaging
+  { name: "Slack", src: slackLogo, scale: 1.3 },
+  { name: "WhatsApp", src: whatsappLogo, scale: 1.3 },
+  { name: "Twilio", src: twilioLogo, scale: 1.3 },
+  // Automation
+  { name: "Zapier", src: zapierLogo },
+  { name: "n8n", src: n8nLogo },
+  { name: "Make", src: makeLogo, scale: 1.3 },
+];
 const HeroSection = () => {
   return <section className="relative min-h-[100svh] pt-28 sm:pt-32 md:pt-36 lg:pt-28 pb-16 sm:pb-20 md:pb-24 lg:pb-10 overflow-x-hidden px-4 sm:px-6 lg:flex lg:items-center">
       {/* Background effects */}
