@@ -1,12 +1,25 @@
 
 
-# Move the GHL Form Up on the Scorecard Page
+# Move Headline Down and Add Mobile Responsive CSS
 
-## Change
+## Problem
+The screenshot shows the headline is clipped behind the header/navbar -- it needs more top padding so it sits fully below the nav. Additionally, ChatGPT's responsive and display-safety CSS should be added.
 
-Reduce the top padding on the scorecard page to move the form closer to the top of the viewport.
+## Changes
 
-## Technical Detail
+### 1. `src/pages/Scorecard.tsx`
+- Increase `<main>` top padding from `pt-12` back to `pt-24` so the headline clears the fixed header and has breathing room.
 
-In `src/pages/Scorecard.tsx`, change the `<main>` element's class from `pt-32 pb-16` to `pt-20 pb-16`. This reduces the top padding from 8rem (128px) to 5rem (80px), pulling both the heading and form upward. Also reduce the bottom margin on the heading block from `mb-12` to `mb-8` to tighten spacing between the title and the form.
+### 2. `src/index.css`
+- Add a mobile media query for the iframe height (920px on screens <= 768px).
+- The `display: block !important` rule is already present in the existing CSS -- no change needed there.
 
+```css
+@media (max-width: 768px) {
+  .ghl-form-iframe {
+    height: 920px !important;
+  }
+}
+```
+
+This media query will be added right after the existing `.ghl-form-iframe::-webkit-scrollbar` block inside `@layer components`.
