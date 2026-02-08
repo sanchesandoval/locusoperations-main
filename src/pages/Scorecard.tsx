@@ -28,9 +28,9 @@ const Scorecard = () => {
           <div className="max-w-2xl mx-auto card-premium">
             <iframe
               src="https://api.leadconnectorhq.com/widget/form/p61qThW6q0uTt7jSreIK"
-              style={{ width: "100%", height: "800px", border: "none", borderRadius: "20px" }}
+              style={{ display: "none", width: "100%", height: "100%", border: "none", borderRadius: "20px" }}
               id="inline-p61qThW6q0uTt7jSreIK"
-              data-layout='{"id":"INLINE"}'
+              data-layout="{'id':'INLINE'}"
               data-trigger-type="alwaysShow"
               data-trigger-value=""
               data-activation-type="alwaysActivated"
@@ -38,7 +38,7 @@ const Scorecard = () => {
               data-deactivation-type="leadCollected"
               data-deactivation-value=""
               data-form-name="Locus LP Lead Magnet Assessment Form"
-              data-height="undefined"
+              data-height="732"
               data-layout-iframe-id="inline-p61qThW6q0uTt7jSreIK"
               data-form-id="p61qThW6q0uTt7jSreIK"
               title="Locus LP Lead Magnet Assessment Form"
