@@ -25,7 +25,7 @@ const Scorecard = () => {
             </h1>
             <div className="text-base text-muted-foreground space-y-3 text-center">
               <p>This scorecard measures and scores you across three critical areas of your lead-to-appointment pipeline:</p>
-              <ul className="space-y-2 list-none pl-0">
+              <ul className="space-y-2 list-none pl-0 text-left">
                 <li><span className="font-semibold text-foreground">Speed & Capture</span> — How fast and reliably you respond to new leads</li>
                 <li><span className="font-semibold text-foreground">Follow-Up & Booking</span> — Whether your follow-up converts or falls through the cracks</li>
                 <li><span className="font-semibold text-foreground">Show Rate & Recovery</span> — How well you prevent no-shows and re-engage lost leads</li>
