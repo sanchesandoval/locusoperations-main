@@ -2,34 +2,25 @@
 
 ## Summary
 
-Two changes to `src/lib/config.tsx`:
+The "How It Works" footer link doesn't work because the SolutionSection ("How Locus Works") has no `id` attribute for the browser to scroll to. Two small fixes:
 
-1. Add "Revenue Leak Scorecard" link under the "Get Started" footer group
-2. Add "How It Works" link in the "Company" footer group, positioned between existing links
+## Changes
 
-## Changes (single file: `src/lib/config.tsx`)
+### 1. Add `id` to SolutionSection (`src/components/home/SolutionSection.tsx`)
 
-Update the `footer` array to:
+Add `id="how-it-works"` to the `<section>` element:
 
 ```
-footer: [
-  {
-    title: "Get Started",
-    links: [
-      { href: "/book-call", label: "Book a Free Consultation" },
-      { href: "/scorecard", label: "Revenue Leak Scorecard" },
-    ],
-  },
-  {
-    title: "Company",
-    links: [
-      { href: "/#how-it-works", label: "How It Works" },
-      { href: "/#testimonials", label: "Results" },
-      { href: "/#faq", label: "FAQs" },
-    ],
-  },
-],
+<section id="how-it-works" className="section-spacing relative overflow-hidden">
 ```
 
-These changes propagate automatically to every page since all pages use the shared `Footer` component.
+### 2. Update footer link (`src/lib/config.tsx`)
+
+Change the href from `/#our-services` to `/#how-it-works`:
+
+```
+{ href: "/#how-it-works", label: "How It Works" },
+```
+
+This ensures the footer link on every page scrolls to the "How Locus Works" solution section, not the services section.
 
