@@ -1,21 +1,18 @@
 
+# Fix Scrollbar on Scorecard Iframe
 
-# Show Full GHL Form Without Scrolling
+## Problem
+The GHL form content is 732px tall (per `data-height`), but the `card-premium` container doesn't have enough explicit height, causing a scrollbar to appear inside the iframe.
 
-## Change
-Update `src/pages/Scorecard.tsx` to remove the fixed `500px` height and instead use a much taller height so the entire form renders inline without any internal scrolling.
+## Fix in `src/pages/Scorecard.tsx`
 
-- Change iframe height from `500px` to `800px` (can be adjusted once you see how tall the actual form is)
-- Remove `overflow-hidden` from the card container so nothing gets clipped
+1. **Set a minimum height on the container div** -- Give the `card-premium` wrapper a `min-height` of ~800px (732px form + padding buffer) so the iframe has room to render fully.
 
-## Colors for GHL Form Styling
-Use these in your GHL form builder to match the site:
+2. **Add `overflow: hidden`** to the container to suppress any residual scrollbar while the GHL script auto-sizes the iframe.
 
-- **Page/Form background**: `#121212` (or card bg `#1a1a1a`)
-- **Text color**: `#f2f2f2`
-- **Muted/label text**: `#999999`
-- **Primary/button green**: `#45A88C`
-- **Input field background**: `#2e2e2e`
-- **Border color**: `#2e2e2e`
-- **Button text**: `#ffffff`
+The change is a one-line style addition to the container div wrapping the iframe.
 
+## Technical Detail
+
+- On the `<div className="max-w-2xl mx-auto card-premium">`, add inline style: `minHeight: "800px"` and `overflow: "hidden"`
+- This ensures the container is always tall enough for the 732px form, eliminating the scrollbar
