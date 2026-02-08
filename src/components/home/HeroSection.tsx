@@ -30,7 +30,7 @@ import makeLogo from "@/assets/logos/make.png";
 const integrationLogos = [
   // CRM / Sales
   { name: "Salesforce", src: salesforceLogo, scale: 1.4 },
-  { name: "Pipedrive", src: pipedriveLogo, scale: 1.3 },
+  { name: "Pipedrive", src: pipedriveLogo },
   { name: "Wealthbox", src: wealthboxLogo, scale: 1.3 },
   { name: "Lawmatics", src: lawmaticsLogo, scale: 1.3 },
   { name: "HighLevel", src: highlevelLogo, scale: 1.3 },
@@ -43,7 +43,7 @@ const integrationLogos = [
   { name: "AestheticsPro", src: aestheticsproLogo, scale: 1.3 },
   { name: "SimplePractice", src: simplepracticeLogo, scale: 1.8 },
   { name: "Clio", src: clioLogo },
-  { name: "Jobber", src: jobberLogo },
+  { name: "Jobber", src: jobberLogo, scale: 0.85 },
   { name: "ServiceTitan", src: servicetitanLogo },
   // Messaging
   { name: "Slack", src: slackLogo, scale: 1.3 },
@@ -52,7 +52,7 @@ const integrationLogos = [
   // Automation
   { name: "Zapier", src: zapierLogo },
   { name: "n8n", src: n8nLogo },
-  { name: "Make", src: makeLogo, scale: 1.3 },
+  { name: "Make", src: makeLogo },
 ];
 const HeroSection = () => {
   return <section className="relative min-h-[100svh] pt-28 sm:pt-32 md:pt-36 lg:pt-28 pb-16 sm:pb-20 md:pb-24 lg:pb-10 overflow-x-hidden px-4 sm:px-6 lg:flex lg:items-center">
