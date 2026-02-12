@@ -19,9 +19,9 @@ const testimonials = [{
 }];
 const TestimonialCard = ({
   testimonial
-}: {
-  testimonial: typeof testimonials[0];
-}) => <div className="card-premium p-6 lg:p-8 flex flex-col w-[350px] shrink-0">
+
+
+}: {testimonial: typeof testimonials[0];}) => <div className="card-premium p-6 lg:p-8 flex flex-col w-[350px] shrink-0">
     {/* Stars */}
     <div className="flex gap-1 mb-4">
       {[...Array(5)].map((_, i) => <StarIcon key={i} className="w-4 h-4 text-primary" />)}
@@ -55,7 +55,7 @@ const TestimonialsSection = () => {
           </BlurFade>
           <BlurFade delay={0.15}>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-              ​Results from Clinics Running Locus
+              ​Results from Running Locus
     
             </h2>
           </BlurFade>
