@@ -61,7 +61,7 @@ const TestimonialsSection = () => {
           </BlurFade>
           <BlurFade delay={0.2}>
             <p className="text-lg text-muted-foreground">
-              Success stories from clinics running the Locus OS.
+              Success stories from businesses running the Locus OS.
             </p>
           </BlurFade>
         </div>
