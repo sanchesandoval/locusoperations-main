@@ -2,42 +2,22 @@
 
 ## Summary
 
-Replace all Calendly booking widgets and scripts with the new GoHighLevel (GHL) booking widget across the site.
+Update the GHL booking iframe and script in both booking components to use the new embed code you provided, which should fix the form not displaying fully.
 
-## Files to Change
+## Changes
 
 ### 1. `src/components/home/CalendlySection.tsx`
-- Rename to conceptually be a "BookingSection" (or just update internals)
-- Remove Calendly script loading from `useEffect`
-- Replace the Calendly `div` with the GHL iframe:
-  ```html
-  <iframe
-    src="https://api.leadconnectorhq.com/widget/booking/TqgqhfmP8rOA9BTwevpK"
-    style={{ width: "100%", border: "none", overflow: "hidden", minHeight: "700px" }}
-    scrolling="no"
-    id="msgsndr-calendar"
-  />
-  ```
-- Load the GHL embed script (`https://link.msgsndr.com/js/embed.js`) instead of Calendly's script
+- Change iframe `id` from `"msgsndr-calendar"` to `"TqgqhfmP8rOA9BTwevpK_1771082847803"`
+- Change script `src` from `https://link.msgsndr.com/js/embed.js` to `https://link.msgsndr.com/js/form_embed.js`
+- Increase `minHeight` from `700px` to `1000px` to ensure the full form (with all fields and calendar) is visible
 
 ### 2. `src/pages/BookCall.tsx`
-- Remove Calendly script loading from `useEffect`
-- Replace the Calendly `div` with the same GHL iframe
-- Load the GHL embed script instead
-
-### 3. Cleanup
-- Remove the Calendly logo asset if present (`src/assets/logos/calendly.png`) -- this is just a logo used elsewhere, will keep unless you want it removed
-- No other files reference Calendly widgets
+- Same three changes: new iframe `id`, new script `src`, increased `minHeight`
 
 ## Technical Details
 
-Both components currently:
-1. Load `https://assets.calendly.com/assets/external/widget.js` via a script tag in `useEffect`
-2. Render a `<div className="calendly-inline-widget" data-url="...">` element
-
-They will be updated to:
-1. Load `https://link.msgsndr.com/js/embed.js` via a script tag in `useEffect`
-2. Render the GHL `<iframe>` with the booking URL
-
-The wrapper styling (`card-premium`, max-width, etc.) will be preserved.
+The key difference in your new embed code:
+- Script changed from `embed.js` to `form_embed.js` -- this is likely why the form wasn't rendering fully
+- New unique iframe `id` for proper widget initialization
+- The increased height accommodates the full form fields (name, email, phone, business type, revenue) plus the calendar picker shown in your screenshot
 
