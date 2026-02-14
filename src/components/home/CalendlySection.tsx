@@ -2,7 +2,7 @@ import { useEffect } from "react";
 const CalendlySection = () => {
   useEffect(() => {
     const script = document.createElement("script");
-    script.src = "https://link.msgsndr.com/js/embed.js";
+    script.src = "https://link.msgsndr.com/js/form_embed.js";
     script.type = "text/javascript";
     script.async = true;
     document.body.appendChild(script);
@@ -23,9 +23,9 @@ const CalendlySection = () => {
         <div className="max-w-4xl mx-auto card-premium overflow-hidden">
         <iframe
           src="https://api.leadconnectorhq.com/widget/booking/TqgqhfmP8rOA9BTwevpK"
-          style={{ width: "100%", border: "none", overflow: "hidden", minHeight: "700px" }}
+           style={{ width: "100%", border: "none", overflow: "hidden", minHeight: "1000px" }}
           scrolling="no"
-          id="msgsndr-calendar"
+          id="TqgqhfmP8rOA9BTwevpK_1771082847803"
         />
         </div>
 
