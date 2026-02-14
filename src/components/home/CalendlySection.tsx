@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 const CalendlySection = () => {
   useEffect(() => {
-    // Load Calendly widget script
     const script = document.createElement("script");
-    script.src = "https://assets.calendly.com/assets/external/widget.js";
+    script.src = "https://link.msgsndr.com/js/embed.js";
+    script.type = "text/javascript";
     script.async = true;
     document.body.appendChild(script);
     return () => {
@@ -17,15 +17,16 @@ const CalendlySection = () => {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
             Book Your Pipeline Diagnostic
           </h2>
-          <p className="text-lg text-muted-foreground max-w-xl mx-auto">30 minutes. No fluff. We map where your bookings slip through and provide the blueprint to fix them.          </p>
+          <p className="text-lg text-muted-foreground max-w-xl mx-auto">30 minutes. No fluff. We map where your bookings slip through and provide the blueprint to fix them.</p>
         </div>
 
-        {/* Calendly embed */}
         <div className="max-w-4xl mx-auto card-premium overflow-hidden">
-        <div className="calendly-inline-widget" data-url="https://calendly.com/locusops/30min/?month=2026-02&hide_landing_page_details=1" style={{
-          minWidth: "320px",
-          height: "700px"
-        }} />
+        <iframe
+          src="https://api.leadconnectorhq.com/widget/booking/TqgqhfmP8rOA9BTwevpK"
+          style={{ width: "100%", border: "none", overflow: "hidden", minHeight: "700px" }}
+          scrolling="no"
+          id="msgsndr-calendar"
+        />
         </div>
 
         {/* Privacy note */}
