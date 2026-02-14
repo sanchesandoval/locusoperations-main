@@ -43,7 +43,7 @@ const BookCall = () => {
           </div>
 
           {/* GHL Booking embed */}
-          <div className="max-w-4xl mx-auto card-premium overflow-hidden">
+          <div className="max-w-4xl mx-auto overflow-hidden">
           <iframe
             src="https://api.leadconnectorhq.com/widget/booking/TqgqhfmP8rOA9BTwevpK"
             style={{ width: "100%", border: "none", overflow: "hidden", minHeight: "1000px" }}
