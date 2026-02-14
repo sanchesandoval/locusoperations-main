@@ -17,7 +17,7 @@ const CalendlySection = () => {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
             Book Your Pipeline Diagnostic
           </h2>
-          <p className="text-lg text-muted-foreground max-w-xl mx-auto">30 minutes. No fluff. We map where your bookings slip through and provide the blueprint to fix them.</p>
+          <p className="text-lg text-muted-foreground max-w-xl mx-auto">15 minutes. No fluff. We map where your bookings slip through and provide the blueprint to fix them.</p>
         </div>
 
         <div className="max-w-4xl mx-auto overflow-hidden">

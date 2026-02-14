@@ -38,7 +38,7 @@ const BookCall = () => {
               Book Your Pipeline Diagnostic
             </h1>
             <p className="text-lg text-muted-foreground max-w-xl mx-auto">
-              30 minutes. No fluff. We map where your bookings leak and what to install first.
+              15 minutes. No fluff. We map where your bookings leak and what to install first.
             </p>
           </div>
 
