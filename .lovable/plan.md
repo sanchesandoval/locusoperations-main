@@ -1,17 +1,17 @@
 
+
 ## Summary
 
-Remove the `card-premium` wrapper styling from the GHL booking iframe on both the homepage and the /book-call page so the widget displays cleanly without a redundant dark background behind it.
+Update the "30 minutes" copy to "15 minutes" in the two booking-related components that are part of the "Book a Free Consultation" flow.
 
 ## Changes
 
-### 1. `src/components/home/CalendlySection.tsx`
-- Remove the `card-premium` class from the `div` wrapping the iframe
-- Keep the `max-w-4xl mx-auto` for centering/width, but drop the card background and border
+### 1. `src/pages/BookCall.tsx` (line 41)
+- Change "30 minutes. No fluff. We map where your bookings leak and what to install first." to "15 minutes. No fluff. We map where your bookings leak and what to install first."
 
-### 2. `src/pages/BookCall.tsx`
-- Same change: remove `card-premium` from the iframe wrapper div
+### 2. `src/components/home/CalendlySection.tsx` (line 20)
+- Change "30 minutes. No fluff. We map where your bookings slip through and provide the blueprint to fix them." to "15 minutes. No fluff. We map where your bookings slip through and provide the blueprint to fix them."
 
-## Technical Details
+### Not changed
+- `src/components/home/ResearchSection.tsx` -- this "30 minutes" refers to a lead response time statistic, not the consultation duration, so it stays as-is.
 
-The `card-premium` class applies `bg-card border border-border rounded-2xl` plus a box shadow. Since the GHL widget already has its own dark background, this creates a visible dark border/padding area beneath the calendar content. Removing it will let the widget render directly without the extra card layer.
