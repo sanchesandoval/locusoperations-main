@@ -20,7 +20,7 @@ const CalendlySection = () => {
           <p className="text-lg text-muted-foreground max-w-xl mx-auto">30 minutes. No fluff. We map where your bookings slip through and provide the blueprint to fix them.</p>
         </div>
 
-        <div className="max-w-4xl mx-auto card-premium overflow-hidden">
+        <div className="max-w-4xl mx-auto overflow-hidden">
         <iframe
           src="https://api.leadconnectorhq.com/widget/booking/TqgqhfmP8rOA9BTwevpK"
            style={{ width: "100%", border: "none", overflow: "hidden", minHeight: "1000px" }}
