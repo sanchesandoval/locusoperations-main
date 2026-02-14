@@ -1,23 +1,17 @@
 
-
 ## Summary
 
-Update the GHL booking iframe and script in both booking components to use the new embed code you provided, which should fix the form not displaying fully.
+Remove the `card-premium` wrapper styling from the GHL booking iframe on both the homepage and the /book-call page so the widget displays cleanly without a redundant dark background behind it.
 
 ## Changes
 
 ### 1. `src/components/home/CalendlySection.tsx`
-- Change iframe `id` from `"msgsndr-calendar"` to `"TqgqhfmP8rOA9BTwevpK_1771082847803"`
-- Change script `src` from `https://link.msgsndr.com/js/embed.js` to `https://link.msgsndr.com/js/form_embed.js`
-- Increase `minHeight` from `700px` to `1000px` to ensure the full form (with all fields and calendar) is visible
+- Remove the `card-premium` class from the `div` wrapping the iframe
+- Keep the `max-w-4xl mx-auto` for centering/width, but drop the card background and border
 
 ### 2. `src/pages/BookCall.tsx`
-- Same three changes: new iframe `id`, new script `src`, increased `minHeight`
+- Same change: remove `card-premium` from the iframe wrapper div
 
 ## Technical Details
 
-The key difference in your new embed code:
-- Script changed from `embed.js` to `form_embed.js` -- this is likely why the form wasn't rendering fully
-- New unique iframe `id` for proper widget initialization
-- The increased height accommodates the full form fields (name, email, phone, business type, revenue) plus the calendar picker shown in your screenshot
-
+The `card-premium` class applies `bg-card border border-border rounded-2xl` plus a box shadow. Since the GHL widget already has its own dark background, this creates a visible dark border/padding area beneath the calendar content. Removing it will let the widget render directly without the extra card layer.
