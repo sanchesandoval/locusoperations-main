@@ -27,17 +27,17 @@ const categories = [
     ],
   },
   {
-    name: "Booking",
+    name: "Conversion",
     questions: [
-      "Can leads self-book an appointment without calling your office?",
+      "Can leads self-schedule a demo or intro call without going through a rep?",
       "Do you qualify leads before they hit your calendar?",
     ],
   },
   {
-    name: "No-Shows",
+    name: "Pipeline Retention",
     questions: [
-      "Do you send automated appointment confirmations and reminders?",
-      "Do you have a system to rebook no-shows within 24 hours?",
+      "Do you send automated meeting prep and confirmation sequences?",
+      "Do you have a system to re-engage no-shows within 24 hours?",
     ],
   },
   {
@@ -96,7 +96,7 @@ const RevenueLeakFinder = () => {
           {/* Header */}
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-              Your Revenue Leak Scorecard
+              Your Revenue Leak Diagnostic
             </h1>
             <p className="text-lg text-muted-foreground">
               Answer a few quick questions. Get your score. See which leaks to fix first.

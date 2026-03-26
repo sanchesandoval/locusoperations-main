@@ -8,13 +8,13 @@ interface CategoryScore {
 
 const insightMap: Record<string, string> = {
   "Speed-to-Lead":
-    "Your leads are waiting too long for a response. Research shows that leads contacted within 5 minutes are 10-20x more likely to book. Every hour of delay costs you booked appointments.",
+    "Your leads are waiting too long for a response. Leads contacted within 5 minutes are 21x more likely to qualify. Every hour of delay costs you pipeline you already paid to generate.",
   "Follow-Up":
-    "You're generating leads but not converting them. 59% of qualified leads never book because follow-up is inconsistent. A multi-touch sequence across SMS, email, and voice changes this completely.",
-  Booking:
-    "Leads who can't self-book drop off. Requiring a phone call to schedule creates friction that kills conversion rates.",
-  "No-Shows":
-    "You're booking appointments but losing them to no-shows and cancellations. Automated confirmation and reminder sequences reduce this by 25-40%.",
+    "You're generating leads but not converting them. 59% of qualified leads never convert because follow-up is inconsistent. A multi-touch sequence across SMS, email, and voice changes this completely.",
+  Conversion:
+    "Leads who can't self-schedule drop off. Friction in the demo or intro call flow kills conversion before the conversation even starts.",
+  "Pipeline Retention":
+    "You're getting meetings on the calendar but losing them before they happen. Automated confirmation and re-engagement sequences reduce no-show rates and recover ghosted opportunities.",
   Reactivation:
     "You have a database of past leads and prospects who went cold. Without a reactivation system, this revenue stays locked up.",
 };

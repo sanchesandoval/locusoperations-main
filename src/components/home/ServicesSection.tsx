@@ -8,13 +8,13 @@ const services = [
     label: "IDENTIFY",
     title: "We find where your revenue is leaking.",
     description:
-      "We start with a deep diagnostic of your entire lead-to-appointment pipeline. We map every stage — from first contact to booked appointment — and pinpoint the exact leaks costing you money.",
+      "We start with a deep diagnostic of your entire revenue motion. We map every stage from first contact to closed deal and pinpoint the exact leaks costing you money.",
     features: [
-      "60-minute pipeline diagnostic",
+      "Pipeline diagnostic",
       "Full funnel mapping (visual)",
       "Top 3 revenue leaks identified",
-      "1–2 quick wins fixed live",
-      "1-page fix plan delivered same day",
+      "1–2 quick win fixes delivered same day",
+      "Custom fix roadmap delivered same day",
     ],
   },
   {
@@ -22,12 +22,12 @@ const services = [
     label: "BUILD",
     title: "We build the system that plugs every leak.",
     description:
-      "We design and install your complete AI-powered revenue operations system inside your existing tools. No new platforms to learn. No rip-and-replace. Just automation that works 24/7.",
+      "We build the fix inside your existing tool stack. No new platforms to learn. No rip-and-replace. Just automation that works while your team sleeps.",
     features: [
-      "AI lead response (under 60 seconds)",
+      "AI-powered lead response",
       "Multi-channel follow-up (SMS, email, voice)",
-      "Smart qualification + booking flows",
-      "No-show recovery sequences",
+      "Smart qualification + pipeline flows",
+      "Re-engagement sequences",
       "Database reactivation campaigns",
       "Live in 2–4 weeks",
     ],
@@ -37,13 +37,13 @@ const services = [
     label: "OPERATE",
     title: "You run it — or we run it for you.",
     description:
-      "Once the system is live, you choose your path. Take it over with our resources and monthly updates, or keep us embedded as your ongoing revenue operations partner. Either way, the system is yours.",
+      "Once the system is live, you choose your path. Take it over with full documentation and monthly updates, or keep us as your fractional GTM engineer — monitoring performance, optimizing the system, and staying accountable to the numbers. Either way, the system is yours.",
     features: [
-      "Monthly workshops + optimization",
-      "Template + snapshot library",
-      "KPI dashboards + reporting",
-      "Optional: ongoing DFY management",
-      "Optional: weekly strategy calls",
+      "Ongoing fractional GTM engineering",
+      "Weekly strategy calls (optional)",
+      "Bi-weekly performance reporting",
+      "Monthly optimization workshops",
+      "Assets library (templates, SOPs, workflow snapshots)",
     ],
   },
 ];
@@ -113,16 +113,16 @@ const ServiceCard = ({
   );
 };
 
-const PricingSection = () => {
+const ServicesSection = () => {
   return (
-    <section id="our-services" className="section-spacing relative overflow-hidden">
+    <section id="services" className="section-spacing relative overflow-hidden">
       <div className="absolute top-1/2 left-0 w-[400px] h-[400px] rounded-full bg-primary/5 blur-[100px] -translate-y-1/2" />
       <div className="absolute top-1/2 right-0 w-[400px] h-[400px] rounded-full bg-primary/5 blur-[100px] -translate-y-1/2" />
 
       <div className="container-main relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <p className="text-primary font-medium mb-4">Our Services</p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">Three Steps to a Pipeline That Runs Itself.</h2>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">Three ways we close your revenue leaks.</h2>
         </div>
 
         <div className="space-y-6">
@@ -142,4 +142,4 @@ const PricingSection = () => {
   );
 };
 
-export default PricingSection;
+export default ServicesSection;

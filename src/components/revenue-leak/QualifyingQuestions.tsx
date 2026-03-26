@@ -1,8 +1,8 @@
 import { Textarea } from "@/components/ui/textarea";
 
 const q14Options = [
-  "Book more appointments from the leads I'm already getting",
-  "Reduce no-shows and cancellations",
+  "Convert more pipeline from the leads I'm already generating",
+  "Reduce drop-off between qualified leads and closed deals",
   "Stop losing leads after hours and on weekends",
   "Build a system that runs without me managing it daily",
 ];

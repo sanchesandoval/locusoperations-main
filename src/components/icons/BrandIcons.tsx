@@ -122,6 +122,23 @@ export const TurtleIcon = ({ className = "w-6 h-6" }: { className?: string }) =>
   </svg>
 );
 
+export const XMarkIcon = ({ className = "w-6 h-6" }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M8 8L24 24" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+    <path d="M24 8L8 24" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+  </svg>
+);
+
+export const SignalWavesIcon = ({ className = "w-6 h-6" }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="16" cy="16" r="2.5" fill="currentColor" />
+    <path d="M11 21C9.5 19.5 8.5 17.4 8.5 16C8.5 14.6 9.5 12.5 11 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" opacity="0.6" />
+    <path d="M21 11C22.5 12.5 23.5 14.6 23.5 16C23.5 17.4 22.5 19.5 21 21" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" opacity="0.6" />
+    <path d="M7 25C4.5 22.5 3 19.4 3 16C3 12.6 4.5 9.5 7 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" opacity="0.3" />
+    <path d="M25 7C27.5 9.5 29 12.6 29 16C29 19.4 27.5 22.5 25 25" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" opacity="0.3" />
+  </svg>
+);
+
 export const StarIcon = ({ className = "w-5 h-5", filled = true }: { className?: string; filled?: boolean }) => (
   <svg className={className} viewBox="0 0 20 20" fill={filled ? "currentColor" : "none"} xmlns="http://www.w3.org/2000/svg">
     <path d="M10 2L12.09 7.26L18 7.64L13.45 11.14L14.82 17L10 14.27L5.18 17L6.55 11.14L2 7.64L7.91 7.26L10 2Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />

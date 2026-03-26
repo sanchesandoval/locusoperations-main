@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-const CalendlySection = () => {
+const BookingSection = () => {
   useEffect(() => {
     const script = document.createElement("script");
     script.src = "https://link.msgsndr.com/js/form_embed.js";
@@ -17,14 +17,13 @@ const CalendlySection = () => {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
             Book Your Pipeline Diagnostic
           </h2>
-          <p className="text-lg text-muted-foreground max-w-xl mx-auto">15 minutes. No fluff. We map where your bookings slip through and provide the blueprint to fix them.</p>
+          <p className="text-lg text-muted-foreground max-w-xl mx-auto">30 minutes. No fluff. We map where your revenue is leaking and show you exactly what to fix first.</p>
         </div>
 
         <div className="max-w-4xl mx-auto overflow-hidden">
         <iframe
           src="https://api.leadconnectorhq.com/widget/booking/TqgqhfmP8rOA9BTwevpK"
            style={{ width: "100%", border: "none", overflow: "hidden", minHeight: "1000px" }}
-          scrolling="no"
           id="TqgqhfmP8rOA9BTwevpK_1771083505613"
         />
         </div>
@@ -37,4 +36,4 @@ const CalendlySection = () => {
       </div>
     </section>;
 };
-export default CalendlySection;
+export default BookingSection;

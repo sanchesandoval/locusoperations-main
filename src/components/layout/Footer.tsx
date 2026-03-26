@@ -12,7 +12,7 @@ const Footer = () => {
           <div className="md:col-span-2 space-y-4">
             <img src={locusLogo} alt="Locus" className="h-6 w-auto" />
             <p className="text-sm text-white/70 max-w-xs">
-              AI-Powered Revenue Operations for Appointment-Based Businesses    
+              AI-powered revenue operations for fast-moving B2B companies.
             </p>
             
             {/* Social links */}
@@ -41,7 +41,7 @@ const Footer = () => {
         {/* Disclaimer */}
         <div className="mt-12 pt-8 border-t border-white/10">
           <p className="text-xs text-white/40 max-w-2xl">
-            HIPAA readiness depends on your tools, configuration, and clinic policies. We align systems to HIPAA requirements when applicable. Locus does not provide legal or compliance advice.
+            Results vary based on your existing stack, team structure, and engagement scope. Locus does not guarantee specific revenue outcomes. All metrics referenced are based on third-party research or client averages.
           </p>
           <p className="text-xs text-white/30 mt-4">
             © {new Date().getFullYear()} Locus. All rights reserved.

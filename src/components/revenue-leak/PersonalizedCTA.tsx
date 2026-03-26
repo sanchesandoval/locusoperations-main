@@ -44,7 +44,7 @@ const PersonalizedCTA = ({ score, q16Answer, categoryScores }: Props) => {
           Your pipeline has {score} critical leak{score !== 1 ? "s" : ""}.
         </p>
         <p className="text-muted-foreground">
-          Recommended: Book a free 15-minute pipeline review with our team.
+          Recommended: Book a free 30-minute pipeline review with our team.
           We'll walk through your specific results and show you exactly what to
           fix first.
         </p>
@@ -67,7 +67,7 @@ const PersonalizedCTA = ({ score, q16Answer, categoryScores }: Props) => {
           {score !== 1 ? "are" : "is"} costing you revenue.
         </p>
         <p className="text-muted-foreground">
-          Recommended: Book a free 15-minute pipeline review to see what your
+          Recommended: Book a free 30-minute pipeline review to see what your
           fix plan would look like.
         </p>
         <Link
