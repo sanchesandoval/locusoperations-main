@@ -1,35 +1,56 @@
 import { motion } from "framer-motion";
 
+const mrrMidpoints: Record<string, number> = {
+  "Under $50K/month": 25000,
+  "$50K–$100K/month": 75000,
+  "$100K–$250K/month": 175000,
+  "$250K+/month": 250000,
+};
+
 interface Props {
   score: number;
+  mrrRange?: string | null;
 }
 
-const ScoreGauge = ({ score }: Props) => {
+const ScoreGauge = ({ score, mrrRange }: Props) => {
   const maxScore = 17;
   const ratio = score / maxScore;
   // Needle angle: -90 (left/green) to +90 (right/red)
   const needleAngle = -90 + ratio * 180;
+
+  const getEstimatedLoss = () => {
+    if (!mrrRange || !mrrMidpoints[mrrRange]) return null;
+    const midpoint = mrrMidpoints[mrrRange];
+    const multiplier = score <= 5 ? 0.12 : score <= 11 ? 0.25 : 0.35;
+    const loss = Math.round((midpoint * multiplier) / 100) * 100;
+    return loss.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
+  };
+
+  const estimatedLoss = getEstimatedLoss();
 
   const getZone = () => {
     if (score <= 5)
       return {
         label: "Low Risk",
         color: "text-green-400",
-        message:
-          "Your revenue motion has solid foundations. A few targeted fixes could unlock significant pipeline you're currently leaving on the table.",
+        message: estimatedLoss
+          ? `Based on your revenue and gap score, you are likely losing approximately ${estimatedLoss} per month to fixable ops gaps.`
+          : "Your revenue motion has solid foundations. A few targeted fixes could unlock significant pipeline you're currently leaving on the table — likely 10–15% of potential revenue.",
       };
     if (score <= 11)
       return {
         label: "Moderate Risk",
         color: "text-yellow-400",
-        message:
-          "Your revenue motion has serious gaps across marketing, sales, or customer success. You're likely losing 20–30% of potential revenue that's fixable with the right systems.",
+        message: estimatedLoss
+          ? `Based on your revenue and gap score, you are likely losing approximately ${estimatedLoss} per month to fixable ops gaps.`
+          : "Your revenue motion has serious gaps. You are likely losing 20–30% of potential revenue to ops gaps that are fixable with the right systems.",
       };
     return {
       label: "Critical",
       color: "text-destructive",
-      message:
-        "Your revenue motion is leaking at nearly every stage. Most businesses at this score are losing 30–40% of potential revenue due to disconnected systems and ops gaps.",
+      message: estimatedLoss
+        ? `Based on your revenue and gap score, you are likely losing approximately ${estimatedLoss} per month to fixable ops gaps.`
+        : "Your revenue motion is leaking at nearly every stage. You are likely losing 30–40% of potential revenue to ops gaps that are fixable with the right systems.",
     };
   };
 

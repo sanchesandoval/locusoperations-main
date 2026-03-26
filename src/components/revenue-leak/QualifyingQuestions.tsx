@@ -1,5 +1,12 @@
 import { Textarea } from "@/components/ui/textarea";
 
+const mrrRangeOptions = [
+  "Under $50K/month",
+  "$50K–$100K/month",
+  "$100K–$250K/month",
+  "$250K+/month",
+];
+
 const q14Options = [
   "Convert more pipeline from the leads I'm already generating",
   "Reduce churn and increase lifetime value from existing customers",
@@ -22,10 +29,12 @@ const q16Options = [
 ];
 
 interface Props {
+  mrrRange: string | null;
   q14: string | null;
   q15: string | null;
   q16: string | null;
   q17: string;
+  onMrrRange: (v: string) => void;
   onQ14: (v: string) => void;
   onQ15: (v: string) => void;
   onQ16: (v: string) => void;
@@ -71,8 +80,8 @@ const RadioQuestion = ({
 );
 
 const QualifyingQuestions = ({
-  q14, q15, q16, q17,
-  onQ14, onQ15, onQ16, onQ17,
+  mrrRange, q14, q15, q16, q17,
+  onMrrRange, onQ14, onQ15, onQ16, onQ17,
 }: Props) => (
   <div className="space-y-8 mt-12">
     <div className="text-center">
@@ -80,6 +89,13 @@ const QualifyingQuestions = ({
       <p className="text-sm text-muted-foreground">Help us understand your situation better.</p>
     </div>
 
+    <RadioQuestion
+      label="Business Context"
+      question="What is your approximate monthly revenue?"
+      options={mrrRangeOptions}
+      value={mrrRange}
+      onChange={onMrrRange}
+    />
     <RadioQuestion
       label="Goals"
       question="What's the #1 outcome you want to achieve in the next 90 days?"

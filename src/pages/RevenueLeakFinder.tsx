@@ -71,6 +71,7 @@ const RevenueLeakFinder = () => {
     new Array(allQuestions.length).fill(null)
   );
   const [submitted, setSubmitted] = useState(false);
+  const [mrrRange, setMrrRange] = useState<string | null>(null);
   const [q14, setQ14] = useState<string | null>(null);
   const [q15, setQ15] = useState<string | null>(null);
   const [q16, setQ16] = useState<string | null>(null);
@@ -169,6 +170,7 @@ const RevenueLeakFinder = () => {
           {/* Qualifying Questions */}
           <div className="max-w-2xl mx-auto">
             <QualifyingQuestions
+              mrrRange={mrrRange} onMrrRange={setMrrRange}
               q14={q14} q15={q15} q16={q16} q17={q17}
               onQ14={setQ14} onQ15={setQ15} onQ16={setQ16} onQ17={setQ17}
             />
@@ -188,6 +190,7 @@ const RevenueLeakFinder = () => {
                     score,
                     result_label: score <= 5 ? "Low Risk" : score <= 11 ? "Moderate Risk" : "Critical",
                     qualifying_answers: {
+                      monthly_revenue: mrrRange,
                       desired_outcome: q14,
                       biggest_obstacle: q15,
                       preferred_solution: q16,
@@ -202,7 +205,7 @@ const RevenueLeakFinder = () => {
               </button>
             ) : (
               <div className="space-y-8">
-                <ScoreGauge score={score} />
+                <ScoreGauge score={score} mrrRange={mrrRange} />
                 <PersonalizedInsights categoryScores={categoryScores} />
                 <PersonalizedCTA
                   score={score}
