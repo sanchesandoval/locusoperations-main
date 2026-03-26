@@ -64,7 +64,7 @@ const Diagnostic = () => {
               data-layout="{'id':'INLINE'}"
               data-trigger-type="alwaysShow"
               data-activation-type="alwaysActivated"
-              data-deactivation-type="neverDeactivate"
+              data-deactivation-type="leadCollected"
               data-form-name="Locus LP Lead Magnet Diagnostic Form"
               data-height="728"
               data-layout-iframe-id="inline-OPaDhXKtxiiFMZqRaSQ9"
