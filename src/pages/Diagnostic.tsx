@@ -1,17 +1,38 @@
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
 const Diagnostic = () => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     const script = document.createElement("script");
     script.src = "https://link.msgsndr.com/js/form_embed.js";
     script.async = true;
     document.body.appendChild(script);
+
+    const handleMessage = (event: MessageEvent) => {
+      if (
+        typeof event.data === "object" &&
+        event.data !== null &&
+        (event.data.type === "leadConnector:leadCollected" ||
+          event.data.type === "form_submitted" ||
+          event.data.event === "leadConnector:leadCollected" ||
+          JSON.stringify(event.data).toLowerCase().includes("leadcollected") ||
+          JSON.stringify(event.data).toLowerCase().includes("form_submitted"))
+      ) {
+        navigate("/revenue-leak-finder");
+      }
+    };
+
+    window.addEventListener("message", handleMessage);
+
     return () => {
       document.body.removeChild(script);
+      window.removeEventListener("message", handleMessage);
     };
-  }, []);
+  }, [navigate]);
 
   return (
     <div className="min-h-screen bg-background">
@@ -35,19 +56,19 @@ const Diagnostic = () => {
 
           <div className="ghl-form-wrap mt-10">
             <iframe
-              src="https://api.leadconnectorhq.com/widget/form/p61qThW6q0uTt7jSreIK"
-              id="inline-p61qThW6q0uTt7jSreIK"
+              src="https://api.leadconnectorhq.com/widget/form/OPaDhXKtxiiFMZqRaSQ9"
+              id="inline-OPaDhXKtxiiFMZqRaSQ9"
               className="ghl-form-iframe"
               title="Locus LP Lead Magnet Diagnostic Form"
               style={{ border: "none", borderRadius: "20px" }}
               data-layout="{'id':'INLINE'}"
               data-trigger-type="alwaysShow"
               data-activation-type="alwaysActivated"
-              data-deactivation-type="leadCollected"
+              data-deactivation-type="neverDeactivate"
               data-form-name="Locus LP Lead Magnet Diagnostic Form"
-              data-height="820"
-              data-layout-iframe-id="inline-p61qThW6q0uTt7jSreIK"
-              data-form-id="p61qThW6q0uTt7jSreIK"
+              data-height="728"
+              data-layout-iframe-id="inline-OPaDhXKtxiiFMZqRaSQ9"
+              data-form-id="OPaDhXKtxiiFMZqRaSQ9"
             />
           </div>
         </div>
