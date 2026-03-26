@@ -2,9 +2,9 @@ import { Textarea } from "@/components/ui/textarea";
 
 const q14Options = [
   "Convert more pipeline from the leads I'm already generating",
-  "Reduce drop-off between qualified leads and closed deals",
-  "Stop losing leads after hours and on weekends",
-  "Build a system that runs without me managing it daily",
+  "Reduce churn and increase lifetime value from existing customers",
+  "Stop deals from stalling and going dark in my pipeline",
+  "Build a system that runs the full revenue motion without me managing it daily",
 ];
 
 const q15Options = [

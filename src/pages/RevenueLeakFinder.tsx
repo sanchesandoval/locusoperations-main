@@ -14,7 +14,7 @@ const categories = [
     name: "Speed-to-Lead",
     questions: [
       "Do you respond to every new lead within 5 minutes?",
-      "Are after-hours inquiries answered by anything other than voicemail?",
+      "Do inbound leads receive an automated response outside of business hours?",
       "Does every lead source (forms, calls, DMs, ads) feed into one system?",
     ],
   },
@@ -45,6 +45,21 @@ const categories = [
     questions: [
       "Do you re-engage leads who went dark in the last 90 days?",
       "Do you follow up with prospects who completed a consultation but didn't buy?",
+    ],
+  },
+  {
+    name: "CS & Retention",
+    questions: [
+      "Do new customers receive an automated onboarding sequence after signing?",
+      "Do you have visibility into which customers are at risk of churning before they cancel?",
+      "Do you have a system to identify upsell or expansion opportunities within your existing customer base?",
+    ],
+  },
+  {
+    name: "Data & Visibility",
+    questions: [
+      "Can your sales and marketing teams see the same data on every lead and deal in real time?",
+      "Do you know which pipeline stage deals most commonly stall or go dark?",
     ],
   },
 ];
@@ -171,7 +186,7 @@ const RevenueLeakFinder = () => {
                     answers: answersObj,
                     category_scores: categoryScores,
                     score,
-                    result_label: score <= 4 ? "Low Risk" : score <= 8 ? "Moderate Risk" : "Critical",
+                    result_label: score <= 5 ? "Low Risk" : score <= 11 ? "Moderate Risk" : "Critical",
                     qualifying_answers: {
                       desired_outcome: q14,
                       biggest_obstacle: q15,

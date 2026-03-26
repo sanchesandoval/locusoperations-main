@@ -5,31 +5,31 @@ interface Props {
 }
 
 const ScoreGauge = ({ score }: Props) => {
-  const maxScore = 12;
+  const maxScore = 17;
   const ratio = score / maxScore;
   // Needle angle: -90 (left/green) to +90 (right/red)
   const needleAngle = -90 + ratio * 180;
 
   const getZone = () => {
-    if (score <= 4)
+    if (score <= 5)
       return {
         label: "Low Risk",
         color: "text-green-400",
         message:
-          "Your pipeline has solid foundations. A few targeted fixes could unlock significant revenue.",
+          "Your revenue motion has solid foundations. A few targeted fixes could unlock significant pipeline you're currently leaving on the table.",
       };
-    if (score <= 8)
+    if (score <= 11)
       return {
         label: "Moderate Risk",
         color: "text-yellow-400",
         message:
-          "Your pipeline has serious gaps. You're likely losing $3-6K/month in revenue that's fixable.",
+          "Your revenue motion has serious gaps across marketing, sales, or customer success. You're likely losing 20–30% of potential revenue that's fixable with the right systems.",
       };
     return {
       label: "Critical",
       color: "text-destructive",
       message:
-        "Critical. Your pipeline is bleeding revenue at nearly every stage. Most businesses at this score are losing 30-40% of potential appointments.",
+        "Your revenue motion is leaking at nearly every stage. Most businesses at this score are losing 30–40% of potential revenue due to disconnected systems and ops gaps.",
     };
   };
 
@@ -98,7 +98,7 @@ const ScoreGauge = ({ score }: Props) => {
         <p className="text-sm text-muted-foreground mb-1">Your Leak Score</p>
         <p className={`text-5xl font-bold ${zone.color}`}>
           {score}
-          <span className="text-xl text-muted-foreground">/12</span>
+          <span className="text-xl text-muted-foreground">/17</span>
         </p>
         <p className={`text-lg font-semibold mt-1 ${zone.color}`}>{zone.label}</p>
       </div>

@@ -18,6 +18,10 @@ const quickWins: Record<string, string> = {
     "Send an automated reminder 24 hours and 1 hour before each appointment.",
   Reactivation:
     "Run a simple 're-engagement' text to all leads who went dark in the last 90 days.",
+  "CS & Retention":
+    "Set up a simple health score using your existing CRM data — flag any customer who hasn't logged in or engaged in 14 days and trigger an automatic check-in sequence.",
+  "Data & Visibility":
+    "Audit your CRM for contacts missing key fields — company size, MRR, lead source, and last activity date. Clean data is the prerequisite for every other system to work.",
 };
 
 interface Props {

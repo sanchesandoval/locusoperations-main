@@ -17,6 +17,10 @@ const insightMap: Record<string, string> = {
     "You're getting meetings on the calendar but losing them before they happen. Automated confirmation and re-engagement sequences reduce no-show rates and recover ghosted opportunities.",
   Reactivation:
     "You have a database of past leads and prospects who went cold. Without a reactivation system, this revenue stays locked up.",
+  "CS & Retention":
+    "You're losing customers you already paid to acquire. Most SaaS companies have a reactive CS problem — they find out a customer is churning when they cancel, not when the signals appeared weeks earlier. A proactive retention system changes this.",
+  "Data & Visibility":
+    "Your teams are making decisions based on incomplete or conflicting data. When marketing and sales see different versions of the same account, handoffs break down and revenue leaks through the gaps. A unified data layer is the foundation everything else runs on.",
 };
 
 interface Props {
