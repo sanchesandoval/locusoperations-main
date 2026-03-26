@@ -1,10 +1,11 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
 const Diagnostic = () => {
   const navigate = useNavigate();
+  const iframeRef = useRef<HTMLIFrameElement>(null);
 
   useEffect(() => {
     const script = document.createElement("script");
@@ -12,25 +13,31 @@ const Diagnostic = () => {
     script.async = true;
     document.body.appendChild(script);
 
+    // Listen for postMessage from GHL
     const handleMessage = (event: MessageEvent) => {
-      if (
-        typeof event.data === "object" &&
-        event.data !== null &&
-        (event.data.type === "leadConnector:leadCollected" ||
-          event.data.type === "form_submitted" ||
-          event.data.event === "leadConnector:leadCollected" ||
-          JSON.stringify(event.data).toLowerCase().includes("leadcollected") ||
-          JSON.stringify(event.data).toLowerCase().includes("form_submitted"))
-      ) {
+      const data = typeof event.data === "string" ? event.data : JSON.stringify(event.data ?? "");
+      if (data.toLowerCase().includes("leadcollected") || data.toLowerCase().includes("form_submitted")) {
         navigate("/revenue-leak-finder");
       }
     };
-
     window.addEventListener("message", handleMessage);
+
+    // Poll: when GHL redirects the iframe to our domain, we can detect it (same-origin)
+    const interval = setInterval(() => {
+      try {
+        const href = iframeRef.current?.contentWindow?.location?.href;
+        if (href && href.includes("locusops.com")) {
+          navigate("/revenue-leak-finder");
+        }
+      } catch {
+        // Cross-origin — iframe still on GHL domain, ignore
+      }
+    }, 500);
 
     return () => {
       document.body.removeChild(script);
       window.removeEventListener("message", handleMessage);
+      clearInterval(interval);
     };
   }, [navigate]);
 
@@ -56,6 +63,7 @@ const Diagnostic = () => {
 
           <div className="ghl-form-wrap mt-10">
             <iframe
+              ref={iframeRef}
               src="https://api.leadconnectorhq.com/widget/form/OPaDhXKtxiiFMZqRaSQ9"
               id="inline-OPaDhXKtxiiFMZqRaSQ9"
               className="ghl-form-iframe"
