@@ -1,1 +1,0 @@
-ALTER TABLE leak_finder_submissions ADD COLUMN qualifying_answers jsonb;

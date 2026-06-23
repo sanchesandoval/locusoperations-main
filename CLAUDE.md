@@ -1,123 +1,107 @@
-# Locus — Agency Landing Page
+# CLAUDE.md
 
-AI-powered revenue operations agency. This repo is the marketing website only — not the product, not the client dashboard.
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+# Locus — B2B SaaS GTM Partner Landing Page
+
+AI-native GTM partner marketing site. This repo is the **public website only** — not the product, not the client dashboard.
+
+> Migration note: this was a Vite + React Router app and was rebuilt on Next.js. Some leftover artifacts remain (`.env` with `VITE_`-prefixed Supabase keys that are unused; `templates-references/` holds the two source templates this design was adapted from and is excluded from the TypeScript build). Ignore them unless a task touches them.
 
 ## Tech Stack
 
-- Next.js (App Router) + TypeScript
-- Tailwind CSS 4
-- Framer Motion (via Magic UI components)
-- Magic UI component library (licensed — use components from registry)
-- Deploy target: Vercel
+- **Next.js 15 App Router** + React 19 + TypeScript (NOT Vite, NOT React Router)
+- **Tailwind CSS v4** — CSS-first config. There is no `tailwind.config.js`; the theme lives in the `@theme` block of `src/app/globals.css`
+- **shadcn/ui** — "new-york" style, RSC enabled, `neutral` base, Lucide icons (`src/components/ui/`)
+- **motion v12** (the `motion` package, the renamed framer-motion) for animations — import from `motion/react`
+- **next-themes** for light/dark theming
+- **Cal.com** embed (`@calcom/embed-react`) for booking — NOT GHL, NOT Calendly
+- **pnpm** package manager (`pnpm-lock.yaml`)
+- Deploy target: Vercel (`vercel.json` sets framework to nextjs)
 
 ## Commands
 
 ```bash
-npm run dev          # Dev server
-npm run build        # Production build
-npm run lint         # ESLint check
-npx next start       # Preview production build locally
+pnpm dev      # Dev server — http://localhost:3000
+pnpm build    # Production build
+pnpm start    # Serve the production build
+pnpm lint     # next lint (ESLint)
 ```
+
+There is no test suite configured.
+
+## Architecture
+
+### Routing (App Router)
+Routes are directories under `src/app/`, each with a `page.tsx`:
+- `/` — home (`src/app/page.tsx`)
+- `/book-call` — Cal.com booking embed (`force-dynamic`)
+- `/privacy-policy`, `/terms` — legal pages
+
+`src/app/layout.tsx` is the root layout: wraps every page in `ThemeProvider` + a centered `max-w-7xl` frame with the persistent `<Navbar />` and vertical guide borders. Metadata, OpenGraph, and favicon are set here, driven by `siteConfig`. `opengraph-image.tsx` and `icon.svg` are Next file-based metadata conventions.
+
+### Page composition
+The home page (`src/app/page.tsx`) renders 11 section components from `src/components/sections/` in order, separated by `divide-y`:
+HeroSection → CompanyShowcase → ProblemSection → HowItWorksSection → StackTransparencySection → SignalCategoriesSection → WhatYouGetSection → CostComparisonSection → FAQSection → CTASection → FooterSection.
+
+### Content is configuration-driven — edit `src/lib/config.tsx`, not components
+**Almost all site copy lives in the `siteConfig` object in [src/lib/config.tsx](src/lib/config.tsx)** — hero text, nav links, company logos, problem cards, how-it-works steps, signal categories, FAQ items, CTA, footer. Section components read from `siteConfig`; to change wording, edit the config. `config.tsx` is `.tsx` (not `.ts`) because logo entries embed `<img>` JSX and it exports a `Highlight` component. The exported `SiteConfig` type is `typeof siteConfig`.
+
+### Component layout
+- `src/components/sections/` — the page sections + `navbar.tsx` and `footer-section.tsx`
+- `src/components/ui/` — shadcn primitives plus animated effect components (`marquee`, `flickering-grid`, `orbiting-circle`, `code-block`, `markdown`, `response-stream`)
+- `src/components/` (root) — bespoke animations and shared pieces (`*-bento-animation`, `handoff-animation`, `stack-burst-animation`, `cal-embed`, `nav-menu`, `section-header`, `theme-provider`, `theme-toggle`, `icons`)
+- `src/hooks/use-media-query.ts`, `src/lib/utils.ts` (`cn` helper)
+
+Brand/integration logos are PNG/SVG/WEBP/AVIF files in `public/logos/`, referenced by path in `siteConfig.companyShowcase`.
+
+### Path alias
+`@/` → `src/`. Use it for all imports (configured in `tsconfig.json` and `components.json`).
 
 ## Brand
 
-### Colors (CSS variables)
+### Colors — defined as CSS variables in `src/app/globals.css`
 
-- `--bg-primary: #04080C` — near-black background, used everywhere
-- `--accent: #0D9373` — signature green, CTAs and highlights only
-- `--white-logo: #FFFFFF` — reserved for "Locus" wordmark only
-- `--white-ui: #F5F5F5` — all UI text, components, borders
+The site is **dark-first**; `--background` dark is `#04080C`. The signature **Locus green `#0D9373` is the `--secondary` token**, exposed as Tailwind `text-secondary` / `bg-secondary`.
 
-IMPORTANT: Never use #FFFFFF for anything except the logo. All other white UI elements use #F5F5F5.
+> IMPORTANT GOTCHA: in this Tailwind config the green is `secondary`, NOT `accent`. The `--accent` token is a dark card color (`#0A1015`), not green. The `Highlight` component in `config.tsx` uses `text-secondary` for the green emphasis. Use `secondary` for any green CTA/highlight/active state, and use it sparingly for maximum impact.
+
+Other dark-theme tokens: `--foreground: #F5F5F5` (all UI text — never `#FFFFFF` except the logo wordmark), `--card: #0A1015`, `--muted: #1A2228`, `--border: #1A2228`.
 
 ### Typography
+Headings/UI use **Satoshi**, body uses **Eudoxus Sans** — both loaded via the Fontshare `@import` at the top of `globals.css` and mapped to `--font-sans` / `--font-body` in the `@theme` block. Never use Inter, Roboto, Arial, or system fonts. (Note: `layout.tsx` also loads Geist via `next/font` for the variable/mono slot.)
 
-- **Headings:** Satoshi (variable weight) — bold at hero scale, medium for section heads
-- **Body/UI:** Eudoxus Sans — all paragraphs, nav, buttons, captions
-- Never use Inter, Roboto, Arial, or system fonts
-
-### Design Direction
-
-Dark, premium, clean. Think high-end consulting firm meets operational intelligence.
-
-- Dark backgrounds throughout — no light/white sections
-- Green accent used sparingly for maximum impact (CTAs, key stats, active states)
-- Generous negative space, not cluttered
-- Subtle depth: noise textures, faint gradients, soft glows on accent elements
-- Animations should feel precise, not playful — staggered reveals, smooth fades, no bounce
+### Design direction
+Dark, premium, clean — high-end consulting firm meets operational intelligence. Generous negative space. Subtle depth (noise, faint gradients, soft glows on accent elements). Animations feel precise, not playful — staggered reveals, smooth fades, no bounce. Prefer `motion` over CSS-only animation in React components. Don't reinvent what shadcn/ui or the existing animated `ui/` components provide.
 
 ## Tone of Voice
 
-Write like you already ran the audit and you're presenting the findings — calm, precise, a little damning. Direct, no-fluff, slightly uncomfortable because it's too accurate. Never soft. Never consultative. The voice is a confident operator who already knows what's wrong. Think surgeon, not salesperson.
+Write like you already ran the audit and you're presenting the findings — calm, precise, a little damning. Direct, no-fluff, slightly uncomfortable because it's too accurate. Never soft, never consultative. A confident operator who already knows what's wrong — surgeon, not salesperson.
 
-Diagnostic-first philosophy: we audit before we automate. We set a baseline, build inside their existing stack, and take accountability for the outcome. The differentiator isn't just speed or tooling — it's that we can prove what changed and why.
+Diagnostic-first: we audit before we automate. We set a baseline, build inside the client's existing stack, and own the outcome. The differentiator isn't speed or tooling — it's that we prove what changed and why. We own the **full** revenue motion (marketing ops + sales ops + customer success ops connected), not one slice.
 
-We own the full revenue motion – marketing ops, sales ops, and customer success ops connected. Not one slice. The whole system.
+## Services Reference (Locus Audit → Build → Command)
 
-## Site Structure
+- **Locus Audit** — paid revenue-motion diagnostic. Map the funnel, find the leaks, fix 1–2 live.
+- **Locus Build** — build the system the audit reveals (CRM cleanup, speed-to-lead, automated follow-up, onboarding).
+- **Locus Command** — fully embedded ops partner; we run it for you.
 
-### Nav
-- Services, Results, CTA button ("Book a Free Consultation")
-
-### Hero
-- Badge: "For Fast-Moving B2B Companies"
-- Two CTAs: "Book a Free Consultation" (primary) → GHL booking page, "Take the Revenue Leak Scorecard" (secondary) → /scorecard
-
-### Integration Logos
-- B2B stack: HubSpot, Salesforce, Slack, Make, n8n, Zapier, Pipedrive
-
-### Problem Section
-- 3 cards showing revenue leak patterns across B2B/SaaS/agency operations
-
-### How Locus Works
-- 01 Identify → 02 Build → 03 Operate
-- Maps to service tiers: Locus Audit → Locus Build → Locus Command
-
-### Stats Section
-- 4-stat format with PLACEHOLDER numbers (clearly marked)
-- Cover marketing ops, sales ops, and CS ops metrics
-- Examples: speed-to-lead improvement, pipeline velocity, churn reduction, rep efficiency
-
-### Results/Testimonials
-- Carousel format
-- Use placeholder testimonials (clearly marked) until real ones exist
-
-### FAQ
-- Accordion format
-- B2B revenue operations questions (not clinic/healthcare)
-
-### Final CTA / Scorecard Block
-- Push to Revenue Leak Scorecard (/scorecard) and consultation booking
-
-### Footer
-- Standard structure with updated tagline
-
-## Services Reference
-
-- **Locus Audit** — 90-min revenue operations diagnostic. Map the funnel, find the leaks, fix 1–2 live.
-- **Locus Build** — Build the system. CRM cleanup, speed-to-lead, automated follow-up, onboarding — whatever the audit reveals.
-- **Locus Command** — Fully embedded ops partner. We run it for you.
+The "How Locus Works" section maps to these as 01 Identify → 02 Build → 03 Operate.
 
 ## Differentiator
-We diagnose before we build and take accountability for the outcome. We set the baseline, build inside their existing stack, and prove what changed and why. That's not a deliverable. That's infrastructure.
+We diagnose before we build and take accountability for the outcome. We set the baseline, build inside the client's existing stack, and prove what changed and why. That's not a deliverable — that's infrastructure.
 
 ## Target Audience
-
-B2B SaaS, agencies, and consultancies scaling through $50K–$500K MRR who know their pipeline is leaking but don't have an internal ops person to fix it. Three buyer moments: Three buyer moments, same ICP: (1) Pre-stall — scaling fast, ops hasn't caught up, we're the preventative play before the wall hits. (2) Mid-stall — growth is slowing, they feel it but can't name it, we diagnose it. (3) Post-stall — hired more reps, bought more tools, still not growing, the problem is ops but they're blaming everything else, we're the reveal.
+Founder-led B2B SaaS companies scaling through ~$50K–$500K MRR who know their pipeline is leaking but have no internal ops person. Three buyer moments, same ICP: **pre-stall** (preventative), **mid-stall** (they feel it, can't name it — we diagnose), **post-stall** (more reps, more tools, still flat — the ops reveal).
 
 ## Terminology
-
 - **Revenue leak** — operational gaps where pipeline, deals, or customers fall through the cracks
-- **Speed-to-lead** — time between inbound lead action and first human/automated response
-- **RevOps** — revenue operations: the unified function across marketing, sales, and CS ops
-- **GTM** — go-to-market: the full motion of how a company acquires, converts, and retains customers across marketing, sales, and CS
-
+- **Speed-to-lead** — time between an inbound lead action and first response
+- **RevOps** — unified revenue operations across marketing, sales, and CS
+- **GTM** — go-to-market: the full acquire→convert→retain motion
 
 ## Important Notes
-
-- NEVER use light/white page backgrounds — the entire site is dark-themed
-- All placeholder content (stats, testimonials) must be clearly marked with `{PLACEHOLDER}` comments in code
-- The scorecard at /scorecard is a 12-question quiz — link to it, don't rebuild it
-- "Book a Free Consultation" always links to the GHL calendar page, never Calendly
-- Use Magic UI components where they fit — don't reinvent what the library provides
-- Prefer Framer Motion for animations over CSS-only when using React components
+- The site is dark-themed and dark-first — don't introduce light/white page backgrounds for content sections.
+- To change site copy, edit `siteConfig` in `src/lib/config.tsx` — not the section components.
+- "Book a strategy call" routes to `/book-call`, which renders the Cal.com embed (`locusops/locus-revenue-motion-audit`). Never wire booking to Calendly.
+- Mark placeholder content (stats, testimonials) clearly in code until real values exist.
