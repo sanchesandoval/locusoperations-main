@@ -103,5 +103,5 @@ Founder-led B2B SaaS companies scaling through ~$50K–$500K MRR who know their 
 ## Important Notes
 - The site is dark-themed and dark-first — don't introduce light/white page backgrounds for content sections.
 - To change site copy, edit `siteConfig` in `src/lib/config.tsx` — not the section components.
-- "Book a strategy call" routes to `/book-call`, which renders the Cal.com embed (`locusops/locus-revenue-motion-audit`). Never wire booking to Calendly.
+- "Book a strategy call" routes to `/book-call`, which renders the Cal.com embed (`locusops/gtm-call`). Never wire booking to Calendly.
 - Mark placeholder content (stats, testimonials) clearly in code until real values exist.

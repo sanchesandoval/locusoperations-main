@@ -6,7 +6,7 @@ import { useEffect } from "react";
 export function CalEmbed() {
   useEffect(() => {
     (async function () {
-      const cal = await getCalApi({ namespace: "locus-revenue-motion-audit" });
+      const cal = await getCalApi({ namespace: "gtm-call" });
       cal("ui", {
         cssVarsPerTheme: {
           light: { "cal-brand": "#2d7a6e" },
@@ -20,8 +20,8 @@ export function CalEmbed() {
 
   return (
     <Cal
-      namespace="locus-revenue-motion-audit"
-      calLink="locusops/locus-revenue-motion-audit"
+      namespace="gtm-call"
+      calLink="locusops/gtm-call"
       style={{ width: "100%", height: "100%", overflow: "scroll" }}
       config={{
         layout: "month_view",
