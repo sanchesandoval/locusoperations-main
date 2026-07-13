@@ -307,13 +307,13 @@ export const siteConfig = {
       "Two ways to work with us. Start wherever makes sense, there's no required order.",
     closingNote: {
       prefix: "Not sure which one fits?",
-      linkText: "Book a free call and we'll figure it out together.",
+      linkText: "Book a free call and we'll figure it out together →",
     },
     plans: [
       {
         id: 1,
         tag: "Done For You",
-        timeline: "Monthly",
+        timeline: "Monthly, Start Now",
         title: "We Run Your Outbound",
         description:
           "For teams that want qualified meetings without adding headcount. We run outbound ourselves, email and LinkedIn, using our own stack. You just show up to the meetings.",
@@ -332,11 +332,13 @@ export const siteConfig = {
         id: 2,
         tag: "Own The System",
         timeline: "90-Day Project",
-        title: "Build the System",
+        title: "Build Your Outbound Engine",
         description:
-          "For teams ready to own the whole system outright. We build the same outbound infrastructure inside your own tools, and we operate it while we build it, so outbound doesn't stop and wait on handoff.",
+          "For teams with a specific gap we diagnose first: messy CRM data, no signal tracking, tools that don't talk to each other, or outreach that's still done by hand. We rebuild whatever's actually broken inside your own stack, and run it while we build, so outbound doesn't stop and wait on handoff. In 90 days, you own the whole system outright.",
         features: [
-          "Full outbound system built inside your own stack",
+          "Signal capture and enrichment wired into your CRM",
+          "Orchestration logic connecting every tool you use",
+          "Outreach sequences built and ready to run",
           "We run it for you while it's being built",
           "Hand it off to your team, or keep us running it, your call",
           "One project fee, scoped on a call",

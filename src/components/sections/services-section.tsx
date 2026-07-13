@@ -16,16 +16,18 @@ export function ServicesSection() {
       id="services"
       className="flex flex-col items-center justify-center gap-12 py-20 w-full px-6"
     >
-      <div className="w-full max-w-3xl">
-        <p className="text-xs font-semibold uppercase tracking-widest text-secondary mb-3">
+      <div className="w-full max-w-5xl">
+        <p className="text-xs font-semibold uppercase tracking-widest text-secondary mb-6 text-center">
           {servicesSection.badge}
         </p>
-        <h2 className="text-3xl md:text-4xl font-medium tracking-tighter text-balance mb-4 flex flex-col gap-1">
-          {servicesSection.title}
-        </h2>
-        <p className="text-muted-foreground text-base md:text-lg text-balance max-w-xl">
-          {servicesSection.description}
-        </p>
+        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 md:gap-10">
+          <h2 className="text-3xl md:text-4xl font-medium tracking-tighter text-balance flex flex-col gap-1">
+            {servicesSection.title}
+          </h2>
+          <p className="text-muted-foreground text-base md:text-lg text-balance md:text-right md:max-w-sm md:pt-1">
+            {servicesSection.description}
+          </p>
+        </div>
       </div>
 
       <div className="w-full max-w-5xl grid gap-6 md:grid-cols-2 items-stretch">

@@ -18,7 +18,7 @@ const rows = [
   {
     label: "Time to first pipeline",
     values: [
-      "About 3 weeks",
+      "3 weeks",
       "2–4 months (hiring plus ramp)",
       "Days, but you run it yourself",
       "60–90 days",
@@ -113,7 +113,7 @@ export function CostComparisonSection() {
                   ) : j === 0 ? (
                     <span className="font-medium text-secondary">{val}</span>
                   ) : (
-                    <span>– {val}</span>
+                    <span>{val}</span>
                   )}
                 </div>
               ))}
