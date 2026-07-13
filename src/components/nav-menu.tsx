@@ -92,10 +92,7 @@ export function NavMenu() {
         setWidth(rect.width);
       }
 
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - 100;
-
-      window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
 
       setTimeout(() => setIsManualScroll(false), 500);
     }

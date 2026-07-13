@@ -11,7 +11,7 @@ export function ServicesSection() {
   return (
     <section
       id="services"
-      className="flex flex-col items-center justify-center gap-12 py-20 w-full px-6"
+      className="flex flex-col items-center justify-center gap-12 py-20 w-full px-6 scroll-mt-48"
     >
       <div className="text-center max-w-2xl">
         <p className="text-xs font-semibold uppercase tracking-widest text-secondary mb-3">

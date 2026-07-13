@@ -8,6 +8,16 @@ import Link from "next/link";
 export function FooterSection() {
   const tablet = useMediaQuery("(max-width: 1024px)");
 
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, url: string) => {
+    if (!url.includes("#")) return;
+    const targetId = url.split("#")[1];
+    const element = document.getElementById(targetId);
+    if (element) {
+      e.preventDefault();
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <footer id="footer" className="w-full pb-0">
       <div className="flex flex-col md:flex-row md:items-start md:justify-between p-10">
@@ -32,7 +42,9 @@ export function FooterSection() {
                     key={link.id}
                     className="group inline-flex cursor-pointer items-center justify-start gap-1 text-[15px]/snug text-muted-foreground"
                   >
-                    <Link href={link.url}>{link.title}</Link>
+                    <Link href={link.url} onClick={(e) => handleLinkClick(e, link.url)}>
+                      {link.title}
+                    </Link>
                     <div className="flex size-4 items-center justify-center border border-border rounded translate-x-0 transform opacity-0 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:opacity-100">
                       <ChevronRightIcon className="h-4 w-4 " />
                     </div>

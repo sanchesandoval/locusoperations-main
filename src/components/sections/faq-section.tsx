@@ -12,7 +12,7 @@ export function FAQSection() {
   return (
     <section
       id="faq"
-      className="flex flex-col items-center justify-center gap-4 pb-10 w-full relative"
+      className="flex flex-col items-center justify-center gap-4 pb-10 w-full relative scroll-mt-36"
     >
       <div className="w-full p-10 pb-0 md:p-14 md:pb-0">
         <div className="max-w-xl mx-auto flex flex-col items-center justify-center gap-2">

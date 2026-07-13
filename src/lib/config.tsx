@@ -38,7 +38,7 @@ export const siteConfig = {
   ],
   links: {
     email: "chris@locusops.com",
-    linkedin: "https://linkedin.com/company/locusops",
+    linkedin: "https://www.linkedin.com/company/locusgtm/",
   },
   nav: {
     links: [
@@ -441,7 +441,7 @@ export const siteConfig = {
       title: "Connect",
       links: [
         { id: 8, title: "Start Getting Meetings", url: "/book-call" },
-        { id: 10, title: "LinkedIn", url: "https://linkedin.com/in/christopherjsanchez" },
+        { id: 10, title: "LinkedIn", url: "https://www.linkedin.com/company/locusgtm/" },
       ],
     },
   ],
