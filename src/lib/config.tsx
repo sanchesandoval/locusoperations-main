@@ -339,7 +339,7 @@ export const siteConfig = {
           "Hand it off to your team, or keep us running it, your call",
           "One project fee, scoped on a call",
         ],
-        cta: { text: "Ask About Build", href: "/book-call" },
+        cta: { text: "Build the Foundation", href: "/book-call" },
         emphasized: false,
       },
     ],

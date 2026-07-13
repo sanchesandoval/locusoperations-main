@@ -5,9 +5,6 @@ import Link from "next/link";
 const primaryButtonClass =
   "bg-secondary h-9 flex items-center justify-center text-sm font-medium tracking-wide rounded-full text-primary-foreground dark:text-secondary-foreground px-5 shadow-[inset_0_1px_2px_rgba(255,255,255,0.25),0_3px_3px_-1.5px_rgba(16,24,40,0.06),0_1px_1px_rgba(16,24,40,0.08)] border border-white/[0.12] hover:bg-secondary/80 transition-all ease-out active:scale-95";
 
-const outlineButtonClass =
-  "border border-border h-9 flex items-center justify-center text-sm font-medium tracking-wide rounded-full text-primary px-5 hover:bg-muted transition-all ease-out active:scale-95";
-
 export function ServicesSection() {
   const { servicesSection } = siteConfig;
 
@@ -60,10 +57,7 @@ export function ServicesSection() {
               ))}
             </ul>
 
-            <Link
-              href={plan.cta.href}
-              className={plan.emphasized ? primaryButtonClass : outlineButtonClass}
-            >
+            <Link href={plan.cta.href} className={primaryButtonClass}>
               {plan.cta.text}
             </Link>
           </div>
