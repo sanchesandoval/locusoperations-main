@@ -289,7 +289,7 @@ export const siteConfig = {
     description:
       "Buying intent doesn't announce itself. Here's what we track, and the exact play we run the moment each signal fires.",
     closingNote:
-      "These six are just a sample. Every play we build is designed around your buyers and the signals that actually predict a deal for you.",
+      "These six barely scratch the surface. Every play we build is designed around your buyers and the signals that actually predict the deal for you.",
   },
   servicesSection: {
     badge: "Services",
