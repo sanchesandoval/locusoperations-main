@@ -20,7 +20,7 @@ const layers = [
   },
   {
     label: "Layer 02 — Orchestration",
-    description: "The logic that decides what to do with each signal, who gets it, and when. Built in n8n, run by AI.",
+    description: "The logic that decides what to do with each signal, who gets it, and when.",
     tools: [
       { name: "n8n", src: "/logos/n8n.svg", darkSrc: "/logos/n8n-dark.svg", imgClass: "h-7" },
       { name: "Claude", src: "/logos/claude-large-logo.png", darkSrc: "/logos/claude-large-logo-dark.png" },
