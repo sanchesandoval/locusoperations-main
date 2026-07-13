@@ -1,48 +1,48 @@
 import { siteConfig } from "@/lib/config";
-import { Eye, Layers, Target, TrendingUp, UserPlus, Zap } from "lucide-react";
+import { Crown, Eye, Layers, TrendingUp, UserCheck, UserPlus } from "lucide-react";
 
 const signals = [
   {
     id: 1,
-    title: "Buying Intent",
+    title: "The Hiring Play",
     description:
-      "Prospects actively comparing solutions, reading category reviews, and engaging with competitor content. Research behavior that happens before any form gets filled.",
-    icon: <Target className="size-5" />,
-  },
-  {
-    id: 2,
-    title: "Hiring Signals",
-    description:
-      "A GTM, sales, or marketing hire signals approved budget and a build starting. Be positioned before the role is filled and the vendor list closes.",
+      "Job posts are budget decisions made public, for problems you solve. We match the job description's actual keywords to what your product replaces or supports.",
     icon: <UserPlus className="size-5" />,
   },
   {
-    id: 3,
-    title: "Funding & Leadership",
+    id: 2,
+    title: "The Funding Play",
     description:
-      "New funding and leadership changes reset buying cycles. A new CRO or VP of Marketing has 90 days to show results. That's the window.",
+      "Fresh capital, fresh budget, a mandate to move fast. The 90 days after a raise are the easiest meetings you'll book.",
     icon: <TrendingUp className="size-5" />,
   },
   {
-    id: 4,
-    title: "Site & Content Behavior",
+    id: 3,
+    title: "The New Leader Play",
     description:
-      "Companies repeatedly visiting solution pages and consuming category content without converting. Warm intent with no form submitted.",
-    icon: <Eye className="size-5" />,
+      "A new VP audits the whole stack in their first 90 days. Show up while it's still up for review.",
+    icon: <Crown className="size-5" />,
+  },
+  {
+    id: 4,
+    title: "The Champion Play",
+    description:
+      "A past buyer changed jobs. They already know what you do and already trust you. It's the warmest outbound that exists.",
+    icon: <UserCheck className="size-5" />,
   },
   {
     id: 5,
-    title: "Tech Stack Signals",
+    title: "The Stack Signal Play",
     description:
-      "A company adopting a new CRM, automation tool, or outbound platform is building something and hitting a ceiling. Tool adoption signals an execution gap.",
+      "A company adopts a new tool in your category and hits a ceiling fast. Tool adoption means they're building something, and building means they need help finishing it.",
     icon: <Layers className="size-5" />,
   },
   {
     id: 6,
-    title: "Growth Signals",
+    title: "The Content Play",
     description:
-      "Rapid headcount growth, new market entries, and product launches. When a company is scaling fast, their GTM capacity can't keep pace. That's the gap.",
-    icon: <Zap className="size-5" />,
+      "Companies repeatedly visiting solution pages and consuming category content without converting. Warm intent, no form submitted.",
+    icon: <Eye className="size-5" />,
   },
 ];
 
@@ -84,6 +84,10 @@ export function SignalCategoriesSection() {
           </article>
         ))}
       </div>
+
+      <p className="text-muted-foreground text-sm text-center max-w-xl">
+        {signalCategoriesSection.closingNote}
+      </p>
     </section>
   );
 }

@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 # Locus — B2B SaaS GTM Partner Landing Page
 
-AI-native GTM partner marketing site. This repo is the **public website only** — not the product, not the client dashboard.
+AI-native GTM partner marketing site. This repo is the **public website only**, not the product, not the client dashboard.
 
 > Migration note: this was a Vite + React Router app and was rebuilt on Next.js. Some leftover artifacts remain (`.env` with `VITE_`-prefixed Supabase keys that are unused; `templates-references/` holds the two source templates this design was adapted from and is excluded from the TypeScript build). Ignore them unless a task touches them.
 
@@ -15,7 +15,7 @@ AI-native GTM partner marketing site. This repo is the **public website only** �
 - **shadcn/ui** — "new-york" style, RSC enabled, `neutral` base, Lucide icons (`src/components/ui/`)
 - **motion v12** (the `motion` package, the renamed framer-motion) for animations — import from `motion/react`
 - **next-themes** for light/dark theming
-- **Cal.com** embed (`@calcom/embed-react`) for booking — NOT GHL, NOT Calendly
+- **Cal.com** embed (`@calcom/embed-react`) for booking. Not GHL, not Calendly.
 - **pnpm** package manager (`pnpm-lock.yaml`)
 - Deploy target: Vercel (`vercel.json` sets framework to nextjs)
 

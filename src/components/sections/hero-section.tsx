@@ -10,7 +10,7 @@ export function HeroSection() {
         <div className="absolute inset-0">
           <div className="absolute inset-0 -z-10 h-[600px] md:h-[800px] w-full [background:radial-gradient(125%_125%_at_50%_10%,var(--background)_40%,var(--secondary)_100%)] rounded-b-xl"></div>
         </div>
-        <div className="relative z-10 pt-24 pb-10 max-w-3xl mx-auto h-full w-full flex flex-col gap-10 items-center justify-center">
+        <div className="relative z-10 pt-16 pb-6 max-w-3xl mx-auto h-full w-full flex flex-col gap-5 items-center justify-center">
           <p className="border border-border bg-accent rounded-full text-sm h-8 px-3 flex items-center">
             {hero.badge}
           </p>
@@ -28,7 +28,7 @@ export function HeroSection() {
               >
                 {hero.cta.primary.text}
               </Link>
-              <p className="text-sm text-muted-foreground">The strategy call is free. If we don&apos;t find enough leaks to justify the build, you owe nothing and keep the audit.</p>
+              <p className="text-sm text-muted-foreground">{hero.microcopy}</p>
             </div>
           </div>
         </div>

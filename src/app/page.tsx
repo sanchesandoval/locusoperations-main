@@ -7,8 +7,8 @@ import { HeroSection } from "@/components/sections/hero-section";
 import { HowItWorksSection } from "@/components/sections/how-it-works-section";
 import { ProblemSection } from "@/components/sections/problem-section";
 import { SignalCategoriesSection } from "@/components/sections/signal-categories-section";
-import { StackTransparencySection } from "@/components/sections/stack-transparency-section";
-import { WhatYouGetSection } from "@/components/sections/what-you-get-section";
+import { ServicesSection } from "@/components/sections/services-section";
+import { SolutionSection } from "@/components/sections/solution-section";
 
 export default function Home() {
   return (
@@ -16,10 +16,10 @@ export default function Home() {
       <HeroSection />
       <CompanyShowcase />
       <ProblemSection />
+      <SolutionSection />
       <HowItWorksSection />
-      <StackTransparencySection />
       <SignalCategoriesSection />
-      <WhatYouGetSection />
+      <ServicesSection />
       <CostComparisonSection />
       <FAQSection />
       <CTASection />

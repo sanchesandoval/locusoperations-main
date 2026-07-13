@@ -20,6 +20,7 @@ dist-ssr
 # Next.js build output and cache
 .next/
 out/
+*.tsbuildinfo
 
 # Vercel
 .vercel/

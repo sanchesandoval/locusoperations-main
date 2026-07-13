@@ -1,119 +1,126 @@
 "use client";
 
-import { Check, X } from "lucide-react";
+import { Check } from "lucide-react";
+
+const columns = ["Locus", "Hire SDRs", "AI SDR or tool", "Another agency", "Build internally"];
 
 const rows = [
   {
-    category: "Outbound execution",
-    detail: "SDR team, 2 reps + OTE commission",
-    oldWay: "$180–250K/yr",
-    withLocus: "AI system, no hire needed",
-    locusGood: true,
+    label: "How you pay",
+    values: [
+      "Setup fee, then per qualified meeting",
+      "$96–132K/yr fully loaded",
+      "Monthly fee, plus your own list and tools",
+      "$5–10K/mo retainer",
+      "$120–180K/yr fully loaded",
+    ],
   },
   {
-    category: "Prospecting & sales tools",
-    detail: "Apollo, Clay, HubSpot, enrichment",
-    oldWay: "$40–100K/yr",
-    withLocus: "Covered in engagement",
-    locusGood: true,
+    label: "Time to first pipeline",
+    values: [
+      "About 3 weeks",
+      "2–4 months (hiring plus ramp)",
+      "Days, but you run it yourself",
+      "60–90 days",
+      "3–6 months",
+    ],
   },
   {
-    category: "Ops management",
-    detail: "Ops oversight or dedicated ops role",
-    oldWay: "$60–100K/yr",
-    withLocus: "Managed end-to-end by Locus",
-    locusGood: true,
+    label: "Built inside your tools",
+    values: [true, "uses whatever you give them", "their platform, not yours", "runs outside your stack", "yes, if you have the team"],
   },
   {
-    category: "Time to first results",
-    detail: "From kickoff to first audit deliverable",
-    oldWay: "90–180 days",
-    withLocus: "< 14 days",
-    locusGood: true,
+    label: "Fixes data, signals, and routing",
+    values: [true, "doesn't touch it", "one piece of it", "campaigns, not plumbing", "months-long project"],
   },
   {
-    category: "Audit before building anything",
-    detail: "Find leaks before recommending a fix",
-    oldWay: null,
-    withLocus: true,
-    locusGood: true,
+    label: "AI execution + human judgment",
+    values: [true, "human, no system", "system, no judgment", "varies by account manager", "you build both, or neither"],
   },
   {
-    category: "Baseline set on day one",
-    detail: "Numbers agreed before we touch anything",
-    oldWay: null,
-    withLocus: true,
-    locusGood: true,
+    label: "You own the system",
+    values: [true, "leaves when they do", "rented, not owned", "locked to them", "yours, if it ships"],
   },
   {
-    category: "Your total investment",
-    detail: "Annual all-in cost",
-    oldWay: "$280–450K/yr",
-    withLocus: "Fraction of one SDR salary",
-    locusGood: true,
+    label: "Reduces headcount dependency",
+    values: [true, "adds headcount", "still need someone to run it", "adds a vendor to manage", "adds a team"],
+  },
+  {
+    label: "Risk if it doesn't work",
+    values: [
+      "30-day guarantee",
+      "pipeline stalls, re-hire",
+      "cancel and start over",
+      "contract lock-in",
+      "sunk cost, hard to unwind",
+    ],
   },
 ];
 
 export function CostComparisonSection() {
   return (
     <section
-      id="cost-comparison"
+      id="why-locus"
       className="flex flex-col items-center justify-center gap-10 py-20 w-full px-6"
     >
       <div className="text-center max-w-2xl">
         <p className="text-xs font-semibold uppercase tracking-widest text-secondary mb-3">
-          The Real Cost
+          Why Locus
         </p>
         <h2 className="text-3xl md:text-4xl font-medium tracking-tighter text-balance mb-4">
-          The cost of keeping things the way they are.
+          More tools, more hires, more agencies. None fix the system underneath.
         </h2>
         <p className="text-muted-foreground text-lg">
-          Locus isn&apos;t free. But it costs a fraction of what you&apos;d
-          spend hiring the team to do the same work. You get results in 14
-          days, not 6 months.
+          Each of those adds a layer to manage. Locus builds the system, then runs it. Every column below is honest, only one is complete.
         </p>
       </div>
 
-      <div className="w-full max-w-3xl overflow-hidden rounded-xl border border-border">
-        {/* Header row */}
-        <div className="grid grid-cols-3 bg-muted text-sm font-semibold">
-          <div className="px-5 py-4 text-muted-foreground">What you&apos;re comparing</div>
-          <div className="px-5 py-4 border-l border-border text-muted-foreground text-center">
-            Doing it yourself
+      <div className="w-full max-w-6xl overflow-x-auto">
+        <div className="min-w-[900px] rounded-xl border border-border overflow-hidden">
+          {/* Header row */}
+          <div className="grid grid-cols-[1.4fr_repeat(5,1fr)] bg-muted text-sm font-semibold">
+            <div className="px-5 py-4 text-muted-foreground">vs the usual fixes</div>
+            {columns.map((col, i) => (
+              <div
+                key={col}
+                className={`px-4 py-4 border-l border-border text-center ${
+                  i === 0 ? "text-secondary bg-secondary/10" : "text-muted-foreground"
+                }`}
+              >
+                {col}
+              </div>
+            ))}
           </div>
-          <div className="px-5 py-4 border-l border-border text-secondary text-center">
-            With Locus
-          </div>
+
+          {/* Data rows */}
+          {rows.map((row, i) => (
+            <div
+              key={row.label}
+              className={`grid grid-cols-[1.4fr_repeat(5,1fr)] border-t border-border text-sm ${
+                i === rows.length - 1 ? "bg-muted/40" : ""
+              }`}
+            >
+              <div className="px-5 py-4 font-medium">{row.label}</div>
+              {row.values.map((val, j) => (
+                <div
+                  key={j}
+                  className={`px-4 py-4 border-l border-border text-center flex items-center justify-center ${
+                    j === 0 ? "bg-secondary/5" : "text-muted-foreground"
+                  }`}
+                >
+                  {val === true ? (
+                    <Check className="w-4 h-4 text-secondary" />
+                  ) : j === 0 ? (
+                    <span className="font-medium text-secondary">{val}</span>
+                  ) : (
+                    <span>– {val}</span>
+                  )}
+                </div>
+              ))}
+            </div>
+          ))}
         </div>
-
-        {/* Data rows */}
-        {rows.map((row, i) => (
-          <div
-            key={i}
-            className={`grid grid-cols-3 border-t border-border text-sm ${i === rows.length - 1 ? "bg-muted/40" : ""}`}
-          >
-            <div className="px-5 py-4">
-              <p className="font-medium">{row.category}</p>
-              <p className="text-xs text-muted-foreground mt-0.5">{row.detail}</p>
-            </div>
-            <div className="px-5 py-4 border-l border-border text-center text-muted-foreground flex items-center justify-center">
-              {row.oldWay === null ? (
-                <X className="w-4 h-4 text-destructive opacity-60" />
-              ) : (
-                row.oldWay
-              )}
-            </div>
-            <div className="px-5 py-4 border-l border-border text-center flex items-center justify-center font-medium text-secondary">
-              {row.withLocus === true ? (
-                <Check className="w-4 h-4 text-secondary" />
-              ) : (
-                row.withLocus
-              )}
-            </div>
-          </div>
-        ))}
       </div>
-
     </section>
   );
 }

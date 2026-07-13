@@ -23,16 +23,16 @@ export const BLUR_FADE_DELAY = 0.15;
 
 export const siteConfig = {
   name: "Locus | AI GTM Infrastructure",
-  footerDescription: "The AI-Native GTM partner that audits your revenue motion, finds the leaks, and builds the systems to fix them.",
+  footerDescription: "The AI-native GTM partner for B2B software companies.",
   description:
-    "Locus builds AI GTM infrastructure for B2B SaaS companies. We audit your revenue motion, capture buying signals, and build automated systems that generate qualified pipeline without adding headcount.",
-  cta: "Find My Revenue Leaks",
+    "Locus is the AI-native GTM partner for early-stage B2B software companies. We run signal-based outbound across email and LinkedIn and book qualified meetings straight onto your calendar, or build the same system inside your own stack.",
+  cta: "Start Getting Meetings",
   url: process.env.NEXT_PUBLIC_APP_URL || "https://locusops.com",
   keywords: [
     "Revenue Operations",
     "AI GTM",
     "B2B SaaS",
-    "Pipeline Audit",
+    "Qualified Meetings",
     "Sales Ops",
     "Marketing Ops",
   ],
@@ -44,16 +44,29 @@ export const siteConfig = {
     links: [
       { id: 1, name: "Home", href: "/#hero" },
       { id: 2, name: "How it Works", href: "/#how-it-works" },
+      { id: 3, name: "Services", href: "/#services" },
     ],
   },
   hero: {
-    badge: "For B2B SaaS Companies",
-    title: "Your pipeline is leaking revenue. We find it, prove it, and fix it.",
-    description:
-      "We audit your full revenue motion: marketing, sales, and customer success. We surface exactly where pipeline is leaking, and fix it inside your existing stack. No new headcount. Nothing ripped out.",
+    badge: "For B2B Software Companies",
+    title: (
+      <>
+        Qualified Meetings Delivered to You
+        <br />
+        <Highlight className="dark:font-medium">Every Single Month</Highlight>
+      </>
+    ),
+    description: (
+      <>
+        We build and run the revenue system that books qualified meetings straight into your calendar and CRM. One setup fee to start, then{" "}
+        <span className="underline decoration-secondary/60 underline-offset-4">you only pay for what lands</span>.
+      </>
+    ),
+    microcopy:
+      "100% performance-backed. If we don't book you a qualified meeting within 30 days of launch, you get your setup fee back.",
     cta: {
       primary: {
-        text: "Find My Revenue Leaks",
+        text: "Start Getting Meetings",
         href: "/book-call",
       },
     },
@@ -64,54 +77,75 @@ export const siteConfig = {
         id: 1,
         name: "HubSpot",
         logo: (
-          <img
-            src="/logos/hubspot-new.png"
-            alt="HubSpot"
-            className="h-7 object-contain opacity-80 transition-all duration-200"
-          />
+          <>
+            <img
+              src="/logos/hubspot-new.png"
+              alt="HubSpot"
+              className="h-7 object-contain opacity-80 transition-all duration-200 dark:hidden"
+            />
+            <img
+              src="/logos/hubspot-new-dark.png"
+              alt="HubSpot"
+              className="h-7 object-contain opacity-80 transition-all duration-200 hidden dark:block"
+            />
+          </>
         ),
       },
       {
         id: 2,
-        name: "Clay",
+        name: "Attio",
         logo: (
           <img
-            src="/logos/clay.webp"
-            alt="Clay"
-            className="h-7 object-contain opacity-80 transition-all duration-200"
+            src="/logos/blacktext-attio-logo.png"
+            alt="Attio"
+            className="h-7 object-contain opacity-80 transition-all duration-200 dark:brightness-0 dark:invert"
           />
         ),
       },
       {
         id: 3,
-        name: "Apollo",
+        name: "n8n",
         logo: (
-          <img
-            src="/logos/apolloio.avif"
-            alt="Apollo"
-            className="h-7 object-contain opacity-80 transition-all duration-200"
-          />
+          <>
+            <img
+              src="/logos/n8n.svg"
+              alt="n8n"
+              className="h-7 object-contain opacity-80 transition-all duration-200 dark:hidden"
+            />
+            <img
+              src="/logos/n8n-dark.svg"
+              alt="n8n"
+              className="h-7 object-contain opacity-80 transition-all duration-200 hidden dark:block"
+            />
+          </>
         ),
       },
       {
         id: 4,
-        name: "GoHighLevel",
+        name: "Clay",
         logo: (
-          <img
-            src="/logos/highlevel.png"
-            alt="GoHighLevel"
-            className="h-[50px] object-contain opacity-80 transition-all duration-200"
-          />
+          <>
+            <img
+              src="/logos/clay.webp"
+              alt="Clay"
+              className="h-7 object-contain opacity-80 transition-all duration-200 dark:hidden"
+            />
+            <img
+              src="/logos/clay-dark.webp"
+              alt="Clay"
+              className="h-7 object-contain opacity-80 transition-all duration-200 hidden dark:block"
+            />
+          </>
         ),
       },
       {
         id: 5,
-        name: "n8n",
+        name: "Prospeo",
         logo: (
           <img
-            src="/logos/n8n.svg"
-            alt="n8n"
-            className="h-7 object-contain opacity-80 transition-all duration-200"
+            src="/logos/prospeo-big-logo.png"
+            alt="Prospeo"
+            className="h-[78px] object-contain opacity-80 transition-all duration-200"
           />
         ),
       },
@@ -119,11 +153,18 @@ export const siteConfig = {
         id: 6,
         name: "Smartlead",
         logo: (
-          <img
-            src="/logos/smartlead-full-logo.webp"
-            alt="Smartlead"
-            className="h-7 object-contain opacity-80 transition-all duration-200"
-          />
+          <>
+            <img
+              src="/logos/smartlead-full-logo.webp"
+              alt="Smartlead"
+              className="h-7 object-contain opacity-80 transition-all duration-200 dark:hidden"
+            />
+            <img
+              src="/logos/smartlead-full-logo-dark.webp"
+              alt="Smartlead"
+              className="h-7 object-contain opacity-80 transition-all duration-200 hidden dark:block"
+            />
+          </>
         ),
       },
       {
@@ -139,13 +180,20 @@ export const siteConfig = {
       },
       {
         id: 8,
-        name: "Lemlist",
+        name: "HeyReach",
         logo: (
-          <img
-            src="/logos/lemlist-large-logo.png"
-            alt="Lemlist"
-            className="h-7 object-contain opacity-80 transition-all duration-200"
-          />
+          <>
+            <img
+              src="/logos/heyreach-large-logo.png"
+              alt="HeyReach"
+              className="h-7 object-contain opacity-80 transition-all duration-200 dark:hidden"
+            />
+            <img
+              src="/logos/heyreach-dark.png"
+              alt="HeyReach"
+              className="h-7 object-contain opacity-80 transition-all duration-200 hidden dark:block"
+            />
+          </>
         ),
       },
     ],
@@ -153,83 +201,150 @@ export const siteConfig = {
   problemSection: {
     title: "Most revenue teams are operating on vibes.",
     description:
-      "The real leaks aren't in the close. They're in the three ops layers nobody touches together: marketing, sales, and CS. And nobody's measuring any of it.",
+      "Reps spend their time building lists and sending messages, not talking to buyers. There's no repeatable system underneath any of it, and nobody's tracking where a meeting actually came from.",
     without: [
-      "Speed-to-lead averaging 47+ hours — leads go cold before sales sees them",
-      "Attribution tracked in a spreadsheet, sometimes",
-      "CRM is a graveyard — contacts rotting, no follow-up since last quarter",
-      "Site visitors, hiring triggers, and funding signals routing to nobody",
-      "CS onboards without knowing what sales promised",
-      "Renewals have no owner and no timeline",
-      "No baseline — every report starts a debate about whose numbers are right",
-      "Strategy built on gut feel and last quarter's memory",
+      "Outbound happens in bursts, then goes quiet for weeks",
+      "Reps build lists and send messages instead of talking to buyers",
+      "No repeatable process, every rep does outbound their own way",
+      "No idea who's actually in-market right now, so it's volume over timing",
+      "CRM full of contacts with zero context",
+      "No way to trace a meeting back to what actually caused it",
+      "Meetings on the calendar are a coin flip",
+      "No way to know what's actually working",
     ],
     with: [
-      "Speed-to-lead under 5 minutes, triggered automatically",
-      "Every source traced to pipeline",
-      "CRM updated by workflow — every contact enriched, every stage accurate",
-      "Buying signals captured and routed the moment they fire",
-      "Sales-to-CS handoff is documented and automatic",
-      "Renewal sequences fire before anyone has to ask",
-      "One baseline, set on day one — every result measured against it",
-      "Decisions backed by the numbers you set on day one",
+      "Outbound runs every week, on a schedule",
+      "Reps spend their time talking to buyers and closing deals",
+      "One repeatable system, every rep works from the same playbook",
+      "Buying signals tracked and acted on the moment they happen, timing over volume",
+      "Every contact synced to your CRM, fully enriched",
+      "Every meeting traced back to its exact source",
+      "Qualified meetings land on your calendar every month",
+      "Every result measured, so you know what's working",
     ],
   },
   howItWorksSection: {
     badge: "How it Works",
-    title: "Three steps. One revenue motion.",
+    title: "From Cold Prospect to Booked Meeting in Two Weeks.",
     description:
-      "We find the leaks in 2 weeks. We build the fixes in a month. We optimize and prove results in the final 6 weeks.",
+      "Two weeks to set everything up right. Then outbound runs, meetings land, and we tune it every week based on what's actually working.",
     items: [
       {
         id: 1,
         step: "01",
-        timeline: "Weeks 1-2",
-        title: "Audit",
+        timeline: "Week 1",
+        title: "We Learn Your Business",
         description:
-          "We map your full revenue motion across marketing, sales, and CS. Every signal that exists, what's being captured, and what's going unacted on. You get the full picture before we recommend a single fix.",
+          "We look at your current outbound, your signals, your replies, and what's actually working today. We map your ICP and your total addressable market, and build the account list from there.",
         deliverables: [
-          "Full motion mapped across all three layers",
-          "Prioritized leak list with dollar estimates attached",
-          "Baseline metrics locked before any build begins",
-          "Clear recommendation: what to fix first and why",
+          "Current outbound and data reviewed",
+          "ICP and TAM mapped, account list built",
+          "Buying signals chosen for your specific market",
         ],
       },
       {
         id: 2,
         step: "02",
-        timeline: "Weeks 3-6",
-        title: "Build",
+        timeline: "Week 2",
+        title: "We Build the Infrastructure",
         description:
-          "We build signal-to-action pipelines inside the stack you already run. One system at a time, prioritized by what the audit found. Every build measured against the baseline we set during the audit.",
+          "Email domains warm up, verified contacts get pulled in, and we set the signals that trigger outreach. For example, a hiring signal plus new funding means we reach out. Everything is tested before a single message goes out.",
         deliverables: [
-          "Signal capture and CRM enrichment wired in",
-          "Outreach execution automated end-to-end",
-          "Each fix tied directly to a leak from the audit",
-          "Every build measured against your day-one baseline",
+          "Email infrastructure built and warming",
+          "LinkedIn outbound wired in",
+          "Buying signals set to trigger outreach automatically",
         ],
       },
       {
         id: 3,
         step: "03",
-        timeline: "Weeks 7-12",
-        title: "Scale",
+        timeline: "Week 3",
+        title: "Outbound Goes Live",
         description:
-          "Systems are live. Now we optimize. We tighten what's working, cut what isn't, and re-measure everything against the baseline we set on day one.",
+          "Email and LinkedIn campaigns launch across your best-fit accounts. The moment someone replies interested, in 10 minutes or less they get a booking link, and your team gets a Slack and CRM alert with the full context. Call them for a warmer shot, or let them book straight onto the calendar. Either way, that's a qualified meeting delivered.",
         deliverables: [
-          "Ongoing optimization across all active systems",
-          "Full performance review against day-one baseline",
-          "You own every workflow, prompt, and config we built",
-          "Continue, expand, or walk away. Your call.",
+          "Hot replies routed in 10 minutes or less",
+          "Prospect gets a link to book, your team gets a Slack and CRM alert",
+          "Qualified meeting delivered the moment it's booked",
+        ],
+      },
+      {
+        id: 4,
+        step: "04",
+        timeline: "Weeks 4-12",
+        title: "The System That Compounds",
+        description:
+          "We review every campaign weekly. We double down on what's booking meetings, cut what isn't, and ship changes in days, not months. Keep it running with us, or once it's proven, we build the same system into your own infrastructure.",
+        deliverables: [
+          "Weekly review across every active campaign",
+          "Winners scaled, losers cut, changes shipped fast",
+          "Keep it running with us, or once it's proven, we build it into your own infrastructure",
         ],
       },
     ],
   },
   signalCategoriesSection: {
-    badge: "Signal Intelligence",
-    title: "We act on signals your competitors haven't seen yet.",
+    badge: "The Playbook",
+    title: "We act on buying intent your competitors haven't seen yet.",
     description:
-      "Buying intent doesn't announce itself. These six signal types tell us who's in-market, why, and when to act — before they fill out a competitor's form.",
+      "Buying intent doesn't announce itself. Here's what we track, and the exact play we run the moment each signal fires.",
+    closingNote:
+      "These six are just a sample. Every play we build is designed around your buyers and the signals that actually predict a deal for you.",
+  },
+  servicesSection: {
+    badge: "Services",
+    title: (
+      <>
+        <span className="block">
+          1. <Highlight>Operate.</Highlight> We run it for you.
+        </span>
+        <span className="block">
+          2. <Highlight>Build.</Highlight> We build it, you own it.
+        </span>
+      </>
+    ),
+    description:
+      "Two ways to work with us. Start wherever makes sense, there's no required order.",
+    closingNote: {
+      prefix: "Not sure which one fits?",
+      linkText: "Book a free call and we'll figure it out together.",
+    },
+    plans: [
+      {
+        id: 1,
+        tag: "Done For You",
+        timeline: "Monthly",
+        title: "We Run Your Outbound",
+        description:
+          "For teams that want qualified meetings without adding headcount. We run outbound ourselves, email and LinkedIn, using our own stack. You just show up to the meetings.",
+        features: [
+          "Email and LinkedIn outreach, run for you",
+          "Qualified meetings booked straight to your calendar",
+          "Signal-based outbound, not generic blasts",
+          "Weekly optimization, built into the engagement",
+          "Setup fee to start, then pay per qualified meeting",
+          "30-day guarantee on your setup fee",
+        ],
+        cta: { text: "Start Getting Meetings", href: "/book-call" },
+        emphasized: true,
+      },
+      {
+        id: 2,
+        tag: "Own The System",
+        timeline: "90-Day Project",
+        title: "Build the System",
+        description:
+          "For teams ready to own the whole system outright. We build the same outbound infrastructure inside your own tools, and we operate it while we build it, so outbound doesn't stop and wait on handoff.",
+        features: [
+          "Full outbound system built inside your own stack",
+          "We run it for you while it's being built",
+          "Hand it off to your team, or keep us running it, your call",
+          "One project fee, scoped on a call",
+        ],
+        cta: { text: "Ask About Build", href: "/book-call" },
+        emphasized: false,
+      },
+    ],
   },
   faqSection: {
     title: "Answered plainly.",
@@ -238,76 +353,84 @@ export const siteConfig = {
     faQitems: [
       {
         id: 1,
-        question: "What makes Locus different from a typical RevOps firm?",
+        question: "Who is this for?",
         answer:
-          "We audit before we build. Most firms are paid to build something, so they always recommend building. We're paid to find what's actually leaking. Sometimes that's a $200/mo fix, not a $20K project. The strategy call is free — you get the audit findings before you commit to anything.",
+          "Early-stage B2B software companies who need qualified meetings landing on their calendar and don't have the time, team, or systems to run outbound themselves. If you already have a full outbound engine running and just want a tune-up, this is probably more than you need.",
       },
       {
         id: 2,
-        question: "What does the 90-day pilot include?",
+        question:
+          "How is this different from another agency, an AI SDR tool, or hiring our own SDR?",
         answer:
-          "Audit and baseline locked in weeks 1-2. Systems built and live in weeks 3-6. Optimization and proof of impact in weeks 7-12. At day 90 we either continue running the system or you walk away with the playbook and the working system.",
+          "Most agencies get paid whether or not it works. Most AI SDR tools send more volume, not more meetings. An SDR costs you salary and months of ramp before you see a result. We get paid when a qualified meeting actually lands, so our incentive is the same as yours from day one.",
       },
       {
         id: 3,
-        question: "What if you find we don't need a build?",
+        question: "How does pay-per-qualified-meeting pricing work?",
         answer:
-          "That's the audit working correctly. Our pricing is structured so the audit itself is the deliverable. If you don't need a build, you don't pay for one.",
+          "For Operate, you pay one setup fee to get everything built and live: ICP definition, inbox warmup, campaign build. After that, you're billed per qualified meeting, not a flat monthly number. If we don't book meetings, you don't pay beyond the setup fee. Exact numbers get scoped on the call based on your deal size.",
       },
       {
         id: 4,
-        question: "Who is this for?",
+        question: "What counts as a qualified meeting?",
         answer:
-          "B2B SaaS companies doing $50K+ per month with a 1 to 5 person GTM team. Your pipeline is unpredictable and you don't have the internal bandwidth to fix it. You're growing fast enough that the gaps are expensive, but not yet at the size where you'd hire a full ops function. You want scalable systems, not a bigger headcount.",
-      },
-      {
-        id: 10,
-        question: "Can our team run this without you after the engagement?",
-        answer:
-          "Yes. You receive the n8n workflows, documented prompts, signal configs, and any custom tooling we built. Everything is built to be operated by your existing team. We can stay on for ongoing optimization if you want it, but you're never locked in.",
+          "We agree on the criteria in writing before a single email sends: right company, right person, a real reason to buy. You confirm every meeting against that bar before it counts. If it doesn't clear the bar, it doesn't get billed.",
       },
       {
         id: 5,
-        question: "How is this different from hiring a RevOps consultant?",
+        question: "What channels do you actually run?",
         answer:
-          "A RevOps consultant builds a playbook and hands it to you. We audit first to find what's actually leaking, then build AI systems tuned to what your specific funnel needs. You don't get a deck. You get a working system with a before and after baseline.",
+          "Email and LinkedIn. No cold calling, no paid ads. Two channels run well beats five channels run half-heartedly.",
       },
       {
         id: 6,
-        question: "Do you use AI?",
+        question: "Isn't outbound dead? My inbox is already full of AI spam.",
         answer:
-          "Yes. AI is the speed layer — it handles research, personalization, and execution at scale. We own the logic layer: the strategy, the sequencing, and the decisions about what to build and when. AI doesn't replace judgment. It removes the bottleneck between a good decision and it actually happening.",
+          "Generic blasts are dead. What still works is reaching the right person the week something actually changes for them, a new hire, a funding round, a tool they just adopted. That's the opposite of a blast, and it's the whole premise of what we run.",
       },
       {
         id: 7,
-        question: "How much time will this require from me?",
+        question: "Will this hurt my reputation with prospects?",
         answer:
-          "2-3 hours in week 1 for the audit interview and system tour. 1 hour weekly thereafter for working sessions. Less than hiring an SDR.",
+          "Every inbox warms for two weeks minimum before it sends a single message. Every campaign is written off a real signal, not a template with a first name dropped in. If a message reads like spam, it doesn't go out under your name.",
       },
       {
         id: 8,
-        question: "What does pricing look like?",
+        question: "Do you replace our tools or our team?",
         answer:
-          "The strategy call is free. We run a live audit on it, map your revenue motion, and price the build against what we find. If the audit doesn't surface enough to justify the investment, there's nothing to pay. Build pricing is scoped on the call so you know exactly what you're committing to before you do.",
+          "No. Operate runs on our own stack, so nothing changes on your end except meetings landing on your calendar. Build gets built inside your existing tools, so you end up owning more of what you already pay for, not less.",
+      },
+      {
+        id: 9,
+        question: "What happens if it doesn't work?",
+        answer:
+          "We don't promise a number upfront, results depend on your ICP and market. What's guaranteed: if we haven't booked a qualified meeting within 30 days of launch, you get 100% of your setup fee back.",
+      },
+      {
+        id: 10,
+        question: "Is there a setup fee, retainer, or long contract?",
+        answer:
+          "Operate has a setup fee to get live, then pay-per-meeting after that, with a 3-month minimum so the system has time to actually compound. Build is a single project fee, scoped on the call. Nothing auto-renews without you saying yes.",
       },
     ],
   },
   ctaSection: {
     id: "cta",
     backgroundImage: "/agent-cta-background.png",
-    title: "Find out exactly where your pipeline is leaking.",
+    title: "Let's get qualified meetings on your calendar.",
     button: {
-      text: "Find My Revenue Leaks",
+      text: "Start Getting Meetings",
       href: "/book-call",
     },
-    subtext: "If we don't put 5 qualified meetings on your calendar within 30 days of your system going live, we work free until we do. The strategy call is free. The audit happens on it.",
+    subtext: "Free strategy call. If we don't book a qualified meeting within 30 days of launch, you get 100% of your setup fee back.",
   },
   footerLinks: [
     {
       title: "Services",
       links: [
         { id: 1, title: "How It Works", url: "/#how-it-works" },
-        { id: 2, title: "The Infrastructure", url: "/#stack" },
+        { id: 2, title: "The Solution", url: "/#solution" },
+        { id: 3, title: "Operate or Build", url: "/#services" },
       ],
     },
     {
@@ -319,7 +442,7 @@ export const siteConfig = {
     {
       title: "Connect",
       links: [
-        { id: 8, title: "Find My Revenue Leaks", url: "/book-call" },
+        { id: 8, title: "Start Getting Meetings", url: "/book-call" },
         { id: 10, title: "LinkedIn", url: "https://linkedin.com/in/christopherjsanchez" },
       ],
     },

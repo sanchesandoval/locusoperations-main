@@ -22,6 +22,8 @@ interface FlickeringGridProps extends React.HTMLAttributes<HTMLDivElement> {
   textColor?: string;
   fontSize?: number;
   fontWeight?: number | string;
+  imageSrc?: string;
+  imageSize?: number;
 }
 
 export const FlickeringGrid: React.FC<FlickeringGridProps> = ({
@@ -36,17 +38,31 @@ export const FlickeringGrid: React.FC<FlickeringGridProps> = ({
   text = "",
   fontSize = 140,
   fontWeight = 600,
+  imageSrc,
+  imageSize = 220,
   ...props
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [isInView, setIsInView] = useState(false);
   const [canvasSize, setCanvasSize] = useState({ width: 0, height: 0 });
+  const imageRef = useRef<HTMLImageElement | null>(null);
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   // Convert any CSS color to rgba for optimal canvas performance
   const memoizedColor = useMemo(() => {
     return getRGBA(color);
   }, [color]);
+
+  useEffect(() => {
+    if (!imageSrc) return;
+    const img = new window.Image();
+    img.onload = () => {
+      imageRef.current = img;
+      setImageLoaded(true);
+    };
+    img.src = imageSrc;
+  }, [imageSrc]);
 
   const drawGrid = useCallback(
     (
@@ -60,15 +76,66 @@ export const FlickeringGrid: React.FC<FlickeringGridProps> = ({
     ) => {
       ctx.clearRect(0, 0, width, height);
 
-      // Create a separate canvas for the text mask
+      // Create a separate canvas for the text/image mask
       const maskCanvas = document.createElement("canvas");
       maskCanvas.width = width;
       maskCanvas.height = height;
       const maskCtx = maskCanvas.getContext("2d", { willReadFrequently: true });
       if (!maskCtx) return;
 
-      // Draw text on mask canvas
-      if (text) {
+      const img = imageRef.current;
+
+      if (img && text) {
+        // Combined lockup: icon on the left, wordmark text to its right,
+        // the pair centered as one unit. Flattened to a solid white
+        // silhouette afterward so the reveal logic below is unaffected
+        // by the icon's own colors.
+        const drawSize = imageSize * dpr;
+        const aspect = (img.naturalWidth || 1) / (img.naturalHeight || 1);
+        const drawW = aspect >= 1 ? drawSize : drawSize * aspect;
+        const drawH = aspect >= 1 ? drawSize / aspect : drawSize;
+
+        const scaledFontSize = fontSize * dpr;
+        maskCtx.fillStyle = "white";
+        maskCtx.font = `${fontWeight} ${scaledFontSize}px "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif`;
+        maskCtx.textAlign = "left";
+        maskCtx.textBaseline = "middle";
+        const textWidth = maskCtx.measureText(text).width;
+
+        const gap = 6 * dpr;
+        const verticalNudge = 14 * dpr;
+        const totalWidth = drawW + gap + textWidth;
+        const startX = width / 2 - totalWidth / 2;
+        const centerY = height / 2;
+
+        maskCtx.drawImage(img, startX, centerY - drawH / 2 - verticalNudge, drawW, drawH);
+        maskCtx.fillText(text, startX + drawW + gap, centerY);
+
+        maskCtx.globalCompositeOperation = "source-in";
+        maskCtx.fillStyle = "white";
+        maskCtx.fillRect(0, 0, width, height);
+        maskCtx.globalCompositeOperation = "source-over";
+      } else if (img) {
+        // Draw the image alone, then flatten it to a solid white silhouette
+        // (same masking approach as text below) so the reveal logic works
+        // regardless of the image's own colors.
+        const drawSize = imageSize * dpr;
+        const aspect = (img.naturalWidth || 1) / (img.naturalHeight || 1);
+        const drawW = aspect >= 1 ? drawSize : drawSize * aspect;
+        const drawH = aspect >= 1 ? drawSize / aspect : drawSize;
+        maskCtx.drawImage(
+          img,
+          width / 2 - drawW / 2,
+          height / 2 - drawH / 2,
+          drawW,
+          drawH,
+        );
+        maskCtx.globalCompositeOperation = "source-in";
+        maskCtx.fillStyle = "white";
+        maskCtx.fillRect(0, 0, width, height);
+        maskCtx.globalCompositeOperation = "source-over";
+      } else if (text) {
+        // Draw text on mask canvas
         maskCtx.save();
         maskCtx.scale(dpr, dpr);
         maskCtx.fillStyle = "white";
@@ -107,7 +174,7 @@ export const FlickeringGrid: React.FC<FlickeringGridProps> = ({
         }
       }
     },
-    [memoizedColor, squareSize, gridGap, text, fontSize, fontWeight],
+    [memoizedColor, squareSize, gridGap, text, fontSize, fontWeight, imageSize, imageLoaded],
   );
 
   const setupCanvas = useCallback(
