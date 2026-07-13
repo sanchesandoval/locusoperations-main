@@ -16,38 +16,26 @@ export function ServicesSection() {
       id="services"
       className="flex flex-col items-center justify-center gap-12 py-20 w-full px-6"
     >
-      <div className="w-full max-w-5xl">
-        <p className="text-xs font-semibold uppercase tracking-widest text-secondary mb-6 text-center">
+      <div className="text-center max-w-2xl">
+        <p className="text-xs font-semibold uppercase tracking-widest text-secondary mb-3">
           {servicesSection.badge}
         </p>
-        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 md:gap-10">
-          <h2 className="text-3xl md:text-4xl font-medium tracking-tighter text-balance flex flex-col gap-1">
-            {servicesSection.title}
-          </h2>
-          <p className="text-muted-foreground text-base md:text-lg text-balance md:text-right md:max-w-sm md:pt-1">
-            {servicesSection.description}
-          </p>
-        </div>
+        <h2 className="text-3xl md:text-4xl font-medium tracking-tighter text-balance mb-4">
+          {servicesSection.title}
+        </h2>
+        <p className="text-muted-foreground text-center text-balance font-medium">
+          {servicesSection.description}
+        </p>
       </div>
 
       <div className="w-full max-w-5xl grid gap-6 md:grid-cols-2 items-stretch">
         {servicesSection.plans.map((plan) => (
           <div
             key={plan.id}
-            className={
-              plan.emphasized
-                ? "flex flex-col gap-6 rounded-2xl border-2 border-secondary bg-secondary/5 p-8"
-                : "flex flex-col gap-6 rounded-2xl border border-border bg-card/30 p-8"
-            }
+            className="group flex flex-col gap-6 rounded-2xl border border-border bg-card/30 p-8 transition-colors duration-200 hover:border-secondary hover:bg-secondary/5"
           >
             <div className="flex items-center justify-between flex-wrap gap-2">
-              <span
-                className={
-                  plan.emphasized
-                    ? "text-xs font-semibold uppercase tracking-widest text-secondary border border-secondary/40 rounded-full px-3 py-1"
-                    : "text-xs font-semibold uppercase tracking-widest text-muted-foreground border border-border rounded-full px-3 py-1"
-                }
-              >
+              <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground border border-border rounded-full px-3 py-1 transition-colors duration-200 group-hover:text-secondary group-hover:border-secondary/40">
                 {plan.tag}
               </span>
               <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">

@@ -22,7 +22,7 @@ export const Highlight = ({
 export const BLUR_FADE_DELAY = 0.15;
 
 export const siteConfig = {
-  name: "Locus | AI GTM Infrastructure",
+  name: "Locus | Go-to-Market Systems for B2B Software Companies",
   footerDescription: "The AI-native GTM partner for B2B software companies.",
   description:
     "Locus is the AI-native GTM partner for early-stage B2B software companies. We run signal-based outbound across email and LinkedIn and book qualified meetings straight onto your calendar, or build the same system inside your own stack.",
@@ -295,12 +295,8 @@ export const siteConfig = {
     badge: "Services",
     title: (
       <>
-        <span className="block">
-          1. <Highlight>Operate.</Highlight> We run it for you.
-        </span>
-        <span className="block">
-          2. <Highlight>Build.</Highlight> We build it, you own it.
-        </span>
+        1. <Highlight>Operate.</Highlight> We run it for you. 2.{" "}
+        <Highlight>Build.</Highlight> We build it, you own it.
       </>
     ),
     description:
@@ -334,7 +330,7 @@ export const siteConfig = {
         timeline: "90-Day Project",
         title: "Build Your Outbound Engine",
         description:
-          "For teams with a specific gap we diagnose first: messy CRM data, no signal tracking, tools that don't talk to each other, or outreach that's still done by hand. We rebuild whatever's actually broken inside your own stack, and run it while we build, so outbound doesn't stop and wait on handoff. In 90 days, you own the whole system outright.",
+          "For teams with a specific gap we diagnose first: messy CRM data, no signal tracking, disconnected tools, or outreach still done by hand. We rebuild what's broken inside your own stack, running it while we build, so outbound never stops. In 90 days, you own the whole system.",
         features: [
           "Signal capture and enrichment wired into your CRM",
           "Orchestration logic connecting every tool you use",

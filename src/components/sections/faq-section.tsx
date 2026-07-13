@@ -4,7 +4,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { SectionHeader } from "@/components/section-header";
 import { siteConfig } from "@/lib/config";
 
 export function FAQSection() {
@@ -13,19 +12,21 @@ export function FAQSection() {
   return (
     <section
       id="faq"
-      className="flex flex-col items-center justify-center gap-10 pb-10 w-full relative"
+      className="flex flex-col items-center justify-center gap-4 pb-10 w-full relative"
     >
-      <SectionHeader>
-        <p className="text-xs font-semibold uppercase tracking-widest text-secondary">
-          Frequently Asked Questions
-        </p>
-        <h2 className="text-3xl md:text-4xl font-medium tracking-tighter text-center text-balance">
-          {faqSection.title}
-        </h2>
-        <p className="text-muted-foreground text-center text-balance font-medium">
-          {faqSection.description}
-        </p>
-      </SectionHeader>
+      <div className="w-full p-10 pb-0 md:p-14 md:pb-0">
+        <div className="max-w-xl mx-auto flex flex-col items-center justify-center gap-2">
+          <p className="text-xs font-semibold uppercase tracking-widest text-secondary">
+            Frequently Asked Questions
+          </p>
+          <h2 className="text-3xl md:text-4xl font-medium tracking-tighter text-center text-balance">
+            {faqSection.title}
+          </h2>
+          <p className="text-muted-foreground text-center text-balance font-medium">
+            {faqSection.description}
+          </p>
+        </div>
+      </div>
 
       <div className="max-w-3xl w-full mx-auto px-10">
         <Accordion
