@@ -1,6 +1,7 @@
 "use client";
 
 import { Check } from "lucide-react";
+import { useState } from "react";
 
 const columns = ["Locus", "Hire SDRs", "AI SDR or tool", "Another agency", "Build internally"];
 
@@ -58,6 +59,8 @@ const rows = [
 ];
 
 export function CostComparisonSection() {
+  const [hoveredCol, setHoveredCol] = useState<number | null>(null);
+
   return (
     <section
       id="why-locus"
@@ -83,8 +86,14 @@ export function CostComparisonSection() {
             {columns.map((col, i) => (
               <div
                 key={col}
-                className={`px-4 py-4 border-l border-border text-center ${
-                  i === 0 ? "text-secondary bg-secondary/10" : "text-muted-foreground"
+                onMouseEnter={() => i > 0 && setHoveredCol(i)}
+                onMouseLeave={() => i > 0 && setHoveredCol(null)}
+                className={`px-4 py-4 border-l border-border text-center transition-colors duration-200 ${
+                  i === 0
+                    ? "text-secondary bg-secondary/10"
+                    : hoveredCol === i
+                      ? "text-destructive bg-destructive/10"
+                      : "text-muted-foreground"
                 }`}
               >
                 {col}
@@ -104,8 +113,14 @@ export function CostComparisonSection() {
               {row.values.map((val, j) => (
                 <div
                   key={j}
-                  className={`px-4 py-4 border-l border-border text-center flex items-center justify-center ${
-                    j === 0 ? "bg-secondary/5" : "text-muted-foreground"
+                  onMouseEnter={() => j > 0 && setHoveredCol(j)}
+                  onMouseLeave={() => j > 0 && setHoveredCol(null)}
+                  className={`px-4 py-4 border-l border-border text-center flex items-center justify-center transition-colors duration-200 ${
+                    j === 0
+                      ? "bg-secondary/5"
+                      : hoveredCol === j
+                        ? "bg-destructive/10 text-destructive"
+                        : "text-muted-foreground"
                   }`}
                 >
                   {val === true ? (
